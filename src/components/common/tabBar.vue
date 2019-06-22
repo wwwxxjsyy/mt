@@ -2,6 +2,7 @@
     <div id="footer">
         <ul>
             <router-link 
+                active-class="active"
                 v-for="(item,index) in tabbar" 
                 @click="handleTogglePage(index)"
                 :to="item.path"
@@ -17,27 +18,27 @@
 
 <script>
 export default {
-    name:"Footer",
+    name:"Tabbar",
     data(){
         return {
             tabbar:[
                 {
-                   icon:"&#xe717;",
+                   icon:"&#xe656;",
                    title:"首页",
                    path:"/home"
                 },
                 {
-                   icon:"&#xe61d;",
+                   icon:"&#xe632;",
                    title:"会员",
                    path:"/vip"
                 },
                 {
-                   icon:"&#xe605;",
+                   icon:"&#xe634;",
                    title:"订单",
                    path:"/order"
                 },
                 {
-                   icon:"&#xe605;",
+                   icon:"&#xe657;",
                    title:"我的",
                    path:"/mine"
                 }
@@ -80,6 +81,9 @@ export default {
         align-items: center;
     }
      #footer>ul>li>i{
-         font-size:.4rem;
+         font-size:.5rem;
      }
+     #footer>ul>.active{
+        color:rgb(255,209,97);
+    }
 </style>
