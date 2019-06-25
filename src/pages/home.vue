@@ -1,21 +1,34 @@
 <template>
     <div class="mt-home">
-        <h2>mt-home</h2>
+        <mt-home-address/>
+        <mt-home-search/>
+        <mt-home-recommend/>
+        <mt-home-banner/>
+        <mt-home-class/>
     </div>
 </template>
 
 <script>
-
-
+import Address from '../router/home/mt-home-adress'
+import Search from '../router/home/mt-home-search'
+import Recommend from '../router/home/mt-home-recommend'
+import Banner from '../router/home/mt-home-banner'
+import Class from '../router/home/mt-home-class'
 export default {
      name:"MtHome",
      components:{
-         
+        "mt-home-address":Address,
+        "mt-home-search":Search,
+        "mt-home-recommend":Recommend,
+        "mt-home-banner":Banner,
+        "mt-home-class":Class
      }
     
 }
 </script>
 
 <style scoped>
-
+.mt-home{
+    padding: .2rem;
+}
 </style>
