@@ -8,6 +8,7 @@
                 :to="item.path"
                 tag="li"
                 :key="index"
+                exact
                 >
                 <img :src="$route.path==item.path?item.pic1:item.pic" class="tabbar-pic">
                 <span>{{item.title}}</span>
