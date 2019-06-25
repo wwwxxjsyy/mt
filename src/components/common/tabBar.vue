@@ -8,6 +8,7 @@
                 :to="item.path"
                 tag="li"
                 :key="index"
+                exact
                 >
                 <i class="iconfont" v-html="item.icon"></i>
                 <span>{{item.title}}</span>
