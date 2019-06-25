@@ -15,7 +15,7 @@
                 </div>
                 <div class="login_password"><span>密码登录</span></div>
                 <div class="bottom">
-                    <div class="center"><span class="iconfont wechat">&#xe603;</span></div>
+                    <div class="center"><span class="iconfont wechat">&#xe638;</span></div>
                     <div class="login_password center">登陆代表你已经同意<span>美团用户协议</span>、<span>隐私政策</span></div>
                 </div>
             
@@ -28,7 +28,7 @@ export default {
      data(){
         return {
             phone:'',
-            verification:'',
+            // verification:'',
         }
     },
     methods:{
@@ -36,14 +36,15 @@ export default {
         
                 const formData = {
                     phone:this.phone,
-                    verification:this.verification
+                    // verification:this.verification
                 }
-                axios.post('http://localhost:5000/api/users/register',formData)
-                .then(res=>{
-                    console.log(res)
-                    this.$router.push({name:'loginLink'})
-                })
-
+                // this.http.post('http://localhost:5000/api/users/register',formData)
+                // .then(res=>{
+                //     console.log(res)
+                //     this.$router.push({name:'LoginMessageVerification'})
+                // })
+                
+                this.$router.push({name:'LoginMessageVerification'})
            
 
             
@@ -54,6 +55,11 @@ export default {
 </script>
 
 <style scoped>
+input{
+    outline:none;
+    padding-left:.1rem;
+    font-size:.35rem;
+}
 .card-body{
     padding:.5rem;
 }
@@ -109,6 +115,7 @@ export default {
 }
 .wechat{
     font-size:.7rem;
+    color:rgb(0, 200, 0);
 }
 .bottom{
     margin-top:2rem;

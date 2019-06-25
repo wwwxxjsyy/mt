@@ -1,10 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import homeRouter from "./home"
-import orderRouter from "./order"
-import mineRouter from "./mine"
-import vipRouter from "./vip"
-import loginRouter from "./login"
+//一级路由
+import Home from "../pages/home"
+import Order from "../pages/order"
+import Mine from "../pages/mine"
+import Vip from "../pages/vip"
+import Login from "../pages/login"
+import LoginMessageVerification from '../components/login/loginMessageVerification'
+//二级路由
+//如：HomeShop 驼峰命名，前面加上一级路由名字
+
+//三级路由
+
+
 
 Vue.use(Router)
 
@@ -14,19 +22,40 @@ export default new Router({
   linkActiveClass: 'active',
   linkExactActiveClass: 'active',
   routes:[
-        homeRouter,
-        orderRouter,
-        mineRouter,
-        loginRouter,
-        vipRouter,
       {
-          path:"/",
-          redirect:"/home"
+        path:"/",
+        redirect:"/home"
+      },
+      {
+        path:"/home",
+        component:Home
+      },
+      {
+        path:"/vip",
+        component:Vip
+      },
+      {
+        path:"/order",
+        component:Order
+      },
+      {
+        path:"/mine",
+        component:Mine
+      },
+      {
+        path:"/login",
+        component:Login
+      },
+      {
+        name:"LoginMessageVerification",
+        path:"/loginMessageVerification",
+        component:LoginMessageVerification
+        
       },
       
       {
-          path:"**",
-          redirect:"/home"
+        path:"**",
+        redirect:"/home"
       }
   ]
 })
