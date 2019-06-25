@@ -61,9 +61,10 @@ export default {
         position: fixed;
         left: 0;
         bottom: 0;
+        z-index: 1;
         border:1px solid #ccc;
+        background: #fff;
     }
-
     #footer>ul{
         width: 100%;
         height: 100%;
@@ -71,7 +72,6 @@ export default {
         justify-content: space-between;
         align-items: center;
     }
-
     #footer>ul>li{
         width: 100%;
         height: 100%;
