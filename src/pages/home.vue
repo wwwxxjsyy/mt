@@ -25,6 +25,7 @@ export default {
         "mt-home-banner":Banner,
         "mt-home-class":Class,
          homeShop
+
      }
 }
 </script>
