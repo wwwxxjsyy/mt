@@ -1,21 +1,24 @@
 <template>
     <div class="mt-home">
-        <h2>mt-home</h2>
+        <homeShop></homeShop>
     </div>
 </template>
 
 <script>
-
+import homeShop from "../components/home/homeShop"
 
 export default {
-     name:"MtHome",
-     components:{
-         
+    name:"MtHome",
+    components:{
+         homeShop
      }
     
 }
 </script>
 
 <style scoped>
-
+    .mt-home{
+        width:100%;
+        height: 100%;
+    }
 </style>

@@ -47,7 +47,6 @@ export default {
                    path:"/mine"
                 }
             ],
-            flag:0
         }
     },
     methods:{
@@ -55,13 +54,11 @@ export default {
             this.$emit("handleToggle",index)
         }
     },
-  
 }
 </script>
 
 
-<style >
-
+<style scoped>
 .footer{
     width: 100%;
     height: 1rem;
@@ -71,9 +68,7 @@ export default {
     border:1px solid #ccc;
     z-index: 999999;
     background:#fff;
-
 }
-
 .footer>ul{
     width: 100%;
     height: 100%;
@@ -81,7 +76,6 @@ export default {
     justify-content: space-between;
     align-items: center;
 }
-
 .footer>ul>li{
     width: 100%;
     height: 100%;
@@ -97,19 +91,48 @@ export default {
 .footer>ul>li>i{
     font-size:.5rem;
 }
-
 .footer>ul>li.active{
-color:rgb(247, 187, 37);
+    color:rgb(247, 187, 37);
 }
 .footer>ul>li.active>.tabbar-pic{
     position: relative;
     display: inline-block!important;
     animation: rotate 0.5s ;
 }
-
 @-webkit-keyframes rotate {
   0% { transform: scale(1); }
   50% { transform: scale(0.5); }
   100% { transform: scale(1); }
+}
+#footer{
+    width: 100%;
+    height: 1rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    border:1px solid #ccc;
+    background: #fff;
+}
+#footer>ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#footer>ul>li{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#footer>ul>li>i{
+    font-size:.5rem;
+}
+#footer>ul>.active{
+    color:rgb(255,209,97);
 }
 </style>
