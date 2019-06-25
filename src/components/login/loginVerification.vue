@@ -1,11 +1,6 @@
 <template>
-    <div class="mt-login">
-            <div class="card">
-                <div class="header">
-                    <span class="iconfont">&#xe605;</span>
-                    <span>帮助</span>
-                </div>
-                <!-- <div class="card-body">
+    <div class="mt-login-verification">
+                <div class="card-body">
                     <h6>欢迎登陆美团</h6>
                     <form action="" @submit.prevent="onSubmit">
                         <div class="form-group">
@@ -22,21 +17,14 @@
                 <div class="bottom">
                     <div class="center"><span class="iconfont wechat">&#xe603;</span></div>
                     <div class="login_password center">登陆代表你已经同意<span>美团用户协议</span>、<span>隐私政策</span></div>
-                </div> -->
-                <mt-login-verification/>
-                
-            </div>
+                </div>
             
     </div>
 </template>
 
 <script>
-import MtLoginVrification from '../components/login/loginVerification'
 export default {
-    name:"MtLogin",
-    components:{
-        'mt-login-verification':MtLoginVrification
-    },
+    name:"MtLoginVrification",
      data(){
         return {
             phone:'',
@@ -66,25 +54,6 @@ export default {
 </script>
 
 <style scoped>
-input{
-    outline:none;
-    padding-left:.1rem;
-    font-size:.35rem;
-}
-.mt-login{
-    background:#fff;
-    height:100%;
-}
-.card>.header{
-    padding:.3rem;
-    color:rgb(255,189,39);
-    display:flex;
-    font-size:.3rem;
-    justify-content:space-between;
-}
-.card>.header .iconfont{
-    font-size:.5rem;
-}
 .card-body{
     padding:.5rem;
 }

@@ -4,7 +4,7 @@
       <img :src="imgUrl" alt>
     </router-link>
 
-    <a href="#" class="MineName">T552225532</a>
+    <a href="#/login" class="MineName">T552225532</a>
     <div class="mine-icon">
       <a href="#" class="iconfont" v-for="item in headerIcon" v-html="item" :key="item"></a>
     </div>

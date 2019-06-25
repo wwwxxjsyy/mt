@@ -1,5 +1,5 @@
 export default {
-    path : 'login',
+    path : '/login',
     component : () => import('@/pages/login'),
     children : [
     ]
