@@ -1,14 +1,14 @@
 <template>
     <div class="class">
         <ul>
-            <li v-for="(item,index) in classifys">
+            <li v-for="(item,index) in classifys" :key="index">
                 <span><img :src="item.pic"></span>
                 <b>{{item.title}}</b>
             </li>
           
         </ul>
           <ul>
-            <li v-for="(item,index) in sclassifys">
+            <li v-for="(item,index) in sclassifys" :key="index"> 
                 <span><img :src="item.pic"></span>
                 <b>{{item.title}}</b>
             </li>
