@@ -1,7 +1,13 @@
 <template>
+<<<<<<< HEAD
   <div id="app">
     <router-view/>
     <!-- <Mt-TabBar/> -->
+=======
+  <div id="app" @scroll="scrollHeader()" ref="app" >
+    <router-view :isChange="flag"/>
+    <Mt-TabBar/>
+>>>>>>> 0b083648dc06fde23709d77038c142e874bbede4
   </div>
 </template>
 
@@ -11,14 +17,29 @@ import axios from 'axios'
 
 export default {
   name: 'App',
+  data(){
+    return{
+      flag:false
+    }
+  },
   components:{
     // "Mt-TabBar":TabBar
+  },
+  data(){
+    return{
+      flag:false
+    }
+  },
+  methods: {
+      scrollHeader() {
+          this.flag = this.$refs.app.scrollTop == 0 ? false : true;
+      }
   },
   mounted(){
     this.http.get('/posts').then(res=>{
       console.log(res)
     })
-  }
+  } 
 }
 </script>
 
@@ -31,5 +52,7 @@ export default {
   color: #2c3e50;
   height: 100%;
   width: 100%;
+  overflow: scroll;
+  background: #fff;
 }
 </style>
