@@ -1,13 +1,13 @@
 <template>
-    <p>评价11</p>
+    
 </template>
 
 <script>
 export default {
-    
+    name:"ordersimilarity"
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

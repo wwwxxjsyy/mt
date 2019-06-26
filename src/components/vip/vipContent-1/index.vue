@@ -22,7 +22,11 @@ export default {
 
 <style scoped>
 .vip-content-text{
+<<<<<<< HEAD
     background:#f2f2f2;
+=======
+    background:#f3f4f4;
+>>>>>>> lishun
 }
 .vip-content-txt{
     padding-top: 0.3rem;

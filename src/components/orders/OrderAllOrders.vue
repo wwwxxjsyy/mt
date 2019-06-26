@@ -13,6 +13,7 @@ import OrderOftenBuy from "./OrderOftenBuy"
 import OrderMyOrder from "./OrderMyOrder"
 
 export default {
+    name:"orderallorders",
     components:{
         OrderOftenBuy,
         OrderMyOrder
