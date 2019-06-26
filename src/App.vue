@@ -15,10 +15,10 @@ export default {
     "Mt-TabBar":TabBar
   },
   mounted(){
-    this.http.get('/posts').then(res=>{
-      console.log(res)
-    })
-  }
+  //   this.http.get('/posts').then(res=>{
+  //     console.log(res)
+  //   })
+  // }
 }
 </script>
 
