@@ -2,7 +2,7 @@
 <div class='mine-list'>
     <ul>
         <li v-for="(item,index) in list" :key="index">
-           <router-link to="" tag="a">
+           <router-link :to="item.path" tag="a">
                <img :src="item.url" alt=""> 
                <span class="listTitle">{{item.desc1}}</span>
               <span class="listCare">{{item.desc2}}</span>
@@ -23,27 +23,32 @@ return {
         {
             url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
             desc1:'红包',
-            desc2:'4个未使用'
+            desc2:'4个未使用',
+            path:'/RedMoney'
         },
         {
             url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
             desc1:'代金券',
-            desc2:'0张未使用'
+            desc2:'0张未使用',
+            path:'/'
         },
         {
             url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
             desc1:'津贴',
-            desc2:'余额20元'
+            desc2:'余额20元',
+            path:'/'
         },
         {
             url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
             desc1:'我的钱包',
-            desc2:'签到赢现金'
+            desc2:'签到赢现金',
+            path:'/'
         },
         {
             url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
             desc1:'借钱',
-            desc2:'最高10万'
+            desc2:'最高10万',
+            path:'/'
         },
     ]
 };
@@ -71,6 +76,7 @@ return {
     /* float: left; */
     width: 25%;
     margin-bottom:.5rem;
+    text-align: center;
 }
 .mine-list ul>li:last-child{
     margin-bottom:0;
