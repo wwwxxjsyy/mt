@@ -1,0 +1,66 @@
+<template>
+<div class='address-header'>
+    <div class="back">
+           <i class="iconfont" @click="returnOut" v-html="icon"></i>
+            <span>我的收货地址</span>
+    </div>
+    <router-link to="/PlusAddress" tag="div" class="address-header-titile">
+            <span>新增地址</span>
+    </router-link>  
+</div>
+</template>
+
+<script>
+
+export default {
+components: {},
+data() {
+return {
+    icon:'&#xe609;'
+};
+},
+computed: {},
+watch: {},
+methods: {
+    returnOut(){
+        window.history.back()
+    }
+},
+}
+</script>
+<style  scoped>
+.address-header {
+    width: 100%;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafafa;
+    padding-left: .39rem;
+    position:sticky;
+    top:0;
+    left:0;
+    z-index: 2000;
+}
+
+.address-header .back {
+    display: flex;
+}
+
+.address-header .back>i {
+    font-size: .6rem;
+    color:#757575;
+}
+.address-header .back>span {
+    margin-left: .3rem;
+    font-size: .45rem;
+    color: black;
+}
+
+.address-header-titile>span {
+    float: right;
+    font-size: .31rem;
+    color: black;
+    margin-right: .4rem;
+}
+</style>

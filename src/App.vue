@@ -33,7 +33,7 @@ export default {
     this.http.get('/posts').then(res=>{
       console.log(res)
     })
-  } 
+  }
 }
 </script>
 

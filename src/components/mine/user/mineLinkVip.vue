@@ -12,7 +12,7 @@ export default {
 components: {},
 data() {
 return {
-    url:'../static/img/mineVip.gif'
+    url:require('../../../assets/minePic/mineVip.gif')
 };
 },
 }

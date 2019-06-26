@@ -2,7 +2,7 @@
     <div class="footer">
         <ul>
             <router-link 
-                active-class="active"
+                active-class="active" 
                 v-for="(item,index) in tabbar" 
                 @click="handleTogglePage(index)"
                 :to="item.path"

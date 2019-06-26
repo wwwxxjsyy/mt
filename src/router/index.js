@@ -8,6 +8,10 @@ import Vip from "../pages/vip"
 import Login from "../pages/login"
 import LoginMessageVerification from '../components/login/loginMessageVerification'
 
+import RedMoney from '../components/mine/others/RedMoney'
+import Collection from '../components/mine/others/Collection'
+import Address from '../components/mine/others/Address'
+import PlusAddress from '../components/mine/others/PlusAddress'
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 import HomeGoods from '../pages/homegoods'
@@ -79,10 +83,26 @@ export default new Router({
         component:LoginMessageVerification
         
       },
-      
+        {
+        path:"/RedMoney",
+        component:RedMoney
+      },
+      {
+        path:"/Collection",
+        component:Collection
+      },
+      {
+        path:"/Address",
+        component:Address
+      },
+      {
+        path:'/PlusAddress',
+        component:PlusAddress
+      },
       {
         path:"**",
         redirect:"/home"
-      }
+      },
+    
   ]
 })

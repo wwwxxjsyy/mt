@@ -3,7 +3,7 @@
     <div class="orderoftenbuy">
         <div class="orderoftenbuy-top">
             <h3>最近常买</h3>
-            <a href="#">查看10个商家  ></a>
+            <a href="#"><p>查看10个商家</p><span class="orderoftenbuy-top-youjian"></span></a>
         </div>
         <div class="orderoftenbuy-bottom">
             <ul>
@@ -80,6 +80,17 @@ export default {
     font-size:0.26rem;
     color:#7a7a7a;
     margin-right:0.2rem;
+    display:flex;
+    justify-content:flex-start;
+}
+.orderoftenbuy-top-youjian{
+    width:0.22rem;
+    height:0.28rem;
+    background:url("../../../static/img/order/png.png");
+    background-size:8.77rem 4.97rem;
+    background-position:0.02rem 0rem;
+    margin-top:0.46rem;
+    margin-left:0.1rem;
 }
 .orderoftenbuy-bottom{
     width:100%;
