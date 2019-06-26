@@ -3,20 +3,24 @@
     <div class="ordernodiscu">
         <OrderHead/>
         <OrderNotDiscuss/>
+        <OrderNotDiscusss/>
     </div>
 </template>
 
 <script>
 // 订单头部
 import OrderHead from "./OrderHead"
-// 待评价
+// 待评价(有数据)
 import OrderNotDiscuss from "./OrderNotDiscuss"
+// 待评价（无数据）
+import OrderNotDiscusss from "./OrderNotDiscusss"
 
 export default {
-    name:"OrderNoDiscuss",
+    name:"ordernodiscuss",
     components:{
         OrderHead,
-        OrderNotDiscuss
+        OrderNotDiscuss,
+        OrderDotDiscusss
     }
 }
 </script>

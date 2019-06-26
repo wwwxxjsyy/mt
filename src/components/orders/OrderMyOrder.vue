@@ -8,11 +8,9 @@
         <!-- menu -->
         <div class="ordermyorder-bottom">
             <div class="myordermenu">
-                <router-link to="/order">
-                    全部订单<span></span>
-                </router-link>
-                <router-link to="/ordernodiscuss">待评价</router-link>
-                <router-link to="/orderrefund">退款</router-link>
+                <router-link to="/orderallorders">全部订单<span></span></router-link>
+                <router-link to="ordernotdiscuss">待评价</router-link>
+                <router-link to="orderreimburse">退款</router-link>
             </div>
             <!-- 所有订单商品 -->
             <ul class="myorderdelite">
@@ -25,7 +23,7 @@
                                 <div class="delite-shopdelite">
                                     <div class="shopdelite-name">
                                         <p>合番（高新四路店）</p>
-                                        <p>></p>
+                                        <p class="shopdelite-name-youjian"></p>
                                     </div>
                                     <div class="shopdelite-discount">
                                         <p>20减18</p>
@@ -63,7 +61,7 @@
                                 <div class="delite-shopdelite">
                                     <div class="shopdelite-name">
                                         <p>合番（高新四路店）</p>
-                                        <p>></p>
+                                        <p class="shopdelite-name-youjian"></p>
                                     </div>
                                     <div class="shopdelite-discount">
                                         <p>20减18</p>
@@ -101,7 +99,7 @@
                                 <div class="delite-shopdelite">
                                     <div class="shopdelite-name">
                                         <p>合番（高新四路店）</p>
-                                        <p>></p>
+                                        <p class="shopdelite-name-youjian"></p>
                                     </div>
                                     <div class="shopdelite-discount">
                                         <p>20减18</p>
@@ -139,7 +137,7 @@
                                 <div class="delite-shopdelite">
                                     <div class="shopdelite-name">
                                         <p>合番（高新四路店）</p>
-                                        <p>></p>
+                                        <p class="shopdelite-name-youjian"></p>
                                     </div>
                                     <div class="shopdelite-discount">
                                         <p>20减18</p>
@@ -177,7 +175,7 @@
                                 <div class="delite-shopdelite">
                                     <div class="shopdelite-name">
                                         <p>合番（高新四路店）合番（高新四路店）合番（高新四路店）</p>
-                                        <p>></p>
+                                        <p class="shopdelite-name-youjian"></p>
                                     </div>
                                     <div class="shopdelite-discount">
                                         <p>20减18</p>
@@ -213,7 +211,7 @@
 
 <script>
 export default {
-    
+    name:"ordermyorder",
 }
 </script>
 
@@ -331,6 +329,14 @@ export default {
     white-space:nowrap; 
     text-overflow:ellipsis;
     margin-right:0.2rem;
+}
+.shopdelite-name-youjian{
+    width:0.22rem;
+    height:0.28rem;
+    background:url("../../../static/img/order/png.png");
+    background-size:8.77rem 4.97rem;
+    background-position:-0.46rem 0rem;
+    margin-top:0.06rem;
 }
 .shopdelite-discount{
     width:100%;
