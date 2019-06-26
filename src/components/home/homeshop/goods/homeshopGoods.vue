@@ -14,7 +14,7 @@
           </p>
         </li>
 
-        <li 
+        <li
             class="menu-item" 
             :class="{'current':currentIndex === index + 1}" 
             v-for="(item,index) in goods" :key="index"
@@ -2522,7 +2522,7 @@ export default {
       // console.log(index)
       let foodlist = this.$refs.foodScroll.getElementsByClassName("food-list-hook")
       let element = foodlist[index]
-      // console.log(element)
+    //   console.log(element)
       // 滚动到对应元素的位置
       this.foodScroll.scrollToElement(element,250)
     },
@@ -2541,6 +2541,19 @@ export default {
       this.$refs.foodView.showView()
     }
   },
+  created(){
+	  // DOM已经更新
+		this.$nextTick(() => {
+		// 执行滚动方法
+		this.initScroll()
+
+		// 计算分类的区间高度
+		this.calculateHeight()
+		// 监听滚动的位置
+		// 根据滚动位置确认下标,与左侧对应
+		// 通过下标实现点击左侧,滚动右侧
+		})
+  },
   computed:{
     currentIndex(){
       for(let i = 0; i < this.listHeight.length; i++){
@@ -2550,7 +2563,7 @@ export default {
 
         // 是否在上述区间中
         if(!height2 || (this.scrollY >= height1 && this.scrollY < height2)){
-          // console.log(i)
+        //   console.log(i)
           return i;
         }
       }
@@ -2576,89 +2589,91 @@ export default {
 .goods{
   display: flex;
   position: absolute;
-  top: 190px;
-  bottom: 51px;
+  top: 4rem;
+  bottom: .4rem;
   overflow: hidden;
   width: 100%;
 }
 
 .goods .menu-wrapper{
-  flex:0 0 85px;
+  width: 22%;
   background: #f4f4f4;
 }
 
 .goods .foods-wrapper{
   flex:1;
-  /* background: blue; */
 }
 
 /* Menu item */ 
 .goods .menu-wrapper .menu-item{
-	padding: 16px 23px 15px 10px;
+	padding: .3rem .1rem .35rem .2rem;
+	/* padding: .2rem; */
 	border-bottom: 1px solid #E4E4E4;
-  position: relative;
+  	position: relative;
 }
 
 .goods .menu-wrapper .menu-item .text{
-	font-size: 13px;
+	font-size: .27rem;
 	color: #333333;
-	line-height: 17px;
+	line-height: .2rem;
 	vertical-align: middle;
 	-webkit-line-clamp: 2;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
+	/* display: -webkit-box; */
+	display: flex;
+	align-items: center;
+	/* -webkit-box-orient: vertical; */
+	/* overflow: hidden; */
 }
 
 .goods .menu-wrapper .menu-item .text .icon{
-	width: 15px;
-	height: 15px;
+	width: .3rem;
+	height: .3rem;
 	vertical-align: middle;
 }
 
 /* 专场样式 */ 
 .goods .foods-wrapper .container-list{
-	padding: 11px 11px 0 11px;
+	padding: .2rem .25rem 0 .25rem;
 	border-bottom: 1px solid #E4E4E4;
 }
 
 .goods .foods-wrapper .container-list img{
 	width: 100%;
+	height: 1.8rem;
 	margin-bottom: 11px;
-	border-radius: 5px;
+	border-radius: .16rem;
 }
 
 /* 具体分类商品布局 */ 
 .goods .foods-wrapper .food-list{
-	padding: 11px;
+	padding: .2rem;
 }
-
-
 
 .goods .foods-wrapper .food-list .title{
-	height: 13px;
-	font-size: 13px;
+	height: .3rem;
+	font-size: .25rem;
+	font-weight: 900;
 	background: url(./img/btn_yellow_highlighted@2x.png) no-repeat left center;
-	background-size: 2px 10px;
-	padding-left: 7px;
-	margin-bottom: 12px;
+	background-size: .1rem .3rem;
+	padding-left: .2rem;
+	margin-bottom: .2rem;
+	line-height: .3rem;
 }
-
-
 
 
 .goods .foods-wrapper .food-list .food-item{
 	display: flex;
-	margin-bottom: 25px;
-  position: relative;
+	margin-bottom: .2rem;
+ 	position: relative;
 }
 
 .goods .foods-wrapper .food-list .food-item  .icon{
-	flex: 0 0 63px;
+	flex: 0 0 1.4rem;
 	background-position: center;
-	background-size: 120% 100%;background-repeat: no-repeat;
+	background-size: 120% 100%;
+	background-repeat: no-repeat;
 	margin-right: 11px;
-	height: 75px;
+	height: 1.5rem;
 }
 .goods .foods-wrapper .food-list .food-item .content{
 	flex: 1;
@@ -2666,19 +2681,17 @@ export default {
 
 /* 具体内容样式 */ 
 .goods .foods-wrapper .food-list .food-item .content .name{
-	font-size: 16px;
-	line-height: 21px;
+	font-size: .33rem;
 	color: #333333;
 	margin-bottom: 10px;
 	padding-right: 27px;
 }
 
 .goods .foods-wrapper .food-list .food-item .content .desc{
-	font-size: 10px;
-	line-height: 19px;
+	font-size: .26rem;
+	/* line-height: 19px; */
 	color: #bfbfbf;
 	margin-bottom: 8px;
-	
 	/* 超出部分显示省略号*/
 	-webkit-line-clamp: 1;
 	display: -webkit-box;
@@ -2687,26 +2700,27 @@ export default {
 }
 
 .goods .foods-wrapper .food-list .food-item .content .extra{
-	font-size: 10px;
+	font-size: .25rem;
 	color: #BFBFBF;
-	margin-bottom: 7px;
+	/* margin-bottom: .1rem; */
+	/* margin-top: .2rem; */
 }
 .goods .foods-wrapper .food-list .food-item .content .extra .saled{
-	margin-right: 14px;
+	margin-right: .2rem;
 }
 .goods .foods-wrapper .food-list .food-item .content .product{
-	height: 15px;
+	height: .3rem;
 	margin-bottom: 6px;
 }
 .goods .foods-wrapper .food-list .food-item .content .price{
-	font-size: 0;
+	font-size: .0;
 }
 .goods .foods-wrapper .food-list .food-item .content .price .text{
-	font-size: 14px;
+	font-size: .25rem;
 	color: #fb4e44;
 }
 .goods .foods-wrapper .food-list .food-item .content .price .unit{
-	font-size: 12px;
+	font-size: .25rem;
 	color: #BFBFBF;
 }
 
@@ -2730,13 +2744,13 @@ export default {
 	position: absolute;
 	right: 5px;
 	top: 5px;
-	width: 13px;
-	height: 13px;
+	width: .3rem;
+	height: .3rem;
 	border-radius: 50%;
 	color: white;
 	background: red;
 	text-align: center;
-	font-size: 7px;
-	line-height: 13px;
+	font-size: .2rem;
+	line-height: .3rem;
 }
 </style>
