@@ -2,16 +2,16 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="../../../static/imgs/banner/banner1.png">
+        <img src="../../../../static/imgs/banner/banner1.png">
       </div>
       <div class="swiper-slide">
-        <img src="../../../static/imgs/banner/banner2.png">
+        <img src="../../../../static/imgs/banner/banner2.png">
       </div>
       <div class="swiper-slide">
-        <img src="../../../static/imgs/banner/banner3.png">
+        <img src="../../../../static/imgs/banner/banner3.png">
       </div>
       <div class="swiper-slide">
-        <img src="../../../static/imgs/banner/banner2.png">
+        <img src="../../../../static/imgs/banner/banner2.png">
       </div>
     </div>
     <!-- 如果需要分页器 -->
