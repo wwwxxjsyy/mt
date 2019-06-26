@@ -36,10 +36,17 @@ export default {
       }
   },
   mounted(){
+<<<<<<< HEAD
     this.http.get('/posts').then(res=>{
       console.log(res)
     })
   } 
+=======
+  //   this.http.get('/posts').then(res=>{
+  //     console.log(res)
+  //   })
+  // }
+>>>>>>> dandan
 }
 </script>
 
