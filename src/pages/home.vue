@@ -5,14 +5,13 @@
 </template>
 
 <script>
-import homeShop from "../components/home/homeShop"
+import homeShop from "../components/home/homeshop/homeShop"
 
 export default {
     name:"MtHome",
     components:{
          homeShop
      }
-    
 }
 </script>
 

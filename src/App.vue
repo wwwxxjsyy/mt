@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <router-view/>
-    <Mt-TabBar/>
+    <!-- <Mt-TabBar/> -->
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import TabBar from "./components/common/tabBar.vue"
+// import TabBar from "./components/common/tabBar.vue"
 
 export default {
   name: 'App',
   components:{
-    "Mt-TabBar":TabBar
+    // "Mt-TabBar":TabBar
   },
   mounted(){
     this.http.get('/posts').then(res=>{
