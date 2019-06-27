@@ -10,11 +10,7 @@
         </div>
         <div class="vip-left">
             <span>低至￥15/月</span>
-<<<<<<< HEAD
             <a href>立即开通</a>
-=======
-            <router-link to="/vipOpen" tag="a">立即开通</router-link>
->>>>>>> lishun
         </div>
     </div>
 
@@ -29,7 +25,6 @@
             <img src="../../../assets/img/vipImg/redpacket.png" alt="" class="img1">
         </div>
     </div> 
-<<<<<<< HEAD
     <!-- <div class="vip-content-text">
         <div class="vip-content-txt">
             <span class="privi">特权2</span><h1>限时抢购加量包</h1>
@@ -46,8 +41,6 @@
     </div>  -->
     
 
-=======
->>>>>>> lishun
   </div>
 </template>
 

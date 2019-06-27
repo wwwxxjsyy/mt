@@ -1,19 +1,13 @@
 <template>
-<<<<<<< HEAD
   <div id="app">
     <router-view/>
-    <!-- <Mt-TabBar/> -->
-=======
-  <div id="app" @scroll="scrollHeader()" ref="app" >
-    <router-view :isChange="flag"/>
     <Mt-TabBar/>
->>>>>>> 0b083648dc06fde23709d77038c142e874bbede4
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-// import TabBar from "./components/common/tabBar.vue"
+import TabBar from "./components/common/tabBar.vue"
 
 export default {
   name: 'App',
@@ -24,6 +18,7 @@ export default {
   },
   components:{
     // "Mt-TabBar":TabBar
+    TabBar
   },
   data(){
     return{
