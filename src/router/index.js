@@ -36,6 +36,10 @@ export default new Router({
       {
         path:"/home",
         component:Home,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         path: "/homegoods",
@@ -63,41 +67,76 @@ export default new Router({
       },
       {
         path:"/vip",
-        component:Vip
+        component:Vip,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         path:"/order",
-        component:Order
+        component:Order,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         path:"/mine",
-        component:Mine
+        component:Mine,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         path:"/login",
-        component:Login
+        component:Login,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         name:"LoginMessageVerification",
         path:"/loginMessageVerification",
-        component:LoginMessageVerification
-        
+        component:LoginMessageVerification,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
         {
         path:"/RedMoney",
-        component:RedMoney
+        component:RedMoney,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         path:"/Collection",
-        component:Collection
+        component:Collection,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         path:"/Address",
-        component:Address
+        component:Address,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         path:'/PlusAddress',
-        component:PlusAddress
+        component:PlusAddress,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
       },
       {
         path:"**",
