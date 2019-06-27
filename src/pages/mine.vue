@@ -1,6 +1,6 @@
 <template>
   <div class="mt-mine">
-    <mineHeader/>
+    <mineHeader :isLogin='currentUser'/>
     <mineVip/>
     <mineList/>
     <mineContent/>
@@ -12,6 +12,7 @@ import mineHeader from "../components/mine/user/mineHeader";
 import mineVip from "../components/mine/user/mineLinkVip";
 import mineList from "../components/mine/user/mineList";
 import mineContent from "../components/mine/user/mineContent";
+import{getStore} from "../config/mUtils"
 export default {
   name: "MtMine",
   components: {
@@ -19,6 +20,16 @@ export default {
     mineVip,
     mineList,
     mineContent
+  },
+  computed:{
+    // this.http.get('/check_code/?phone=18821687723').then(res=>{
+        // console.log(res)
+        // })
+        
+        currentUser(){
+                return this.$store.getters.currentUser
+            }
+        
   }
 };
 </script>

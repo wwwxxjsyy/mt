@@ -32,7 +32,7 @@ export default {
       }
   },
   mounted(){
-    this.http.get('/posts').then(res=>{
+    this.http.post('api/home/',).then(res=>{
       console.log(res)
     })
   }

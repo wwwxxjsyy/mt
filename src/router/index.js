@@ -91,7 +91,7 @@ export default new Router({
         path:"/login",
         component:Login,
         meta:{
-          flag:true,
+          flag:false,
           requredAuth:true
         }  
       },
@@ -110,7 +110,7 @@ export default new Router({
         path:"/loginMessageVerification",
         component:LoginMessageVerification,
         meta: {
-          flag: true,
+          flag: false,
           requredAuth: true
         },
       },
