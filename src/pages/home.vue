@@ -17,10 +17,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import homeShop from "../components/home/homeshop/homeShop"
-
-=======
 import Address from '../components/home/homeIndex/mt-home-adress'
 import Search from '../components/home/homeIndex/mt-home-search'
 import Recommend from '../components/home/homeIndex/mt-home-recommend'
@@ -31,7 +27,6 @@ import Ddiscount from '../components/home/homeIndex/mt-home-discount'
 import Goodshop from '../components/home/homeIndex/mt-home-goodshop'
 import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
->>>>>>> 4351982289ebdf2fc34ede09dea95b06b01862ff
 export default {
      name:"MtHome",
      components:{

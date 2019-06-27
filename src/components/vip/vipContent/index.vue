@@ -12,12 +12,7 @@
             <span>低至￥15/月</span>
             <!-- <a href>立即开通</a> -->
             <router-link to='/vipOpen' tag='a'>立即开通</router-link>
-=======
-            <router-link to="/vipOpen" tag="a">立即开通</router-link>
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
-=======
-            <a href>立即开通</a>
->>>>>>> lihao
+
         </div>
     </div>
 
@@ -70,9 +65,15 @@ export default {
     margin-left: 0.2rem;
     line-height: 0.8rem;
 }
+.vip-logo {
+    display: flex;
+    align-items: baseline;
+}
 .vip-logo img{
     margin-top:0.5rem;
     margin-left: 0.2rem;
+    margin-right: 0.1rem;
+
 }
 .vip-left span{
     font-size: 0.25rem;

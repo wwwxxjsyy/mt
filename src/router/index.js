@@ -7,19 +7,15 @@ import Mine from "../pages/mine"
 import Vip from "../pages/vip"
 import Login from "../pages/login"
 import LoginMessageVerification from '../components/login/loginMessageVerification'
-
-import VipOpen from '../components/vip/vipOpen/'
-
+import VipOpen from '../components/vip/vipOpen'
 import RedMoney from '../components/mine/others/RedMoney'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
-<<<<<<< HEAD
 import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
-=======
                               // order
       // 待评价
 import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
@@ -36,7 +32,7 @@ import OrderOrderComment from '../components/orders/OrderComment.vue'
       // 相似商家
 import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
 
->>>>>>> 4351982289ebdf2fc34ede09dea95b06b01862ff
+import VipLogin from '../components/vip/viplogin/'
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 import HomeGoods from '../pages/homegoods'
@@ -63,6 +59,14 @@ export default new Router({
         }  
       },
       {
+        path:'/viplogin',
+        component:VipLogin,
+        meta:{
+          flag:true,
+          requredAuth:true
+        }   
+      },
+      {
         path:"/home",
         component:Home,
         meta:{
@@ -78,6 +82,7 @@ export default new Router({
           requredAuth:true
         }  
       },
+      
       {
         path:"/order",
         component:Order,
@@ -109,9 +114,9 @@ export default new Router({
         meta:{
           flag:false,
           requredAuth:false
-        }  
-        
+        }   
       },
+     
       {
         name:"LoginMessageVerification",
         path:"/loginMessageVerification",
@@ -207,6 +212,7 @@ export default new Router({
         path:'/MyAccount',
         component:MyAccount
       },
+ 
       {
         path:"**",
         redirect:"/home"

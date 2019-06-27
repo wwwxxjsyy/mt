@@ -23,10 +23,7 @@ export default {
 <style scoped>
 .vip-content-text{
     background:#f2f2f2;
-<<<<<<< HEAD:src/components/vip/vipContent-1/index.vue
-=======
-    background:#f2f2f2;
->>>>>>> 4351982289ebdf2fc34ede09dea95b06b01862ff:src/components/vip/vipContentred/index.vue
+
 }
 .vip-content-txt{
     padding-top: 0.3rem;
