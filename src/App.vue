@@ -1,11 +1,6 @@
 <template>
-<<<<<<< HEAD
-  <div id="app" @scroll="scrollHeader()" ref="app" >
-    <router-view :isChange="flag"/>
-=======
   <div id="app"  >
     <router-view />
->>>>>>> 6530ed4184d68f9bc9343ecadba25169482b025b
     <Mt-TabBar v-if="$route.meta.flag"/>
   </div>
 </template>
@@ -19,24 +14,6 @@ export default {
   components:{
 
     "Mt-TabBar":TabBar
-<<<<<<< HEAD
-  },
-  data(){
-    return{
-      flag:false
-    }
-  },
-  methods: {
-      scrollHeader() {
-          this.flag = this.$refs.app.scrollTop == 0 ? false : true;
-      }
-  },
-  mounted(){
-    this.http.post('/api/search/',"").then(res=>{
-      console.log(res)
-    })
-=======
->>>>>>> 6530ed4184d68f9bc9343ecadba25169482b025b
   }
   // mounted(){
   //   this.http.get('/posts').then(res=>{
