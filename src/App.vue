@@ -1,5 +1,6 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <div id="app"  >
     <router-view />
     <Mt-TabBar v-if="$route.meta.flag"/>
@@ -12,6 +13,11 @@
     <Mt-TabBar v-if="$route.meta.flag"/>
 >>>>>>> 56ac1af05bd5506e88cafc7570786963714addd5
 >>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
+=======
+  <div id="app">
+    <router-view/>
+    <Mt-TabBar/>
+>>>>>>> lihao
   </div>
 </template>
 
@@ -22,6 +28,7 @@ import TabBar from "./components/common/tabBar.vue"
 export default {
   name: 'App',
   components:{
+<<<<<<< HEAD
     "Mt-TabBar":TabBar
 <<<<<<< HEAD
   }
@@ -31,6 +38,10 @@ export default {
   //   })
   // },
 =======
+=======
+    // "Mt-TabBar":TabBar
+    TabBar
+>>>>>>> lihao
   },
   data(){
     return{

@@ -1,9 +1,13 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <header class="vipHeader bc"   >
 =======
     <header class="vipHeader" :class="{bc:flag}" >
 >>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
+=======
+    <header class="vipHeader">
+>>>>>>> lihao
         <div class="header">
             <span class="tit">{{title}}</span>
         </div> 
@@ -19,6 +23,7 @@ export default {
         title:{
             type : String,
             default : '会员'
+<<<<<<< HEAD
         },
 <<<<<<< HEAD
         // flag:{
@@ -38,6 +43,8 @@ export default {
         flag:{
             type:Boolean,
             required:true
+=======
+>>>>>>> lihao
         }
     }
 >>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
@@ -45,10 +52,13 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 .bc{
     background: #fff !important;
     top: 0 !important;
 }
+=======
+>>>>>>> lihao
 .vipHeader{
     background: url('../../../assets/img/vipImg/bbg.png')
 }
@@ -62,9 +72,14 @@ export default {
     /* text-align: center; */
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
 }
 .vipHeader{
     position:sticky; 
     top: 0;  
+=======
+    position:sticky;
+    top:0;
+>>>>>>> lihao
 }
 </style>
