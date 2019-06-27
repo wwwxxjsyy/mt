@@ -18,7 +18,7 @@
             </div>
             <div class="home-optimization-foodname-right">
               <img :src="items.shoppic" class="home-optimization-shopname">
-              <i>x</i>
+              <i>×</i>
             </div>
           </div>
         </li>
@@ -125,6 +125,7 @@ export default {
   padding: 0.1rem;
 }
 .home-optimization-title h2 {
+  font-size: .3rem;
   font-weight: bold;
 }
 .home-optimization-more {
@@ -182,28 +183,30 @@ export default {
 .home-optimization-foodname-right {
   width: 30%;
   height: 0.7rem;
-  position: absolute;
+  /* background: red; */
+  /* position: absolute; */
 }
 .home-optimization-foodname-right .home-optimization-shopname {
   width: 0.7rem;
   height: 0.7rem;
+  margin-left: .2rem;
   position: relative;
-  left: 258px;
-  bottom: 40px;
+  left: .0rem;
+  bottom: .4rem;
 }
 .home-optimization-foodname-right i {
   display: inline-block;
   text-align: center;
   width: 0.2rem;
   height: 0.2rem;
-  color: rgb(145, 141, 141);
+  color: rgb(163, 160, 160);
   font-size: 0.17rem;
   line-height: 0.18rem;
   border-radius: 0.05rem;
-  border: 1px solid rgb(145, 141, 141);
-  position: relative;
-  left: 228px;
-  bottom: 5px;
+  border: 1px solid rgb(163, 160, 160);
+  position: relative; 
+  left: 0.6rem;
+  bottom: .3rem; 
 }
 .home-optimization-selected h3 {
   width: 100%;

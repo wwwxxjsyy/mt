@@ -283,6 +283,7 @@ export default {
 .moreshop h2{
     width: 100%;
     font-weight: 900;
+    font-size: .3rem;
 }
 .home-moreshop-menu{
     width: 100%;

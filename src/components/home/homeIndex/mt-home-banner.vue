@@ -20,12 +20,14 @@
 </template>
 
 <script>
+import Swiper from "swiper"
 export default {
   name: "Banner",
   mounted(){
     var mySwiper = new Swiper(".swiper-container", {
       // direction: "vertical", // 垂直切换选项
       loop: true, // 循环模式选项
+      // observer:true,
       autoplay: true,
       delay: 1000,
     //   effect:"fade",//淡入
@@ -34,6 +36,7 @@ export default {
       pagination: {
         el: ".swiper-pagination",
         type:"bullets",
+        
       }
     });
   }
