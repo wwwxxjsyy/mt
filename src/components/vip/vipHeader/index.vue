@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
     <header class="vipHeader bc"   >
+=======
+    <header class="vipHeader" :class="{bc:flag}" >
+>>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
         <div class="header">
             <span class="tit">{{title}}</span>
         </div> 
@@ -16,6 +20,7 @@ export default {
             type : String,
             default : '会员'
         },
+<<<<<<< HEAD
         // flag:{
         //     type:Boolean,
         //     required:true
@@ -29,6 +34,13 @@ export default {
           
     // }
     } 
+=======
+        flag:{
+            type:Boolean,
+            required:true
+        }
+    }
+>>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
 }
 </script>
 

@@ -202,7 +202,7 @@
 
 <script>
 export default {
-    name:"OrdernotDiscuss"
+    name:"ordernotdiscuss"
 }
 </script>
 

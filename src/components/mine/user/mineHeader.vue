@@ -1,6 +1,6 @@
 <template>
   <div class="mine-header">
-    <router-link to="/MyAccount" class="MineHeaderLogo">
+    <router-link to="" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
 
@@ -16,8 +16,8 @@ export default {
   components: {},
   data() {
     return {
-      imgUrl: "../../../assets/minePic/logo.gif",
-      headerIcon: ["&#xe603;", "&#xe62e;"]
+      imgUrl: require("../../../assets/minePic/logo.gif"),
+      headerIcon: ["&#xe601;", "&#xe69a;"]
     };
   },
   computed: {},
@@ -48,12 +48,14 @@ export default {
   height: 100%;
 }
 .MineName {
-  font-size: 0.25rem;
+  font-size: .4rem;
   color: #303030;
   font-weight: bold;
+  margin-right:1.2rem;
 }
 .mine-icon a {
   display: inline-block;
   font-size: 50px;
+  padding-right:.4rem;
 }
 </style>

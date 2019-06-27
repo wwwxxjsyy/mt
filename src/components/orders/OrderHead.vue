@@ -4,11 +4,9 @@
         <a class="orderhead-l" href="#">跑腿订单</a>
         <h3>订单</h3>
         <div  class="orderhead-r">
-            <a href="#">
-                <img src="../../assets/img/order/search.png" alt="">
+            <a class="orderhead-search" href="#">
             </a>
-            <a href="#">
-                <img src="../../assets/img/order/news.png" alt="">
+            <a class="orderhead-news" href="#">
             </a>
         </div>
     </div>
@@ -16,7 +14,7 @@
 
 <script>
 export default {
-    
+    name:"orderhead"
 }
 </script>
 
@@ -52,12 +50,15 @@ export default {
     width:0.46rem;
     height:0.46rem;
 }
-.orderhead-r a:first-child{
-    margin-right:0.3rem;
+.orderhead-search{
+    background:url("../../../static/img/order/png.png");
+    background-size:8.77rem 4.97rem;
+    background-position:-2.03rem 0rem;
+    margin-right:0.2rem;
 }
-.orderhead-r a img{
-    display:block;
-     width:0.46rem;
-    height:0.46rem;
+.orderhead-news{
+    background:url("../../../static/img/order/png.png");
+    background-size:8.77rem 4.97rem;
+    background-position:-0.03rem -0.95rem;
 }
 </style>

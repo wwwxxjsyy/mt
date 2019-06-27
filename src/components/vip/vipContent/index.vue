@@ -10,8 +10,12 @@
         </div>
         <div class="vip-left">
             <span>低至￥15/月</span>
+<<<<<<< HEAD
             <!-- <a href>立即开通</a> -->
             <router-link to='/vipOpen' tag='a'>立即开通</router-link>
+=======
+            <router-link to="/vipOpen" tag="a">立即开通</router-link>
+>>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
         </div>
     </div>
 

@@ -7,7 +7,7 @@
       <div class="mine-list">
         <ul>
           <li v-for="(item,index) in funList" :key="index">
-            <router-link to tag="a">
+            <router-link :to="item.path" tag="a">
               <img :src="item.url" alt>
               <span>{{item.desc}}</span>
             </router-link>
@@ -23,7 +23,7 @@
       <div class="mine-list">
         <ul>
           <li v-for="(item,index) in serList" :key="index">
-            <router-link to tag="a">
+            <router-link :to="item.path" tag="a">
               <img :src="item.url" alt>
               <span>{{item.desc}}</span>
             </router-link>
@@ -39,7 +39,7 @@
       <div class="mine-list">
         <ul>
           <li v-for="(item,index) in morList" :key="index">
-            <router-link to tag="a">
+            <router-link :to="item.path" tag="a">
               <img :src="item.url" alt>
               <span>{{item.desc}}</span>
             </router-link>
@@ -57,63 +57,77 @@ export default {
     return {
       funList: [
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "我的地址"
+          url: require("../../../assets/minePic/funlistimg.gif"),
+          desc: "我的地址",
+          path:'/Address'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "我的足迹"
+          url: require("../../../assets/minePic/funlistimg.gif"),
+          desc: "我的足迹",
+          path:'/'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "我的收藏"
+          url:  require("../../../assets/minePic/funlistimg.gif"),
+          desc: "我的收藏",
+          path:'/Collection'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "答谢记录"
+          url:  require("../../../assets/minePic/funlistimg.gif"),
+          desc: "答谢记录",
+          path:'/'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "我的评价"
+          url: require("../../../assets/minePic/funlistimg.gif"),
+          desc: "我的评价",
+          path:'/'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "我的袋鼠"
+          url:require("../../../assets/minePic/funlistimg.gif"),
+          desc: "我的袋鼠",
+          path:'/'
         }
       ],
       serList: [
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "帮助与反馈"
+          url:  require("../../../assets/minePic/funlistimg.gif"),
+          desc: "帮助与反馈",
+          path:'/'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "客服中心"
+          url: require("../../../assets/minePic/funlistimg.gif"),
+          desc: "客服中心",
+          path:'/'
         }
       ],
       morList: [
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "邀请有奖"
+          url:require("../../../assets/minePic/funlistimg.gif"),
+          desc: "邀请有奖",
+           path:'/'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "商家入驻"
+          url: require("../../../assets/minePic/funlistimg.gif"),
+          desc: "商家入驻",
+           path:'/'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "骑手招募"
+          url: require("../../../assets/minePic/funlistimg.gif"),
+          desc: "骑手招募",
+           path:'/'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "我要合作"
+          url: require("../../../assets/minePic/funlistimg.gif"),
+          desc: "我要合作",
+           path:'/'
         },
         {
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "美团公益"
+          url:require("../../../assets/minePic/funlistimg.gif"),
+          desc: "美团公益",
+           path:'/'
         },{
-          url: "../../../assets/mine/minePic/funlistimg.gif",
-          desc: "能量捐赠"
+          url: require("../../../assets/minePic/funlistimg.gif"),
+          desc: "能量捐赠",
+           path:'/'
         }
       ]
     };
@@ -150,6 +164,7 @@ export default {
   /* float: left; */
   width: 25%;
   padding: 5px 0;
+  text-align: center;
 }
 .mine-function .mine-list ul > li:last-child {
   margin-bottom: 0;
