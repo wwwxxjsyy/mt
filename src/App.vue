@@ -20,6 +20,25 @@ export default {
   //     console.log(res)
   //   })
   // },
+<<<<<<< HEAD
+=======
+  // },
+  data(){
+    return{
+      flag:false
+    }
+  },
+  methods: {
+      scrollHeader() {
+          this.flag = this.$refs.app.scrollTop == 0 ? false : true;
+      }
+  },
+  mounted(){
+    this.http.post('api/home/',).then(res=>{
+      console.log(res)
+    })
+  }
+>>>>>>> dandan
 }
 </script>
 
