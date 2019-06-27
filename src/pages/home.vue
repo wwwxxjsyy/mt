@@ -42,7 +42,6 @@ export default {
         "mt-home-toshop":Toshop,
         "mt-home-moreshop":Moreshop,
         //  homeShop
-
      }
 }
 </script>

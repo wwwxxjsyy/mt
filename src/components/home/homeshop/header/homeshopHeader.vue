@@ -6,7 +6,7 @@
 			<div class="back-wrapper">
 				<span class="icon-arrow_lift"></span>
 			</div>
-
+      
 			<form class="search-wrapper">
 				<span class="search-icon"></span>
 				<input class="search-bar" type="text" placeholder="搜索店内商品" />
@@ -43,7 +43,6 @@
     <!-- 公告内容 开始 -->
     <div class="bulletin-wrapper">
 			<img class="icon" v-if="poiInfo.discounts2" :src="poiInfo.discounts2[0].icon_url" />
-
 			<span class="text" v-if="poiInfo.discounts2">{{poiInfo.discounts2[0].info}}</span>
 			<div class="detail" v-if="poiInfo.discounts2" @click="showBulletin">
 				{{poiInfo.discounts2.length}}个活动
@@ -161,8 +160,9 @@ export default {
 @import url(../../../../common/css/icon.css);
 
 .header{
-  height: 3rem;;
-  padding-top: .5rem;
+  height: 3.3rem;;
+  padding-top: .4rem;
+  /* background: red; */
 }
 
 /* 顶部通栏样式 */
@@ -260,12 +260,12 @@ export default {
 /* 背景图片样式 */ 
 .header .bg-wrapper {
     width: 100%;
-    height: 3rem;;
+    height: 3.3rem;;
     position: absolute;
     left: 0;
     top: 0;
     z-index: -1;
-    background-size: 100% 135%;
+    background-size: 100% 100%;
 		background-position: center -12px;
 }
 
@@ -317,7 +317,7 @@ export default {
 /* 公告内容样式 */
 .header .bulletin-wrapper {
   height: .26rem;
-  padding: .05rem .2rem;
+  padding: .3rem .2rem;
 }
 
 .header .bulletin-wrapper .icon {
@@ -337,13 +337,11 @@ export default {
 .header .bulletin-wrapper .detail {
   color: white;
   float: right;
-  font-size: .3rem;
-  line-height: .18rem;
+  font-size: .25rem;
 }
 
 .header .bulletin-wrapper .detail span {
   font-size: .4rem;
-  line-height: .18rem;
   float: right;
 }
 

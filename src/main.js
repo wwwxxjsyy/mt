@@ -2,7 +2,9 @@ import Vue from 'vue'
 import App from './App'
 import VueLazyload from "vue-lazyload"
 import router from './router'
-import axios from 'axios' 
+import Observer from "./Observer";
+Vue.prototype.Observer = Observer;
+// import axios from 'axios' 
 import http from './api/http'
 Vue.prototype.http=http
 

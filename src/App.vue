@@ -1,7 +1,11 @@
 <template>
   <div id="app" @scroll="scrollHeader()" ref="app" >
     <router-view :isChange="flag"/>
+<<<<<<< HEAD
     <Mt-TabBar/>
+=======
+    <Mt-TabBar v-if="$route.meta.flag"/>
+>>>>>>> 56ac1af05bd5506e88cafc7570786963714addd5
   </div>
 </template>
 
@@ -33,7 +37,7 @@ export default {
     this.http.get('/posts').then(res=>{
       console.log(res)
     })
-  } 
+  }
 }
 </script>
 
@@ -49,6 +53,5 @@ export default {
   height: 100%;
   width: 100%;
   overflow: scroll;
-  background: #fff;
 }
 </style>

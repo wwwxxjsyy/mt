@@ -10,13 +10,14 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://jsonplaceholder.typicode.com/',//后端接口地址
-        // target:'http://10.35.162.87:5000/',
+        // target: 'http://jsonplaceholder.typicode.com/',//后端接口地址
+        // target:'http://10.35.161.31:9001/',
+        target:'http://10.35.161.34:5555/',
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
             '^/api': '/api',//重写,
         }
-    }
+      }
     },
 
     // Various Dev Server settings
