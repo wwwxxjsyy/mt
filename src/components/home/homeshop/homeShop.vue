@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="homeshop">
     <!-- header -->
     <home-header></home-header>
     <!-- navigation -->
@@ -46,5 +46,5 @@ export default {
 </script>
 
 <style scoped>
- 
+  
 </style>

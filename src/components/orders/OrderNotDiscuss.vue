@@ -2,201 +2,199 @@
                         <!-- 待评价 -->
     <div class="ordernotdiscuss">
         <!-- menu -->
-        <!-- <div class="ordernotdiscuss-bottom"> -->
-            <div class="notdiscussmenu">
-                <a href="#">全部订单</a>
-                <a href="#">待评价<span></span></a>
-                <a href="#">退款</a>
-            </div>
-            <!-- 所有订单商品 -->
-            <ul class="notdiscussdelite">
-                <li>
+        <div class="notdiscussmenu">
+            <router-link to="/order">全部订单</router-link>
+            <router-link to="/OrderOrderNoDiscuss">待评价<span></span></router-link>
+            <router-link to="/OrderOrderRefund">退款</router-link>
+        </div>
+        <!-- 所有订单商品 -->
+        <ul class="notdiscussdelite">
+            <li>
+                <!-- 单个订单商品详情 -->
+                <div class="orderdelite-top">
+                    <a href="#">
+                        <div class="delite-shop">
+                            <img src="" alt="">
+                            <div class="delite-shopdelite">
+                                <div class="shopdelite-name">
+                                    <p>合番（高新四路店）</p>
+                                    <p class="shopdelite-name-youjian"></p>
+                                </div>
+                                <div class="shopdelite-discount">
+                                    <p>20减18</p>
+                                    <p>49减24</p>
+                                    <p>79减28</p>
+                                    <!-- <p>109减38</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <p class="delitestate">订单已完成</p>
+                    </a>
+                </div>
+                <!-- 单个订单商品价格 -->
+                <div class="orderdelite-center">
+                    <div class="shopnames">
+                        <p class="shopname"><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span></p>
+                        <p class="shopcount">等<span>3</span>件商品</p>
+                    </div>
+                    <p class="shopprice">￥23.8</p>
+                </div>
+                <!-- 单个订单商品操作 -->
+                <div class="orderdelite-bottom">
+                    <a href="#">相似商家</a>
+                    <a href="#">再来一单</a>
+                    <a href="#">评价</a>
+                </div>
+            </li>
+            <li>
+                <!-- 单个订单商品详情 -->
+                <div class="orderdelite-top">
+                    <a href="#">
+                        <div class="delite-shop">
+                            <img src="" alt="">
+                            <div class="delite-shopdelite">
+                                <div class="shopdelite-name">
+                                    <p>合番（高新四路店）</p>
+                                    <p class="shopdelite-name-youjian"></p>
+                                </div>
+                                <div class="shopdelite-discount">
+                                    <p>20减18</p>
+                                    <p>49减24</p>
+                                    <p>79减28</p>
+                                    <!-- <p>109减38</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <p class="delitestate">订单已完成</p>
+                    </a>
+                </div>
+                <!-- 单个订单商品价格 -->
+                <div class="orderdelite-center">
+                    <div class="shopnames">
+                        <p class="shopname"><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span></p>
+                        <p class="shopcount">等<span>3</span>件商品</p>
+                    </div>
+                    <p class="shopprice">￥23.8</p>
+                </div>
+                <!-- 单个订单商品操作 -->
+                <div class="orderdelite-bottom">
+                    <a href="#">相似商家</a>
+                    <a href="#">再来一单</a>
+                    <a href="#">评价</a>
+                </div>
+            </li>
+            <li>
+                <!-- 单个订单商品详情 -->
+                <div class="orderdelite-top">
+                    <a href="#">
+                        <div class="delite-shop">
+                            <img src="" alt="">
+                            <div class="delite-shopdelite">
+                                <div class="shopdelite-name">
+                                    <p>合番（高新四路店）</p>
+                                    <p class="shopdelite-name-youjian"></p>
+                                </div>
+                                <div class="shopdelite-discount">
+                                    <p>20减18</p>
+                                    <p>49减24</p>
+                                    <p>79减28</p>
+                                    <!-- <p>109减38</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <p class="delitestate">订单已完成</p>
+                    </a>
+                </div>
+                <!-- 单个订单商品价格 -->
+                <div class="orderdelite-center">
+                    <div class="shopnames">
+                        <p class="shopname"><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span></p>
+                        <p class="shopcount">等<span>3</span>件商品</p>
+                    </div>
+                    <p class="shopprice">￥23.8</p>
+                </div>
+                <!-- 单个订单商品操作 -->
+                <div class="orderdelite-bottom">
+                    <a href="#">相似商家</a>
+                    <a href="#">再来一单</a>
+                    <a href="#">评价</a>
+                </div>
+            </li>
+            <li>
                     <!-- 单个订单商品详情 -->
-                    <div class="orderdelite-top">
-                        <a href="#">
-                            <div class="delite-shop">
-                                <img src="" alt="">
-                                <div class="delite-shopdelite">
-                                    <div class="shopdelite-name">
-                                        <p>合番（高新四路店）</p>
-                                        <p>></p>
-                                    </div>
-                                    <div class="shopdelite-discount">
-                                        <p>20减18</p>
-                                        <p>49减24</p>
-                                        <p>79减28</p>
-                                        <!-- <p>109减38</p> -->
-                                    </div>
+                <div class="orderdelite-top">
+                    <a href="#">
+                        <div class="delite-shop">
+                            <img src="" alt="">
+                            <div class="delite-shopdelite">
+                                <div class="shopdelite-name">
+                                    <p>合番（高新四路店）</p>
+                                    <p class="shopdelite-name-youjian"></p>
+                                </div>
+                                <div class="shopdelite-discount">
+                                    <p>20减18</p>
+                                    <p>49减24</p>
+                                    <p>79减28</p>
+                                    <!-- <p>109减38</p> -->
                                 </div>
                             </div>
-                            <p class="delitestate">订单已完成</p>
-                        </a>
-                    </div>
-                    <!-- 单个订单商品价格 -->
-                    <div class="orderdelite-center">
-                        <div class="shopnames">
-                            <p class="shopname"><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span></p>
-                            <p class="shopcount">等<span>3</span>件商品</p>
                         </div>
-                        <p class="shopprice">￥23.8</p>
+                        <p class="delitestate">订单已完成</p>
+                    </a>
+                </div>
+                <!-- 单个订单商品价格 -->
+                <div class="orderdelite-center">
+                    <div class="shopnames">
+                        <p class="shopname"><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span></p>
+                        <p class="shopcount">等<span>2</span>件商品</p>
                     </div>
-                    <!-- 单个订单商品操作 -->
-                    <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <a href="#">评价</a>
-                    </div>
-                </li>
-                <li>
-                    <!-- 单个订单商品详情 -->
-                    <div class="orderdelite-top">
-                        <a href="#">
-                            <div class="delite-shop">
-                                <img src="" alt="">
-                                <div class="delite-shopdelite">
-                                    <div class="shopdelite-name">
-                                        <p>合番（高新四路店）</p>
-                                        <p>></p>
-                                    </div>
-                                    <div class="shopdelite-discount">
-                                        <p>20减18</p>
-                                        <p>49减24</p>
-                                        <p>79减28</p>
-                                        <!-- <p>109减38</p> -->
-                                    </div>
+                    <p class="shopprice">￥23.8</p>
+                </div>
+                <!-- 单个订单商品操作 -->
+                <div class="orderdelite-bottom">
+                    <a href="#">相似商家</a>
+                    <a href="#">再来一单</a>
+                    <a href="#">评价</a>
+                </div>
+            </li>
+            <li>
+                <!-- 单个订单商品详情 -->
+                <div class="orderdelite-top">
+                    <a href="#">
+                        <div class="delite-shop">
+                            <img src="" alt="">
+                            <div class="delite-shopdelite">
+                                <div class="shopdelite-name">
+                                    <p>合番（高新四路店）合番（高新四路店）合番（高新四路店）</p>
+                                    <p class="shopdelite-name-youjian"></p>
+                                </div>
+                                <div class="shopdelite-discount">
+                                    <p>20减18</p>
+                                    <p>49减24</p>
+                                    <p>79减28</p>
+                                    <!-- <p>109减38</p> -->
                                 </div>
                             </div>
-                            <p class="delitestate">订单已完成</p>
-                        </a>
-                    </div>
-                    <!-- 单个订单商品价格 -->
-                    <div class="orderdelite-center">
-                        <div class="shopnames">
-                            <p class="shopname"><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span></p>
-                            <p class="shopcount">等<span>3</span>件商品</p>
                         </div>
-                        <p class="shopprice">￥23.8</p>
+                        <p class="delitestate">订单已完成</p>
+                    </a>
+                </div>
+                <!-- 单个订单商品价格 -->
+                <div class="orderdelite-center">
+                    <div class="shopnames">
+                        <p class="shopname"><span>照烧鸡牛丼双拼饭</span></p>
+                        <!-- <p class="shopcount">等<span>3</span>件商品</p> -->
                     </div>
-                    <!-- 单个订单商品操作 -->
-                    <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <a href="#">评价</a>
-                    </div>
-                </li>
-                <li>
-                    <!-- 单个订单商品详情 -->
-                    <div class="orderdelite-top">
-                        <a href="#">
-                            <div class="delite-shop">
-                                <img src="" alt="">
-                                <div class="delite-shopdelite">
-                                    <div class="shopdelite-name">
-                                        <p>合番（高新四路店）</p>
-                                        <p>></p>
-                                    </div>
-                                    <div class="shopdelite-discount">
-                                        <p>20减18</p>
-                                        <p>49减24</p>
-                                        <p>79减28</p>
-                                        <!-- <p>109减38</p> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="delitestate">订单已完成</p>
-                        </a>
-                    </div>
-                    <!-- 单个订单商品价格 -->
-                    <div class="orderdelite-center">
-                        <div class="shopnames">
-                            <p class="shopname"><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span></p>
-                            <p class="shopcount">等<span>3</span>件商品</p>
-                        </div>
-                        <p class="shopprice">￥23.8</p>
-                    </div>
-                    <!-- 单个订单商品操作 -->
-                    <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <a href="#">评价</a>
-                    </div>
-                </li>
-                <li>
-                     <!-- 单个订单商品详情 -->
-                    <div class="orderdelite-top">
-                        <a href="#">
-                            <div class="delite-shop">
-                                <img src="" alt="">
-                                <div class="delite-shopdelite">
-                                    <div class="shopdelite-name">
-                                        <p>合番（高新四路店）</p>
-                                        <p>></p>
-                                    </div>
-                                    <div class="shopdelite-discount">
-                                        <p>20减18</p>
-                                        <p>49减24</p>
-                                        <p>79减28</p>
-                                        <!-- <p>109减38</p> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="delitestate">订单已完成</p>
-                        </a>
-                    </div>
-                    <!-- 单个订单商品价格 -->
-                    <div class="orderdelite-center">
-                        <div class="shopnames">
-                            <p class="shopname"><span>照烧鸡牛丼双拼饭</span><span>照烧鸡牛丼双拼饭</span></p>
-                            <p class="shopcount">等<span>2</span>件商品</p>
-                        </div>
-                        <p class="shopprice">￥23.8</p>
-                    </div>
-                    <!-- 单个订单商品操作 -->
-                    <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <a href="#">评价</a>
-                    </div>
-                </li>
-                <li>
-                    <!-- 单个订单商品详情 -->
-                    <div class="orderdelite-top">
-                        <a href="#">
-                            <div class="delite-shop">
-                                <img src="" alt="">
-                                <div class="delite-shopdelite">
-                                    <div class="shopdelite-name">
-                                        <p>合番（高新四路店）合番（高新四路店）合番（高新四路店）</p>
-                                        <p>></p>
-                                    </div>
-                                    <div class="shopdelite-discount">
-                                        <p>20减18</p>
-                                        <p>49减24</p>
-                                        <p>79减28</p>
-                                        <!-- <p>109减38</p> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="delitestate">订单已完成</p>
-                        </a>
-                    </div>
-                    <!-- 单个订单商品价格 -->
-                    <div class="orderdelite-center">
-                        <div class="shopnames">
-                            <p class="shopname"><span>照烧鸡牛丼双拼饭</span></p>
-                            <!-- <p class="shopcount">等<span>3</span>件商品</p> -->
-                        </div>
-                        <p class="shopprice">￥23.8</p>
-                    </div>
-                    <!-- 单个订单商品操作 -->
-                    <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <a href="#">评价</a>
-                    </div>
-                </li>
-            </ul>
-        <!-- </div> -->
+                    <p class="shopprice">￥23.8</p>
+                </div>
+                <!-- 单个订单商品操作 -->
+                <div class="orderdelite-bottom">
+                    <a href="#">相似商家</a>
+                    <a href="#">再来一单</a>
+                    <a href="#">评价</a>
+                </div>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -213,38 +211,36 @@ export default {
     margin-top:0.9rem;
     margin-bottom:1rem;
     overflow-y:auto;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
 }
-/* .ordernotdiscuss-bottom{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-} */
 /* menu */
 .notdiscussmenu{
-    width:80%;
-    height:0.6rem;
-    margin:0 auto 0.2rem;
+    height:0.9rem;
+    line-height:0.6rem;
+    margin:0 auto;
     display:flex;
     justify-content:space-between;
+    background:white;
 }
 .notdiscussmenu a{
     font-size:0.26rem;
     color:#494949;
     position:relative;
 }
+.notdiscussmenu a:first-child{
+    margin-left:10%;
+}
+.notdiscussmenu a:last-child{
+    margin-right:10%;
+}
 .notdiscussmenu span{
     position:absolute;
     display:block;
-    width:0.6rem;
-    height:0.08rem;
+    width:0.4rem;
+    height:0.04rem;
     background:#fbd48f;
     border-radius:0.04rem;
-    bottom:0;
-    left:20%;
+    bottom:20%;
+    left:25%;
 }
 /* 所有订单商品 */
 .notdiscussdelite{
@@ -315,13 +311,20 @@ export default {
     text-overflow:ellipsis;
     margin-right:0.2rem;
 }
+.shopdelite-name-youjian{
+    width:0.22rem;
+    height:0.28rem;
+    background:url("../../../static/img/order/png.png");
+    background-size:8.77rem 4.97rem;
+    background-position:-0.46rem 0rem;
+    margin-top:0.06rem;
+}
 .shopdelite-discount{
     width:100%;
     height:0.4rem;
     display:flex;
     flex-wrap:nowrap;
     overflow:hidden;
-    
 }
 .shopdelite-discount p{
     display:flex;
@@ -396,7 +399,7 @@ export default {
     margin-left:0.22rem;
     margin-top:0.32rem;
 }
-.orderdelite-bottom a:last-child{
+.notdiscussdelite li .orderdelite-bottom a:last-child{
     margin-right:0.22rem;
     background:#fdc032;
 }

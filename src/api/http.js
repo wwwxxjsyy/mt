@@ -2,8 +2,9 @@ import axios from 'axios'
 import $qs from 'qs' 
 
 //创建axios实例
-// axios.defaults.baseURL ='http://10.35.162.87:5000/';
-axios.defaults.baseURL ='http://jsonplaceholder.typicode.com/';
+axios.defaults.baseURL ='http://10.35.161.34:5555/';
+// axios.defaults.baseURL ='http://jsonplaceholder.typicode.com/';
+// axios.defaults.baseURL ='http://10.35.161.31:9001/';
 
 axios.interceptors.request.use(
     config => {

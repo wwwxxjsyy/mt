@@ -1,14 +1,14 @@
 <template>
   <div class="nav">
-    <router-link class="nav-item" to="/home/goods">
+    <router-link class="nav-item" to="/homegoods/goods">
       点菜
       <i class="line"></i>
     </router-link>
-    <router-link class="nav-item" to="/home/ratings">
+    <router-link class="nav-item" to="/homegoods/ratings">
       评价({{commentNum}})
       <i class="line"></i>    
     </router-link>
-    <router-link class="nav-item" to="/home/seller">
+    <router-link class="nav-item" to="/homegoods/seller">
       商家
       <i class="line"></i>    
     </router-link>
@@ -35,10 +35,11 @@ export default {
 .nav{
   display: flex;
   width: 100%;
-  height: .6rem;
-  line-height: .6rem;
+  height: .7rem;
+  line-height: .7rem;
   font-size: .3rem;
   border-bottom: 2px solid #e4e4e4;
+  padding-top: .05rem;
 }
 .nav-item{
   flex:1;

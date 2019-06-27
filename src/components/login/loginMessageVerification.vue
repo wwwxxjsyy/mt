@@ -4,46 +4,130 @@
         <div class="content">
             <p class="tips">输入验证码</p>
             <p class="tipsPhone">验证码已发送至 
-                <span>+86 18821687723</span>
+                <span>+86 {{this.phone}}</span>
             </p>
-    <div class="checkedCode">
-        <div class="getCodeMsg">
-            <input type="tel" maxlength="1" name="code" pattern="[0-9]*" />
-            <input type="tel" maxlength="1" name="code" pattern="[0-9]*"/>
-            <input type="tel" maxlength="1" name="code" pattern="[0-9]*"/>
-            <input type="tel" maxlength="1" name="code" pattern="[0-9]*"/>
-            <input type="tel" maxlength="1" name="code" pattern="[0-9]*"/>
-            <input type="tel" maxlength="1" name="code" pattern="[0-9]*"/>
-        </div>
+         <div class="input-box checkedCode">
+      <div class="input-content getCodeMsg">
+        <input v-model.trim.number="input0" maxlength="1" pattern="[0-9]*" ref="input0" @keydown.8="deleteValue('input0','input0')" @keyup="changeValue($event,'input0','input1')" type="tel" >
+        <input v-model.trim.number="input1" maxlength="1" pattern="[0-9]*" ref="input1" @keydown.8="deleteValue('input1','input0')" @keyup="changeValue($event,'input1','input2')" type="tel" >
+        <input v-model.trim.number="input2" maxlength="1" pattern="[0-9]*" ref="input2" @keydown.8="deleteValue('input2','input1')" @keyup="changeValue($event,'input2','input3')" type="tel" >
+        <input v-model.trim.number="input3" maxlength="1" pattern="[0-9]*" ref="input3" @keydown.8="deleteValue('input3','input2')" @keyup="changeValue($event,'input3','input4')" type="tel" >
+        <input v-model.trim.number="input4" maxlength="1" pattern="[0-9]*" ref="input4" @keydown.8="deleteValue('input4','input3')" @keyup="changeValue($event,'input4','input5')" type="tel" >
+        <input v-model.trim.number="input5" maxlength="1" pattern="[0-9]*" ref="input5" @keydown.8="deleteValue('input5','input4')" @keyup="changeValue($event,'input5','input5')" type="tel">
+      </div>
+    </div>
+     <div class="send">   
+        <span v-if="sendMsgDisabled">{{time+' 秒后重新获取验证码'}}</span>
+        <span v-if="!sendMsgDisabled" @click="send()" class="repeat">重新获取验证码</span>
+    </div>
     </div>
 </div>
   
-    </div>
 </template>
-
+<script src="../../../static/js/jquery-3.4.0.min.js"></script>
 <script>
+
 import MtLoginHeader from "./loginHeader";
 export default {
   name: "MtLoginVrification",
   components: {
     "mt-login-header": MtLoginHeader
   },
-  created() {
-    $(".getCodeMsg input").keyup(function(event) {
-      // 删除往前 添加往后
-      if ($(this).index() < 6) {
-        if (event.keyCode == 46 || event.keyCode == 8) {
-          $(this)
-            .prev("input")
-            .focus();
-        } else {
-          $(this)
-            .next("input")
-            .focus();
+  data(){
+    return {
+      time: 10, // 发送验证码倒计时
+      sendMsgDisabled: true,
+      phone:'',
+      numArr:[],
+      valueList:'',
+      simpleInput0: '',
+      simpleInput1: '',
+      input0: '',
+      input1: '',
+      input2: '',
+      input3: '',
+      input4: '',
+      input5: ''
+    }
+  },
+  methods:{
+    send() {
+        this.input0=""
+        this.input1=""
+        this.input2=""
+        this.input3=""
+        this.input4=""
+        this.input5=""
+        this.numArr=[]
+        this.valueList=''
+        let interval = window.setInterval(function() {
+        if ((this.time--) <= 0) {
+          this.time = 10;
+          this.sendMsgDisabled = true;
+          window.clearInterval(interval);
         }
+      }, 1000)
+
+    },
+    deleteValue (inputValue, previousItem) { // 键盘按下时$event，当前input，上一个input
+      // console.log(this[inputValue], this[previousItem])
+      if (this[inputValue].length > 0) { // 当前有值，清空之
+        this[inputValue] = ''
+      } else { // 当前没有值，光标跳转到上一个input，并清空该input值
+        this.$nextTick(() => {
+          this.$refs[previousItem].focus()
+          this[previousItem] = ''
+          this[inputValue] = ''
+        })
       }
-    });
+    },
+    changeValue (e, inputValue, nextItem) { // 键盘抬起时$event，当前input，下一个input
+      // console.log(e.keyCode, this[inputValue], this[nextItem])
+      if (e.keyCode !== 8) {
+        this.$nextTick(() => {
+          this.$refs[nextItem].focus() // 截取当前值最后一位，跳到下一个input
+          this[inputValue] = (this[inputValue]).toString().slice(-1)
+        })
+      }
+      this.numArr.push(this[inputValue])
+      if(this.numArr.length==6){
+        this.valueList=this.numArr.join('')
+        var formData={
+          'phone':this.phone,
+          'code':this.valueList
+        }
+        console.log(this.valueList)
+        console.log(this.phone)
+        this.http.get('/check_code/?phone=18821687723').then(res=>{
+        console.log(res)
+        })
+        this.$router.push('/mine')
+        // 发送请求比对成功，跳转路由，我的页面
+      }
+    
+    
+    },
+      
+  },
+  created(){
+    this.Observer.$on("getPhone",(phone)=>{
+             this.phone=phone
+              console.log(this.phone)
+        })
+
+      
+    
+    let me = this;
+    let interval = window.setInterval(function() {
+        if ((me.time--) <= 0) {
+          me.time = 60;
+          me.sendMsgDisabled=false
+          window.clearInterval(interval);
+        }
+    }, 1000)
   }
+  
+}
   //  data(){
   //     return {
   //         phone:'',
@@ -65,7 +149,7 @@ export default {
 
   //     }
   // }
-};
+// };
 </script>
 
 <style scoped>
@@ -110,18 +194,29 @@ export default {
   line-height: 13px;
 }
 .checkedCode input {
-  padding: 0.2rem;
+  padding-bottom: 0.1rem;
   margin: 10px 0;
   width: 12%;
   margin-right: 5.6%;
   text-align: center;
   display: block;
   float: left;
-  height: 35px;
+  height: 1rem;
   border-bottom: solid 1px #898989;
-  border-radius: 0;
+  outline:none;
+  caret-color: rgb(255,189,39);
+  font-size: .44rem;
+}
+.checkedCode input:focus{
+  border-bottom: solid 2px #333;
 }
 .checkedCode input:last-child {
   margin-right: 0;
+}
+.send{
+  margin-top:1.5rem;
+}
+.repeat{
+  color:rgb(255,189,39);
 }
 </style>

@@ -4,10 +4,8 @@
         <a class="orderhead-l" href="#">跑腿订单</a>
         <h3>订单</h3>
         <div  class="orderhead-r">
-            <a class="orderhead-search" href="#">
-            </a>
-            <a class="orderhead-news" href="#">
-            </a>
+            <router-link to="/OrderOrderSearch" class="orderhead-search"></router-link>
+            <router-link to="/OrderOrderNews" class="orderhead-news"></router-link>
         </div>
     </div>
 </template>

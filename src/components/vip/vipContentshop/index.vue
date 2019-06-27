@@ -9,6 +9,7 @@
                        <span>{{item.money}}</span>无门槛
                    </div>
                    <div class="shops">
+<<<<<<< HEAD:src/components/vip/vipContent-2/index.vue
                        <img :src="item.imgs" alt="">
                        <span>{{item.names}}</span>
                    </div>
@@ -17,6 +18,17 @@
              
         </div>
 
+=======
+                       <a href=""><img :src="item.imgs" alt=""></a>
+                       <span>{{item.names}}</span>
+                   </div>
+                </li>
+            </ul>     
+        </div>
+        <div class="vip-footer">
+            <span>更多外卖可到美团外卖首页查看</span>
+        </div>
+>>>>>>> 4351982289ebdf2fc34ede09dea95b06b01862ff:src/components/vip/vipContentshop/index.vue
     
     </div>
     
@@ -24,7 +36,7 @@
 
 <script>
 export default {
-    name:'VipContent2',
+    name:'VipContentshop',
     data(){
         return{
             shopList:[
@@ -45,6 +57,27 @@ export default {
                     imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
                     names:'御品轩(枫叶新都市店)',
                     path:''
+<<<<<<< HEAD:src/components/vip/vipContent-2/index.vue
+=======
+                },
+                {
+                    money:'￥7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                {
+                    money:'￥7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                {
+                    money:'￥7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+>>>>>>> 4351982289ebdf2fc34ede09dea95b06b01862ff:src/components/vip/vipContentshop/index.vue
                 }
             ]
         }
@@ -103,4 +136,14 @@ ul>li{
     font-size: 0.3rem;
     color: #33312e;
 }
+<<<<<<< HEAD:src/components/vip/vipContent-2/index.vue
+=======
+.vip-footer{
+    height: 1rem;
+    text-align: center;
+    font-size: 0.2rem;
+    color: #777777;
+}
+
+>>>>>>> 4351982289ebdf2fc34ede09dea95b06b01862ff:src/components/vip/vipContentshop/index.vue
 </style>

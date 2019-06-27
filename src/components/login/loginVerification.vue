@@ -2,15 +2,15 @@
     <div class="mt-login-verification">
                 <div class="card-body">
                     <h6>欢迎登陆美团</h6>
-                    <form action="" @submit.prevent="onSubmit">
+                    <form action="" >
                         <div class="form-group">
                             <label for="phone" class="phone">
                             <div><span>+86</span> <span>></span></div>
-                            <input type="phone" v-model="phone">
+                            <input type="phone" v-model="phone"  @input="changePhone">
                             </label>
                             <p class="info">未注册的手机号验证后自动创建美团账号</p>
                         </div>
-                        <button  type="submit" class="btn">获取短信验证码</button>
+                        <button  type="submit" :class="this.flag ? 'btn' : 'btn1'" @click.prevent="getPhoneNum" >获取短信验证码</button>
                     </form>
                 </div>
                 <div class="login_password"><span>密码登录</span></div>
@@ -27,28 +27,45 @@ export default {
     name:"MtLoginVrification",
      data(){
         return {
+            flag:true,
             phone:'',
+            TEL_REGEXP:/^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/
             // verification:'',
         }
     },
     methods:{
-        onSubmit(){
-        
-                const formData = {
-                    phone:this.phone,
-                    // verification:this.verification
+        //当输入的手机号格式正确时，发送验证码的按钮恢复颜色
+        changePhone(){
+            if(this.TEL_REGEXP.test(this.phone)){
+                $("button[type='submit']").removeAttr("abled");
+                    this.flag=true
+            }
+        },
+        getPhoneNum(){
+            //把手机号传到发送验证码的页面
+            this.Observer.$emit("getPhone",this.phone)
+            // var TEL_REGEXP = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/;
+            //正则验证
+            if(this.TEL_REGEXP.test(this.phone)){
+                $("button[type='submit']").removeAttr("abled");
+                    //请求后端发送验证码
+                    this.flag=true
+                    // this.http.get('/check_code/?phone='+this.phone).then(res=>{
+                    //     console.log(res)
+                    //     if(res.code==200){
+                    //         this.$router.push({name:'LoginMessageVerification'})
+                    //     }else{
+                    //         $("button[type='submit']").attr("disabled");
+                    //         this.flag=false
+                    //     }
+                    // }) 
+                    this.$router.push({name:'LoginMessageVerification'})  
+            }else{
+                    $("button[type='submit']").attr("disabled");
+                    this.flag=false
                 }
-                // this.http.post('http://localhost:5000/api/users/register',formData)
-                // .then(res=>{
-                //     console.log(res)
-                //     this.$router.push({name:'LoginMessageVerification'})
-                // })
-                
-                this.$router.push({name:'LoginMessageVerification'})
-           
-
-            
-        }
+        },
+        
     }
 
 }
@@ -99,6 +116,16 @@ input{
     border-radius:.5rem;
     font-size:.3rem;
     margin-top:.4rem;
+    outline:none;
+}
+.btn1{
+    width:100%;
+    padding:.2rem;
+    border-radius:.5rem;
+    font-size:.3rem;
+    margin-top:.4rem;
+    outline:none;
+    background:rgb(197, 197, 196);
 }
 .login_password{
     

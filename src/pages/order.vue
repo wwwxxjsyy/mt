@@ -30,5 +30,6 @@ export default {
     flex-direction:column;
     justify-content:flex-start;
     overflow:hidden;
+    background:#f2f2f2;
 }
 </style>

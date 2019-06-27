@@ -1,18 +1,18 @@
 <template>
                                     <!-- 退款(总)-->
-    <div>
+    <div class="orderrefund">
            <OrderHead/>
            <OrderReimburse/>
-           <OrderNotRefund/>                        
+           <OrderNotRefund v-show="false"/>                        
     </div>
 </template>
 
 <script>
-import OrderHead from "./orderhead"
+import OrderHead from "./OrderHead"
 // 退款(有数据)
-import OrderReimburse from "./orderreimburse"
+import OrderReimburse from "./OrderReimburse"
 // 退款（无数据）
-import OrderNotRefund from "./ordernotrefund"
+import OrderNotRefund from "./OrderNotRefund"
 
 export default {
     name:"orderrefund",
@@ -25,5 +25,12 @@ export default {
 </script>
 
 <style>
-
+.orderrefund{
+    width:100%;
+    height:100%;
+    background:#f2f2f2;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
 </style>

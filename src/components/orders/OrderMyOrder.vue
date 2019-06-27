@@ -8,9 +8,9 @@
         <!-- menu -->
         <div class="ordermyorder-bottom">
             <div class="myordermenu">
-                <router-link to="/orderallorders">全部订单<span></span></router-link>
-                <router-link to="ordernotdiscuss">待评价</router-link>
-                <router-link to="orderreimburse">退款</router-link>
+                <router-link to="/order">全部订单<span></span></router-link>
+                <router-link to="/OrderOrderNoDiscuss">待评价</router-link>
+                <router-link to="/OrderOrderRefund">退款</router-link>
             </div>
             <!-- 所有订单商品 -->
             <ul class="myorderdelite">
@@ -47,9 +47,9 @@
                     </div>
                     <!-- 单个订单商品操作 -->
                     <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <!-- <a href="#">评价</a> -->
+                        <router-link to="/OrderOrderSimilarity">相似商家</router-link>
+                        <router-link to="">再来一单</router-link>
+                        <!-- <router-link to="">评价</router-link> -->
                     </div>
                 </li>
                 <li>
@@ -85,9 +85,9 @@
                     </div>
                     <!-- 单个订单商品操作 -->
                     <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <!-- <a href="#">评价</a> -->
+                        <router-link to="/OrderOrderSimilarity">相似商家</router-link>
+                        <router-link to="">再来一单</router-link>
+                        <!-- <router-link to="">评价</router-link> -->
                     </div>
                 </li>
                 <li>
@@ -123,9 +123,9 @@
                     </div>
                     <!-- 单个订单商品操作 -->
                     <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <a href="#">评价</a>
+                        <router-link to="/OrderOrderSimilarity">相似商家</router-link>
+                        <router-link to="">再来一单</router-link>
+                        <router-link to="">评价</router-link>
                     </div>
                 </li>
                 <li>
@@ -161,9 +161,9 @@
                     </div>
                     <!-- 单个订单商品操作 -->
                     <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <a href="#">评价</a>
+                        <router-link to="/OrderOrderSimilarity">相似商家</router-link>
+                        <router-link to="">再来一单</router-link>
+                        <router-link to="">评价</router-link>
                     </div>
                 </li>
                 <li>
@@ -199,9 +199,9 @@
                     </div>
                     <!-- 单个订单商品操作 -->
                     <div class="orderdelite-bottom">
-                        <a href="#">相似商家</a>
-                        <a href="#">再来一单</a>
-                        <!-- <a href="#">评价</a> -->
+                        <router-link to="/OrderOrderSimilarity">相似商家</router-link>
+                        <router-link to="">再来一单</router-link>
+                        <!-- <router-link to="">评价</router-link> -->
                     </div>
                 </li>
             </ul>
@@ -240,9 +240,10 @@ export default {
 }
 /* menu */
 .myordermenu{
-    width:80%;
-    height:0.6rem;
-    margin:0 auto 0.2rem;
+    width:100%;
+    height:0.9rem;
+    line-height:0.6rem;
+    margin:0 auto;
     display:flex;
     justify-content:space-between;
 }
@@ -251,19 +252,26 @@ export default {
     color:#494949;
     position:relative;
 }
+.myordermenu a:first-child{
+    margin-left:10%;
+}
+.myordermenu a:last-child{
+    margin-right:10%;
+}
 .myordermenu span{
     position:absolute;
     display:block;
-    width:0.6rem;
-    height:0.08rem;
+    width:0.4rem;
+    height:0.04rem;
     background:#fbd48f;
     border-radius:0.04rem;
-    bottom:0;
-    left:20%;
+    bottom:20%;
+    left:30%;
 }
 /* 所有订单商品 */
 .myorderdelite{
     width:100%;
+    flex:1;
 }
 /* 单个订单商品 */
 .myorderdelite li{
