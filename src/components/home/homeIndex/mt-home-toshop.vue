@@ -212,6 +212,7 @@ export default {
 }
 .home-toshop-title h2{
     font-weight: 900;
+    font-size: .3rem;
 }
 .home-toshop-title h2 span{
     font-size: .2rem;

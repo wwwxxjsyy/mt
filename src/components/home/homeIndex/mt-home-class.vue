@@ -36,7 +36,7 @@ export default {
                     title:'超市便利'
                 },
                 {
-                    pic:require('../../../../static/imgs/class/fresh.png'),
+                    pic:require('../../../../static/imgs/class/deliciousfood.png'),
                     title:'蔬菜水果'
                 },
                 {
@@ -91,11 +91,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .class{
     margin-top: .2rem;
     width:100%;
-    /* background: yellowgreen; */
 }
 .class ul{
     width: 100%;
@@ -118,7 +117,8 @@ export default {
     justify-content:center;    
 }
 .class ul .home-class-blist span img{
-    width: 80%;
+    width: 1.2rem;
+    height: 1.2rem;
 }
 .class ul .home-class-slist{
     width: 20%;

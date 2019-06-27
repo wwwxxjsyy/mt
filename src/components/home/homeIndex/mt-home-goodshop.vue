@@ -55,8 +55,8 @@ export default {
                     shoppic:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3422724315,104055540&fm=26&gp=0.jpg',
                     discount:[
                         '5减5',
-                       '50减25',
-                       '100减50',
+                        '50减25',
+                        '100减50',
                         '200减100'
                     ],
                     shoptheme:'麻辣.鲜香 挑战您的味蕾',
@@ -87,7 +87,7 @@ export default {
     background-image: url("../../../../static/imgs/banner/banner2.png");
     background-size: cover;
     opacity: .9;
-    position: relative;
+    /* position: relative; */
 }
 .home-goodshop-btm{
     width: 100%;
@@ -99,9 +99,9 @@ export default {
     height: .9rem;
     /* background: yellowgreen; */
     display: flex;
-    position: absolute;
-    left: 20px;
-    top: 100px;
+    position: relative;
+    left: .2rem;
+    top: 1rem;
 }
 .home-goodshop-information{
     display: flex;

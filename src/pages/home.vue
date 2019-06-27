@@ -1,8 +1,11 @@
 <template>
     <div class="mt-home">
-
-        <homeShop></homeShop>
-
+        <mt-home-address/>
+        <mt-home-search/>
+        <mt-home-recommend/>
+        <mt-home-banner/>
+        <!-- <mt-home-class/> -->
+        <!-- <homeShop></homeShop> -->
         <mt-home-class/>
         <mt-home-optimization/>
         <mt-home-discount/>
@@ -10,14 +13,11 @@
         <mt-home-toshop/>
         <mt-home-moreshop/>
         <!-- <homeShop></homeShop> -->
-
     </div>
 </template>
 
 <script>
-
 import homeShop from "../components/home/homeshop/homeShop"
-
 import Address from '../components/home/homeIndex/mt-home-adress'
 import Search from '../components/home/homeIndex/mt-home-search'
 import Recommend from '../components/home/homeIndex/mt-home-recommend'
@@ -28,8 +28,6 @@ import Ddiscount from '../components/home/homeIndex/mt-home-discount'
 import Goodshop from '../components/home/homeIndex/mt-home-goodshop'
 import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
-// import homeShop from "../components/home/homeIndex/homeShop"
-
 export default {
      name:"MtHome",
      components:{
@@ -42,7 +40,7 @@ export default {
         "mt-home-discount":Ddiscount,
         "mt-home-goodshop":Goodshop,
         "mt-home-toshop":Toshop,
-        "mt-home-moreshop":Moreshop
+        "mt-home-moreshop":Moreshop,
         //  homeShop
      }
 }
@@ -53,5 +51,6 @@ export default {
     padding: .2rem;
     width:100%;
     height: 100%;
+    /* -webkit-overflow-scrolling: touch; */
 }
 </style>
