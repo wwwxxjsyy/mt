@@ -1,9 +1,5 @@
 <template>
-<<<<<<< HEAD
-    <header class="vipHeader">
-=======
-    <header class="vipHeader" :class="{bc:flag}" >
->>>>>>> lishun
+    <header class="vipHeader bc"   >
         <div class="header">
             <span class="tit">{{title}}</span>
         </div> 
@@ -19,26 +15,28 @@ export default {
         title:{
             type : String,
             default : '会员'
-<<<<<<< HEAD
-=======
         },
-        flag:{
-            type:Boolean,
-            required:true
->>>>>>> lishun
-        }
-    }
+        // flag:{
+        //     type:Boolean,
+        //     required:true
+        // }
+    },
+    methods: {
+    //     scrollHeader() {
+    //         this.flag = this.$refs.mt-vip.scrollTop == 0 ? false : true;
+    //         console.log(this.flag)
+    //         this.$emit('scrollHeader',this.flag)
+          
+    // }
+    } 
 }
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-=======
 .bc{
     background: #fff !important;
     top: 0 !important;
 }
->>>>>>> lishun
 .vipHeader{
     background: url('../../../assets/img/vipImg/bbg.png')
 }
@@ -46,22 +44,15 @@ export default {
     font-size: 0.46rem;
     color: #333333;
     font-weight: 600;
-    height: 1.5rem;
+    height: 1.3rem;
     display: block;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     /* text-align: center; */
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-    position:sticky;
-    top:0;
-=======
 }
 .vipHeader{
     position:sticky; 
     top: 0;  
->>>>>>> lishun
 }
-
-
 </style>

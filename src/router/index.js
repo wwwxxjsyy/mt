@@ -7,6 +7,7 @@ import Mine from "../pages/mine"
 import Vip from "../pages/vip"
 import Login from "../pages/login"
 import LoginMessageVerification from '../components/login/loginMessageVerification'
+import VipOpen from '../components/vip/vipOpen/'
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 
@@ -24,27 +25,61 @@ export default new Router({
   routes:[
       {
         path:"/",
-        redirect:"/home"
+        redirect:"/home",
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
       },
       {
         path:"/home",
-        component:Home
+        component:Home,
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
       },
       {
         path:"/vip",
-        component:Vip
+        component:Vip,
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
       },
       {
         path:"/order",
-        component:Order
+        component:Order,
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
       },
       {
         path:"/mine",
-        component:Mine
+        component:Mine,
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
       },
       {
         path:"/login",
-        component:Login
+        component:Login,
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
+      },
+      //vip
+      {
+        path:'/vipOpen',
+        component:VipOpen,
+        meta:{
+          flag:false,
+          requredAuth:false
+        }  
+        
       },
       {
         name:"LoginMessageVerification",
