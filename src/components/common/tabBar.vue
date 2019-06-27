@@ -68,7 +68,8 @@ export default {
     bottom: 0;
     border:1px solid #ccc;
     z-index: 999999;
-    background:#fff;
+    background:#fafafa;
+    color: #ccc;
 }
 .footer>ul{
     width: 100%;

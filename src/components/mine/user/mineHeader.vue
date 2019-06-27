@@ -1,6 +1,6 @@
 <template>
   <div class="mine-header">
-    <router-link to="" class="MineHeaderLogo">
+    <router-link to="/MyAccount" class="MineHeaderLogo" >
       <img :src="imgUrl" alt>
     </router-link>
 

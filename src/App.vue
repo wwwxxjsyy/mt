@@ -1,13 +1,7 @@
 <template>
-<<<<<<< HEAD
   <div id="app">
     <router-view/>
     <!-- <Mt-TabBar/> -->
-=======
-  <div id="app" @scroll="scrollHeader()" ref="app" >
-    <router-view :isChange="flag"/>
-    <Mt-TabBar/>
->>>>>>> 0b083648dc06fde23709d77038c142e874bbede4
   </div>
 </template>
 
@@ -49,7 +43,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #fafafa;
   height: 100%;
   width: 100%;
   overflow: scroll;

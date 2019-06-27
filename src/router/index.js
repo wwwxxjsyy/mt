@@ -11,6 +11,10 @@ import RedMoney from '../components/mine/others/RedMoney'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
+import Mywallet from '../components/mine/others/MyWallet'
+import Balance from '../components/mine/others/Balance'
+import MyEvalute from '../components/mine/others/MyEvalute'
+import MyAccount from '../components/mine/others/MyAccount'
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 
@@ -71,6 +75,22 @@ export default new Router({
       {
         path:'/PlusAddress',
         component:PlusAddress
+      },
+      {
+        path:'/MyWallet',
+        component:Mywallet
+      },
+      {
+        path:'/Balance',
+        component:Balance
+      },
+      {
+        path:'/MyEvalute',
+        component:MyEvalute
+      },
+      {
+        path:'/MyAccount',
+        component:MyAccount
       },
       {
         path:"**",

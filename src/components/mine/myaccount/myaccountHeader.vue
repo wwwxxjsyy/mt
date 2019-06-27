@@ -1,13 +1,10 @@
 <template>
-    <div class="balance-header">
-        <div class="back">
+<div class='myaccount-header'>
+    <div class="back">
            <i class="iconfont" @click="returnOut" v-html="icon"></i>
-            <span>美团红包</span>
-        </div>
-        <div class="balance-header-titile">
-            <span>兑换</span>
-        </div>
+            <span>我的账户</span>
     </div>
+</div>
 </template>
 
 <script>
@@ -16,7 +13,7 @@ export default {
 components: {},
 data() {
 return {
-    icon:'&#xe607;'
+    icon:'&#xe609;'
 };
 },
 computed: {},
@@ -26,16 +23,17 @@ methods: {
         window.history.back()
     }
 },
+
 }
 </script>
-<style  scoped>
-.balance-header {
+<style scoped>
+.myaccount-header {
     width: 100%;
-    height: 1.5rem;
+    height: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
+    background: #fafafa;
     padding-left: .39rem;
     position:sticky;
     top:0;
@@ -43,25 +41,17 @@ methods: {
     z-index: 2000;
 }
 
-.balance-header .back {
+.myaccount-header .back {
     display: flex;
 }
 
-.balance-header .back>i {
+.myaccount-header .back>i {
     font-size: .6rem;
-    color: #555555;
+    color:#757575;
 }
-.balance-header .back>span {
+.myaccount-header .back>span {
     margin-left: .3rem;
     font-size: .45rem;
     color: black;
 }
-
-.balance-header-titile>span {
-    float: right;
-    font-size: .31rem;
-    color: black;
-    margin-right: .4rem;
-}
-
 </style>
