@@ -3,7 +3,7 @@
     <div class="ordernodiscu">
         <OrderHead/>
         <OrderNotDiscuss/>
-        <OrderNotDiscusss/>
+        <OrderNotDiscusss v-show="false"/>
     </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     components:{
         OrderHead,
         OrderNotDiscuss,
-        OrderDotDiscusss
+        OrderNotDiscusss
     }
 }
 </script>
@@ -33,7 +33,6 @@ export default {
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
-    overflow:hidden;
     background:#f2f2f2;
 }
 </style>

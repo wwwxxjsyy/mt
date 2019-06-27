@@ -2,8 +2,8 @@
     <div class="ordernotdiscusss">
         <div class="notordermenu">
             <router-link to="/order">全部订单</router-link>
-            <router-link to="ordernodiscuss">待评价<span></span></router-link>
-            <router-link to="orderrefund">退款</router-link>
+            <router-link to="/OrderOrderNoDiscuss">待评价<span></span></router-link>
+            <router-link to="/OrderOrderRefund">退款</router-link>
         </div>
         <div class="notorderdelite">
             <img src="../../../static/img/order/orderk2.png" alt="">
@@ -32,8 +32,8 @@ export default {
 /* menu */
 .notordermenu{
     width:100%;
-    height:1.2rem;
-    line-height:1.2rem ;
+    height:0.9rem;
+    line-height:0.6rem ;
     margin:0 auto;
     display:flex;
     justify-content:space-between;
@@ -53,12 +53,12 @@ export default {
 .notordermenu span{
     position:absolute;
     display:block;
-    width:0.6rem;
+    width:0.4rem;
     height:0.04rem;
     background:#fbd48f;
-    border-radius:0.02rem;
+    border-radius:0.04rem;
     bottom:20%;
-    left:20%;
+    left:25%;
 }
 .notorderdelite{
     width:100%;

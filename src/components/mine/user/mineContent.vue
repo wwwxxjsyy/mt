@@ -79,7 +79,7 @@ export default {
         {
           url: require("../../../assets/minePic/funlistimg.gif"),
           desc: "我的评价",
-          path:'/'
+          path:'/MyEvalute'
         },
         {
           url:require("../../../assets/minePic/funlistimg.gif"),

@@ -23,7 +23,6 @@
     </div>
 </div>
   
-    </div>
 </template>
 <script src="../../../static/js/jquery-3.4.0.min.js"></script>
 <script>
@@ -154,10 +153,6 @@ export default {
 </script>
 
 <style scoped>
-input{
-  
-  /* padding:.1rem; */
-}
 
 .card {
   height: 100%;

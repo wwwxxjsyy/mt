@@ -1,6 +1,11 @@
 <template>
+<<<<<<< HEAD
   <div id="app" @scroll="scrollHeader()" ref="app" >
     <router-view :isChange="flag"/>
+=======
+  <div id="app"  >
+    <router-view />
+>>>>>>> 6530ed4184d68f9bc9343ecadba25169482b025b
     <Mt-TabBar v-if="$route.meta.flag"/>
   </div>
 </template>
@@ -11,13 +16,10 @@ import TabBar from "./components/common/tabBar.vue"
 
 export default {
   name: 'App',
-  data(){
-    return{
-      flag:false
-    }
-  },
   components:{
+
     "Mt-TabBar":TabBar
+<<<<<<< HEAD
   },
   data(){
     return{
@@ -33,7 +35,14 @@ export default {
     this.http.post('/api/search/',"").then(res=>{
       console.log(res)
     })
+=======
+>>>>>>> 6530ed4184d68f9bc9343ecadba25169482b025b
   }
+  // mounted(){
+  //   this.http.get('/posts').then(res=>{
+  //     console.log(res)
+  //   })
+  // },
 }
 </script>
 
@@ -49,5 +58,6 @@ export default {
   height: 100%;
   width: 100%;
   overflow: scroll;
+  /* background: #fff; */
 }
 </style>

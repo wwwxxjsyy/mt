@@ -47,6 +47,7 @@ methods: {
 
 .plus-address-header .back>i {
     font-size: .6rem;
+    color: #333;
 }
 .plus-address-header .back>span {
     margin-left: 1.3rem;

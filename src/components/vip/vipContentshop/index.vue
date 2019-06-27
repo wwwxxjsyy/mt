@@ -25,7 +25,7 @@
 
 <script>
 export default {
-    name:'VipContent2',
+    name:'VipContentshop',
     data(){
         return{
             shopList:[
@@ -126,6 +126,7 @@ ul>li{
     color: #33312e;
 }
 .vip-footer{
+    height: 1rem;
     text-align: center;
     font-size: 0.2rem;
     color: #777777;

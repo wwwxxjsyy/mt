@@ -49,6 +49,7 @@ methods: {
 
 .balance-header .back>i {
     font-size: .6rem;
+    color: #555555;
 }
 .balance-header .back>span {
     margin-left: .3rem;
