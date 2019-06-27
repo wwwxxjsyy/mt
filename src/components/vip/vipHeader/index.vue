@@ -1,10 +1,6 @@
 <template>
-<<<<<<< HEAD
-    <header class="vipHeader bc"   >
-=======
-    <header class="vipHeader" :class="{bc:flag}" >
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
-        <div class="header">
+    <header class="vipHeader"  >
+        <div class="header" >
             <span class="tit">{{title}}</span>
         </div> 
         
@@ -15,33 +11,20 @@
 <script>
 export default {
     name:"VipHeader",
+   
     props:{
         title:{
             type : String,
             default : '会员'
         },
-<<<<<<< HEAD
         // flag:{
         //     type:Boolean,
         //     required:true
         // }
-    },
-    methods: {
-    //     scrollHeader() {
-    //         this.flag = this.$refs.mt-vip.scrollTop == 0 ? false : true;
-    //         console.log(this.flag)
-    //         this.$emit('scrollHeader',this.flag)
-          
-    // }
-    } 
-=======
-        flag:{
-            type:Boolean,
-            required:true
-        }
     }
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
-}
+        
+   
+}   
 </script>
 
 <style scoped>
@@ -50,10 +33,11 @@ export default {
     top: 0 !important;
 }
 .vipHeader{
-    background: url('../../../assets/img/vipImg/bbg.png')
+    /* background: url('../../../assets/img/vipImg/bbg.png') */
+     background: linear-gradient(to right, rgba(248,243,236,0), rgba(241,229,221,1));
 }
 .tit{
-    font-size: 0.46rem;
+    font-size: 0.4rem;
     color: #333333;
     font-weight: 600;
     height: 1.3rem;

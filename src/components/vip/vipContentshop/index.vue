@@ -73,8 +73,11 @@ export default {
 
 <style scoped>
 .vip-content-text{
-    background: #f3f4f4;
+    background: #f2f2f2;
 
+}
+.vip-content-txt{
+    margin-top: 0.2rem;
 }
 ul>li{
     display: block;
@@ -82,7 +85,7 @@ ul>li{
     height: 2.7rem;
   
     background: url('../../../assets/img/vipImg/bgc_wps.png') no-repeat;
-      background-size: 100% 100%;
+    background-size: 100% 100%;
 }
 .price{
     font-size: 0.3rem;
@@ -94,10 +97,13 @@ ul>li{
     font-size: 0.4rem;
     color: #e85b4d;
 }
-.shops>img{
+.shops>a>img{
     width: 1.2rem;
     height: 1rem;
     margin-top: 0.1rem;
+}
+.shops a{
+    display: block;
 }
 .oul{
     display: flex;

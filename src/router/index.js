@@ -7,15 +7,12 @@ import Mine from "../pages/mine"
 import Vip from "../pages/vip"
 import Login from "../pages/login"
 import LoginMessageVerification from '../components/login/loginMessageVerification'
-<<<<<<< HEAD
-import VipOpen from '../components/vip/vipOpen/'
-=======
-
+import VipOpen from '../components/vip/vipOpen'
 import RedMoney from '../components/mine/others/RedMoney'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
+import VipLogin from '../components/vip/viplogin/'
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 import HomeGoods from '../pages/homegoods'
@@ -36,102 +33,55 @@ export default new Router({
       {
         path:"/",
         redirect:"/home",
-<<<<<<< HEAD
         meta:{
           flag:true,
           requredAuth:true
         }  
-=======
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
+      },
+      {
+        path:'/viplogin',
+        component:VipLogin,
+        meta:{
+          flag:true,
+          requredAuth:true
+        }   
       },
       {
         path:"/home",
         component:Home,
-<<<<<<< HEAD
         meta:{
           flag:true,
           requredAuth:true
         }  
-=======
-        meta: {
-          flag: true,
-          requredAuth: true
-        },
-      },
-      {
-        path: "/homegoods",
-        component: HomeGoods,
-        meta: {
-          flag: false,
-          requredAuth: false
-        },
-        children: [
-          {
-            path: "goods",
-            component: HomeShopGoods
-          },
-
-          {
-            path: "ratings",
-            component: HomeShopRatings
-          },
-
-          {
-            path: "seller",
-            component: HomeShopSeller
-          },
-        ]
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
       },
       {
         path:"/vip",
         component:Vip,
-<<<<<<< HEAD
         meta:{
           flag:true,
           requredAuth:true
         }  
-=======
-        meta: {
-          flag: true,
-          requredAuth: true
-        },
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
       },
+      
       {
         path:"/order",
         component:Order,
-<<<<<<< HEAD
         meta:{
           flag:true,
           requredAuth:true
         }  
-=======
-        meta: {
-          flag: true,
-          requredAuth: true
-        },
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
       },
       {
         path:"/mine",
         component:Mine,
-<<<<<<< HEAD
         meta:{
           flag:true,
           requredAuth:true
         }  
-=======
-        meta: {
-          flag: true,
-          requredAuth: true
-        },
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
       },
       {
         path:"/login",
         component:Login,
-<<<<<<< HEAD
         meta:{
           flag:true,
           requredAuth:true
@@ -144,15 +94,9 @@ export default new Router({
         meta:{
           flag:false,
           requredAuth:false
-        }  
-        
-=======
-        meta: {
-          flag: true,
-          requredAuth: true
-        },
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
+        }   
       },
+     
       {
         name:"LoginMessageVerification",
         path:"/loginMessageVerification",
@@ -194,6 +138,7 @@ export default new Router({
           requredAuth: true
         },
       },
+ 
       {
         path:"**",
         redirect:"/home"
