@@ -1,11 +1,7 @@
 <template>
   <div id="app" @scroll="scrollHeader()" ref="app" >
     <router-view :isChange="flag"/>
-<<<<<<< HEAD
-    <Mt-TabBar/>
-=======
     <Mt-TabBar v-if="$route.meta.flag"/>
->>>>>>> 56ac1af05bd5506e88cafc7570786963714addd5
   </div>
 </template>
 
@@ -34,7 +30,7 @@ export default {
       }
   },
   mounted(){
-    this.http.get('/posts').then(res=>{
+    this.http.post('/api/search/',"").then(res=>{
       console.log(res)
     })
   }
@@ -44,7 +40,7 @@ export default {
 <style>
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "微软雅黑";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* 解决苹果滑动卡顿问题king */

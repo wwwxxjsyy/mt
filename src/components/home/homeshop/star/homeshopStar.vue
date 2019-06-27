@@ -56,15 +56,15 @@
 
 <style>
 .star{
-		font-size: 1rem;
+		/* font-size: 1rem; */
 	}
 	.star .star-item{
 		display: inline-block;
-		width: .25rem;
-		height: .25rem;
+		width: .22rem;
+		height: .22rem;
 		margin-right: 3px;
 		background-repeat: no-repeat;
-		background-size: .25rem .25rem;
+		background-size: .22rem .22rem;
 	}
 	.star .star-item:last-child{
 		margin-right: 0;

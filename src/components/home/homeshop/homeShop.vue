@@ -1,10 +1,7 @@
 <template>
    <div class="homeshop">
-    <!-- header -->
     <home-header></home-header>
-    <!-- navigation -->
     <home-nav></home-nav>
-    <!-- content -->
     <keep-alive>
       <router-view></router-view>
     </keep-alive>

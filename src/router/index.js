@@ -66,6 +66,10 @@ export default new Router({
         ]
       },
       {
+        path:"/goods",
+        component: HomeShopGoods
+      },
+      {
         path:"/vip",
         component:Vip,
         meta: {
