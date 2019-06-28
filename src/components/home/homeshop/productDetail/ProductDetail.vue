@@ -132,7 +132,7 @@ import Split from '../split/Split'
 	position: fixed;
 	left: 0;
 	top: 0;
-	bottom: 51px;
+	bottom: 1rem;
 	background: white;
 	width: 100%;
 	z-index: 90;
@@ -143,10 +143,6 @@ import Split from '../split/Split'
 }
 .food-detail-enter, .food-detail-leave-to {
   transform: translateX(100%);
-}
-
-.food .food-wrapper .food-content{
-	
 }
 
 .food .food-wrapper .food-content .img-wrapper{
@@ -172,13 +168,13 @@ import Split from '../split/Split'
 	height: 100%;
 }
 .food .food-wrapper .food-content .img-wrapper .close-bt{
-	width: 30px;
-	height: 30px;
+	width: .5rem;
+	height: .5rem;
 	position: absolute;
-	left: 10px;
-	top: 10px;
+	left: .2rem;
+	top: .2rem;
 	text-align: center;
-	font-size: 30px;
+	font-size: .5rem;
 	color: white;
 	background: #7f7f7f;
 	border-radius: 50%;
@@ -186,82 +182,83 @@ import Split from '../split/Split'
 .food .food-wrapper .food-content .img-wrapper .share-bt,
 .food .food-wrapper .food-content .img-wrapper .more-bt
 {
-	width: 30px;
-	height: 30px;
+	width: .55rem;
+	height: .55rem;
 	position: absolute;
-	top: 10px;
+	top: .2rem;
 }
 .food .food-wrapper .food-content .img-wrapper .share-bt{
-	right: 50px;
+	right: 1rem;
 }
 .food .food-wrapper .food-content .img-wrapper .more-bt{
-	right: 10px;
+	right: .1rem;
 }
 
 .food .food-wrapper .food-content .content-wrapper{
-	padding: 0 0 16px 16px;
+	padding: 0 0 .3rem .4rem;
 	position: relative;
 }
 .food .food-wrapper .food-content .content-wrapper .name{
-	font-size: 15px;
+	font-size: .3rem;
 	color: #333333;
-	line-height: 30px;
 	font-weight: bold;
 }
 .food .food-wrapper .food-content .content-wrapper .saled{
-	font-size: 11px;
+	font-size: .25rem;
 	color: #9d9d9d;
-	margin-bottom: 6px;
+	margin-bottom: .1rem;
 }
 .food .food-wrapper .food-content .content-wrapper .product{
-	height: 15px;
+	height: .3rem;
 	margin-bottom: 16px;
 }
 .food .food-wrapper .food-content .content-wrapper .price{
 	font-size: 0;
 }
 .food .food-wrapper .food-content .content-wrapper .price .text{
-	font-size: 17px;
+	font-size: .33rem;
 	color: #FB4E44;
 }
 .food .food-wrapper .food-content .content-wrapper .price .unit{
-	font-size: 11px;
+	font-size: .33rem;
 	color: #9D9D9D;
 }
 .food .food-wrapper .food-content .cartcontrol-wrapper{
 	position: absolute;
-	right: 12px;
-	bottom: 10px;
+	right: .2rem;
+	bottom: .1rem;
 	padding: 2px;
 }
 .food .food-wrapper .food-content .buy{
-	width: 64px;
-	height: 30px;
-	font-size: 12px;
-	line-height: 30px;
+	width: 1.3rem;
+	height: .57rem;
+	font-size: .23rem;
+	line-height: .57rem;
+  color: black;
 	text-align: center;
 	background: #FFD161;
-	border-radius: 30px;
+	border-radius: .3rem;
 	position: absolute;
-	right: 12px;
-	bottom: 10px;
+	right: .2rem;
+	bottom: .1rem;
 }
 
 .food .food-wrapper .rating-wrapper{
-	padding-left: 16px;
+	padding-left: .25rem;
 }
 .food .food-wrapper .rating-wrapper .rating-title{
-	padding: 16px 16px 16px 0;
+	padding: .2rem .2rem .2rem 0;
 }
 .food .food-wrapper .rating-wrapper .rating-title .like-ratio{
 	float: left;
 	font-size: 0;
 }
 .food .food-wrapper .rating-wrapper .rating-title .like-ratio .title{
-	font-size: 13px;
+	font-size: .3rem;
+  color: black;
 }
 .food .food-wrapper .rating-wrapper .rating-title .like-ratio .ratio{
-	font-size: 11px;
+	font-size: .26rem;
 }
 .food .food-wrapper .rating-wrapper .rating-title .like-ratio .ratio i{
 	color: #FB4E44;
@@ -275,17 +272,17 @@ import Split from '../split/Split'
 .food .food-wrapper .rating-wrapper .rating-title .snd-title .text,
 .food .food-wrapper .rating-wrapper .rating-title .snd-title .icon
 {
-	font-size: 13px;
+	font-size: .26rem;
 	color: #9D9D9D;
 	display: inline-block;
 }
 .food .food-wrapper .rating-wrapper .rating-title .snd-title .icon{
-	margin-left: 12px;
+	margin-left: .2rem;
 }
 
 
 .food .food-wrapper .rating-wrapper .comment-item{
-	padding: 15px 14px 17px 0;
+	padding: .25rem .25rem .25rem 0;
 	border-bottom: 1px solid #F4F4F4;
 	width: 100%;
 	box-sizing: border-box;
@@ -293,11 +290,11 @@ import Split from '../split/Split'
 }
 .food .food-wrapper .rating-wrapper .comment-item .comment-header{
 	flex: 0 0 41px;
-	margin-right: 10px;
+	margin-right: .2rem;
 }
 .food .food-wrapper .rating-wrapper .comment-item .comment-header img{
-	width: 41px;
-	height: 41px;
+	width: .8rem;
+	height: .8rem;
 	border-radius: 50%;
 }
 
@@ -308,19 +305,19 @@ import Split from '../split/Split'
 .food .food-wrapper .rating-wrapper .comment-item .comment-main .user{
 	width: 50%;
 	float: left;
-	font-size: 12px;
+	font-size: .25rem;
 	color: #333333;
 }
 .food .food-wrapper .rating-wrapper .comment-item .comment-main .time{
 	width: 50%;
 	float: right;
 	text-align: right;
-	font-size: 10px;
+	font-size: .28rem;
 	color: #666666;
 }
 .food .food-wrapper .rating-wrapper .comment-item .comment-main .content{
 	margin-top: 17px;
-	font-size: 13px;
-	line-height: 19px;
+  float: left;
+	font-size: .3rem;
 }
 </style>

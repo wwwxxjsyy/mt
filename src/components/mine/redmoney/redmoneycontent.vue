@@ -45,28 +45,36 @@ export default {
             "限非到店自取订单，13:00-16:59，西安地区，下午茶频道使用。限登录和收餐手机号为13363959776使用。"
         },
         {
-          desc1: "下午茶红包",
+          desc1: "夜宵红包",
           desc2: "￥10",
           desc3: "有效期至2019.06.27",
-          desc4: "满50可用",
+          desc4: "满60可用",
           desc5:
-            "限非到店自取订单，13:00-16:59，西安地区，下午茶频道使用。限登录和收餐手机号为13363959776使用。"
+            "限非到店自取订单，21:00-23:59、00:00-04:59，西安地区，夜宵频道使用。限登录和收餐手机号为13363959776使用。"
         },
         {
-          desc1: "下午茶红包",
-          desc2: "￥10",
+          desc1: "新客首单红包",
+          desc2: "￥14",
           desc3: "有效期至2019.06.27",
-          desc4: "满50可用",
+          desc4: "满15可用",
           desc5:
-            "限非到店自取订单，13:00-16:59，西安地区，下午茶频道使用。限登录和收餐手机号为13363959776使用。"
+            "限非到店自取订单，新用户（手机号、设备、账号均未在美团外卖下过单）使用。限登录和收餐手机号为13363959776使用。"
         },
         {
-          desc1: "下午茶红包",
-          desc2: "￥10",
+          desc1: "通用红包",
+          desc2: "￥4",
           desc3: "有效期至2019.06.27",
-          desc4: "满50可用",
+          desc4: "满35可用",
           desc5:
-            "限非到店自取订单，13:00-16:59，西安地区，下午茶频道使用。限登录和收餐手机号为13363959776使用。"
+            "限非到店自取订单，西安地区使用。限登录和收餐手机号为13363959776使用。"
+        },
+         {
+          desc1: "通用红包",
+          desc2: "￥4",
+          desc3: "有效期至2019.06.27",
+          desc4: "满35可用",
+          desc5:
+            "限非到店自取订单，西安地区使用。限登录和收餐手机号为13363959776使用。"
         }
       ]
     };
@@ -91,8 +99,8 @@ export default {
   color: #666;
   width: 100%;
   height: 0.9rem;
-  text-align: left;
-  line-height: 0.9rem;
+  display: flex;
+  align-items: center;
   font-size: 0.25rem;
   padding-left: 0.4rem;
 }
@@ -100,13 +108,13 @@ export default {
 .remind img {
   width: 0.25rem;
   height: 0.25rem;
-  margin-right: 0.05rem;
+  margin-right: 0.15rem;
   vertical-align: middle;
 }
 
 .mainContent {
   margin-top: 0.4rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: .3rem;
 }
 
 .coupon {
@@ -167,6 +175,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 0.3rem;
+  color: #ccc;
 }
 .coupon .coupon-content {
   margin-top: 0.3rem;

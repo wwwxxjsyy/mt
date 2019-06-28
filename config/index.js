@@ -12,7 +12,11 @@ module.exports = {
       '/api': {
         // target: 'http://jsonplaceholder.typicode.com/',//后端接口地址
         // target:'http://10.35.161.31:9001/',
-        target:'http://10.35.161.34:5555/',
+<<<<<<< HEAD
+        // target:'http://10.35.162.134:8000',
+=======
+        target:'http://10.35.162.134:8000/',
+>>>>>>> dandan
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
             '^/api': '/api',//重写,
@@ -22,7 +26,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: '0.0.0.0', // can be overwritten by process.env.HOST
-    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8082, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,

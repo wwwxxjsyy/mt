@@ -6,7 +6,7 @@
                <span>开通会员</span>
             </div>
             <div class="user-photp">
-                <a href="#"><img src="../../../assets/img/vipImg/vip.png" alt=""> </a>
+                <a href="#"><img src="../../../assets/img/vipImg/vip.png" alt=""></a>
                 <div class="user">
                     <span>185****1777</span>
                     <p>您当前还不是会员</p>
@@ -40,7 +40,8 @@
         <div class="vipPay">
             <div class="vipPay-content">
                 <span><i>月卡仅需</i>￥15</span>
-                <a href="#">去支付</a>
+                <!-- <a href="#">去支付</a> -->
+                <router-link to='viplogin' tag='a'>去支付</router-link>
             </div>
         </div>
     </div>
@@ -121,6 +122,7 @@ export default {
 .username{
     color: #fefffe;
     font-size: 0.3rem;
+    padding-top: 0.1rem;
 }
 .user{
     margin-left: 0.2rem;
@@ -146,10 +148,13 @@ export default {
 .monthCard-content span{
     font-size: 0.26rem;
     color: #a1a1a1;
+    display: flex;
+    align-items: center;
+    margin-top: 0.3rem;
 }
 .monthCard-content span img{
     margin-left: 0.2rem;
-    margin-top: 0.3rem;
+    /* margin-top: 0.3rem; */
     padding-right:0.1rem;
 }
 .card{

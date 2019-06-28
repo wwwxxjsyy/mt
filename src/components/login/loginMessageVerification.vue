@@ -4,7 +4,7 @@
         <div class="content">
             <p class="tips">输入验证码</p>
             <p class="tipsPhone">验证码已发送至 
-                <span>+86 {{this.phone}}</span>
+                <span>+86 {{phone}}</span>
             </p>
          <div class="input-box checkedCode">
       <div class="input-content getCodeMsg">
@@ -23,7 +23,10 @@
     </div>
 </div>
   
+<<<<<<< HEAD
   
+=======
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 </template>
 <script src="../../../static/js/jquery-3.4.0.min.js"></script>
 <script>
@@ -61,9 +64,11 @@ export default {
         this.input5=""
         this.numArr=[]
         this.valueList=''
+        this.sendMsgDisabled = true;
+        let me = this;
         let interval = window.setInterval(function() {
-        if ((this.time--) <= 0) {
-          this.time = 10;
+        if ((me.time--) <= 0) {
+          me.time = 10;
           this.sendMsgDisabled = true;
           window.clearInterval(interval);
         }
@@ -99,9 +104,11 @@ export default {
         }
         console.log(this.valueList)
         console.log(this.phone)
-        this.http.get('/check_code/?phone=18821687723').then(res=>{
-        console.log(res)
-        })
+        // this.http.get('/check_code/?phone=18821687723').then(res=>{
+        // console.log(res)
+        // })
+        //存储在vuex中
+        this.$store.dispatch("setUser",'T123')
         this.$router.push('/mine')
         // 发送请求比对成功，跳转路由，我的页面
       }
@@ -120,8 +127,9 @@ export default {
     
     let me = this;
     let interval = window.setInterval(function() {
+      
         if ((me.time--) <= 0) {
-          me.time = 60;
+          me.time = 10;
           me.sendMsgDisabled=false
           window.clearInterval(interval);
         }
@@ -203,10 +211,11 @@ export default {
   display: block;
   float: left;
   height: 1rem;
-  border-bottom: solid 1px #898989;
   outline:none;
   caret-color: rgb(255,189,39);
   font-size: .44rem;
+  border:none;
+  border-bottom: solid 1px #898989;
 }
 .checkedCode input:focus{
   border-bottom: solid 2px #333;

@@ -7,12 +7,23 @@ import Mine from "../pages/mine"
 import Vip from "../pages/vip"
 import Login from "../pages/login"
 import LoginMessageVerification from '../components/login/loginMessageVerification'
+<<<<<<< HEAD
+=======
+import VipOpen from '../components/vip/vipOpen'
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 import RedMoney from '../components/mine/others/RedMoney'
 import VipOpen from '../components/vip/vipOpen'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
+<<<<<<< HEAD
 
+=======
+import Mywallet from '../components/mine/others/MyWallet'
+import Balance from '../components/mine/others/Balance'
+import MyEvalute from '../components/mine/others/MyEvalute'
+import MyAccount from '../components/mine/others/MyAccount'
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
                               // order
       // 待评价
 import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
@@ -29,7 +40,11 @@ import OrderOrderComment from '../components/orders/OrderComment.vue'
       // 相似商家
 import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
 
+<<<<<<< HEAD
 
+=======
+import VipLogin from '../components/vip/viplogin/'
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 import HomeGoods from '../pages/homegoods'
@@ -50,10 +65,26 @@ export default new Router({
       {
         path:"/",
         redirect:"/home",
+<<<<<<< HEAD
+=======
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
+      },
+      {
+        path:'/viplogin',
+        component:VipLogin,
+        meta:{
+          flag:true,
+          requredAuth:true
+        }   
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
       },
       {
         path:"/home",
         component:Home,
+<<<<<<< HEAD
         meta: {
           flag: true,
           requredAuth: true
@@ -82,45 +113,94 @@ export default new Router({
             component: HomeShopSeller
           },
         ]
+=======
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
+      },
+      {
+        path:"/goods",
+        component: HomeShopGoods
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
       },
       {
         path:"/vip",
         component:Vip,
+<<<<<<< HEAD
         meta: {
           flag: true,
           requredAuth: true
         },
+=======
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
       },
+      
       {
         path:"/order",
         component:Order,
+<<<<<<< HEAD
         meta: {
           flag: true,
           requredAuth: true
         },
+=======
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
       },
       {
         path:"/mine",
         component:Mine,
+<<<<<<< HEAD
         meta: {
           flag: true,
           requredAuth: true
         },
+=======
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
       },
       {
         path:"/login",
         component:Login,
+<<<<<<< HEAD
         meta: {
           flag: true,
           requredAuth: true
         },
+=======
+        meta:{
+          flag:false,
+          requredAuth:true
+        }  
       },
+      //vip
+      {
+        path:'/vipOpen',
+        component:VipOpen,
+        meta:{
+          flag:false,
+          requredAuth:false
+        }   
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
+      },
+     
       {
         name:"LoginMessageVerification",
         path:"/loginMessageVerification",
         component:LoginMessageVerification,
         meta: {
-          flag: true,
+          flag: false,
           requredAuth: true
         },
       },
@@ -155,8 +235,12 @@ export default new Router({
           flag: true,
           requredAuth: true
         },
+<<<<<<< HEAD
       },
                           // order
+=======
+      },     // order
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
           {
             name:"OrderOrderNoDiscuss",
             path:"/OrderOrderNoDiscuss",
@@ -195,6 +279,26 @@ export default new Router({
 
 
       
+<<<<<<< HEAD
+=======
+      {
+        path:'/MyWallet',
+        component:Mywallet
+      },
+      {
+        path:'/Balance',
+        component:Balance
+      },
+      {
+        path:'/MyEvalute',
+        component:MyEvalute
+      },
+      {
+        path:'/MyAccount',
+        component:MyAccount
+      },
+ 
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
       {
         path:"**",
         redirect:"/home"

@@ -12,15 +12,26 @@ import TabBar from "./components/common/tabBar.vue"
 export default {
   name: 'App',
   components:{
+<<<<<<< HEAD
     "Mt-TabBar":TabBar
 
+=======
+
+    "Mt-TabBar":TabBar
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
   }
   // mounted(){
   //   this.http.get('/posts').then(res=>{
   //     console.log(res)
   //   })
   // },
+<<<<<<< HEAD
   ,
+=======
+<<<<<<< HEAD
+=======
+  // },
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
   data(){
     return{
       flag:false
@@ -32,17 +43,21 @@ export default {
       }
   },
   mounted(){
-    this.http.get('/posts').then(res=>{
+    this.http.post('api/home/',).then(res=>{
       console.log(res)
     })
   }
+<<<<<<< HEAD
+=======
+>>>>>>> dandan
+>>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 }
 </script>
 
 <style>
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "微软雅黑";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* 解决苹果滑动卡顿问题king */
