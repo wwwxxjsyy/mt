@@ -1,8 +1,4 @@
 <template>
-<<<<<<< HEAD
-=======
-
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
     <header class="vipHeader bc"   >
         <div class="header">
             <span class="tit">{{title}}</span>
@@ -20,10 +16,6 @@ export default {
         title:{
             type : String,
             default : '会员'
-<<<<<<< HEAD
-=======
-
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
         },
         // flag:{
         //     type:Boolean,
@@ -37,12 +29,6 @@ export default {
     //         this.$emit('scrollHeader',this.flag)
           
     // }
-<<<<<<< HEAD
-    // } 
-        // }
-    }
-}
-=======
     }, 
 
 
@@ -50,7 +36,6 @@ export default {
         
    
 }   
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 </script>
 
 <style scoped>

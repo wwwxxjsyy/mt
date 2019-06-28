@@ -23,10 +23,6 @@
     </div>
 </div>
   
-<<<<<<< HEAD
-  
-=======
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 </template>
 <script src="../../../static/js/jquery-3.4.0.min.js"></script>
 <script>

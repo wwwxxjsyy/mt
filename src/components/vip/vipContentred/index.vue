@@ -23,10 +23,6 @@ export default {
 <style scoped>
 .vip-content-text{
     background:#f2f2f2;
-<<<<<<< HEAD
-=======
-
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 }
 .vip-content-txt{
     padding-top: 0.3rem;

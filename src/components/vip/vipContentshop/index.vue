@@ -9,16 +9,6 @@
                        <span>{{item.money}}</span>无门槛
                    </div>
                    <div class="shops">
-<<<<<<< HEAD
-                       <img :src="item.imgs" alt="">
-                       <span>{{item.names}}</span>
-                   </div>
-                </li>
-            </ul>
-             
-        </div>
-
-=======
                        <a href=""><img :src="item.imgs" alt=""></a>
                        <span>{{item.names}}</span>
                    </div>
@@ -28,7 +18,6 @@
         <div class="vip-footer">
             <span>更多外卖可到美团外卖首页查看</span>
         </div>
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
     
     </div>
     
@@ -57,8 +46,6 @@ export default {
                     imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
                     names:'御品轩(枫叶新都市店)',
                     path:''
-<<<<<<< HEAD
-=======
                 },
                 {
                     money:'￥7',
@@ -77,7 +64,6 @@ export default {
                     imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
                     names:'御品轩(枫叶新都市店)',
                     path:''
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
                 }
             ]
         }
@@ -87,20 +73,12 @@ export default {
 
 <style scoped>
 .vip-content-text{
-<<<<<<< HEAD
-    background: #f2f2f2;
-=======
     background: #f3f4f4;
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 
 }
 ul>li{
     display: block;
-<<<<<<< HEAD
-     width: 33%;
-=======
      width: 30%;
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
     height: 2.7rem;
   
     background: url('../../../assets/img/vipImg/bgc_wps.png') no-repeat;
@@ -110,45 +88,29 @@ ul>li{
     font-size: 0.3rem;
     color: #777777;
     text-align: center;
-<<<<<<< HEAD
-    margin-bottom: 0.1rem;
-=======
     margin-bottom: 0.2rem;
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 }
 .price span{
     font-size: 0.4rem;
     color: #e85b4d;
 }
 .shops>img{
-<<<<<<< HEAD
-    width: 1.5rem;
-    height: 1.2rem;
-=======
     width: 1.2rem;
     height: 1rem;
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
     margin-top: 0.1rem;
 }
 .oul{
     display: flex;
-<<<<<<< HEAD
-=======
     flex-wrap: wrap;
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 }
 .oul>li{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-    margin-left: 0.2rem;
-=======
     margin: 0.1rem 0.1rem 0.2rem 0.15rem; 
     
     /* width: 100%; */
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 }
 .shops{
     display: flex;
@@ -163,8 +125,6 @@ ul>li{
     font-size: 0.3rem;
     color: #33312e;
 }
-<<<<<<< HEAD
-=======
 .vip-footer{
     height: 1rem;
     text-align: center;
@@ -172,5 +132,4 @@ ul>li{
     color: #777777;
 }
 
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
 </style>

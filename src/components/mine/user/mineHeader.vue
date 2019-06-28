@@ -1,13 +1,9 @@
 <template>
   <div class="mine-header">
-<<<<<<< HEAD
-    <router-link to="/MyAccount" class="MineHeaderLogo" >
-=======
     <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
-    <router-link to='/home' v-show="isLogin" class="MineHeaderLogo">
->>>>>>> dandan
+    <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
 
@@ -52,6 +48,7 @@ export default {
   background: #f7f7f7;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   top: 0;
   position: sticky;
 }
@@ -73,7 +70,10 @@ export default {
 }
 .mine-icon a {
   display: inline-block;
-  font-size: 50px;
-  padding-right:.4rem;
+  font-size: .5rem;
+
+}
+.mine-icon a:first-child{
+  margin-right: .4rem;
 }
 </style>

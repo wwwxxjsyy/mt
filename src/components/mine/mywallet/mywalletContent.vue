@@ -116,7 +116,7 @@ export default {
   padding-top: 1.04rem;
 }
 .mywallet-content .mt-money {
-  font-size: 0.5rem;
+  font-size: 0.45rem;
   color: black;
 }
 .mywallet-content .remind {

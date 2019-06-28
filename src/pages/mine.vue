@@ -13,21 +13,13 @@ import mineHeader from "../components/mine/user/mineHeader";
 import mineVip from "../components/mine/user/mineLinkVip";
 import mineList from "../components/mine/user/mineList";
 import mineContent from "../components/mine/user/mineContent";
-<<<<<<< HEAD
-import Footer from '../components/common/tabBar'
-=======
 import{getStore} from "../config/mUtils"
->>>>>>> dandan
 export default {
   name: "MtMine",
   components: {
     mineHeader,
     mineVip,
     mineList,
-<<<<<<< HEAD
-    mineContent,
-    Footer
-=======
     mineContent
   },
   computed:{
@@ -39,7 +31,6 @@ export default {
                 return this.$store.getters.currentUser
             }
         
->>>>>>> dandan
   }
 };
 </script>
