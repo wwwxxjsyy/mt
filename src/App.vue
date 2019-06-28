@@ -1,23 +1,7 @@
 <template>
-<<<<<<< HEAD
-<<<<<<< HEAD
   <div id="app"  >
     <router-view />
     <Mt-TabBar v-if="$route.meta.flag"/>
-=======
-  <div id="app" @scroll="scrollHeader()" ref="app" >
-    <router-view :isChange="flag"/>
-<<<<<<< HEAD
-    <Mt-TabBar/>
-=======
-    <Mt-TabBar v-if="$route.meta.flag"/>
->>>>>>> 56ac1af05bd5506e88cafc7570786963714addd5
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
-=======
-  <div id="app">
-    <router-view/>
-    <Mt-TabBar/>
->>>>>>> lihao
   </div>
 </template>
 
@@ -28,21 +12,15 @@ import TabBar from "./components/common/tabBar.vue"
 export default {
   name: 'App',
   components:{
-<<<<<<< HEAD
     "Mt-TabBar":TabBar
-<<<<<<< HEAD
+
   }
   // mounted(){
   //   this.http.get('/posts').then(res=>{
   //     console.log(res)
   //   })
   // },
-=======
-=======
-    // "Mt-TabBar":TabBar
-    TabBar
->>>>>>> lihao
-  },
+  ,
   data(){
     return{
       flag:false
@@ -58,7 +36,6 @@ export default {
       console.log(res)
     })
   }
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
 }
 </script>
 
@@ -74,9 +51,6 @@ export default {
   height: 100%;
   width: 100%;
   overflow: scroll;
-<<<<<<< HEAD
   /* background: #fff; */
-=======
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22
 }
 </style>

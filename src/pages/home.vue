@@ -17,26 +17,23 @@
 </template>
 
 <script>
-import homeShop from "../components/home/homeshop/homeShop"
-<<<<<<< HEAD
-import Address from '../components/home/homeIndex/mt-home-adress'
-import Search from '../components/home/homeIndex/mt-home-search'
-import Recommend from '../components/home/homeIndex/mt-home-recommend'
-import Banner from '../components/home/homeIndex/mt-home-banner'
-import Class from '../components/home/homeIndex/mt-home-class'
-import Optimization from '../components/home/homeIndex/mt-home-optimization'
-import Ddiscount from '../components/home/homeIndex/mt-home-discount'
-import Goodshop from '../components/home/homeIndex/mt-home-goodshop'
-import Toshop from '../components/home/homeIndex/mt-home-toshop'
-import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
-=======
+// import homeShop from "../components/home/homeshop/homeShop"
+import Address from "../components/home/homeIndex/mt-home-adress"
+import Searchs from "../components/home/homeIndex/mt-home-search"
+import Recommend from "../components/home/homeIndex/mt-home-recommend"
+import Banner from "../components/home/homeIndex/mt-home-banner"
+import Class from "../components/home/homeIndex/mt-home-class"
+import Optimization from "../components/home/homeIndex/mt-home-optimization"
+import Ddiscount from "../components/home/homeIndex/mt-home-discount"
+import Goodshop from "../components/home/homeIndex/mt-home-goodshop"
+import Toshop from "../components/home/homeIndex/mt-home-toshop"
+import Moreshop from "../components/home/homeIndex/mt-home-adress"
 
->>>>>>> lihao
 export default {
      name:"MtHome",
      components:{
         "mt-home-address":Address,
-        "mt-home-search":Search,
+        "mt-home-search":Searchs,
         "mt-home-recommend":Recommend,
         "mt-home-banner":Banner,
         "mt-home-class":Class,

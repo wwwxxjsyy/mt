@@ -22,15 +22,7 @@ export default {
 
 <style scoped>
 .vip-content-text{
-<<<<<<< HEAD:src/components/vip/vipContentred/index.vue
-<<<<<<< HEAD:src/components/vip/vipContentred/index.vue
     background:#f2f2f2;
-=======
-    background:#f3f4f4;
->>>>>>> b46a84b9f4c7349201e0525ec38bb13eb1138f22:src/components/vip/vipContent-1/index.vue
-=======
-    background:#f2f2f2;
->>>>>>> lihao:src/components/vip/vipContent-1/index.vue
 }
 .vip-content-txt{
     padding-top: 0.3rem;
