@@ -4,24 +4,24 @@
     <!-- 底部左侧 -->
     <div class="content-left">
       <div 
-				class="logo-wrapper"
-				:class="{'highligh':totalCount>0}"
-				>
+		class="logo-wrapper"
+		:class="{'highligh':totalCount>0}"
+		>
         <span 
-					class="icon-shopping_cart logo"
-					:class="{'highligh':totalCount>0}"
-					@click="toggleList"
-					></span>
-				<i class="num" v-show="totalCount">{{totalCount}}</i>
+			class="icon-shopping_cart logo"
+			:class="{'highligh':totalCount>0}"
+			@click="toggleList"
+			></span>
+		<i class="num" v-show="totalCount">{{totalCount}}</i>
       </div>
       <div class="desc-wrapper">
-				<p class="total-price" v-show="totalPrice">
-					￥{{totalPrice}}
-				</p>
+			<p class="total-price" v-show="totalPrice">
+				￥{{totalPrice}}
+			</p>
         <p 
-					class="tip"
-					:class="{'highligh':totalCount>0}"
-					>另需{{poiInfo.shipping_fee_tip}}</p>
+			class="tip"
+			:class="{'highligh':totalCount>0}"
+			>另需{{poiInfo.shipping_fee_tip}}</p>
       </div>
     </div>
     <!-- 底部右侧 -->
@@ -274,89 +274,92 @@ import CartControl from '../cartcontrol/CartControl'
 }
 
 .shopcart-wrapper .shopcart-list .list-top{
-	height: 30px;
+	height: .8rem;
 	text-align: center;
-	font-size: 11px;
+	font-size: .25rem;
 	background: #f3e6c6;
-	line-height: 30px;
+	line-height: .8rem;
 	color: #646158;
 }
 
 .shopcart-wrapper .shopcart-list .list-header{
-	height: 30px;
+	height: .6rem;
 	background: #F4F4F4;
+	color: black;
 }
 .shopcart-wrapper .shopcart-list .list-header .title{
 	float: left;
-	border-left: 4px solid #53c123;
-	padding-left: 6px;
-	line-height: 30px;
-	font-size: 12px;
+	border-left: .1rem solid #53c123;
+	padding-left: .2rem;
+	line-height: .6rem;
+	font-size: .25rem;
 }
 .shopcart-wrapper .shopcart-list .list-header .empty{
 	float: right;
-	line-height: 30px;
-	margin-right: 10px;
+	line-height: .6rem;
+	margin-right: .1rem;
+	height: .6rem;
 	font-size: 0;
 }
 .shopcart-wrapper .shopcart-list .list-header .empty img{
-	height: 14px;
+	height: .33rem;
+	display: inline-block;
 	margin-right: 9px;
 	vertical-align: middle;
 }
 .shopcart-wrapper .shopcart-list .list-header .empty span{
-	font-size: 12px;
+	font-size: .23rem;
 	vertical-align: middle;
 }
 
 .shopcart-wrapper .shopcart-list .list-content{
-	max-height: 360px;
+	max-height: 5rem;
 	overflow: hidden;
 	background: white;
 }
 .shopcart-wrapper .shopcart-list .list-content .food-item{
-	height: 38px;
-	padding: 12px 12px 10px 12px;
+	height: 1.3rem;
+	padding: .2rem .2rem .15rem .2rem;
 	border-bottom: 1px solid #F4F4F4;
+	color: black;
 }
 .shopcart-wrapper .shopcart-list .list-content .food-item .desc-wrapper{
 	float: left;
-	width: 240px;
+	width: 70%;
 }
 .shopcart-wrapper .shopcart-list .list-content .food-item .desc-wrapper .desc-left{
 	float: left;
-	width: 170px;
+	width: 3rem;
 }
 .shopcart-wrapper .shopcart-list .list-content .food-item .desc-wrapper .desc-left .name{
-	font-size: 16px;
+	font-size: .3rem;
 	margin-bottom: 8px;
-	
 	/* 超出部分隐藏*/
 	-webkit-line-clamp: 1;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
-	height: 16px;
+	height: 100%;
 }
 .shopcart-wrapper .shopcart-list .list-content .food-item .desc-wrapper .desc-left .unit{
-	font-size: 12px;
+	font-size: .25rem;
 	color: #B4B4B4;
 }
 .shopcart-wrapper .shopcart-list .list-content .food-item .desc-wrapper .desc-left .description{
 	font-size: 12px;
 	color: #B4B4B4;
-		
 	/* 超出部分隐藏*/
 	overflow: hidden;
 	height: 12px;
 }
 .shopcart-wrapper .shopcart-list .list-content .food-item .desc-wrapper .desc-right{
 	float: right;
-	width: 70px;
-	text-align: right;	
+	text-align: right;
+	font-size: .4rem;
+	padding-top: .12rem;
 }
 .shopcart-wrapper .shopcart-list .list-content .food-item .desc-wrapper .desc-right .price{
-	font-size: 12px;
+	font-size: .25rem;
 	line-height: 38px;
 }
 
@@ -374,6 +377,4 @@ import CartControl from '../cartcontrol/CartControl'
 	z-index: 98;
 	background: rgba(7,17,27,0.6);
 }
-
-
 </style>

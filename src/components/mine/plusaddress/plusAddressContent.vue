@@ -56,6 +56,7 @@ export default {
 <style scoped>
 .plus-address-content {
   background: #fff;
+  color: #616161;
 }
 .editAddress > div {
   margin-left: 0.5rem;

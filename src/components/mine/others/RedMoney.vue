@@ -40,4 +40,7 @@ activated() {},
 }
 </script>
 <style  scoped>
+.red-money{
+    background: #fafafa;
+}
 </style>

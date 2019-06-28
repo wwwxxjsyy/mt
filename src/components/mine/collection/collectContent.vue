@@ -28,7 +28,7 @@ methods: {
 </script>
 <style  scoped>
 .collection-content{
-    margin-top: .08rem;
+    border-top: .08rem solid #fafafa;
     flex: 1;
     background: #fff;
     text-align: center;

@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import homeShop from "../components/home/homeshop/homeShop"
 import Address from '../components/home/homeIndex/mt-home-adress'
 import Search from '../components/home/homeIndex/mt-home-search'
 import Recommend from '../components/home/homeIndex/mt-home-recommend'

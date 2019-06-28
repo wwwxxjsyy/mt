@@ -1,12 +1,1641 @@
 <template>
-    
+  <div class="ratings" ref="ratingView">
+    <div class="ratings-wrapper">
+      <div class="overview">
+        <div class="overview-left">
+          <div class="comment-score">
+              <p class="score">{{ratings.comment_score}}</p>
+              <p class="text">商家评分</p>
+          </div>
+          <div class="other-score">
+            <div class="quality-score item">
+              <span class="text">口味</span>
+              <Star :score="ratings.quality_score" class='star'></Star>
+              <span class="score"></span>
+            </div>
+            <div class="pack-score item">
+              <span class="text">包装</span>
+              <Star :score="ratings.pack_score" class='star'></Star>
+              <span class="score"></span>
+            </div>
+          </div>
+        </div>
+        <div class="overview-right">
+          <div class="delivery-score">
+            <p class="score">{{ratings.delivery_score}}</p>
+            <p class="text">配送评分</p>
+          </div>
+        </div>
+      </div>
+
+      <Split></Split>
+
+      <div class="content">
+        <div class="rating-select" v-if="ratings.tab">
+          <span 
+            class="item" 
+            :class="{'active':selectType==2}"
+            @click="selectTypeFn(2)">
+            {{ratings.tab[0].comment_score_title}}
+          </span>
+          <span 
+            class="item" 
+             :class="{'active':selectType==1}"
+            @click="selectTypeFn(1)">
+            {{ratings.tab[1].comment_score_title}}
+          </span>
+          <span 
+            class="item" 
+            :class="{'active':selectType==0}"
+            @click="selectTypeFn(0)">
+            <img v-show="selectType != 0" src="./img/icon_sub_tab_dp_normal@2x.png"/>
+            <img v-show="selectType == 0" src="./img/icon_sub_tab_dp_highlighted@2x.png"/>
+            {{ratings.tab[2].comment_score_title}}
+          </span>
+        </div>
+
+        <div class="labels-view">
+          <span
+            class="item" 
+            v-for="(item,index) in ratings.labels" 
+            :key="index"
+            :class="{'heigligh':item.label_star>0}"
+            >
+            {{item.content}}{{item.label_count}}
+          </span>
+        </div>
+
+        <ul class="rating-list">
+            <li 
+              v-for="(comment,index) in selectComments" 
+              :key="index"
+              class="comment-item"
+              >
+              <div class="comment-header">
+                <img :src="comment.user_pic_url" v-if="comment.user_pic_url" />
+                <img src="./img/anonymity.png" v-if="!comment.user_pic_url"  />
+              </div>
+              <div class="comment-main">
+                <div class="user">
+                  {{comment.user_name}}
+                </div>
+                <div class="time">
+                  {{formatDate(comment.comment_time)}}
+                </div>
+                <div class="star-wrapper">
+                  <span class="text">评分</span>
+                  <Star :score="comment.order_comment_score" class="star"></Star>
+                </div>
+                <div class="content">
+                  {{comment.comment}}
+                </div>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
+
 <script>
+import { Swipe, SwipeItem, Loadmore } from "mint-ui";
+import BScroll from 'better-scroll'
+import Split from '../split/Split'
+import Star from '../star/homeshopStar'
+
+const ALL = 2
+const PICTURE = 1
+const COMMENT = 0
 export default {
-    
+  data(){
+    return {
+      selectType:ALL,
+      ratings:{
+		"comment_num": 3683,
+		"avg_ship_time": 0,
+		"comment_score": 4.7,
+		"food_score": 4.7,
+		"delivery_score": 4.8,
+		"quality_score": 4.6,
+		"pack_score": 4.7,
+		"filter_type_num": 3683,
+		"comment_score_type_infos": [
+			{
+				"comment_score_type": 1,
+				"total_count": 3428,
+				"comment_score_title": "好评"
+			}, {
+				"comment_score_type": 3,
+				"total_count": 180,
+				"comment_score_title": "差评"
+			}
+		],
+		"comments": [
+			{
+				"user_name": "一洲风月",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "虽然配送师傅迟到了有一会儿，但是态度非常好，一直说对不起，都是打工的，我非常体谅配送师傅的心情！谢谢师傅～",
+				"comment_type": 4,
+				"order_time": 1507964827,
+				"comment_time": 1507964827,
+				"order_comment_score": 5,
+				"praise_food_tip": "脆薯饼",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1281862411,
+				"user_id": 170303774,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "https://img.meituan.net/avatar/28799a8c9e206fb7b54f321dd814712594813.jpg",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [
+					{
+						"name": "脆薯饼",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=216588956&wmpoiid=495579&sputag=&activitytag=&sku_id=235150236"
+					}
+				],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "ejX309524666",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "#奶油坚果酱中套餐#不好吃。还是奥尔良，麦辣鸡腿那些最经典的汉堡好吃。薯条软得不能再软了。我备注了可乐换芬达也没有换。#麦辣鸡翅2块#就还好，里面的肉挺嫩的，很入味。",
+				"comment_type": 4,
+				"order_time": 1504161290,
+				"comment_time": 1504161290,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1170455675,
+				"user_id": 252972485,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "https://img.meituan.net/avatar/71ef89fa000e783d5b8d86c2767a9d28195580.jpg",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [
+					{
+						"keyword": "麦辣鸡翅2块",
+						"spu_id": 96985579,
+						"sku_id": 102106880,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985579&wmpoiid=495579&sputag=&activitytag=&sku_id=102106880"
+					}, {
+						"keyword": "奶油坚果酱中套餐",
+						"spu_id": 272461108,
+						"sku_id": 297102924,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=272461108&wmpoiid=495579&sputag=&activitytag=&sku_id=297102924"
+					}
+				],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "匿名用户",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "好吃#霆锋酷辣鸡腿堡大薯套餐#",
+				"comment_type": 4,
+				"order_time": 1507814453,
+				"comment_time": 1507814453,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1277925435,
+				"user_id": 190006170,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p0.meituan.net/aichequan/8632d93a19c8883727301f82cc88501d4301.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [
+					{
+						"keyword": "霆锋酷辣鸡腿堡大薯套餐",
+						"spu_id": 438902255,
+						"sku_id": 479330905,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=438902255&wmpoiid=495579&sputag=&activitytag=&sku_id=479330905"
+					}, {
+						"keyword": "经典麦辣鸡腿汉堡",
+						"spu_id": 96985052,
+						"sku_id": 102106347,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985052&wmpoiid=495579&sputag=&activitytag=&sku_id=102106347"
+					}
+				],
+				"is_anonymous": 1,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "GDq177157764",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": " 鸡翅感觉味道不是很好，包装薯条可以用小袋子装好。有点散落",
+				"comment_type": 4,
+				"order_time": 1506612877,
+				"comment_time": 1506612877,
+				"order_comment_score": 5,
+				"praise_food_tip": "经典麦辣鸡腿汉堡中薯套餐,麦辣鸡翅4块,可口可乐（大杯）",
+				"critic_food_tip": "蜜汁柠檬风味那么大鸡翅",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1244281909,
+				"user_id": 446602414,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/a554576d31162ac97553323d50c2789811619.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [
+					{
+						"name": "经典麦辣鸡腿汉堡中薯套餐",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=151783280&wmpoiid=495579&sputag=&activitytag=&sku_id=162401545"
+					}, {
+						"name": "麦辣鸡翅4块",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985585&wmpoiid=495579&sputag=&activitytag=&sku_id=102106877"
+					}, {
+						"name": "可口可乐（大杯）",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985058&wmpoiid=495579&sputag=&activitytag=&sku_id=102106353"
+					}
+				],
+				"comment_scheme": [
+					{
+						"keyword": "蜜汁柠檬风味那么大鸡翅",
+						"spu_id": 384709076,
+						"sku_id": 420499566,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=384709076&wmpoiid=495579&sputag=&activitytag=&sku_id=420499566"
+					}, {
+						"keyword": "麦辣鸡翅4块",
+						"spu_id": 96985585,
+						"sku_id": 102106877,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985585&wmpoiid=495579&sputag=&activitytag=&sku_id=102106877"
+					}
+				],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "匿名用户",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "很不错👍#经典麦辣鸡腿汉堡大薯套餐##经典麦辣鸡腿汉堡大薯套餐#",
+				"comment_type": 4,
+				"order_time": 1507959265,
+				"comment_time": 1507959265,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1281591493,
+				"user_id": 498421974,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p0.meituan.net/aichequan/8632d93a19c8883727301f82cc88501d4301.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [
+					{
+						"keyword": "经典麦辣鸡腿汉堡大薯套餐",
+						"spu_id": 151784005,
+						"sku_id": 162399835,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=151784005&wmpoiid=495579&sputag=&activitytag=&sku_id=162399835"
+					}
+				],
+				"is_anonymous": 1,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "匿名用户",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "香芋派的盒子装着菠萝派",
+				"comment_type": 4,
+				"order_time": 1507477547,
+				"comment_time": 1507477547,
+				"order_comment_score": 4,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1268527771,
+				"user_id": 110471460,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [
+					{
+						"url": "http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg",
+						"thumbnail_url": "http://p0.meituan.net/wmcomment/1749a2f136fb4facaa5bf69a9093d2c8434085.jpg"
+					}
+				],
+				"user_pic_url": "http://p0.meituan.net/aichequan/8632d93a19c8883727301f82cc88501d4301.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [
+					{
+						"keyword": "香芋派",
+						"spu_id": 96985588,
+						"sku_id": 102106881,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985588&wmpoiid=495579&sputag=&activitytag=&sku_id=102106881"
+					}
+				],
+				"is_anonymous": 1,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "Lauhiukwan",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "为什么你们麦当劳每次送餐都迟到那么久 ！催单都没用",
+				"comment_type": 4,
+				"order_time": 1508059708,
+				"comment_time": 1508059708,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1285156127,
+				"user_id": 4368074,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "https://img.meituan.net/avatar/__49967579__8610036.jpg",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "Ggj331055125",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "薯条有点软了还有点咸",
+				"comment_type": 4,
+				"order_time": 1507891549,
+				"comment_time": 1507891549,
+				"order_comment_score": 4,
+				"praise_food_tip": "霆锋酷辣鸡腿堡配中薯套餐,麦旋风奥利奥原味（鸳鸯奶茶味）",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1279818164,
+				"user_id": 919308326,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/2ed35d8e68a319c5eb346d82d4c3a4f09483.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [
+					{
+						"name": "霆锋酷辣鸡腿堡配中薯套餐",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=438905783&wmpoiid=495579&sputag=&activitytag=&sku_id=479337665"
+					}, {
+						"name": "麦旋风奥利奥原味（鸳鸯奶茶味）",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=438863568&wmpoiid=495579&sputag=&activitytag=&sku_id=479294637"
+					}
+				],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "liaokun0",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "好吃不腻，还不错。",
+				"comment_type": 4,
+				"order_time": 1507802404,
+				"comment_time": 1507802404,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1277298425,
+				"user_id": 253484354,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/a554576d31162ac97553323d50c2789811619.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "WfU359676754",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "骑手很给力，不错",
+				"comment_type": 4,
+				"order_time": 1507598928,
+				"comment_time": 1507598928,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 1271061560,
+				"user_id": 307931009,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/a554576d31162ac97553323d50c2789811619.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "EFR962754963",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "还行，下雨天也就很感谢了",
+				"comment_type": 4,
+				"order_time": 1476954618,
+				"comment_time": 1476954618,
+				"order_comment_score": 5,
+				"praise_food_tip": "经典麦辣鸡腿汉堡,麦乐鸡5块",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 541145885,
+				"user_id": 602866768,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "https://img.meituan.net/avatar/6f9d142fdd98c380e480e9ba9b941fda56815.jpg",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [
+					{
+						"name": "经典麦辣鸡腿汉堡",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985052&wmpoiid=495579&sputag=&activitytag=&sku_id=102106347"
+					}, {
+						"name": "麦乐鸡5块",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985580&wmpoiid=495579&sputag=&activitytag=&sku_id=102106872"
+					}
+				],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "XVw495912307",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "吸管也不拿，怎么喝？送餐态度也不好",
+				"comment_type": 4,
+				"order_time": 1476966260,
+				"comment_time": 1476966260,
+				"order_comment_score": 1,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 541584446,
+				"user_id": 299129759,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/a554576d31162ac97553323d50c2789811619.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "aVh453271553",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "三更半夜 风雨交加 辛苦了",
+				"comment_type": 4,
+				"order_time": 1476726413,
+				"comment_time": 1476726413,
+				"order_comment_score": 5,
+				"praise_food_tip": "麦辣鸡翅4块,零度可口可乐（小杯）,经典麦辣鸡腿汉堡",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 537247789,
+				"user_id": 189752484,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/a554576d31162ac97553323d50c2789811619.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [
+					{
+						"name": "麦辣鸡翅4块",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985585&wmpoiid=495579&sputag=&activitytag=&sku_id=102106877"
+					}, {
+						"name": "零度可口可乐（小杯）",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985573&wmpoiid=495579&sputag=&activitytag=&sku_id=102106868"
+					}, {
+						"name": "经典麦辣鸡腿汉堡",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985052&wmpoiid=495579&sputag=&activitytag=&sku_id=102106347"
+					}
+				],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "jTW196820955",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "薯条都是冷的，麦乐鸡相当难吃",
+				"comment_type": 4,
+				"order_time": 1476433891,
+				"comment_time": 1476433891,
+				"order_comment_score": 3,
+				"praise_food_tip": "经典麦辣鸡腿汉堡",
+				"critic_food_tip": "麦辣鸡翅4块,薯条（大）,麦乐鸡5块",
+				"poi_reply_contents": "",
+				"wm_comment_id": 531936399,
+				"user_id": 271882701,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "https://img.meituan.net/avatar/41be33d1df6fc92b7a0bec7b8106657590526.jpg",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [
+					{
+						"name": "经典麦辣鸡腿汉堡",
+						"schema_uri": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985052&wmpoiid=495579&sputag=&activitytag=&sku_id=102106347"
+					}
+				],
+				"comment_scheme": [
+					{
+						"keyword": "麦乐鸡5块",
+						"spu_id": 96985580,
+						"sku_id": 102106872,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985580&wmpoiid=495579&sputag=&activitytag=&sku_id=102106872"
+					}, {
+						"keyword": "薯条（大）",
+						"spu_id": 96985584,
+						"sku_id": 102106878,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985584&wmpoiid=495579&sputag=&activitytag=&sku_id=102106878"
+					}
+				],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "kfW507727981",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "速度和服务不错，",
+				"comment_type": 4,
+				"order_time": 1476461157,
+				"comment_time": 1476461157,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 532597429,
+				"user_id": 605062326,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/2ed35d8e68a319c5eb346d82d4c3a4f09483.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "qPm254992924",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "以前板烧鸡腿汉堡都有盒子，这次没有的！",
+				"comment_type": 4,
+				"order_time": 1475391011,
+				"comment_time": 1475391011,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 514680795,
+				"user_id": 57228840,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p0.meituan.net/aichequan/65c49a1c879d79fffac737aa48e30f0411391.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [
+					{
+						"keyword": "原味板烧鸡腿堡大套餐",
+						"spu_id": 110713509,
+						"sku_id": 117344682,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=110713509&wmpoiid=495579&sputag=&activitytag=&sku_id=117344682"
+					}
+				],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "rDJ901569961",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "我不知道是太忙还是怎样，一份大薯条就配了一般番茄酱，一杯饮料🍹连吸管也没放。。而且一个多小时才来。。。哎",
+				"comment_type": 4,
+				"order_time": 1473563853,
+				"comment_time": 1473563853,
+				"order_comment_score": 3,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 426883205,
+				"user_id": 151465141,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 2,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/2ed35d8e68a319c5eb346d82d4c3a4f09483.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [
+					{
+						"keyword": "薯条（大）",
+						"spu_id": 96985584,
+						"sku_id": 102106878,
+						"scheme_url": "meituanwaimai://waimai.meituan.com/detail?buztype=0&spuid=96985584&wmpoiid=495579&sputag=&activitytag=&sku_id=102106878"
+					}
+				],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "GPf593897695",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "每次要求要需要蒜蓉辣椒酱，每次都没有。",
+				"comment_type": 4,
+				"order_time": 1475822779,
+				"comment_time": 1475822779,
+				"order_comment_score": 1,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 521966124,
+				"user_id": 403488971,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "https://img.meituan.net/avatar/a65ec3aefaea787739ae3c236e5f9517213911.jpg",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "朱秋如",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "速度很快，很好，很给力",
+				"comment_type": 4,
+				"order_time": 1475733672,
+				"comment_time": 1475733672,
+				"order_comment_score": 5,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 520285316,
+				"user_id": 118378402,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "http://p1.meituan.net/aichequan/e78587c02f319718e3ac9e273d0eee0311047.png",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}, {
+				"user_name": "h菜丸子",
+				"ship_score": 0,
+				"ship_time": 0,
+				"comment": "感觉……没有现场买的好吃",
+				"comment_type": 4,
+				"order_time": 1475670165,
+				"comment_time": 1475670165,
+				"order_comment_score": 4,
+				"praise_food_tip": "",
+				"critic_food_tip": "",
+				"poi_reply_contents": "",
+				"wm_comment_id": 519447984,
+				"user_id": 189114071,
+				"user_poi_comment_num": 1,
+				"add_comment_list": [],
+				"comment_labels": [],
+				"order_type": 1,
+				"delivery_type": 0,
+				"delivery_name": "",
+				"comment_pics": [],
+				"user_pic_url": "https://img.meituan.net/avatar/40e2b2815903db51b842735c46be24fc29298.jpg",
+				"food_comment_score": 0,
+				"delivery_comment_score": 0,
+				"has_add_comment": false,
+				"is_picture_audited": false,
+				"picture_msg": null,
+				"picture_msg_title": null,
+				"picture_msg_url": null,
+				"poi_name": null,
+				"poi_id": null,
+				"comment_source_tip": "",
+				"comment_source_type": 3,
+				"order_detail": null,
+				"praise_food_list": [],
+				"comment_scheme": [],
+				"is_anonymous": 0,
+				"quality_score": 0,
+				"pack_score": 0,
+				"buz_code": 0,
+				"can_additional": 1,
+				"disable_additional_msg": "",
+				"poi_pic_url": null,
+				"order_view_id": null,
+				"dp_order_view_id": null,
+				"high_quality": 0,
+				"is_dp": 0,
+				"share_info": null,
+				"user_type": 0
+			}
+		],
+		"labels": [
+			{
+				"label_id": 75,
+				"content": "味道赞",
+				"label_count": 45,
+				"label_star": 5
+			}, {
+				"label_id": 39,
+				"content": "服务好",
+				"label_count": 20,
+				"label_star": 5
+			}, {
+				"label_id": 34,
+				"content": "满意",
+				"label_count": 11,
+				"label_star": 5
+			}, {
+				"label_id": 38,
+				"content": "少送错送",
+				"label_count": 5,
+				"label_star": 0
+			}, {
+				"label_id": 62,
+				"content": "贵",
+				"label_count": 4,
+				"label_star": 0
+			}, {
+				"label_id": 80,
+				"content": "早餐",
+				"label_count": 3,
+				"label_star": 5
+			}
+		],
+		"comment_categories": [],
+		"buz_code": 0,
+		"comment_praise_ratio": 90,
+		"has_more": false,
+		"friend_status_banner": {
+			"friend_status": 2,
+			"friend_status_tip": "",
+			"bind_schema": ""
+		},
+		"scores": {
+			"comment_score": 4.7,
+			"delivery_score": 4.8,
+			"quality_score": 4.6,
+			"pack_score": 4.7,
+			"show": 1
+		},
+		"comment_tip": "",
+		"tab": [
+			{
+				"comment_score_type": 0,
+				"total_count": 3683,
+				"comment_score_title": "全部"
+			}, {
+				"comment_score_type": 5,
+				"total_count": 50,
+				"comment_score_title": "有图"
+			}, {
+				"comment_score_type": 21,
+				"total_count": 51,
+				"comment_score_title": "点评(3.5分)"
+			}
+		],
+		"comments_dp": {
+			"show": 1,
+			"wm_poi_id": 495579,
+			"dp_poi_id": 4587058,
+			"title": "大众点评",
+			"comment_score": 3.5,
+			"total_count_desc": "51条到店评价",
+			"comments": []
+		}
+	},
+    }
+  },
+  components:{
+    Split,
+    Star
+  },
+  created(){
+        this.$nextTick(()=>{
+        if(!this.scroll){
+            this.scroll = new BScroll(this.$refs.ratingView,{
+            click:true
+            })
+        }else{
+            this.scroll.refresh()
+        }
+        })
+  },
+  methods:{
+    selectTypeFn(type){
+      this.selectType = type
+    },
+    formatDate(time){
+        let date = new Date(time * 1000);
+				let fmt = 'yyyy.MM.dd';
+				if(/(y+)/.test(fmt)) { // 年
+					let year = date.getFullYear().toString();
+					fmt = fmt.replace(RegExp.$1, year);
+				}
+				if(/(M+)/.test(fmt)) { // 月
+					let mouth = date.getMonth() + 1;
+					if(mouth < 10) {
+						mouth = '0' + mouth;
+					}
+					fmt = fmt.replace(RegExp.$1, mouth);
+				}
+				if(/(d+)/.test(fmt)) { // 日
+					let mydate = date.getDate();
+					if(mydate < 10) {
+						mydate = '0' + mydate;
+					}
+					fmt = fmt.replace(RegExp.$1, mydate);
+				}
+				return fmt;
+    }
+  },
+  computed:{
+    selectComments(){
+      if(this.selectType == ALL){
+        return this.ratings.comments
+      }else if(this.selectType == PICTURE){
+        let arr = []
+
+        this.ratings.comments.forEach(comment => {
+          if(comment.comment_pics.length){
+            arr.push(comment)
+          }
+        });
+        return arr
+      }else{
+        return this.ratings.comments_dp.comments
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
+.ratings {
+		position: absolute;
+		left: 0;
+		top: 4rem;
+		bottom: 0;
+		width: 100%;
+		overflow: hidden;
+	}
+	
+	.ratings .ratings-wrapper .overview {
+		padding: .2rem 0 .2rem 0;
+		display: flex;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left {
+		flex: 1;
+		padding-left: .3rem;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .comment-score {
+		float: left;
+		width: 1rem;
+		text-align: center;
+		margin-right: .2rem;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .comment-score .score {
+		font-size: .45rem;
+		font-weight: 800;
+		color: #ffb000;
+		margin-bottom: .05rem;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .comment-score .text {
+		font-size: .2rem;
+		color: #666666;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .other-score {
+		float: left;
+		margin-top: .15rem;
+		margin-left: .1rem;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .other-score .item {
+		/* height: 11px; */
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .other-score .item .text {
+		font-size: .25rem;
+		color: #666666;
+		margin-right: .3rem;
+		float: left;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .other-score .item .star {
+		float: left;
+		margin-right: 11px;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .other-score .item .score {
+		font-size: 11px;
+		color: #FFB000;
+		float: left;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-left .other-score .quality-score {
+		margin-bottom: .4rem;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-right {
+		flex: 0 0 1.8rem;
+		text-align: center;
+		border-left: .02rem solid #9D9D9D;
+	}
+	
+	.ratings .ratings-wrapper .overview .overview-right .delivery-score {}
+	
+	.ratings .ratings-wrapper .overview .overview-right .delivery-score .score {
+		font-size: .4rem;
+		font-weight: 500;
+		color: #999999;
+		margin-bottom: .1rem;
+		margin-top: .1rem;
+	}
+    
+	
+	.ratings .ratings-wrapper .overview .overview-right .delivery-score .text {
+		font-size: .2rem;
+		color: #999999;
+	}
 
+  .ratings .ratings-wrapper .content {
+		padding: .3rem;
+	}
+	
+	.ratings .ratings-wrapper .content .rating-select {
+		width: 100%;
+		box-sizing: border-box;
+		font-size: 0;
+		border: .03rem solid #FFB000;
+		border-right: 0;
+		margin-bottom: .1rem;
+		border-radius: .1rem;
+	}
+	
+	.ratings .ratings-wrapper .content .rating-select .item {
+		width: 33.3%;
+		display: inline-block;
+		height: .7rem;
+		line-height: .7rem;
+		font-size: .28rem;
+		text-align: center;
+		border-right: .02rem solid #FFB000;
+		box-sizing: border-box;
+		color: #FFB000;
+	}
+
+	
+	.ratings .ratings-wrapper .content .rating-select .item:last-child img {
+		height: .3rem;
+		vertical-align: middle;
+		display: inline-block;
+	}
+	
+	.ratings .ratings-wrapper .content .rating-select .item.active {
+		background: #FFB000;
+		color: black;
+	}
+	
+	.ratings .ratings-wrapper .content .labels-view {
+		/*margin-bottom: 14px;*/
+	}
+	
+	.ratings .ratings-wrapper .content .labels-view .item {
+		display: inline-block;
+		height: 27px;
+		line-height: 27px;
+		padding: 0 10px;
+		font-size: 12px;
+		background: #F4F4F4;
+		margin-right: 6px;
+		margin-bottom: 6px;
+		border-radius: 3px;
+		color: #999999;
+	}
+	
+	.ratings .ratings-wrapper .content .labels-view .item.highligh {
+		color: #656565;
+	}
+
+  .ratings .ratings-wrapper .content .rating-list {}
+	
+.ratings .ratings-wrapper .content .rating-list .comment-item {
+	padding: 16px 16px 16px 0;
+	border-bottom: 1px solid #F4F4F4;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-header {
+	flex: 0 0 35px;
+	margin-right: 11px;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-header img {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main {
+	flex: 1;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .user {
+	width: 50%;
+	float: left;
+	font-size: 11px;
+	color: #333333;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .time {
+	width: 50%;
+	float: right;
+	text-align: right;
+	font-size: 9px;
+	color: #666666;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .star-wrapper {
+	float: left;
+	margin-top: 12px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .star-wrapper .text {
+	color: #999999;
+	font-size: 11px;
+	float: left;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .star-wrapper .star {
+	float: left;
+	margin-left: 7px;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .c_content {
+	font-size: 13px;
+	line-height: 19px;
+	float: left;
+	width: 100%;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .c_content i {
+	color: #576b95;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .img-wrapper {
+	margin-top: 9px;
+	float: left;
+}
+
+.ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .img-wrapper img {
+	width: 175px;
+}
+
+
+/* 007 21:33:07
+//下拉刷新
+this.listScroll.on('scroll', (pos) => {
+    if (pos.y > 30) {
+        this.pullInfo="释放更新..."
+    }
+});
+
+//滑动结束松开事件
+this.listScroll.on('touchEnd',(pos) =>{
+    if (pos.y > 30) {
+        setTimeout(()=>{
+            this.pullInfo = ''
+            },1000)
+        }
+    })
+});
+007 21:40:10
+<!-- 刷新提示信息 -->
+<div class="top-tip">
+    <span class="refresh-hook">
+         <img  :src='picc' >
+    </span>
+</div> */
 </style>

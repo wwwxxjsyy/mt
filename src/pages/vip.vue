@@ -1,32 +1,47 @@
 <template>
-    <div class="mt-vip">
+    <div class="mt-vip"  >
         <!-- <h2>mt-vip</h2> -->
-        <VipHeader/>
+        <VipHeader  />
         <VieContent/>
-        <VipContent1/>
-        <VipContent2/>  
+        <VipContentred/>
+        <VipContentshop/>  
     </div>
 </template>
 
 <script>
 import VipHeader from '../components/vip/vipHeader'
 import VieContent from '../components/vip/vipContent/'
-import VipContent1 from '../components/vip/vipContent-1/'
-import VipContent2 from '../components/vip/vipContent-2'
+import VipContentred from '../components/vip/vipContentred/'
+import VipContentshop from '../components/vip/vipContentshop'
 
 export default {
     name:"MtVip",
     components:{
         VipHeader,
         VieContent,
-        VipContent1,
-        VipContent2
+        VipContentred,
+        VipContentshop
+    },
+    data() {
+        return {
+            flag:false
     }
+      
+    },
+    methods: {
+        
+    }
+    // created() {
+    //     this.$emit('scrollHeader',(flag)=>{
+    //         this.flag=flag
+    //         console.log(flag);
+    //     })
+    // },
 }
 </script>
 
 <style scoped>
 .mt-vip{
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 </style>

@@ -42,7 +42,7 @@ return {
             url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
             desc1:'我的钱包',
             desc2:'签到赢现金',
-            path:'/'
+            path:'/Mywallet'
         },
         {
             url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',

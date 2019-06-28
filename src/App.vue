@@ -1,6 +1,6 @@
 <template>
-  <div id="app" @scroll="scrollHeader()" ref="app" >
-    <router-view :isChange="flag"/>
+  <div id="app"  >
+    <router-view />
     <Mt-TabBar v-if="$route.meta.flag"/>
   </div>
 </template>
@@ -11,14 +11,17 @@ import TabBar from "./components/common/tabBar.vue"
 
 export default {
   name: 'App',
-  data(){
-    return{
-      flag:false
-    }
-  },
   components:{
+
     "Mt-TabBar":TabBar
-  },
+  }
+  // mounted(){
+  //   this.http.get('/posts').then(res=>{
+  //     console.log(res)
+  //   })
+  // },
+  ,
+  // },
   data(){
     return{
       flag:false
@@ -28,6 +31,12 @@ export default {
       scrollHeader() {
           this.flag = this.$refs.app.scrollTop == 0 ? false : true;
       }
+  },
+  mounted(){
+    this.http.post('api/home/',).then(res=>{
+      console.log(res)
+    })
+
   }
 }
 </script>
@@ -35,7 +44,7 @@ export default {
 <style>
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "微软雅黑";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* 解决苹果滑动卡顿问题king */
@@ -44,5 +53,6 @@ export default {
   height: 100%;
   width: 100%;
   overflow: scroll;
+  /* background: #fff; */
 }
 </style>

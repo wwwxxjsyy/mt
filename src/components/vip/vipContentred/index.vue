@@ -16,13 +16,13 @@
 
 <script>
 export default {
-    name:'VipContent1'
+    name:'VipContentred'
 }
 </script>
 
 <style scoped>
 .vip-content-text{
-    background:#f3f4f4;
+    background:#f2f2f2;
 }
 .vip-content-txt{
     padding-top: 0.3rem;

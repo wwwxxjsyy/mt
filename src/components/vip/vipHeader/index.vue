@@ -1,5 +1,5 @@
 <template>
-    <header class="vipHeader" :class="{bc:flag}" >
+    <header class="vipHeader bc"   >
         <div class="header">
             <span class="tit">{{title}}</span>
         </div> 
@@ -11,17 +11,31 @@
 <script>
 export default {
     name:"VipHeader",
+   
     props:{
         title:{
             type : String,
             default : '会员'
         },
-        flag:{
-            type:Boolean,
-            required:true
-        }
-    }
-}
+        // flag:{
+        //     type:Boolean,
+        //     required:true
+        // }
+    },
+    methods: {
+    //     scrollHeader() {
+    //         this.flag = this.$refs.mt-vip.scrollTop == 0 ? false : true;
+    //         console.log(this.flag)
+    //         this.$emit('scrollHeader',this.flag)
+          
+    // }
+    }, 
+
+
+    
+        
+   
+}   
 </script>
 
 <style scoped>
@@ -30,15 +44,16 @@ export default {
     top: 0 !important;
 }
 .vipHeader{
-    background: url('../../../assets/img/vipImg/bbg.png')
+    /* background: url('../../../assets/img/vipImg/bbg.png') */
+     background: linear-gradient(to right, rgba(248,243,236,0), rgba(241,229,221,1));
 }
 .tit{
-    font-size: 0.46rem;
+    font-size: 0.4rem;
     color: #333333;
     font-weight: 600;
-    height: 1.5rem;
+    height: 1.3rem;
     display: block;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     /* text-align: center; */
     display: flex;
     justify-content: center;
@@ -47,6 +62,4 @@ export default {
     position:sticky; 
     top: 0;  
 }
-
-
 </style>
