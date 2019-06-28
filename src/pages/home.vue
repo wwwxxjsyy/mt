@@ -4,9 +4,7 @@
         <mt-home-search/>
         <mt-home-recommend/>
         <mt-home-banner/>
-        <!-- <mt-home-class/> -->
-        <!-- <homeShop></homeShop> -->
-        <mt-home-class/>
+        <mt-home-class :classpic='cartinfo'/>
         <mt-home-optimization/>
         <mt-home-discount/>
         <mt-home-goodshop/>
@@ -30,6 +28,11 @@ import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
 export default {
      name:"MtHome",
+     data(){
+         return{
+             cartinfo:{}
+         }
+     },
      components:{
         "mt-home-address":Address,
         "mt-home-search":Search,
@@ -42,7 +45,12 @@ export default {
         "mt-home-toshop":Toshop,
         "mt-home-moreshop":Moreshop,
         //  homeShop
-     }
+     },
+       mounted(){
+    this.http.post('/api/home/').then(res=>{
+            this.data = res.data
+    })
+  }
 }
 </script>
 

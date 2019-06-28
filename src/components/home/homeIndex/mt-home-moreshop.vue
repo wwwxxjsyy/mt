@@ -27,6 +27,11 @@
                         </p>
                     </div>
                 </li>
+                <div class="endline">
+                    <span>
+                       已经到底啦
+                    </span>
+                </div>
             </ul>
         </div>
     </div>
@@ -333,7 +338,7 @@ export default {
 }
 .home-moreshop-foodlist ul li{
     width: 100%;
-    height: 3rem;
+    height: 2.7rem;
     display: flex;
 }
 .home-moreshop-foodlist ul li b{
@@ -385,5 +390,19 @@ export default {
     border-radius: .05rem;
     color: #ff7905;
     margin-right: .1rem;
+}
+.endline{
+    width: 100%;
+    height: .6rem;
+    /* background: red; */
+    border-top: 1px solid rgb(117, 112, 112);
+    text-align: center;
+}
+.endline span{
+    background: #fff;
+    position: relative;
+    top: -.15rem;
+    width: 2rem;
+    padding: 0 .2rem;
 }
 </style>

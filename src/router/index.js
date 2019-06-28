@@ -12,9 +12,13 @@ import RedMoney from '../components/mine/others/RedMoney'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
+
+// 首页相关路由 
+import Delicious from '../pages/delicious'//美食
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 import HomeGoods from '../pages/homegoods'
+
 //三级路由
 import HomeShopGoods from '../components/home/homeshop/goods/homeshopGoods'
 import HomeShopRatings from '../components/home/homeshop/ratings/homeshopRatings'
@@ -36,6 +40,14 @@ export default new Router({
       {
         path:"/home",
         component:Home,
+        meta: {
+          flag: true,
+          requredAuth: false
+        }
+      },
+      {
+        path: "/delicious",
+        component: Delicious
       },
       {
         path: "/homegoods",
@@ -63,15 +75,27 @@ export default new Router({
       },
       {
         path:"/vip",
-        component:Vip
+        component:Vip,
+        meta: {
+          flag: true,
+          requredAuth: false
+        }
       },
       {
         path:"/order",
-        component:Order
+        component:Order,
+        meta: {
+          flag: true,
+          requredAuth: false
+        }
       },
       {
         path:"/mine",
-        component:Mine
+        component:Mine,
+        meta: {
+          flag: true,
+          requredAuth: false
+        }
       },
       {
         path:"/login",
