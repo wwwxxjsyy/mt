@@ -75,8 +75,21 @@ export default new Router({
         }  
       },
       {
-        path:"/goods",
-        component: HomeShopGoods
+        path:"/homegoods",
+        component: HomeGoods,
+        children:[{
+          path: 'goods',
+          component: HomeShopGoods
+        },
+        {
+          path: 'ratings',
+          component: HomeShopRatings
+        },
+        {
+          path: 'seller',
+          component: HomeShopSeller
+        }
+        ]
       },
       {
         path:"/vip",

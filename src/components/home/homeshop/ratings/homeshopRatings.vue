@@ -1493,9 +1493,9 @@ export default {
 	.ratings .ratings-wrapper .content .rating-select .item {
 		width: 33.3%;
 		display: inline-block;
-		height: .7rem;
-		line-height: .7rem;
-		font-size: .28rem;
+		height: .6rem;
+		line-height: .6rem;
+		font-size: .25rem;
 		text-align: center;
 		border-right: .02rem solid #FFB000;
 		box-sizing: border-box;
