@@ -1,0 +1,424 @@
+// 轮播图
+ urlpic:[
+     路径1,路径2,路径3,路径4
+ ]
+// 分类 12个图标加文字  两个数组对象
+ classifys:[
+ {
+     pic:require('../../../../static/imgs/class/deliciousfood.png'),
+     title:'美食',
+     path:'/delicious'
+ },
+ {
+     pic:require('../../../../static/imgs/class/dessert.png'),
+     title:'甜点饮品',
+     path:'/delicious'
+ },
+ {
+     pic:require('../../../../static/imgs/class/supermarket.png'),
+     title:'超市便利',
+     path:'/delicious'
+ },
+ {
+     pic:require('../../../../static/imgs/class/deliciousfood.png'),
+     title:'蔬菜水果',
+     path:'/delicious'
+ },
+ {
+     pic:require('../../../../static/imgs/class/drugs.png'),
+     title:'送药上门',
+     path:'/delicious'
+ }
+]
+
+sclassifys:[
+    {
+        pic:require('../../../../static/imgs/class/lunch.png'),
+        title:'下午茶'
+    },
+    {
+        pic:require('../../../../static/imgs/class/porridge.png'),
+        title:'包子粥铺'
+    },
+    {
+        pic:require('../../../../static/imgs/class/fastfood.png'),
+        title:'面包蛋糕'
+    },
+    {
+        pic:require('../../../../static/imgs/class/porridge.png'),
+        title:'汉堡披萨'
+    },
+    {
+        pic:require('../../../../static/imgs/class/delivery.png'),
+        title:'减免配送费'
+    },
+    {
+        pic:require('../../../../static/imgs/class/allowance.png'),
+        title:'津贴联盟'
+    },
+    {
+        pic:require('../../../../static/imgs/class/specialdelivery.png'),
+        title:'美团专送'
+    },
+    {
+        pic:require('../../../../static/imgs/class/shop.png'),
+        title:'到店自取'
+    },
+    {
+        pic:require('../../../../static/imgs/class/errands.png'),
+        title:'跑腿代购'
+    },
+    {
+        pic:require('../../../../static/imgs/class/class.png'),
+        title:'全部分类'
+    }
+]
+
+// 午餐优选 两个表  上面四个商品一个对象   下面两个菜品一对象
+
+foodlist: [
+    {
+      foodpic:
+        "http://p1.meituan.net/waimaipoi/53aa85e899e2dc4ab7f59a12fcb75aad7947.jpeg",
+      shopname: "三米粥铺  (科学营养的好粥)",
+      recommend: "根据您看过的店推荐",
+      shoppic:
+        "http://userimages15.51sole.com/20170912/b_4056735_201709121533535225.jpg"
+    },
+    {
+      foodpic:
+        "http://p1.meituan.net/waimaipoi/53aa85e899e2dc4ab7f59a12fcb75aad7947.jpeg",
+      shopname: "三米粥铺  (科学营养的好粥)",
+      recommend: "根据您看过的店推荐",
+      shoppic:
+        "http://userimages15.51sole.com/20170912/b_4056735_201709121533535225.jpg"
+    },
+    {
+      foodpic:
+        "http://p1.meituan.net/waimaipoi/53aa85e899e2dc4ab7f59a12fcb75aad7947.jpeg",
+      shopname: "三米粥铺  (科学营养的好粥)",
+      recommend: "根据您看过的店推荐",
+      shoppic:
+        "http://userimages15.51sole.com/20170912/b_4056735_201709121533535225.jpg"
+    },
+    {
+      foodpic:
+        "http://p1.meituan.net/waimaipoi/53aa85e899e2dc4ab7f59a12fcb75aad7947.jpeg",
+      shopname: "三米粥铺  (科学营养的好粥)",
+      recommend: "根据您看过的店推荐",
+      shoppic:
+        "http://userimages15.51sole.com/20170912/b_4056735_201709121533535225.jpg"
+    }
+  ]
+
+goodfood: [
+    {
+      foodmenu: "ᅳ 西北菜菜品 ᅳ",
+      foodname: "肥牛砂锅宽粉",
+      foodprice: "￥ 22.98",
+      foodpic:
+        "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2444544723,2403570976&fm=11&gp=0.jpg",
+      backgroundimg:
+        "http://p0.meituan.net/waimaipoi/148d237f8a27f5a64a5df4c21a99c4c9121765.jpg"
+    },
+    {
+      foodmenu: "ᅳ 新疆菜精选 ᅳ",
+      foodname: "大盘鸡单人套餐",
+      foodprice: "￥ 22.98",
+      foodpic:
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561478282907&di=7954067a9bda931af6bc0bb75a3f6620&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fbainuo%2Fcrop%3D0%2C14%2C690%2C418%3Bw%3D470%3Bq%3D79%2Fsign%3Db425143333d3d539d572558307b7c561%2F55e736d12f2eb938e69f4e3fd0628535e4dd6f08.jpg",
+      backgroundimg:
+        "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1308201291,2809421273&fm=26&gp=0.jpg"
+    }
+  ]
+
+// 优惠专区 两个数组 上面两个店铺信息   下面数组四个对象
+discountlist:[
+    {
+        title:'天天特惠',
+        name:'今夜不打烊',
+        discount:'满减两折起',
+        backgroundimg:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=130943566,2416302647&fm=11&gp=0.jpg'
+    },
+    {
+        title:'餐餐特价',
+        name:'经典人气宵夜',
+        discount:'精选小食5折',
+        backgroundimg:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=130943566,2416302647&fm=11&gp=0.jpg'
+    }
+]
+
+moreslist:[
+    {
+        name:"安全可靠",
+        title:'24小时送药',
+        imgs:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561489353908&di=e28e9547f53e88b205d37cb1a068810f&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn4%2Fjfs%2Ft8962%2F104%2F1404008905%2F281435%2F522b649c%2F59b8a529N2164d192.jpg'
+    },
+    {
+        name:"必吃",
+        title:'6折觅好味',
+        imgs:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561488566784&di=f6c541996682ed8fd53a16b0d6a62376&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201504%2F22%2F20150422H2139_YwBTZ.thumb.224_0.jpeg'
+    },
+    {
+        name:"生日花礼",
+        title:'鲜花低至99',
+        imgs:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1003086202,1774654568&fm=15&gp=0.jpg'
+    },
+    {
+        name:"跑腿帮买",
+        title:'24小时为您服务',
+        imgs:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561488566784&di=f6c541996682ed8fd53a16b0d6a62376&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201504%2F22%2F20150422H2139_YwBTZ.thumb.224_0.jpeg'
+    }
+]
+
+//推荐的店铺 一家  一个数据
+
+goodsshop:[
+    {
+        shopname:'大尚龙虾.烧烤.虾尾',
+        shopimgs:'../../../../static/imgs/banner/banner2.png',
+        shoppic:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3422724315,104055540&fm=26&gp=0.jpg',
+        discount:[
+            '5减5',
+            '50减25',
+            '100减50',
+            '200减100'
+        ],
+        shoptheme:'麻辣.鲜香 挑战您的味蕾',
+        foodpic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=312258124,3153780786&fm=26&gp=0.jpg',
+        foodname:'秘制！麻辣大龙虾 鲜香美味的小龙虾',
+        foodprice:'￥16.0',
+        originalprice:'￥32.8'
+    }
+]
+
+// 到店自取 一个表 6-8个店铺  多点好看点 随意
+
+shoplists:[
+    {
+        shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
+        shopname:'喜唐精致水饺(好吃的水饺)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }
+        ]
+    },
+    {
+        shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
+        shopname:'喜唐精致水饺(好吃的水饺)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
+        shopname:'喜唐精致水饺(好吃的水饺)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
+        shopname:'喜唐精致水饺(好吃的水饺)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
+        shopname:'喜唐精致水饺(好吃的水饺)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
+        shopname:'喜唐精致水饺(好吃的水饺)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
+        shopname:'喜唐精致水饺(好吃的水饺)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    }
+]
+
+// 附近商家 一个表   多个店铺 这里店铺很多 下拉是一直有的  应该加载的是全部店铺 
+foodslist:[
+    {
+        foodpic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1649352314,3326472692&fm=15&gp=0.jpg',
+        foodname:'一只酸奶牛(唐延路T11店)',
+        foodscore:'4.7',
+        foodnum:'1045',
+        time:'38分钟 2.7km',
+        pickup:'20',
+        giveprice:'3.5',
+        percapita:'23',
+        ranking:'雁塔区甜品人气第四名',
+        offer:[
+            {
+                title:'16减4',
+                clolr:'red'
+            },
+            {
+                title:'24减9',
+                clolr:'red'
+            },
+            {
+                title:'16减4',
+                clolr:'red'
+            },
+            {
+                title:'16减4',
+                clolr:'red'
+            }
+        ]
+    },
+    {
+        foodpic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1649352314,3326472692&fm=15&gp=0.jpg',
+        foodname:'一只酸奶牛(唐延路T11店)',
+        foodscore:'4.7',
+        foodnum:'1045',
+        time:'38分钟 2.7km',
+        pickup:'20',
+        giveprice:'3.5',
+        percapita:'23',
+        ranking:'雁塔区甜品人气第四名',
+        offer:[
+            {
+                title:'16减4',
+                clolr:'red'
+            },
+            {
+                title:'24减9',
+                clolr:'red'
+            },
+            {
+                title:'16减4',
+                clolr:'red'
+            },
+            {
+                title:'16减4',
+                clolr:'red'
+            }
+        ]
+    }
+]

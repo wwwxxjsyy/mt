@@ -3,7 +3,11 @@
     <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
+<<<<<<< HEAD
     <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
+=======
+    <router-link to='/home' v-show="isLogin" class="MineHeaderLogo">
+>>>>>>> 6edbf37e79b291684928f3aae35433766f601f0b
       <img :src="imgUrl" alt>
     </router-link>
 
