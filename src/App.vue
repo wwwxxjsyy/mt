@@ -13,12 +13,28 @@ export default {
   name: 'App',
   components:{
     "Mt-TabBar":TabBar
-  }
+  },
   // mounted(){
   //   this.http.get('/posts').then(res=>{
   //     console.log(res)
   //   })
   // },
+  // },
+  data(){
+    return{
+      flag:false
+    }
+  },
+  methods: {
+      scrollHeader() {
+          this.flag = this.$refs.app.scrollTop == 0 ? false : true;
+      }
+  },
+  mounted(){
+    this.http.post('api/home/',).then(res=>{
+      console.log(res)
+    })
+  }
 }
 </script>
 
