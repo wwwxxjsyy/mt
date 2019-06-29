@@ -3,7 +3,14 @@
     <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
+<<<<<<< HEAD
+    <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
+=======
     <router-link to='/home' v-show="isLogin" class="MineHeaderLogo">
+<<<<<<< HEAD
+=======
+>>>>>>> 6edbf37e79b291684928f3aae35433766f601f0b
+>>>>>>> b08faa03246d0916667b369669d95d46daeee43d
       <img :src="imgUrl" alt>
     </router-link>
 
@@ -48,6 +55,7 @@ export default {
   background: #f7f7f7;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   top: 0;
   position: sticky;
 }
@@ -69,7 +77,10 @@ export default {
 }
 .mine-icon a {
   display: inline-block;
-  font-size: 50px;
-  padding-right:.4rem;
+  font-size: .5rem;
+
+}
+.mine-icon a:first-child{
+  margin-right: .4rem;
 }
 </style>

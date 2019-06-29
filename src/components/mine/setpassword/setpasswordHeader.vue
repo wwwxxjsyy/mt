@@ -1,10 +1,10 @@
 <template>
-   <div class="plus-address-header">
-        <div class="back">
+<div class='setpassword-header'>
+    <div class="back">
            <i class="iconfont" @click="returnOut" v-html="icon"></i>
-            <span>新增收货地址</span>
-        </div>
-   </div>
+            <span>设置密码</span>
+    </div>
+</div>
 </template>
 
 <script>
@@ -13,23 +13,23 @@ export default {
 components: {},
 data() {
 return {
-     icon:'&#xe607;'
+    icon:'&#xe607;'
 };
 },
 computed: {},
 watch: {},
 methods: {
-     returnOut(){
+    returnOut(){
         window.history.back()
     }
 },
 
 }
 </script>
-<style scoped>
-.plus-address-header {
+<style  scoped>
+.setpassword-header {
     width: 100%;
-    height: 1.2rem;
+    height: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,16 +41,16 @@ methods: {
     z-index: 2000;
 }
 
-.plus-address-header .back {
+.setpassword-header .back {
     display: flex;
 }
 
-.plus-address-header .back>i {
+.setpassword-header .back>i {
     font-size: .5rem;
-    color: #333;
+    color: #ffdea1;
 }
-.plus-address-header .back>span {
-    margin-left: 1.7rem;
+.setpassword-header .back>span {
+    margin-left: 2rem;
     font-size: .4rem;
     color: black;
 }

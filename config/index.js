@@ -12,7 +12,11 @@ module.exports = {
       '/api': {
         // target: 'http://jsonplaceholder.typicode.com/',//后端接口地址
         // target:'http://10.35.161.31:9001/',
+<<<<<<< HEAD
         // target:'http://10.35.162.134:8000',
+=======
+        target:'http://10.35.162.134:8000/',
+>>>>>>> b08faa03246d0916667b369669d95d46daeee43d
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
             '^/api': '/api',//重写,

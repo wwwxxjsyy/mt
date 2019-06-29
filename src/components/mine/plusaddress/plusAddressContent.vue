@@ -60,17 +60,17 @@ export default {
 }
 .editAddress > div {
   margin-left: 0.5rem;
-  height: 1.32rem;
-  line-height: 1.32rem;
-  border-bottom: 2px solid #e4e4e4;
-  font-size: 0.35rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  border-bottom: 1px solid #e4e4e4;
+  font-size: 0.3rem;
 }
 .editAddress .input-wrap {
-  height: 1.2rem;
-  font-size: 0.3rem;
+  height: 1rem;
+  font-size: 0.28rem;
   border: 0;
   width: 70%;
-  padding-left: 0.4rem;
+  padding-left: 0.3rem;
   outline: 0;
 }
 .editAddress .receive-address {
@@ -85,7 +85,7 @@ export default {
 .editAddress .receive-address .location {
   background: url("../../../assets/minePic/location.png") no-repeat 0 50%;
   background-size: 0.3rem;
-  margin-left: 1.7rem;
+  margin-left: 1.4rem;
   width: 70%;
   height: 100%;
   overflow: hidden;
@@ -94,11 +94,11 @@ export default {
 }
 .editAddress .gender {
   display: flex;
-  padding-left: 1.4rem;
+  padding-left: 1.7rem;
 }
 .editAddress .gender .select-man {
   display: inline-block;
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
 }
 .editAddress .gender .select-man input {
   display: none;
@@ -129,10 +129,10 @@ export default {
 
 .editAddress > input {
   border: none;
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   color: #333;
   width: 70%;
-  height: 1.32rem;
+  height: 1.3rem;
   text-align: center;
 }
 .editAddress .detailAddress {
@@ -157,12 +157,12 @@ export default {
   margin: 0 0.32rem;
 }
 .saveAddress {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   background-image: linear-gradient(135deg, #ffd266 0%, #ffbd27 100%);
   border-radius: 0.08rem;
   text-align: center;
-  height: 1rem;
+  height: 1.1rem;
   font-size: 0.3rem;
-  line-height: 1rem;
+  line-height: 1.1rem;
 }
 </style>

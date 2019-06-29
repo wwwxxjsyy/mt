@@ -1,10 +1,10 @@
 <template>
     <div class="class">
         <ul>
-            <li v-for="(item,index) in classifys" :key="index" class="home-class-blist">
+            <router-link tag="li" :to="item.path" v-for="(item,index) in classifys" :key="index" class="home-class-blist">
                 <span><img :src="item.pic"></span>
                 <b>{{item.title}}</b>
-            </li>
+            </router-link>
           
         </ul>
           <ul>
@@ -25,23 +25,28 @@ export default {
             classifys:[
                 {
                     pic:require('../../../../static/imgs/class/deliciousfood.png'),
-                    title:'美食'
+                    title:'美食',
+                    path:'/delicious'
                 },
                 {
                     pic:require('../../../../static/imgs/class/dessert.png'),
-                    title:'甜点饮品'
+                    title:'甜点饮品',
+                    path:'/delicious'
                 },
                 {
                     pic:require('../../../../static/imgs/class/supermarket.png'),
-                    title:'超市便利'
+                    title:'超市便利',
+                    path:'/delicious'
                 },
                 {
                     pic:require('../../../../static/imgs/class/deliciousfood.png'),
-                    title:'蔬菜水果'
+                    title:'蔬菜水果',
+                    path:'/delicious'
                 },
                 {
                     pic:require('../../../../static/imgs/class/drugs.png'),
-                    title:'送药上门'
+                    title:'送药上门',
+                    path:'/delicious'
                 }
             ],
             sclassifys:[
