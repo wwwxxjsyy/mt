@@ -31,11 +31,8 @@ methods: {
 <style  scoped>
 .address-header {
     width: 100%;
-<<<<<<< HEAD
     height: 1rem;
-=======
-    height: 1.3rem;
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
+    line-height: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,21 +49,13 @@ methods: {
 }
 
 .address-header .back>i {
-<<<<<<< HEAD
     font-size: .35rem;
-=======
-    font-size: .5rem;
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
     color:#757575;
 }
 .address-header .back>span {
     display: inline-block;
     margin-left: .3rem;
-<<<<<<< HEAD
     font-size: .35rem;
-=======
-    font-size: .4rem;
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
     color: black;
 }
 

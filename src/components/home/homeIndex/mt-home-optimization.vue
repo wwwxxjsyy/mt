@@ -2,7 +2,7 @@
   <div class="optimization">
     <div class="home-optimization-title">
       <h2>午餐优选</h2>
-      <span class="home-optimization-more iconfont">更多&#xe60a;</span>
+      <span class="home-optimization-more iconfont" @click="$router.push('/superior')">更多&#xe60a;</span>
     </div>
     <div class="home-optimization-food">
       <ul>
@@ -129,6 +129,7 @@ export default {
   width: 100%;
   height: 0.6rem;
   padding: 0.1rem;
+
 }
 .home-optimization-title h2 {
   font-size: .3rem;

@@ -4,9 +4,8 @@
                 <span class="iconfont" @click="$router.back()">&#xe682;</span>
                 <h3>为你优选</h3>
             </div>
-            <ul>
+            <ul @click="$router.push('/homegoods')">
                 <li v-for="(items,index) in foodslist" :key="index"> 
-                    <!-- <img :src="items.foodpic"> -->
                     <div class="home-moreshop-foodinfo">
                         <div class="home-moreshop-img"></div>
                         <div class="home-moreshop-msg">
@@ -22,14 +21,14 @@
                         
                     </div>
                     <div class="home-goods-img">
-                        <div class="home-goods-img-left">111</div>
+                        <div class="home-goods-img-left"></div>
                         <div class="home-goods-img-right">
-                            <div>1111</div>
-                            <div>1111</div>
+                            <div class="home-goods-img-top"></div>
+                            <div class="home-goods-img-bottom"></div>
                         </div>
                     </div>
                     <div class="home-moreshop-comment">
-                        <div>顾客说<span>骑士辛苦了</span></div> 
+                        <div>顾客说:<span> 骑士辛苦了</span></div> 
                     </div>
                 </li>
             </ul>
@@ -61,14 +60,7 @@ export default {
                             title:'24减9',
                             clolr:'red'
                         },
-                        {
-                            title:'16减4',
-                            clolr:'red'
-                        },
-                        {
-                            title:'16减4',
-                            clolr:'red'
-                        }
+                       
                     ]
                 },
                 {
@@ -90,14 +82,7 @@ export default {
                             title:'24减9',
                             clolr:'red'
                         },
-                        {
-                            title:'16减4',
-                            clolr:'red'
-                        },
-                        {
-                            title:'16减4',
-                            clolr:'red'
-                        }
+                     
                     ]
                 },
                 {
@@ -111,14 +96,7 @@ export default {
                     percapita:'23',
                     ranking:'雁塔区甜品人气第四名',
                     offer:[
-                        {
-                            title:'16减4',
-                            clolr:'red'
-                        },
-                        {
-                            title:'24减9',
-                            clolr:'red'
-                        },
+                       
                         {
                             title:'16减4',
                             clolr:'red'
@@ -146,11 +124,20 @@ img{
     height:inherit;
 }
 .header{
-    height:.6rem;
-    line-height: .6rem;
+    width:100%;
+    height:1rem;
+    line-height: 1rem;
+    position: fixed;
+    top:0;
+    z-index:9;
+    display: flex;
+    justify-content:center;
+    background: rgb(244, 244, 244);
+    box-shadow: 2px 2px 3px #ccc;
 }
 .header span{
-    float:left;
+    position:absolute;
+    left:0;
 }
 .header h3{
     font-weight: 600;
@@ -161,15 +148,15 @@ img{
 .home-moreshop-foodlist{
     width:100%;
     background: #eee;
-    padding:.2rem;
 }
 .home-moreshop-foodlist ul {
     width: 100%;
-    margin-top: .3rem;
+    margin-top: 1rem;
     margin-bottom: .2rem;
     background: #eee;
     border-radius: .2rem;
-    box-shadow: 3px 3px 3px 0px #ccc;
+    padding:.2rem;
+    
 
 }
 .home-moreshop-foodlist ul li{
@@ -181,6 +168,7 @@ img{
     margin-bottom:.2rem;
     background: #fff;
     border-radius: .2rem;
+    box-shadow: 5px 5px 5px #ccc;
 }
 .home-moreshop-foodlist ul li b{
     width: 100%;
@@ -189,6 +177,7 @@ img{
     display: flex;
     justify-content: space-between;
     line-height: .5rem;
+
 }
 .home-moreshop-foodlist ul li img{
     width: 2.8rem;
@@ -196,9 +185,11 @@ img{
 }
 .home-moreshop-foodlist ul li b span{
     font-size: .4rem;
+    width:100%;
 
 }
 .home-moreshop-foodlist ul li p{
+    width:100%;
         display: inline-block;
     line-height: .4rem;
 }
@@ -267,14 +258,26 @@ img{
     width:60%;
     background: #ffd574;
     margin-right: 1px;
+     height:3rem;
 }
 .home-goods-img-right{
     width:40%;
+     height:3rem;
     background: #fde8b6;
+}
+.home-goods-img-top{
+    width:100%;
+    height:50%;
+    background: #eee2c6;
+}
+.home-goods-img-bottom{
+    width:100%;
+    height:50%;
+    background: #b6b4b0;
 }
 .home-moreshop-comment{
     height:.6rem;
-    background: #ccc;
+    background: #eee;
     margin-top: .1rem;
     border-radius: .1rem;
     padding-left:.2rem;

@@ -85,7 +85,6 @@ export default new Router({
         }  
       },
       {
-<<<<<<< HEAD
         name:"selectAddress",
         path:"/selectAddress",
         component:selectAddress,
@@ -104,9 +103,6 @@ export default new Router({
         }  
       },
       {
-        path:"/goods",
-        component: HomeShopGoods
-=======
         path:"/homegoods",
         component: HomeGoods,
         children:[{
@@ -122,7 +118,6 @@ export default new Router({
           component: HomeShopSeller
         }
         ]
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
       },
       {
         path:"/vip",
@@ -281,7 +276,6 @@ export default new Router({
         path:'/MyAccount',
         component:MyAccount
       },
-<<<<<<< HEAD
       {
         path:'/Comp',
         component:Comp
@@ -291,8 +285,6 @@ export default new Router({
         component:Superior
       },
  
-=======
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
       {
         path:"**",
         redirect:"/home"

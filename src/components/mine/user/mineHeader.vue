@@ -1,21 +1,13 @@
 <template>
   <div class="mine-header">
-    <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
+    <router-link to='/registerLogin' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
-<<<<<<< HEAD
-    <router-link to='/home' v-show="isLogin" class="MineHeaderLogo">
-      <img :src="imgUrl" alt>
-    </router-link>
-
-    <a  href="#/registerLogin" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
-=======
     <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
-    <a  href="#/login" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
-    <a  class="MineName" v-show="isLogin">{{isLogin}}</a>
+    <a  href="#/registerLogin" class="MineName"  v-show="!isLogin">登录/注册</a>
+    <a  class="MineName" v-show="isLogin">{{userInfo.u_username}}</a>
     <div class="mine-icon">
       <a href="#" class="iconfont" v-for="item in headerIcon" v-html="item" :key="item"></a>
     </div>
@@ -30,6 +22,7 @@ export default {
       imgUrl: require("../../../assets/minePic/logo.gif"),
       headerIcon: ["&#xe601;", "&#xe69a;"],
       flag:false,
+      isLogin:""
     };
   },
   computed: {
@@ -39,11 +32,13 @@ export default {
   methods: {
 
   },
-  created() {},
+  created() {
+    this.isLogin=localStorage.getItem('mt_login')
+  },
   mounted() {},
   // 登录后传入随机验证码
   props:{
-    isLogin:String,
+    userInfo:{},
     default:'未登录'
   }
 };

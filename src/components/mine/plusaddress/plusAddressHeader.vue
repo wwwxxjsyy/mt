@@ -29,11 +29,7 @@ methods: {
 <style scoped>
 .plus-address-header {
     width: 100%;
-<<<<<<< HEAD
     height: 1rem;
-=======
-    height: 1.2rem;
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,22 +46,13 @@ methods: {
 }
 
 .plus-address-header .back>i {
-<<<<<<< HEAD
-    font-size: .35rem;
-=======
     font-size: .5rem;
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
     color: #333;
 
 }
 .plus-address-header .back>span {
-<<<<<<< HEAD
     margin-left: 2rem;
     font-size: .35rem;
-=======
-    margin-left: 1.7rem;
-    font-size: .4rem;
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
     color: black;
 }
 </style>

@@ -92,10 +92,11 @@ export default {
       // $("#btnSendCode1").css({color:"#eee"})
        this.InterValObj1 = window.setInterval(this.SetRemainTime1, 1000); //启动计时器，1秒执行一次
       //向后台发送处理数据
-      // -this.axios.get('/user/check_code/',{'phone':this.phone}).then(res=>{
-        //   ---  console.log(res)//打印后端的响应
+      this.$axios.get('/user/check_code/?phone='+this.phone).then(res=>{
+        console.log(res)//打印后端的响应
+            console.log(res.data.msg)//打印后端的响应
             alert("发送成功")
-        // ---}) 
+       }) 
     },
     SetRemainTime1() {
       if (this.curCount1 == 0) {
@@ -115,22 +116,23 @@ export default {
             "code":this.code,
         }
         this.$router.push('/mine')
-        // this.$axios.post('/user/code_login/',{"phone":"18821687723","code":this.this.code}).then(res=>{
-        //     //打印登陆成功信息   登陆成功
-        //     存储token在localStory中
-        //     localStorage.setItem("mt_login", res.token);
-        //     //存储在vuex中
-        //     this.$store.dispatch("setUser",'T123')
-        //     this.$router.push('/mine')
-        //     // 发送请求比对成功，跳转路由，我的页面
-        //         // alert("验证码错误")
-        // }).catch(err =>{
-          // 返回错误信息
-            // this.errors = {
-            //   msg: err.response.data.msg
-            // };
-          // }
-        // })   
+        this.$axios.post('/user/code_login/',{"phone":"18821687723","code":this.this.code}).then(res=>{
+            //打印登陆成功信息   登陆成功
+            console.log(res)
+            存储token在localStory中
+            localStorage.setItem("mt_login", true);
+            localStorage.setItem("mt_token", res,token);
+            //存储在vuex中
+            this.$store.dispatch("setUser",this.phone)
+            this.$router.push('/mine')
+            // 发送请求比对成功，跳转路由，我的页面
+                // alert("验证码错误")
+        }).catch(err =>{
+          返回错误信息
+            this.errors = {
+              msg: err.response.data.msg
+            };
+        })   
     },
     //密码登录提交
     toggleLogin2(){
@@ -139,18 +141,20 @@ export default {
             "password":this.password,
         }
         this.$router.push('/mine')
-        // this.$axios.post('/user/code_login/',formData).then(res=>{
-        //     if(res.code==200){
-        //     //打印登陆成功信息   登陆成功
-        //     console.log(res.msg)
-        //     //存储在vuex中
-        //     this.$store.dispatch("setUser",'T123')
-        //     this.$router.push('/mine')
-        //     // 发送请求比对成功，跳转路由，我的页面
-        //     }else{
-        //          alert("账号或密码错误")
-        //     }
-        // })
+        this.$axios.post('/user/code_login/',formData).then(res=>{
+            if(res.code==200){
+            //打印登陆成功信息   登陆成功
+            console.log(res.msg)
+            localStorage.setItem("mt_login", true);
+            localStorage.setItem("mt_token", res,token);
+            //存储在vuex中
+            this.$store.dispatch("setUser",'T123')
+            this.$router.push('/mine')
+            // 发送请求比对成功，跳转路由，我的页面
+            }else{
+                 alert("账号或密码错误")
+            }
+        })
         
     }
   }
@@ -197,13 +201,12 @@ export default {
     height: 1rem;
     position: relative;
     top:.5rem;
-    /* padding-left: 16px; */
     outline: none;
     border: 1px solid #999;
     -webkit-transition: ease all 0.5s;
     transition: ease all 0.5s;
-    border-radius: 5px;
-    font-size: 24px;
+    border-radius: .2rem;
+    font-size: 3rem;
 }
 .btn-default{
   border:none;

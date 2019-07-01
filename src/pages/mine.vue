@@ -1,10 +1,10 @@
 <template>
   <div class="mt-mine">
-    <mineHeader :isLogin='currentUser'/>
-    <mineVip/>
-    <mineList/>
-    <mineContent/>
-    <Footer/>
+    <mineHeader :userInfo="userInfo"/>
+    <mineVip :userInfo="userInfo"/>
+    <mineList :userInfo="userInfo"/>
+    <mineContent :userInfo="userInfo"/>
+    <Footer :userInfo="userInfo"/>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
   },
   data(){
     return {
-      currentUser:"",
+      userInfo:{}
     }
   },
   computed:{
@@ -32,26 +32,20 @@ export default {
               return this.$store.getters.currentUser
       }
         
-<<<<<<< HEAD
   },
   created(){
     // 向后端请求数据
-    // this.currentUser=currentUser
-    // this.$axios.post('/user/code_login/',this.currentUser).then(res=>{
-        //     if(res.code==200){
-        //     //打印登陆成功信息   登陆成功
-        //     console.log(res.msg)
-        //     //存储在vuex中
-        //     this.$store.dispatch("setUser",'T123')
-        //     this.$router.push('/mine')
-        //     // 发送请求比对成功，跳转路由，我的页面
-        //     }else{
-            // this.$store.dispatch("setUser",null)
-        //          alert("账号或密码错误")
-        //     }
-        // })
-=======
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
+    if(currentUser){
+      this.$axios.post('/user/code_login/',currentUser).then(res=>{
+        //打印登陆成功信息   登陆成功
+        console.log(res.msg)
+        this.userInfo=res.data
+      })
+    }else{
+      alert("请先登陆")
+      this.$router.push('/registerLogin')
+    }
+    
   }
 };
 </script>

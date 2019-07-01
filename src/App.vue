@@ -14,14 +14,6 @@ export default {
   components:{
     "Mt-TabBar":TabBar
   },
-<<<<<<< HEAD
-=======
-  // mounted(){
-  //   this.http.get('/posts').then(res=>{
-  //     console.log(res)
-  //   })
-  // },
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
   data(){
     return{
       flag:false
@@ -58,7 +50,6 @@ export default {
         self.getLngLatLocation()
       }
     })
-<<<<<<< HEAD
     },
     getLngLatLocation(){
           var self=this
@@ -106,9 +97,6 @@ export default {
   //     console.log(res)
   //   })
   // }
-=======
-  }
->>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
 }
 </script>
 
