@@ -19,7 +19,10 @@ import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
+<<<<<<< HEAD
 import SetPassword from '../components/mine/others/SetPassword'
+=======
+>>>>>>> 687c9a4a7138af584ae7fa9e64b58e4e1fff9f0a
                               // order
       // 待评价
 import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
@@ -74,26 +77,26 @@ export default new Router({
       {
         path:"/home",
         component:Home,
+<<<<<<< HEAD
         meta: {
           flag: true,
           requredAuth: false
         }
+=======
+        meta:{
+          flag:true,
+          requredAuth:true
+        }  
+>>>>>>> 687c9a4a7138af584ae7fa9e64b58e4e1fff9f0a
       },
       {
-        path: "/delicious",
-        component: Delicious,
-        meta: {
-          flag: true,
-          requredAuth: true
-        },
-      },
-      {
-        path: "/homegoods",
+        path:"/homegoods",
         component: HomeGoods,
-        meta: {
-          flag: false,
-          requredAuth: false
+        children:[{
+          path: 'goods',
+          component: HomeShopGoods
         },
+<<<<<<< HEAD
         children: [
           {
             path: "goods",
@@ -114,6 +117,17 @@ export default new Router({
       {
         path:"/goods",
         component: HomeShopGoods
+=======
+        {
+          path: 'ratings',
+          component: HomeShopRatings
+        },
+        {
+          path: 'seller',
+          component: HomeShopSeller
+        }
+        ]
+>>>>>>> 687c9a4a7138af584ae7fa9e64b58e4e1fff9f0a
       },
       {
         path:"/vip",
@@ -264,11 +278,6 @@ export default new Router({
         path:'/MyAccount',
         component:MyAccount
       },
-      {
-        path:'/SetPassword',
-        component:SetPassword
-      },
- 
       {
         path:"**",
         redirect:"/home"
