@@ -16,6 +16,8 @@ import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
+import History from '../components/vip/viphistory/'
+import RedPack from '../components/vip/vipredpack/'
                               // order
       // 待评价
 import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
@@ -111,6 +113,23 @@ export default new Router({
       {
         path:'/vipOpen',
         component:VipOpen,
+        meta:{
+          flag:false,
+          requredAuth:false
+        }   
+      },
+
+      {
+        path:'/viphistory',
+        component:History,
+        meta:{
+          flag:false,
+          requredAuth:false
+        }   
+      },
+      {
+        path:'/vipredpack',
+        component:RedPack,
         meta:{
           flag:false,
           requredAuth:false

@@ -1,7 +1,8 @@
 <template>
     <div class="vip-content-text">
         <div class="vip-content-txt">
-            <span class="privi">特权2</span><h1>限时抢购加量包</h1>
+            <span class="privi">特权2</span>
+            <h1>限时抢购加量包</h1>
             <p class="vip-common">仅限在本期会员有效期内购买、使用</p> 
             <ul>
                 <li><img src="../../../assets/img/vipImg/redpack.png" alt=""></li>
@@ -36,7 +37,7 @@ export default {
     height: 0.3rem;
     background: #1b252f;
     color: #e3cdbc;
-    font-size: 0.34rem;
+    font-size: 0.3rem;
     border-radius: 0.1rem;
     margin-left: 0.2rem;
     padding: 0.01rem 0.1rem;

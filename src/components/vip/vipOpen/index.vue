@@ -230,12 +230,12 @@ padding: 0 0.1rem;
     bottom: 0.1rem;
     display: flex;
     justify-content: center;
-        padding: 0 36px;
+    padding: 0 36px;
   
 }
 .vipPay-content{
     width: 100%;
-    height: 0.76rem;
+    height: 0.9rem;
     display: flex;
     justify-content: space-between;
 
@@ -243,14 +243,14 @@ padding: 0 0.1rem;
 }
 .vipPay-content>span{
     color: #e85b4d;
-    line-height: 0.76rem;
+    line-height: 0.9rem;
     /* text-align: center; */
     padding-left: 0.66rem;
     display: block;
     background: #ffffff;
     width: 68%;
-    border-top-left-radius: 60px;
-    border-bottom-left-radius: 60px;
+    border-top-left-radius: 70px;
+    border-bottom-left-radius: 70px;
     font-size: .3rem;
     font-weight: 700;
 }
@@ -261,13 +261,13 @@ padding: 0 0.1rem;
 }
 .vipPay-content>a{
     color: #573c29;
-    line-height: 0.76rem;
+    line-height: 0.9rem;
     text-align: center;
     display: block;
     width: 32%;
-    background: linear-gradient(to right, rgba(248,243,236,0), rgba(208,163,132,1));
-     border-top-right-radius: 60px;
-    border-bottom-right-radius: 60px;
+    background: linear-gradient(to right, rgba(248,243,236,0.5), rgba(208,163,132,1));
+     border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
     font-size: .34rem;
 
 }
