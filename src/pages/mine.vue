@@ -13,33 +13,42 @@ import mineHeader from "../components/mine/user/mineHeader";
 import mineVip from "../components/mine/user/mineLinkVip";
 import mineList from "../components/mine/user/mineList";
 import mineContent from "../components/mine/user/mineContent";
-<<<<<<< HEAD
-import Footer from '../components/common/tabBar'
-=======
 import{getStore} from "../config/mUtils"
->>>>>>> dandan
 export default {
   name: "MtMine",
   components: {
     mineHeader,
     mineVip,
     mineList,
-<<<<<<< HEAD
-    mineContent,
-    Footer
-=======
     mineContent
   },
+  data(){
+    return {
+      currentUser:"",
+    }
+  },
   computed:{
-    // this.http.get('/check_code/?phone=18821687723').then(res=>{
-        // console.log(res)
+      currentUser(){
+              return this.$store.getters.currentUser
+      }
+        
+  },
+  created(){
+    // 向后端请求数据
+    // this.currentUser=currentUser
+    // this.$axios.post('/user/code_login/',this.currentUser).then(res=>{
+        //     if(res.code==200){
+        //     //打印登陆成功信息   登陆成功
+        //     console.log(res.msg)
+        //     //存储在vuex中
+        //     this.$store.dispatch("setUser",'T123')
+        //     this.$router.push('/mine')
+        //     // 发送请求比对成功，跳转路由，我的页面
+        //     }else{
+            // this.$store.dispatch("setUser",null)
+        //          alert("账号或密码错误")
+        //     }
         // })
-        
-        currentUser(){
-                return this.$store.getters.currentUser
-            }
-        
->>>>>>> dandan
   }
 };
 </script>

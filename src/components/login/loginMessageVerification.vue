@@ -37,7 +37,7 @@ export default {
     return {
       time: 10, // 发送验证码倒计时
       sendMsgDisabled: true,
-      phone:'',
+      phone:null,
       numArr:[],
       valueList:'',
       simpleInput0: '',
@@ -91,33 +91,54 @@ export default {
           this[inputValue] = (this[inputValue]).toString().slice(-1)
         })
       }
+      //将获得的数字push进数组中
       this.numArr.push(this[inputValue])
-      if(this.numArr.length==6){
-        this.valueList=this.numArr.join('')
-        var formData={
-          'phone':this.phone,
-          'code':this.valueList
-        }
-        console.log(this.valueList)
-        console.log(this.phone)
-        // this.http.get('/check_code/?phone=18821687723').then(res=>{
-        // console.log(res)
-        // })
-        //存储在vuex中
-        this.$store.dispatch("setUser",'T123')
-        this.$router.push('/mine')
-        // 发送请求比对成功，跳转路由，我的页面
+
+      
+      for(var i = 0;i<this.numArr.length;i++){
+       
+          //判断数组是否为空，为空的话将长度减1
+          if(this.numArr==''&&this.numArr==null&&typeof(this.numArr[i])==undefined){
+              this.numArr.splice(i,1);
+              i=i-1;
+              console.log("验证码不符合规则")
+          }else{
+                //判断数组长度为6
+            if(this.numArr.length===6){
+            //将数组合并成字符串
+            this.valueList=this.numArr.join('')
+            // this.Observer.$on("getPhone",(phone)=>{
+            //   this.$nextTick(()=>{
+            //     this.phone=phone
+            //   })
+            //   console.log(this.phone)
+            // })
+            var formData={
+              "phone":"18821687723",
+              "code":this.valueList
+            }
+              // console.log(this.valueList)
+              // console.log(this.phone)
+              // 接口
+              //------ this.$axios.post('/user/code_login/',{"phone":"18821687723","code":this.valueList}).then(res=>{
+                //----- if(res.code==200){
+                  //打印登陆成功信息   登陆成功
+                  // ---console.log(res.msg)
+                  //存储在vuex中
+                // this.$store.dispatch("setUser",'T123')
+                this.$router.push('/mine')
+                // 发送请求比对成功，跳转路由，我的页面
+                //---- }
+              //----- })
+            }
+          }
+          
       }
-    
-    
     },
       
   },
   created(){
-    this.Observer.$on("getPhone",(phone)=>{
-             this.phone=phone
-              console.log(this.phone)
-        })
+    
 
       
     

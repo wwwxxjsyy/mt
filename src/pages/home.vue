@@ -2,16 +2,16 @@
     <div class="mt-home">
         <mt-home-address/>
         <mt-home-search/>
-        <mt-home-recommend/>
-        <mt-home-banner/>
+        <mt-home-recommend :homeData="data"/>
+        <mt-home-banner :homeData="data"/>
         <!-- <mt-home-class/> -->
         <!-- <homeShop></homeShop> -->
-        <mt-home-class/>
-        <mt-home-optimization/>
-        <mt-home-discount/>
-        <mt-home-goodshop/>
-        <mt-home-toshop/>
-        <mt-home-moreshop/>
+        <mt-home-class :homeData="data"/>
+        <mt-home-optimization :homeData="data"/>
+        <mt-home-discount :homeData="data"/>
+        <mt-home-goodshop :homeData="data"/>
+        <mt-home-toshop :homeData="data"/>
+        <mt-home-moreshop :homeData="data"/>
         <!-- <homeShop></homeShop> -->
     </div>
 </template>
@@ -41,7 +41,21 @@ export default {
         "mt-home-toshop":Toshop,
         "mt-home-moreshop":Moreshop,
         //  homeShop
-     }
+     },
+     data(){
+         return {
+             data:{}
+         }
+     },
+     created(){
+         this.http.post('/api/home/').then(res=>{
+            console.log(res)
+            this.data=res
+            })
+    }
+     
+     
+    
 }
 </script>
 

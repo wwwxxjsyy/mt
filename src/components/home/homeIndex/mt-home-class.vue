@@ -8,9 +8,9 @@
           
         </ul>
           <ul>
-            <li v-for="(item,index) in sclassifys" :key="index" class="home-class-slist"> 
-                <span><img :src="item.pic"></span>
-                <b>{{item.title}}</b>
+            <li v-for="(item,index) in homeData.data.main_small_img" :key="index" class="home-class-slist"> 
+                <span><img :src="item.main_small_img_url"></span>
+                <b>{{item.main_small_img_name}}</b>
             </li>
           
         </ul>
@@ -20,6 +20,9 @@
 <script>
 export default {
     name:"Class",
+    props:{
+        homeData:{}
+    },
     data(){
         return{
             classifys:[

@@ -1,17 +1,13 @@
 <template>
   <div class="mine-header">
-<<<<<<< HEAD
-    <router-link to="/MyAccount" class="MineHeaderLogo" >
-=======
     <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
     <router-link to='/home' v-show="isLogin" class="MineHeaderLogo">
->>>>>>> dandan
       <img :src="imgUrl" alt>
     </router-link>
 
-    <a  href="#/login" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
+    <a  href="#/registerLogin" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
     <a  class="MineName" v-show="isLogin">{{isLogin}}</a>
     <div class="mine-icon">
       <a href="#" class="iconfont" v-for="item in headerIcon" v-html="item" :key="item"></a>

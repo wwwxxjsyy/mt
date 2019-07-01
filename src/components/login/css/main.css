@@ -1,0 +1,132 @@
+body{background-color: #272727}
+.fl{
+	float: left;
+	font-size:.3rem;
+}
+.fr{
+	float: right;
+	position: relative;
+	top:-.3rem;
+	right:.2rem;
+}
+.clear{
+	clear: both;
+}
+a{
+	text-decoration: none;
+	color: #333;
+	transition: ease all 0.5s;
+	font-size:.3rem;
+}
+a{
+	color: #ffbd27
+}
+.login_header{
+	margin-bottom: .4rem;
+	display: flex;
+	justify-content: space-around
+}
+.login_header span{
+	/* margin-right: 20px; */
+	cursor: pointer;
+	/* text-align: center; */
+	font-size:.35rem;
+}
+.loginbox{
+	width: 100%;
+	overflow: hidden;
+	padding: 20px;
+	padding-top: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.Cbody_item{
+	border: 0px solid #999;
+	overflow: hidden;
+}
+.form_item{
+	font-size: .3rem;
+}
+.form_item input[type="text"],.form_item input[type="password"]{
+	display: block;
+	width: calc(100% - 18px);
+	height: 1rem;
+	margin:0 auto; 
+	padding-left: 16px;
+	outline: none;
+	border: 1px solid #999;
+	transition: ease all 0.5s;
+	margin-bottom: .8rem;
+	border-radius:5px;
+	font-size:.3rem;
+}
+.form_item input[type="text"]:focus,.form_item input[type="password"]:focus{
+	border: 1px solid rgb(255,189,39);
+	font-size:.3rem;
+}
+.form_item input[type="submit"]{
+	display: block;
+	width: calc(100% - .2rem);
+	height: 1rem;
+	margin:0 auto; 
+	padding-left: 16px;
+	outline: none;
+	border: 1px solid #ffbd27;;
+	transition: ease all 0.5s;
+	background-color: #ffbd27;
+	color: #fff;
+	cursor: pointer;
+	border-radius:5px;
+	font-size:.35rem;
+}
+.form_item input[type="submit"]:hover{
+	background-color: #ffbd27;
+	border: 1px solid #ffbd27;
+}
+.active{
+    color: #ffbd27;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffbd27;
+}
+.loginrslider{
+	width: 160px;
+	height: 322px;
+	background-color: #ffbd27;
+}
+.login_warp{
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px #ccc;
+    overflow: hidden;
+    /* border: 1px solid #484eeb; */
+    margin-top: 10%;
+    transition: ease all 0.5s;
+    position: relative;
+    top: 0px;
+    cursor: pointer;
+    background-color: #FDFDFD;
+}
+.login_warp:hover{
+    top: -30px;
+    box-shadow: 0 15px 21px rgba(10,10,10,.5);
+    -webkit-box-shadow: 0 15px 21px rgba(10,10,10,.5);
+}
+.loginrslider{
+	color: #fff;
+
+}
+.qcode{
+	width: 160px;
+	height: 160px;
+	background-color: #ccc;
+	margin: 0 auto;
+	margin-top: 2px;
+}
+.beizhu{
+	text-align: center;
+	font-size: .25rem;
+	margin-top: 10px;
+	color: #999
+}
