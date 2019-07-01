@@ -6,7 +6,10 @@
 
 <script>
 export default {
-    name:"Recommend"
+    name:"Recommend",
+    props:{
+        homeData:{}
+    },
 }
 </script>
 

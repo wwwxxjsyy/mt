@@ -21,7 +21,7 @@ data() {
 return {
     list:[
         {
-            url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
+            url:'http://p0.meituan.net/81.81.100/aichequan/16a47c2348278098b6a37005294cad524891.png.webp',
             desc1:'红包',
             desc2:'4个未使用',
             path:'/RedMoney'
@@ -33,19 +33,19 @@ return {
             path:'/'
         },
         {
-            url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
+            url:'ttp://p1.meituan.net/81.81.100/aichequan/774ce13f88576ec6742205fdada5dd1f4555.png.webp',
             desc1:'津贴',
             desc2:'余额20元',
             path:'/'
         },
         {
-            url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
+            url:'http://p0.meituan.net/81.81.100/walletopenplatform/f2b3c5f323794c6489b729cab05cdc284299.png.webp',
             desc1:'我的钱包',
             desc2:'签到赢现金',
             path:'/Mywallet'
         },
         {
-            url:'http://p1.meituan.net/81.81.100/aichequan/20642cf247e22e4ad793de9c14482cf44239.png.webp',
+            url:'http://p0.meituan.net/81.81.100/walletopenplatform/6c25f3c96d2810f3a0ef5d453622d1354240.png.webp',
             desc1:'借钱',
             desc2:'最高10万',
             path:'/'

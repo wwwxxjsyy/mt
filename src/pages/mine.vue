@@ -1,10 +1,10 @@
 <template>
   <div class="mt-mine">
-    <mineHeader/>
-    <mineVip/>
-    <mineList/>
-    <mineContent/>
-    <Footer/>
+    <mineHeader :userInfo="userInfo"/>
+    <mineVip :userInfo="userInfo"/>
+    <mineList :userInfo="userInfo"/>
+    <mineContent :userInfo="userInfo"/>
+    <Footer :userInfo="userInfo"/>
   </div>
 </template>
 
@@ -13,15 +13,39 @@ import mineHeader from "../components/mine/user/mineHeader";
 import mineVip from "../components/mine/user/mineLinkVip";
 import mineList from "../components/mine/user/mineList";
 import mineContent from "../components/mine/user/mineContent";
-import Footer from '../components/common/tabBar'
+import{getStore} from "../config/mUtils"
 export default {
   name: "MtMine",
   components: {
     mineHeader,
     mineVip,
     mineList,
-    mineContent,
-    Footer
+    mineContent
+  },
+  data(){
+    return {
+      userInfo:{}
+    }
+  },
+  computed:{
+      currentUser(){
+              return this.$store.getters.currentUser
+      }
+        
+  },
+  created(){
+    // 向后端请求数据
+    if(currentUser){
+      this.$axios.post('/user/code_login/',currentUser).then(res=>{
+        //打印登陆成功信息   登陆成功
+        console.log(res.msg)
+        this.userInfo=res.data
+      })
+    }else{
+      alert("请先登陆")
+      this.$router.push('/registerLogin')
+    }
+    
   }
 };
 </script>

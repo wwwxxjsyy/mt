@@ -2,16 +2,16 @@
     <div class="mt-home">
         <mt-home-address/>
         <mt-home-search/>
-        <mt-home-recommend/>
-        <mt-home-banner/>
+        <mt-home-recommend />
+        <mt-home-banner />
         <!-- <mt-home-class/> -->
         <!-- <homeShop></homeShop> -->
-        <mt-home-class/>
+        <mt-home-class />
         <mt-home-optimization/>
-        <mt-home-discount/>
-        <mt-home-goodshop/>
-        <mt-home-toshop/>
-        <mt-home-moreshop/>
+        <mt-home-discount />
+        <mt-home-goodshop />
+        <mt-home-toshop />
+        <mt-home-moreshop />
         <!-- <homeShop></homeShop> -->
     </div>
 </template>
@@ -29,6 +29,10 @@ import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
 export default {
      name:"MtHome",
+     data(){
+         return{
+         }
+     },
      components:{
         "mt-home-address":Address,
         "mt-home-search":Search,
@@ -41,7 +45,21 @@ export default {
         "mt-home-toshop":Toshop,
         "mt-home-moreshop":Moreshop,
         //  homeShop
-     }
+     },
+     data(){
+         return {
+             data:{}
+         }
+     },
+    //  created(){
+    //      this.http.post('/api/home/').then(res=>{
+    //         console.log(res)
+    //         this.data=res
+    //         })
+    // }
+     
+     
+    
 }
 </script>
 

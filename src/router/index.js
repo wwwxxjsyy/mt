@@ -1,24 +1,38 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 //一级路由
+import Comp from "../components/common/compon.vue"
 import Home from "../pages/home"
 import Order from "../pages/order"
 import Mine from "../pages/mine"
 import Vip from "../pages/vip"
 import Login from "../pages/login"
+import RegisterLogin from '../components/login/registerLogin.vue'
 import LoginMessageVerification from '../components/login/loginMessageVerification'
 import VipOpen from '../components/vip/vipOpen'
 import RedMoney from '../components/mine/others/RedMoney'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
+
+// 首页相关路由 
+import Delicious from '../pages/delicious'//美食
+import Homedrink from '../components/home/homepage/home-drink'
+import Hometest from '../components/home/homecommon/recommend'
+
+
+
+
 import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
+<<<<<<< HEAD
 import History from '../components/vip/viphistory/'
 import RedPack from '../components/vip/vipredpack/'
                               // order
+=======
+>>>>>>> 445d5f0a2681a8b6223f38eb43a2b6430e15fc30
       // 待评价
 import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
       // 退款
@@ -35,9 +49,15 @@ import OrderOrderComment from '../components/orders/OrderComment.vue'
 import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
 
 import VipLogin from '../components/vip/viplogin/'
+
+import selectAddress from '../components/home/homeIndex/mt-home-select-address.vue'
+import city from '../components/home/homeIndex/mt-home-city.vue'
+import Superior from '../components/home/homeIndex/mt-home-superior.vue'
+
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 import HomeGoods from '../pages/homegoods'
+
 //三级路由
 import HomeShopGoods from '../components/home/homeshop/goods/homeshopGoods'
 import HomeShopRatings from '../components/home/homeshop/ratings/homeshopRatings'
@@ -77,35 +97,118 @@ export default new Router({
         }  
       },
       {
-        path:"/vip",
-        component:Vip,
+        path:"/drink",
+        component:Homedrink,
+        meta: {
+          flag: false,
+          requredAuth: false
+        }
+      },
+      {
+        path: "/delicious",
+        component: Delicious,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
+      },
+      {
+        path: "/test",
+        component: Hometest,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
+      },
+      {
+        path: "/homegoods",
+        component: HomeGoods,
+        meta: {
+          flag: false,
+          requredAuth: false
+        },
+        children: [
+          {
+            path: "goods",
+            component: HomeShopGoods
+          },
+
+          {
+            path: "ratings",
+            component: HomeShopRatings
+          },
+
+          {
+            path: "seller",
+            component: HomeShopSeller
+          },
+        ]  
+      },
+      {
+        name:"selectAddress",
+        path:"/selectAddress",
+        component:selectAddress,
         meta:{
-          flag:true,
+          flag:false,
           requredAuth:true
         }  
+      },
+      {
+        name:"city",
+        path:"/city",
+        component:city,
+        meta:{
+          flag:false,
+          requredAuth:true
+        }  
+      },
+      {
+        path:"/homegoods",
+        component: HomeGoods,
+        children:[{
+          path: 'goods',
+          component: HomeShopGoods
+        },
+        {
+          path: 'ratings',
+          component: HomeShopRatings
+        },
+        {
+          path: 'seller',
+          component: HomeShopSeller
+        }
+        ]
+      },
+      {
+        path:"/vip",
+        component:Vip,
+        meta: {
+          flag: true,
+          requredAuth: false
+        } 
       },
       
       {
         path:"/order",
         component:Order,
-        meta:{
-          flag:true,
-          requredAuth:true
-        }  
+        meta: {
+          flag: true,
+          requredAuth: false
+        }
       },
       {
         path:"/mine",
         component:Mine,
-        meta:{
-          flag:true,
-          requredAuth:true
-        }  
+        meta: {
+          flag: true,
+          requredAuth: false
+        } 
       },
       {
         path:"/login",
         component:Login,
         meta:{
-          flag:true,
+          flag:false,
           requredAuth:true
         }  
       },
@@ -118,6 +221,7 @@ export default new Router({
           requredAuth:false
         }   
       },
+<<<<<<< HEAD
 
       {
         path:'/viphistory',
@@ -136,12 +240,23 @@ export default new Router({
         }   
       },
      
+=======
+      {
+        path:'/registerLogin',
+        name:RegisterLogin,
+        component:RegisterLogin,
+        meta:{
+          flag:false,
+          requredAuth:false
+        }
+      },
+>>>>>>> 445d5f0a2681a8b6223f38eb43a2b6430e15fc30
       {
         name:"LoginMessageVerification",
         path:"/loginMessageVerification",
         component:LoginMessageVerification,
         meta: {
-          flag: true,
+          flag: false,
           requredAuth: true
         },
       },
@@ -150,8 +265,13 @@ export default new Router({
         component:RedMoney,
         meta: {
           flag: true,
-          requredAuth: true
+          requredAuth: true,
+          isShow:false
         },
+        meta: {
+         isShow:false
+        },
+
       },
       {
         path:"/Collection",
@@ -160,6 +280,9 @@ export default new Router({
           flag: true,
           requredAuth: true
         },
+        meta: {
+          isShow:false
+         },
       },
       {
         path:"/Address",
@@ -168,6 +291,9 @@ export default new Router({
           flag: true,
           requredAuth: true
         },
+        meta: {
+          isShow:false
+         },
       },
       {
         path:'/PlusAddress',
@@ -231,11 +357,18 @@ export default new Router({
         path:'/MyAccount',
         component:MyAccount
       },
+      {
+        path:'/Comp',
+        component:Comp
+      },
+      {
+        path:'/superior',
+        component:Superior
+      },
  
       {
         path:"**",
         redirect:"/home"
-      },
-    
+      },   
   ]
 })

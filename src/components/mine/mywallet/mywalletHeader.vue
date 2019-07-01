@@ -28,7 +28,6 @@ export default {
 <style  scoped>
 .mywallet-header {
   width: 100%;
-  background: #fafafa;
   height: 0.54rem;
   position: sticky;
   left: 0;

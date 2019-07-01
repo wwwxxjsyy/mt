@@ -41,21 +41,21 @@ methods: {
 .myevaluate-header .return{
     position: absolute;
     left: .4rem;
-    top: .45rem
+    top: .4rem
 }
 .myevaluate-header .return>i{
-    font-size: .52rem;
+    font-size: .5rem;
     color:#6c5f4e;
 }
 .myevaluate-header .person{
     position: absolute;
-    left: 38%;
-    top: 20%;
+    left: 36%;
+    top: 19%;
 }
 .myevaluate-header .person>img{
-    width: 1.3rem;
-    height: 1.3rem;
-    margin-bottom: .2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: .3rem;
     margin: 0 auto;
 }
 .myevaluate-header .person>p>span{

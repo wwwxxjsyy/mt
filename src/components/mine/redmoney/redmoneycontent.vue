@@ -82,15 +82,7 @@ export default {
   computed: {},
   watch: {},
   methods: {},
-  created() {},
-  mounted() {},
-  beforeCreate() {},
-  beforeMount() {},
-  beforeUpdate() {},
-  updated() {},
-  beforeDestroy() {},
-  destroyed() {},
-  activated() {}
+ 
 };
 </script>
 <style  scoped>
@@ -98,7 +90,7 @@ export default {
   background: #fff8e9;
   color: #666;
   width: 100%;
-  height: 0.9rem;
+  height: 0.7rem;
   display: flex;
   align-items: center;
   font-size: 0.25rem;
@@ -106,14 +98,14 @@ export default {
 }
 
 .remind img {
-  width: 0.25rem;
-  height: 0.25rem;
+  width: 0.24rem;
+  height: 0.24rem;
   margin-right: 0.15rem;
   vertical-align: middle;
 }
 
 .mainContent {
-  margin-top: 0.4rem;
+  margin-top: 0.3rem;
   margin-bottom: .3rem;
 }
 
@@ -121,8 +113,8 @@ export default {
   display: flex;
   flex-direction: column;
   background: #fff;
-  margin: .3rem .3rem;
-  border-radius: 0.1rem;
+  margin: .25rem .35rem;
+  border-radius: 0.2rem;
 }
 
 .coupon .coupon-title {
@@ -133,7 +125,7 @@ export default {
 }
 
 .coupon .coupon-title .coupon-title-top {
-  font-size: 0.4rem;
+  font-size: 0.38rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

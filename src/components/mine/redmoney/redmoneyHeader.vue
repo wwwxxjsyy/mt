@@ -31,12 +31,12 @@ methods: {
 <style  scoped>
 .balance-header {
     width: 100%;
-    height: 1.5rem;
+    height: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #fff;
-    padding-left: .39rem;
+    padding-left: .38rem;
     position:sticky;
     top:0;
     left:0;
@@ -48,20 +48,19 @@ methods: {
 }
 
 .balance-header .back>i {
-    font-size: .6rem;
+    font-size: .5rem;
     color: #555555;
 }
 .balance-header .back>span {
-    margin-left: .3rem;
-    font-size: .45rem;
+    margin-left: .4rem;
+    font-size: .4rem;
     color: black;
 }
 
 .balance-header-titile>span {
-    float: right;
-    font-size: .31rem;
+    font-size: .3rem;
     color: black;
-    margin-right: .4rem;
+    margin-right: .5rem;
 }
 
 </style>

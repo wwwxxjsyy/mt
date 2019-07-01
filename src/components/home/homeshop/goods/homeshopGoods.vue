@@ -2590,7 +2590,7 @@ export default {
   display: flex;
   position: absolute;
   top: 4rem;
-  bottom: .4rem;
+  bottom: 1rem;
   overflow: hidden;
   width: 100%;
 }
@@ -2606,27 +2606,25 @@ export default {
 
 /* Menu item */ 
 .goods .menu-wrapper .menu-item{
-	padding: .3rem .2rem .35rem .2rem;
-	/* padding: .2rem; */
+	padding: .2rem .2rem .2rem .2rem;
 	border-bottom: 1px solid #E4E4E4;
   	position: relative;
+	display: flex;
+	align-items: center;
 }
 
 .goods .menu-wrapper .menu-item .text{
-	font-size: .27rem;
+	font-size: .28rem;
 	color: #333333;
-	line-height: .2rem;
+	line-height: .5rem;
 	vertical-align: middle;
 	-webkit-line-clamp: 2;
 	display: -webkit-box;
-	/* display: flex; */
-	/* align-items: center; */
 	-webkit-box-orient: vertical;
-	
-	/* overflow: hidden; */
 	overflow: hidden;
-        text-overflow: ellipsis;
-        white-space:nowrap;
+}
+.goods .menu-wrapper .menu-item .text img{
+	display: inline;
 }
 
 .goods .menu-wrapper .menu-item .text .icon{

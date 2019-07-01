@@ -1,19 +1,24 @@
 <template>
     <div class="header">
-        <span class="iconfont">&#xe60b;</span>
+        <span class="iconfont" @click="$router.back()">&#xe60b;</span>
         <span>帮助</span>
     </div>
 </template>
 
 <script>
 export default {
-    name:'LoginHeader'
+    name:'LoginHeader',
+    methods:{
+        goBack(){
+            this.$router.back()
+        }
+    }
 }
 </script>
 
 <style scoped>
 .header{
-    padding:.3rem;
+    padding:.3rem .5rem;
     color:rgb(255,189,39);
     display:flex;
     font-size:.3rem;
