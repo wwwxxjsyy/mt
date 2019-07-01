@@ -3,17 +3,10 @@
     <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
-<<<<<<< HEAD
-    <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
-=======
+    <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo"/>
     <router-link to='/home' v-show="isLogin" class="MineHeaderLogo">
-<<<<<<< HEAD
-=======
->>>>>>> 6edbf37e79b291684928f3aae35433766f601f0b
->>>>>>> b08faa03246d0916667b369669d95d46daeee43d
       <img :src="imgUrl" alt>
     </router-link>
-
     <a  href="#/login" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
     <a  class="MineName" v-show="isLogin">{{isLogin}}</a>
     <div class="mine-icon">

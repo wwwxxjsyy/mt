@@ -59,7 +59,7 @@
             class="discounts-item"
             v-for="(item,index) in seller.discounts2"
             :key="index"
-            >
+            >; 
             <div class="icon">
               <img :src="item.icon_url">
             </div>

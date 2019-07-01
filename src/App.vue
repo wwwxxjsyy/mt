@@ -12,37 +12,13 @@ import TabBar from "./components/common/tabBar.vue"
 export default {
   name: 'App',
   components:{
-<<<<<<< HEAD
     "Mt-TabBar":TabBar
   },
-=======
-<<<<<<< HEAD
-    "Mt-TabBar":TabBar
-
-=======
-
-    "Mt-TabBar":TabBar
->>>>>>> 6edbf37e79b291684928f3aae35433766f601f0b
-  }
->>>>>>> b08faa03246d0916667b369669d95d46daeee43d
   // mounted(){
   //   this.http.get('/posts').then(res=>{
   //     console.log(res)
   //   })
   // },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-  ,
-
-
-
-=======
-  ,
->>>>>>> b08faa03246d0916667b369669d95d46daeee43d
-  // },
->>>>>>> 6edbf37e79b291684928f3aae35433766f601f0b
   data(){
     return{
       flag:false
@@ -57,15 +33,7 @@ export default {
     this.http.post('api/home/',).then(res=>{
       console.log(res)
     })
-
   }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 6edbf37e79b291684928f3aae35433766f601f0b
->>>>>>> b08faa03246d0916667b369669d95d46daeee43d
 }
 </script>
 
