@@ -10,15 +10,9 @@
         </div>
         <div class="vip-left">
             <span>低至￥15/月</span>
-<<<<<<< HEAD
-
-            <router-link to="/vipOpen" tag="a">立即开通</router-link>
-            <a href>立即开通</a>
-=======
             <!-- <a href>立即开通</a> -->
             <router-link to='/vipOpen' tag='a'>立即开通</router-link>
 
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
         </div>
     </div>
 
@@ -33,25 +27,6 @@
             <img src="../../../assets/img/vipImg/redpacket.png" alt="" class="img1">
         </div>
     </div> 
-<<<<<<< HEAD
-    <!-- <div class="vip-content-text">
-        <div class="vip-content-txt">
-            <span class="privi">特权2</span><h1>限时抢购加量包</h1>
-            <p class="vip-common">仅限在本期会员有效期内购买、使用</p> 
-            <img src="../../assets/img/redpacket.png" alt="" >
-        </div>
-    </div> 
-    <div class="vip-content-text">
-        <div class="vip-content-txt">
-            <span class="privi">特权3</span><h1>限时抢购加量包</h1>
-            <p class="vip-common">会员红包金额升级</p> 
-            <img src="../../assets/img/redpacket.png" alt="" >
-        </div>
-    </div>  -->
-    
-
-=======
->>>>>>> ca3115cc4fb685565cd980e513cd2911023c8dc1
   </div>
 </template>
 

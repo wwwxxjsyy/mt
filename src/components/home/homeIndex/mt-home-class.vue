@@ -12,7 +12,6 @@
                 <span><img :src="item.pic"></span>
                 <b>{{item.title}}</b>
             </li>
-          
         </ul>
     </div>
 </template>
@@ -31,7 +30,7 @@ export default {
                 {
                     pic:require('../../../../static/imgs/class/dessert.png'),
                     title:'甜点饮品',
-                    path:'/delicious'
+                    path:'/drink'
                 },
                 {
                     pic:require('../../../../static/imgs/class/supermarket.png'),

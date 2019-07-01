@@ -34,7 +34,7 @@ export default {
   },
   mounted(){
     this.http.post('api/home/',).then(res=>{
-      console.log(res)
+      console.log(res)     
     })
 
   }

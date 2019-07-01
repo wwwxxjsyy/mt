@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .search{
     background: #ff872a;
     height: .8rem;
@@ -35,6 +35,7 @@ export default {
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 5;
 }
 .search-food span{
     font-size: .35rem;
@@ -57,7 +58,7 @@ export default {
     width: 5rem;
     height: .5rem;
     font-size: .25rem;
-    /* background: #c0845c; */
+
     border: none;
     outline: none;
     color: #fffde5;

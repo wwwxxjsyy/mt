@@ -15,6 +15,12 @@ import PlusAddress from '../components/mine/others/PlusAddress'
 
 // 首页相关路由 
 import Delicious from '../pages/delicious'//美食
+import Homedrink from '../components/home/homepage/home-drink'
+import Hometest from '../components/home/homecommon/recommend'
+
+
+
+
 import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
@@ -79,8 +85,24 @@ export default new Router({
         }
       },
       {
+        path:"/drink",
+        component:Homedrink,
+        meta: {
+          flag: false,
+          requredAuth: false
+        }
+      },
+      {
         path: "/delicious",
         component: Delicious,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
+      },
+      {
+        path: "/test",
+        component: Hometest,
         meta: {
           flag: true,
           requredAuth: true
