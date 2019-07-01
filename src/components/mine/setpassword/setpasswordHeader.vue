@@ -1,10 +1,10 @@
 <template>
-   <div class="balance-header">
-        <div class="back">
+<div class='setpassword-header'>
+    <div class="back">
            <i class="iconfont" @click="returnOut" v-html="icon"></i>
-            <span>我的收藏</span>
-        </div>
-   </div>
+            <span>设置密码</span>
+    </div>
+</div>
 </template>
 
 <script>
@@ -13,27 +13,27 @@ export default {
 components: {},
 data() {
 return {
-     icon:'&#xe607;'
+    icon:'&#xe607;'
 };
 },
 computed: {},
 watch: {},
 methods: {
-     returnOut(){
+    returnOut(){
         window.history.back()
     }
 },
 
 }
 </script>
-<style scoped>
-.balance-header {
+<style  scoped>
+.setpassword-header {
     width: 100%;
-    height: 1.3rem;
+    height: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
+    background: #fafafa;
     padding-left: .39rem;
     position:sticky;
     top:0;
@@ -41,16 +41,16 @@ methods: {
     z-index: 2000;
 }
 
-.balance-header .back {
+.setpassword-header .back {
     display: flex;
 }
 
-.balance-header .back>i {
+.setpassword-header .back>i {
     font-size: .5rem;
-    color: #333;
+    color: #ffdea1;
 }
-.balance-header .back>span {
-    margin-left: .3rem;
+.setpassword-header .back>span {
+    margin-left: 2rem;
     font-size: .4rem;
     color: black;
 }

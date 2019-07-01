@@ -3,11 +3,18 @@
     <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
+<<<<<<< HEAD
     <router-link to='/home' v-show="isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
 
     <a  href="#/registerLogin" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
+=======
+    <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
+      <img :src="imgUrl" alt>
+    </router-link>
+    <a  href="#/login" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
+>>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
     <a  class="MineName" v-show="isLogin">{{isLogin}}</a>
     <div class="mine-icon">
       <a href="#" class="iconfont" v-for="item in headerIcon" v-html="item" :key="item"></a>
@@ -48,6 +55,7 @@ export default {
   background: #f7f7f7;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   top: 0;
   position: sticky;
 }
@@ -69,7 +77,10 @@ export default {
 }
 .mine-icon a {
   display: inline-block;
-  font-size: 50px;
-  padding-right:.4rem;
+  font-size: .5rem;
+
+}
+.mine-icon a:first-child{
+  margin-right: .4rem;
 }
 </style>

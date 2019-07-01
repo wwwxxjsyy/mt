@@ -2,6 +2,7 @@
     <div class="mt-home">
         <mt-home-address/>
         <mt-home-search/>
+<<<<<<< HEAD
         <mt-home-recommend :homeData="data"/>
         <mt-home-banner :homeData="data"/>
         <!-- <mt-home-class/> -->
@@ -12,6 +13,16 @@
         <mt-home-goodshop :homeData="data"/>
         <mt-home-toshop :homeData="data"/>
         <mt-home-moreshop :homeData="data"/>
+=======
+        <mt-home-recommend/>
+        <mt-home-banner/>
+        <mt-home-class :classpic='cartinfo'/>
+        <mt-home-optimization/>
+        <mt-home-discount/>
+        <mt-home-goodshop/>
+        <mt-home-toshop/>
+        <mt-home-moreshop/>
+>>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
         <!-- <homeShop></homeShop> -->
     </div>
 </template>
@@ -29,6 +40,11 @@ import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
 export default {
      name:"MtHome",
+     data(){
+         return{
+             cartinfo:{}
+         }
+     },
      components:{
         "mt-home-address":Address,
         "mt-home-search":Search,
@@ -42,6 +58,7 @@ export default {
         "mt-home-moreshop":Moreshop,
         //  homeShop
      },
+<<<<<<< HEAD
      data(){
          return {
              data:{}
@@ -56,6 +73,13 @@ export default {
      
      
     
+=======
+       mounted(){
+    this.http.post('/api/home/').then(res=>{
+            this.data = res.data
+    })
+  }
+>>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
 }
 </script>
 

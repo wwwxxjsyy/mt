@@ -32,6 +32,7 @@ export default {
               return this.$store.getters.currentUser
       }
         
+<<<<<<< HEAD
   },
   created(){
     // 向后端请求数据
@@ -49,6 +50,8 @@ export default {
         //          alert("账号或密码错误")
         //     }
         // })
+=======
+>>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
   }
 };
 </script>

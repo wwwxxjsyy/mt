@@ -57,56 +57,56 @@ export default {
     return {
       funList: [
         {
-          url: require("../../../assets/minePic/funlistimg.gif"),
+          url: 'http://p0.meituan.net/81.81.100/aichequan/ded6c9cc76a05ffc19807ecfc45ff8da3375.png.webp',
           desc: "我的地址",
           path:'/Address'
         },
         {
-          url: require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p0.meituan.net/81.81.100/aichequan/ded6c9cc76a05ffc19807ecfc45ff8da3375.png.webp',
           desc: "我的足迹",
           path:'/'
         },
         {
-          url:  require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p0.meituan.net/81.81.100/aichequan/2e1dedd1871066c00db5b3fadd226e542730.png.webp',
           desc: "我的收藏",
           path:'/Collection'
         },
         {
-          url:  require("../../../assets/minePic/funlistimg.gif"),
+          url: 'http://p0.meituan.net/81.81.100/aichequan/572fc8d9bfdd557e924bee463105682e2390.png.webp',
           desc: "答谢记录",
           path:'/'
         },
         {
-          url: require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p0.meituan.net/81.81.100/aichequan/e76964fc0cf8b793411fae6dfa0433282568.png.webp',
           desc: "我的评价",
           path:'/MyEvalute'
         },
         {
-          url:require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p0.meituan.net/81.81.100/aichequan/a9edea52108aed36bbe7ab43ee431e4b3133.png.webp',
           desc: "我的袋鼠",
           path:'/'
         }
       ],
       serList: [
         {
-          url:  require("../../../assets/minePic/funlistimg.gif"),
+          url: 'http://p1.meituan.net/81.81.100/aichequan/940870fc2ff927d210349902f067022a3219.png.webp',
           desc: "帮助与反馈",
           path:'/'
         },
         {
-          url: require("../../../assets/minePic/funlistimg.gif"),
+          url: 'http://p1.meituan.net/81.81.100/aichequan/d1f8b37f67553f517134022bf04edf722691.png.webp',
           desc: "客服中心",
           path:'/'
         }
       ],
       morList: [
         {
-          url:require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p0.meituan.net/81.81.100/aichequan/f8611a1d4301b850f6e68a70f8235ca92829.png.webp',
           desc: "邀请有奖",
            path:'/'
         },
         {
-          url: require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p0.meituan.net/81.81.100/aichequan/9fadcad7a0689cc5c9a0a54fd23fe4462989.png.webp',
           desc: "商家入驻",
            path:'/'
         },

@@ -21,8 +21,8 @@ export default {
   height: 100%;
 }
 .myevalute-content > img {
-  width: 5rem;
-  height: 5.2rem;
+  width: 4rem;
+  height: 4.2rem;
   margin: auto;
   margin-top: 3rem;
 }

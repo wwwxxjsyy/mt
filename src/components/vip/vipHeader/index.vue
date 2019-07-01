@@ -1,5 +1,4 @@
 <template>
-
     <header class="vipHeader bc"   >
         <div class="header">
             <span class="tit">{{title}}</span>
@@ -17,7 +16,6 @@ export default {
         title:{
             type : String,
             default : '会员'
-
         },
         // flag:{
         //     type:Boolean,

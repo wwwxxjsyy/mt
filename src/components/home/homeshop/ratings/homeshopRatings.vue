@@ -66,8 +66,8 @@
         </div>
 
         <ul class="rating-list">
-            <li 
-              v-for="(comment,index) in selectComments" 
+            <li
+              v-for="(comment,index) in selectComments"
               :key="index"
               class="comment-item"
               >
@@ -1368,7 +1368,6 @@ export default {
         return this.ratings.comments
       }else if(this.selectType == PICTURE){
         let arr = []
-
         this.ratings.comments.forEach(comment => {
           if(comment.comment_pics.length){
             arr.push(comment)
@@ -1396,11 +1395,14 @@ export default {
 	.ratings .ratings-wrapper .overview {
 		padding: .2rem 0 .2rem 0;
 		display: flex;
+		align-items: center;
 	}
 	
 	.ratings .ratings-wrapper .overview .overview-left {
 		flex: 1;
 		padding-left: .3rem;
+		padding-top: .2rem;
+		padding-bottom: .2rem;
 	}
 	
 	.ratings .ratings-wrapper .overview .overview-left .comment-score {
@@ -1458,6 +1460,7 @@ export default {
 		flex: 0 0 1.8rem;
 		text-align: center;
 		border-left: .02rem solid #9D9D9D;
+		height: .8rem;
 	}
 	
 	.ratings .ratings-wrapper .overview .overview-right .delivery-score {}
@@ -1493,9 +1496,9 @@ export default {
 	.ratings .ratings-wrapper .content .rating-select .item {
 		width: 33.3%;
 		display: inline-block;
-		height: .7rem;
-		line-height: .7rem;
-		font-size: .28rem;
+		height: .6rem;
+		line-height: .6rem;
+		font-size: .25rem;
 		text-align: center;
 		border-right: .02rem solid #FFB000;
 		box-sizing: border-box;
@@ -1515,19 +1518,19 @@ export default {
 	}
 	
 	.ratings .ratings-wrapper .content .labels-view {
-		/*margin-bottom: 14px;*/
+		margin-top: .2rem;
 	}
 	
 	.ratings .ratings-wrapper .content .labels-view .item {
 		display: inline-block;
-		height: 27px;
-		line-height: 27px;
-		padding: 0 10px;
-		font-size: 12px;
+		height: .5rem;
+		line-height: .5rem;
+		padding: 0 .2rem;
+		font-size: .23rem;
 		background: #F4F4F4;
-		margin-right: 6px;
-		margin-bottom: 6px;
-		border-radius: 3px;
+		margin-right: .1rem;
+		margin-bottom: .1rem;
+		border-radius: .05rem;
 		color: #999999;
 	}
 	
@@ -1538,21 +1541,21 @@ export default {
   .ratings .ratings-wrapper .content .rating-list {}
 	
 .ratings .ratings-wrapper .content .rating-list .comment-item {
-	padding: 16px 16px 16px 0;
-	border-bottom: 1px solid #F4F4F4;
+	padding: .1rem .1rem .1rem 0;
+	border-bottom: .03rem solid rgb(236, 232, 232);
 	width: 100%;
 	box-sizing: border-box;
 	display: flex;
 }
 
 .ratings .ratings-wrapper .content .rating-list .comment-item .comment-header {
-	flex: 0 0 35px;
-	margin-right: 11px;
+	flex: 0 0 .5rem;
+	margin-right: .1rem;
 }
 
 .ratings .ratings-wrapper .content .rating-list .comment-item .comment-header img {
-	width: 35px;
-	height: 35px;
+	width: .8rem;
+	height: .8rem;
 	border-radius: 50%;
 }
 
@@ -1563,7 +1566,7 @@ export default {
 .ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .user {
 	width: 50%;
 	float: left;
-	font-size: 11px;
+	font-size: .25rem;
 	color: #333333;
 }
 
@@ -1571,20 +1574,20 @@ export default {
 	width: 50%;
 	float: right;
 	text-align: right;
-	font-size: 9px;
+	font-size: .25rem;
 	color: #666666;
 }
 
 .ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .star-wrapper {
 	float: left;
-	margin-top: 12px;
-	margin-bottom: 15px;
+	margin-top: .05rem;
+	margin-bottom: .05rem;
 	width: 100%;
 }
 
 .ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .star-wrapper .text {
 	color: #999999;
-	font-size: 11px;
+	font-size: .25rem;
 	float: left;
 }
 
@@ -1594,8 +1597,7 @@ export default {
 }
 
 .ratings .ratings-wrapper .content .rating-list .comment-item .comment-main .c_content {
-	font-size: 13px;
-	line-height: 19px;
+	
 	float: left;
 	width: 100%;
 }

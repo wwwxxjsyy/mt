@@ -59,7 +59,7 @@
             class="discounts-item"
             v-for="(item,index) in seller.discounts2"
             :key="index"
-            >
+            >; 
             <div class="icon">
               <img :src="item.icon_url">
             </div>
@@ -77,7 +77,7 @@
 import Split from '../split/Split'
 import BScroll from 'better-scroll'
 export default {
-  data(){
+  data() {
     return {
       seller:{
           "id": 495579,
@@ -182,9 +182,8 @@ export default {
           this.$nextTick(() => {
             if(this.seller.poi_env.thumbnails_url_list){
               let imgW = this.$refs.picsItem[0].clientWidth
-              let marginR = 11
+              let marginR = 20
               let width = (imgW + marginR) * this.seller.poi_env.thumbnails_url_list.length
-
               this.$refs.picsList.style.width = width + "px"
 
               this.scroll = new BScroll(this.$refs.picsView,{
@@ -194,6 +193,9 @@ export default {
 
             this.sellerView = new BScroll(this.$refs.sellerView)
           })
+  },
+  mounted(){
+	  
   },
   components:{
     Split
@@ -214,45 +216,48 @@ export default {
 	
 	.seller .seller-wrapper {
 		background: white;
+		font-weight: 500;
 	}
 	
 	.seller .seller-wrapper .seller-view {
-		padding-left: 15px;
+		padding-left: .2rem;
 	}
 	
 	.seller .seller-wrapper .seller-view .address-wrapper {
 		display: flex;
-		padding: 16px 0;
-		border-bottom: 1px solid #F4F4F4;
+		padding: .3rem 0;
+		border-bottom: .03rem solid #F4F4F4;
 	}
 	
 	.seller .seller-wrapper .seller-view .address-wrapper .address-left {
 		flex: 1;
 		background: url(address.png) no-repeat left center;
-		padding-left: 26px;
-		padding-right: 31px;
-		background-size: 14px 16px;
-		font-size: 14px;
-		line-height: 19px;
+		padding-left: .5rem;
+		padding-right: .5rem;
+		background-size: .3rem .4rem;
+		font-size: .3rem;
+		line-height: .4rem;
 	}
 	
 	.seller .seller-wrapper .seller-view .address-wrapper .address-right {
-		flex: 0 0 60px;
-		background: url(line.png) no-repeat left center;
-		background-size: 1px 15px;
+		flex: 0 0 .8rem;
+		background: url(line.png) no-repeat center center;
+		background-size: 0 .8rem;
+		padding-right: .4rem;
+		margin-left: .3rem;
 	}
 	
 	.seller .seller-wrapper .seller-view .address-wrapper .address-right .content {
 		width: 100%;
 		height: 100%;
 		background: url(phone.png) no-repeat center center;
-		background-size: 18px 18px;
+		background-size: .4rem .4rem;
 	}
 	
 	.seller .seller-wrapper .seller-view .pics-wrapper {
-		padding: 10px 0;
+		padding: .3rem 0;
 		overflow: hidden;
-		border-bottom: 1px solid #F4F4F4;
+		border-bottom: .03rem solid #F4F4F4;
 		white-space: nowrap;
 	}
 	
@@ -260,9 +265,9 @@ export default {
 	
 	.seller .seller-wrapper .seller-view .pics-wrapper .pics-list .pics-item {
 		display: inline-block;
-		margin-right: 11px;
-		width: 93px;
-		height: 75px;
+		margin-right: .2rem;
+		width: 1.8rem;
+		height: 1.4rem;
 	}
 	
 	.seller .seller-wrapper .seller-view .pics-wrapper .pics-list .pics-item img {
@@ -272,63 +277,68 @@ export default {
 	}
 	
 	.seller .seller-wrapper .seller-view .safety-wrapper {
-		padding: 15px 14px 15px 25px;
+		padding: .2rem .15rem .2rem .4rem;
 		background: url(safety.png) no-repeat left center;
-		background-size: 14px 16px;
-		font-size: 14px;
+		background-size: .3rem .3rem;
+		font-size: .3rem;
+		line-height: .6rem
 	}
 	
 	.seller .seller-wrapper .seller-view .safety-wrapper span {
 		float: right;
-		font-size: 14px;
+		font-size: .5rem;
 	}
 	
 	.seller .seller-wrapper .tip-wrapper {
-		padding-left: 15px;
+		padding: .2rem 0 .2rem .25rem;
 	}
 	
 	.seller .seller-wrapper .tip-wrapper .delivery-wrapper {
 		background: url(delivery.png) no-repeat left center;
-		background-size: 14px 16px;
-		padding: 15px 0 15px 25px;
-		font-size: 14px;
-		border-bottom: 1px solid #F4F4F4;
+		background-size: .25rem .25rem;
+		padding: .2rem 0 .2rem .4rem;
+		font-size: .3rem;
+		line-height: .4rem;
+		border-bottom: .03rem solid #F4F4F4;
 	}
 	
 	.seller .seller-wrapper .tip-wrapper .shipping-wrapper {
 		background: url(time.png) no-repeat left center;
-		padding: 15px 17px 15px 25px;
-		background-size: 15px 15px;
-		font-size: 14px;
-		line-height: 18px;
+		padding: .3rem 0 .1rem .4rem;
+		background-size: .25rem .25rem;
+		font-size: .26rem;
+		line-height: .4rem;
 	}
 	
 	.seller .seller-wrapper .other-wrapper {
-		padding-left: 15px;
+		padding-left: .25rem;
 	}
 	
 	.seller .seller-wrapper .other-wrapper .server-wrapper {
 		background: url(server.png) no-repeat left center;
-		background-size: 15px 15px;
-		padding: 15px 0 17px 25px;
-		font-size: 14px;
-		border-bottom: 1px solid #F4F4F4;
+		background-size: .25rem .25rem;
+		padding: .2rem 0 .2rem .4rem;
+		font-size: .25rem;
+		border-bottom: .03rem solid #F4F4F4;
+		line-height: .4rem;
 	}
 	
 	.seller .seller-wrapper .other-wrapper .server-wrapper .poi-server {
 		display: inline-block;
+		line-height: .4rem;
 		margin-left: 17px;
 	}
 	
 	.seller .seller-wrapper .other-wrapper .server-wrapper .poi-server img {
-		width: 15px;
-		height: 15px;
-		margin-right: 6px;
+		width: .3rem;
+		height: .3rem;
+		margin-right: .03rem;
+		display: inline-block;
 		vertical-align: middle;
 	}
 	
 	.seller .seller-wrapper .other-wrapper .discounts-wrapper {
-		padding: 17px 24px 19px 0;
+		padding: .2rem .2rem .2rem 0;
 	}
 	
 	.seller .seller-wrapper .other-wrapper .discounts-wrapper .discounts-item {
@@ -336,16 +346,18 @@ export default {
 	}
 	
 	.seller .seller-wrapper .other-wrapper .discounts-wrapper .discounts-item .icon {
-		flex: 0 0 25px;
+		flex: 0 0 .5rem;
+		padding-top: .1rem;
 	}
 	
 	.seller .seller-wrapper .other-wrapper .discounts-wrapper .discounts-item .icon img {
-		width: 15px;
-		height: 15px;
+		width: .35rem;
+		height: .35rem;
 	}
 	
 	.seller .seller-wrapper .other-wrapper .discounts-wrapper .discounts-item .text {
 		flex: 1;
-		font-size: 14px;
+		font-size: .28rem;
+		line-height: .5rem
 	}
 </style>

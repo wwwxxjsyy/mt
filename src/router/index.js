@@ -14,6 +14,9 @@ import RedMoney from '../components/mine/others/RedMoney'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
+
+// 首页相关路由 
+import Delicious from '../pages/delicious'//美食
 import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
@@ -42,6 +45,7 @@ import Superior from '../components/home/homeIndex/mt-home-superior.vue'
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 import HomeGoods from '../pages/homegoods'
+
 //三级路由
 import HomeShopGoods from '../components/home/homeshop/goods/homeshopGoods'
 import HomeShopRatings from '../components/home/homeshop/ratings/homeshopRatings'
@@ -81,6 +85,7 @@ export default new Router({
         }  
       },
       {
+<<<<<<< HEAD
         name:"selectAddress",
         path:"/selectAddress",
         component:selectAddress,
@@ -101,31 +106,48 @@ export default new Router({
       {
         path:"/goods",
         component: HomeShopGoods
+=======
+        path:"/homegoods",
+        component: HomeGoods,
+        children:[{
+          path: 'goods',
+          component: HomeShopGoods
+        },
+        {
+          path: 'ratings',
+          component: HomeShopRatings
+        },
+        {
+          path: 'seller',
+          component: HomeShopSeller
+        }
+        ]
+>>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
       },
       {
         path:"/vip",
         component:Vip,
-        meta:{
-          flag:true,
-          requredAuth:true
-        }  
+        meta: {
+          flag: true,
+          requredAuth: false
+        } 
       },
       
       {
         path:"/order",
         component:Order,
-        meta:{
-          flag:true,
-          requredAuth:true
-        }  
+        meta: {
+          flag: true,
+          requredAuth: false
+        }
       },
       {
         path:"/mine",
         component:Mine,
-        meta:{
-          flag:true,
-          requredAuth:true
-        }  
+        meta: {
+          flag: true,
+          requredAuth: false
+        } 
       },
       {
         path:"/login",
@@ -167,8 +189,13 @@ export default new Router({
         component:RedMoney,
         meta: {
           flag: true,
-          requredAuth: true
+          requredAuth: true,
+          isShow:false
         },
+        meta: {
+         isShow:false
+        },
+
       },
       {
         path:"/Collection",
@@ -177,6 +204,9 @@ export default new Router({
           flag: true,
           requredAuth: true
         },
+        meta: {
+          isShow:false
+         },
       },
       {
         path:"/Address",
@@ -185,6 +215,9 @@ export default new Router({
           flag: true,
           requredAuth: true
         },
+        meta: {
+          isShow:false
+         },
       },
       {
         path:'/PlusAddress',
@@ -248,6 +281,7 @@ export default new Router({
         path:'/MyAccount',
         component:MyAccount
       },
+<<<<<<< HEAD
       {
         path:'/Comp',
         component:Comp
@@ -257,6 +291,8 @@ export default new Router({
         component:Superior
       },
  
+=======
+>>>>>>> 95771a1f104ccabf58c9fdd3023ef85659b7a6e6
       {
         path:"**",
         redirect:"/home"

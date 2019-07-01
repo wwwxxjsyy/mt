@@ -29,16 +29,15 @@ methods: {
 <style scoped>
 .myaccount-header {
     width: 100%;
-    height: 1.3rem;
+    height: 1.2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     background: #fafafa;
-    padding-left: .39rem;
+    padding-left: .49rem;
     position:sticky;
     top:0;
     left:0;
-    z-index: 2000;
 }
 
 .myaccount-header .back {
@@ -46,12 +45,12 @@ methods: {
 }
 
 .myaccount-header .back>i {
-    font-size: .6rem;
+    font-size: .5rem;
     color:#757575;
 }
 .myaccount-header .back>span {
-    margin-left: .3rem;
-    font-size: .45rem;
+    margin-left: .4rem;
+    font-size: .4rem;
     color: black;
 }
 </style>
