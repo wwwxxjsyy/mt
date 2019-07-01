@@ -31,7 +31,8 @@ methods: {
 <style  scoped>
 .address-header {
     width: 100%;
-    height: 1.5rem;
+    height: 1rem;
+    line-height: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,19 +49,20 @@ methods: {
 }
 
 .address-header .back>i {
-    font-size: .6rem;
+    font-size: .35rem;
     color:#757575;
 }
 .address-header .back>span {
+    display: inline-block;
     margin-left: .3rem;
-    font-size: .45rem;
+    font-size: .35rem;
     color: black;
 }
 
 .address-header-titile>span {
     float: right;
-    font-size: .31rem;
+    font-size: .3rem;
     color: black;
-    margin-right: .4rem;
+    margin-right: .5rem;
 }
 </style>

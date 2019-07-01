@@ -2,18 +2,18 @@
   <div class="optimization">
     <div class="home-optimization-title">
       <h2>午餐优选</h2>
-      <span class="home-optimization-more iconfont">更多&#xe60a;</span>
+      <span class="home-optimization-more iconfont" @click="$router.push('/superior')">更多&#xe60a;</span>
     </div>
     <div class="home-optimization-food">
       <ul>
         <!-- foodlist 不同时间推荐不同商品 优选 -->
-        <li v-for="(items,index) in foodlist" :key="index">
+        <li v-for="(items,index) in homeData.data.foodlist" :key="index">
           <div>
-            <img :src="items.foodpic">
+            <img :src="items.img_url">
           </div>
           <div class="home-optimization-foodname">
             <div class="home-optimization-foodname-left">
-              <h3>{{items.shopname}}</h3>
+              <h3>{{items.shop_name}}</h3>
               <p>{{items.recommend}}</p>
             </div>
             <div class="home-optimization-foodname-right">
@@ -25,16 +25,16 @@
         <!-- 菜品推荐  精选 -->
         <li
           class="home-optimization-selected"
-          v-for="(items,index) in goodfood"
+          v-for="(items,index) in homeData.data.goodfood"
           :key="index+888"
-          :style=" 'background-image :  url( ' + items.backgroundimg+' ) ' "
+          :style=" 'background-image :  url( ' + items.goods_url+' ) ' "
         >
           <h3>{{items.foodmenu}}</h3>
           <div class="home-optimization-selected-btm">
             <div class="home-optimization-selectedmenu">
               <div class="home-optimization-selectedmen-left">
-                <b>{{items.foodname}}</b>
-                <span>{{items.foodprice}}</span>
+                <b>{{items.goods_name}}</b>
+                <span>{{items.goods_price}}</span>
               </div>
               <div class="home-optimization-selectedmen-right">
                 <img :src="items.foodpic" alt>
@@ -50,6 +50,12 @@
 <script>
 export default {
   name: "Optimization",
+  props:{
+        homeData:{}
+    },
+    created(){
+      console.log(this.homeData)
+    },
   data() {
     return {
       foodlist: [
@@ -123,6 +129,7 @@ export default {
   width: 100%;
   height: 0.6rem;
   padding: 0.1rem;
+
 }
 .home-optimization-title h2 {
   font-size: .3rem;

@@ -23,25 +23,13 @@ methods: {
         window.history.back()
     }
 },
-created() {
 
-},
-mounted() {
-
-},
-beforeCreate() {}, 
-beforeMount() {}, 
-beforeUpdate() {}, 
-updated() {}, 
-beforeDestroy() {}, 
-destroyed() {}, 
-activated() {},
 }
 </script>
 <style scoped>
 .balance-header {
     width: 100%;
-    height: 1.5rem;
+    height: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,12 +46,12 @@ activated() {},
 }
 
 .balance-header .back>i {
-    font-size: .6rem;
+    font-size: .5rem;
     color: #333;
 }
 .balance-header .back>span {
     margin-left: .3rem;
-    font-size: .45rem;
+    font-size: .4rem;
     color: black;
 }
 </style>

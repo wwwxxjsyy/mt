@@ -1,28 +1,42 @@
 <template>
-    <div class="myaccount-out">退出当前账号</div>
+
+   <div>
+      <div class="myaccount-out" @click="isShow">退出当前账号</div>
+    <setButtn :isShow="isshow"/>
+   </div>
 </template>
 
 <script>
+import setButtn from './setButton'
 export default {
-  components: {},
+  components: {
+    setButtn
+  },
   data() {
-    return {};
+    return {
+      isshow:false
+    };
   },
   computed: {},
   watch: {},
-  methods: {}
+  methods: {
+    isShow(){
+      this.isshow = true
+    }
+  }
 };
 </script>
 <style  scoped>
 .myaccount-out {
   width: 100%;
-  height: 1.3rem;
+  height: 1.1rem;
   color: #ff6c7a;
-  font-size: 0.42rem;
+  font-size: 0.35rem;
   text-align: center;
-  line-height: 1.3rem;
+  line-height: 1.1rem;
   background: #fafafa;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
-
-
 </style>

@@ -33,7 +33,7 @@ export default {
     name:"MtLoginVrification",
      data(){
         return {
-            flag:true,
+            flag:false,
             phone:'',
             TEL_REGEXP:/^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/,
             tips:true
@@ -57,15 +57,15 @@ export default {
                 $("button[type='submit']").removeAttr("abled");
                     //请求后端发送验证码
                     this.flag=true
-                    // this.http.get('/check_code/?phone='+this.phone).then(res=>{
-                    //     console.log(res)
-                    //     if(res.code==200){
-                    //         this.$router.push({name:'LoginMessageVerification'})
-                    //     }else{
-                    //         $("button[type='submit']").attr("disabled");
-                    //         this.flag=false
-                    //     }
-                    // }) 
+                    // ---this.http.get('/user/check_code/',{'phone':this.phone}).then(res=>{
+                    //   ---  console.log(res)//打印后端的响应
+                    //    --- if(res.code==200){
+                    //     ---    this.$router.push({name:'LoginMessageVerification'})
+                    //    --- }else{
+                    //      ---   $("button[type='submit']").attr("disabled");
+                    //       ---  this.flag=false
+                    //    --- }
+                    // ---}) 
                     this.$router.push({name:'LoginMessageVerification'})  
             }else{
                     $("button[type='submit']").attr("disabled");

@@ -2,7 +2,11 @@ import axios from 'axios'
 import $qs from 'qs' 
 
 //创建axios实例
+<<<<<<< HEAD
 axios.defaults.baseURL ='http://10.35.162.134:8002/';
+=======
+axios.defaults.baseURL ='http://10.35.162.132:8002/';
+>>>>>>> f2369eea932cf092ac236c9d25eac1b0cb541e68
 // axios.defaults.baseURL ='http://jsonplaceholder.typicode.com/';
 // axios.defaults.baseURL ='http://10.35.161.31:9001/';
 

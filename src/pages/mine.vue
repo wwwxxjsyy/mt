@@ -1,10 +1,10 @@
 <template>
   <div class="mt-mine">
-    <mineHeader :isLogin='currentUser'/>
-    <mineVip/>
-    <mineList/>
-    <mineContent/>
-    <Footer/>
+    <mineHeader :userInfo="userInfo"/>
+    <mineVip :userInfo="userInfo"/>
+    <mineList :userInfo="userInfo"/>
+    <mineContent :userInfo="userInfo"/>
+    <Footer :userInfo="userInfo"/>
   </div>
 </template>
 
@@ -22,15 +22,30 @@ export default {
     mineList,
     mineContent
   },
+  data(){
+    return {
+      userInfo:{}
+    }
+  },
   computed:{
-    // this.http.get('/check_code/?phone=18821687723').then(res=>{
-        // console.log(res)
-        // })
+      currentUser(){
+              return this.$store.getters.currentUser
+      }
         
-        currentUser(){
-                return this.$store.getters.currentUser
-            }
-        
+  },
+  created(){
+    // 向后端请求数据
+    if(currentUser){
+      this.$axios.post('/user/code_login/',currentUser).then(res=>{
+        //打印登陆成功信息   登陆成功
+        console.log(res.msg)
+        this.userInfo=res.data
+      })
+    }else{
+      alert("请先登陆")
+      this.$router.push('/registerLogin')
+    }
+    
   }
 };
 </script>

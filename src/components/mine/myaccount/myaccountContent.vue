@@ -1,8 +1,8 @@
 <template>
 <div class='myaccount-content'>
-    <div class="headportrait">
+    <div class="input-wrap">
         <p>头像</p>
-        <div class="right">
+        <div class="wrapcon">
             <span>
                 <img src="../../../assets/minePic/logo.gif" alt="">
             </span>
@@ -16,30 +16,31 @@
             <i class="iconfont">{{'&#xe60a;'}}</i>
         </div>
     </div>
-    <div class="password">
-         <p>账号密码</p>
-        <div>
+    <router-link to="/SetPassword" tag="div" class="input-wrap">
+          <p>账号密码</p>
+        <div class="wrapcon">
             <span>未设置</span>
             <i class="iconfont">{{'&#xe60a;'}}</i>
         </div>
-    </div>
-    <div class="phone">
+    </router-link>
+       
+    <div class="input-wrap">
          <p>手机号</p>
-        <div>
+        <div class="wrapcon">
             <span>133***9776</span>
             <i class="iconfont">{{'&#xe60a;'}}</i>
         </div>
     </div>
-    <div class="wechat">
+    <div class="input-wrap">
          <p>微信账号</p>
-        <div>
+        <div class="wrapcon">
             <span>解绑</span>
             <i class="iconfont">{{'&#xe60a;'}}</i>
         </div>
     </div>
-    <div clsss="delete">
+    <div class="input-wrap">
          <p>注销账号</p>
-        <div>
+        <div class="wrapcon">
             <span>注销后无法恢复,请谨慎操作</span>
             <i class="iconfont">{{'&#xe60a;'}}</i>
         </div>
@@ -66,51 +67,38 @@ methods: {
 </script>
 <style scoped>
 .myaccount-content{
-    margin-top: .34rem;
+    margin-top: .2rem;
     background: #fff;
-    padding: 0 .48rem;
+    padding: 0 .49rem;
     color:black; 
 }
-.myaccount-content>div{
+.myaccount-content .input-wrap{
     border-bottom:1px solid #efefef;
+    display: flex;
+    height:1rem;
+    align-items: center;
+    justify-content: space-between;
 }
-.headportrait{
-    height:2.18rem;
+.myaccount-content .input-wrap:first-child{
+    height: 1.3rem;
+}
+.input-wrap .wrapcon{
     display: flex;
     align-items: center;
-} 
-.headportrait>p{
-    font-size:.38rem;
 }
-.headportrait .right{
-    display: flex;
+.input-wrap>p{
+    font-size:.32rem;
 }
-.headportrait .right img{
+.input-wrap .wrapcon img{
     width: 1.1rem;
     height: 1.1rem;
-    margin-left: 3rem;
-    margin-right: .36rem;
-}
-.headportrait .right i{
-    font-size:.56rem;
-    margin-top: .3rem;
-}
-
-.input-wrap{
-    height:1.42rem;
-    display: flex;
-    align-items: center;
-} 
-.input-wrap>p{
-    font-size:.38rem;
 }
 .input-wrap .wrapcon span{
-    font-size: .36rem;
-      margin-left: 2.6rem;
-    margin-right: .05rem;
+    font-size: .32rem;
+    color: #9e9e9e;
 }
 .input-wrap .wrapcon i{
-    font-size:.56rem;
-    margin-top: .3rem;
+    font-size:.5rem;
+    color: #9e9e9e;
 }
 </style>
