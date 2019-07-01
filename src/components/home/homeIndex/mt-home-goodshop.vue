@@ -15,7 +15,7 @@
         <div class="home-goodshop-btm">
             <h3>{{items.shoptheme}}</h3>
             <ul>
-                <li v-for="(items,index) in items.foodinfo">
+                <li v-for="(items,index) in items.foodinfo" :key="index">
                     <img :src="items.foodpic">
                     <i>
                          <p>{{items.foodname}}</p>

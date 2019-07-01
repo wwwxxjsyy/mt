@@ -49,13 +49,6 @@ export default {
         //获取经纬度
         self.getLngLatLocation()
       }
-<<<<<<< HEAD
-  },
-  mounted(){
-    this.http.post('api/home/',).then(res=>{
-      console.log(res)     
-=======
->>>>>>> f2369eea932cf092ac236c9d25eac1b0cb541e68
     })
     },
     getLngLatLocation(){

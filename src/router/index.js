@@ -91,7 +91,6 @@ export default new Router({
         }  
       },
       {
-<<<<<<< HEAD
         path:"/drink",
         component:Homedrink,
         meta: {
@@ -138,7 +137,8 @@ export default new Router({
             component: HomeShopSeller
           },
         ]  
-=======
+      },
+      {
         name:"selectAddress",
         path:"/selectAddress",
         component:selectAddress,
@@ -155,7 +155,6 @@ export default new Router({
           flag:false,
           requredAuth:true
         }  
->>>>>>> f2369eea932cf092ac236c9d25eac1b0cb541e68
       },
       {
         path:"/homegoods",
@@ -343,7 +342,6 @@ export default new Router({
       {
         path:"**",
         redirect:"/home"
-      },
-    
+      },   
   ]
 })

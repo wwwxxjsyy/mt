@@ -29,22 +29,12 @@ Vue.config.productionTip = false
 // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
 
 // router.beforeEach((to,from,next)=>{
-<<<<<<< HEAD
-//   if(to.path=='/vip'||to.path=='/order'){
-//       if(store.getters.isLogin){
-//         next()
-//       }else{
-//         alert("还未登录，请先登录")
-//         next('/login')
-    
-=======
   const isLogin = localStorage.mt_login ? true: false;
 //   if(to.path=='/vip'||to.path=='/order'){
 //       if(isLogin){
 //         next()
 //       }else{
 //        isLogin ? next() : next('/login')
->>>>>>> f2369eea932cf092ac236c9d25eac1b0cb541e68
 //       }
 //   }else{
 //     next()

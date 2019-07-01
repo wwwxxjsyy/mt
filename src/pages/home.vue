@@ -52,12 +52,12 @@ export default {
              data:{}
          }
      },
-     created(){
-         this.http.post('/api/home/').then(res=>{
-            console.log(res)
-            this.data=res
-            })
-    }
+    //  created(){
+    //      this.http.post('/api/home/').then(res=>{
+    //         console.log(res)
+    //         this.data=res
+    //         })
+    // }
      
      
     
