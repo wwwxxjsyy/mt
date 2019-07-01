@@ -12,7 +12,7 @@
             <span>低至￥15/月</span>
 
             <router-link to="/vipOpen" tag="a">立即开通</router-link>
-            <a href>立即开通</a>
+            <!-- <a href>立即开通</a> -->
         </div>
     </div>
 
