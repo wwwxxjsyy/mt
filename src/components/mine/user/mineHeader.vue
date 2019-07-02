@@ -1,13 +1,13 @@
 <template>
   <div class="mine-header">
-    <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
+    <router-link to='/registerLogin' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
     <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
-    <a  href="#/login" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
-    <a  class="MineName" v-show="isLogin">{{isLogin}}</a>
+    <a  href="#/registerLogin" class="MineName"  v-show="!isLogin">登录/注册</a>
+    <a  class="MineName" v-show="isLogin">{{userInfo.u_username}}</a>
     <div class="mine-icon">
       <a href="#" class="iconfont" v-for="item in headerIcon" v-html="item" :key="item"></a>
     </div>
@@ -22,7 +22,7 @@ export default {
       imgUrl: require("../../../assets/minePic/logo.gif"),
       headerIcon: ["&#xe601;", "&#xe69a;"],
       flag:false,
-      isShow:true
+      isLogin:""
     };
   },
   computed: {
@@ -46,7 +46,7 @@ export default {
   mounted() {},
   // 登录后传入随机验证码
   props:{
-    isLogin:String,
+    userInfo:{},
     default:'未登录'
   }
 };

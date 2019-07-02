@@ -29,7 +29,7 @@ methods: {
 <style scoped>
 .plus-address-header {
     width: 100%;
-    height: 1.2rem;
+    height: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,10 +48,11 @@ methods: {
 .plus-address-header .back>i {
     font-size: .5rem;
     color: #333;
+
 }
 .plus-address-header .back>span {
-    margin-left: 1.7rem;
-    font-size: .4rem;
+    margin-left: 2rem;
+    font-size: .35rem;
     color: black;
 }
 </style>

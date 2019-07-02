@@ -33,7 +33,7 @@ return {
             path:'/'
         },
         {
-            url:'http://p1.meituan.net/81.81.100/aichequan/774ce13f88576ec6742205fdada5dd1f4555.png.webp',
+            url:'ttp://p1.meituan.net/81.81.100/aichequan/774ce13f88576ec6742205fdada5dd1f4555.png.webp',
             desc1:'津贴',
             desc2:'余额20元',
             path:'/'

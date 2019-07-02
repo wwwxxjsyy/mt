@@ -1,26 +1,32 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 //一级路由
+import Comp from "../components/common/compon.vue"
 import Home from "../pages/home"
 import Order from "../pages/order"
 import Mine from "../pages/mine"
 import Vip from "../pages/vip"
 import Login from "../pages/login"
+import RegisterLogin from '../components/login/registerLogin.vue'
 import LoginMessageVerification from '../components/login/loginMessageVerification'
 import VipOpen from '../components/vip/vipOpen'
 import RedMoney from '../components/mine/others/RedMoney'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
-import SetPassword from '../components/mine/others/SetPassword'
 
 // 首页相关路由 
 import Delicious from '../pages/delicious'//美食
+import Homedrink from '../components/home/homepage/home-drink'
+import Hometest from '../components/home/homecommon/recommend'
+
+
+
+
 import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
-                              // order
       // 待评价
 import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
       // 退款
@@ -37,6 +43,11 @@ import OrderOrderComment from '../components/orders/OrderComment.vue'
 import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
 
 import VipLogin from '../components/vip/viplogin/'
+
+import selectAddress from '../components/home/homeIndex/mt-home-select-address.vue'
+import city from '../components/home/homeIndex/mt-home-city.vue'
+import Superior from '../components/home/homeIndex/mt-home-superior.vue'
+
 //二级路由
 //如：HomeShop 驼峰命名，前面加上一级路由名字
 import HomeGoods from '../pages/homegoods'
@@ -76,6 +87,72 @@ export default new Router({
         component:Home,
         meta:{
           flag:true,
+          requredAuth:true
+        }  
+      },
+      {
+        path:"/drink",
+        component:Homedrink,
+        meta: {
+          flag: false,
+          requredAuth: false
+        }
+      },
+      {
+        path: "/delicious",
+        component: Delicious,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
+      },
+      {
+        path: "/test",
+        component: Hometest,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
+      },
+      {
+        path: "/homegoods",
+        component: HomeGoods,
+        meta: {
+          flag: false,
+          requredAuth: false
+        },
+        children: [
+          {
+            path: "goods",
+            component: HomeShopGoods
+          },
+
+          {
+            path: "ratings",
+            component: HomeShopRatings
+          },
+
+          {
+            path: "seller",
+            component: HomeShopSeller
+          },
+        ]  
+      },
+      {
+        name:"selectAddress",
+        path:"/selectAddress",
+        component:selectAddress,
+        meta:{
+          flag:false,
+          requredAuth:true
+        }  
+      },
+      {
+        name:"city",
+        path:"/city",
+        component:city,
+        meta:{
+          flag:false,
           requredAuth:true
         }  
       },
@@ -138,7 +215,15 @@ export default new Router({
           requredAuth:false
         }   
       },
-     
+      {
+        path:'/registerLogin',
+        name:RegisterLogin,
+        component:RegisterLogin,
+        meta:{
+          flag:false,
+          requredAuth:false
+        }
+      },
       {
         name:"LoginMessageVerification",
         path:"/loginMessageVerification",
@@ -246,13 +331,17 @@ export default new Router({
         component:MyAccount
       },
       {
-        path:'/SetPassword',
-        component:SetPassword
+        path:'/Comp',
+        component:Comp
       },
+      {
+        path:'/superior',
+        component:Superior
+      },
+ 
       {
         path:"**",
         redirect:"/home"
-      },
-    
+      },   
   ]
 })

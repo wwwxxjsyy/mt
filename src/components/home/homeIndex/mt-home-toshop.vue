@@ -29,10 +29,10 @@ export default {
         return{
             shoplists:[
                 {
-                    shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
-                    shopname:'喜唐精致水饺(好吃的水饺)',
-                    distance:'729米',
-                    discount:'省2.5元配送费',
+                    shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562551781&di=e8f3c0d90f4327642d6beee52764b50d&imgtype=jpg&er=1&src=http%3A%2F%2F00.imgmini.eastday.com%2Fmobile%2F20180327%2F20180327214538_977ab957fdbe50951691e25e10044fd3_2.jpeg',
+                    shopname:'渭南时辰包子(团结南路店)',
+                    distance:'1070米',
+                    discount:'省2元配送费',
                     activity:[
                         {
                             title:'减',
@@ -49,8 +49,8 @@ export default {
                     ]
                 },
                 {
-                    shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
-                    shopname:'喜唐精致水饺(好吃的水饺)',
+                    shoppic:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1103479575,2951119916&fm=26&gp=0.jpg',
+                    shopname:'湘秦快餐(精选午餐)',
                     distance:'729米',
                     discount:'省2.5元配送费',
                     activity:[
@@ -73,8 +73,8 @@ export default {
                     ]
                 },
                 {
-                    shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
-                    shopname:'喜唐精致水饺(好吃的水饺)',
+                    shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562551975&di=0c3a000b82ab30869b843a9a0c67e148&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F76%2F91%2F5966289bd8c83_610.jpg',
+                    shopname:'催记米线(好面配好汤)',
                     distance:'729米',
                     discount:'省2.5元配送费',
                     activity:[
@@ -97,8 +97,8 @@ export default {
                     ]
                 },
                 {
-                    shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
-                    shopname:'喜唐精致水饺(好吃的水饺)',
+                    shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561957556765&di=c083bc210fc6ff3f57100f83b6bd4743&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fpeople%2F201207%2F12%2F20120712164512_uEfza.jpeg',
+                    shopname:'食客来 (科技三路店)',
                     distance:'729米',
                     discount:'省2.5元配送费',
                     activity:[
@@ -121,8 +121,8 @@ export default {
                     ]
                 },
                 {
-                    shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
-                    shopname:'喜唐精致水饺(好吃的水饺)',
+                    shoppic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1106386385,1319488627&fm=26&gp=0.jpg',
+                    shopname:'食器时代 (面食专家)',
                     distance:'729米',
                     discount:'省2.5元配送费',
                     activity:[
@@ -145,8 +145,8 @@ export default {
                     ]
                 },
                 {
-                    shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
-                    shopname:'喜唐精致水饺(好吃的水饺)',
+                    shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562552415&di=13241d649fcc160db65f1bf47f07a033&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.zhengjicn.com%2FUploadFiles%2Fjx1_UploadFiles_4309%2F201311%2F20131113155752583.jpg',
+                    shopname:'一品轩 (川菜辣专家)',
                     distance:'729米',
                     discount:'省2.5元配送费',
                     activity:[
@@ -169,8 +169,8 @@ export default {
                     ]
                 },
                 {
-                    shoppic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2639842308,901717750&fm=11&gp=0.jpg',
-                    shopname:'喜唐精致水饺(好吃的水饺)',
+                    shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562552461&di=c5962e49fd3b6904c750c6bda8b80e26&imgtype=jpg&er=1&src=http%3A%2F%2Fimg3.redocn.com%2F20100111%2F20100111_eb67165017d3721646a9O4ZcNMDSHaEY.jpg',
+                    shopname:'黑糖咖啡 (休闲娱乐好去处)',
                     distance:'729米',
                     discount:'省2.5元配送费',
                     activity:[
@@ -237,8 +237,9 @@ export default {
 }
 .home-toshop-list ul li img{
     width: 1.5rem;
-    height: 1.5rem;
+    height: 1.5rem; 
     margin:  auto 0;
+    background: #f3f3f3;
 }
 .home-toshop-foodinfo{
     margin-left: .15rem;

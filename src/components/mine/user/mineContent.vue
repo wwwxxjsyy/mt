@@ -57,7 +57,7 @@ export default {
     return {
       funList: [
         {
-          url: 'http://p0.meituan.net/81.81.100/aichequan/0d78fe6f668f49d728fe7d50cb83a5da2990.png.webp',
+          url: 'http://p0.meituan.net/81.81.100/aichequan/ded6c9cc76a05ffc19807ecfc45ff8da3375.png.webp',
           desc: "我的地址",
           path:'/Address'
         },

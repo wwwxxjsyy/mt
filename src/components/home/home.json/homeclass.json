@@ -1,0 +1,517 @@
+轮播图 商品分类15个小图标
+可以用之前的
+
+早餐（午餐）专区
+foodlist: [
+    {
+      foodpic:
+        "http://youimg1.c-ctrip.com/target/100t0d0000006s5zkA325.jpg",
+      shopname: "魏家凉皮 (科技三路店)",
+      recommend: "根据您看过的店推荐",
+      shoppic:
+        "http://userimages15.51sole.com/20170912/b_4056735_201709121533535225.jpg"
+    },
+    {
+      foodpic:
+        "http://img5.imgtn.bdimg.com/it/u=3473710707,611514416&fm=26&gp=0.jpg",
+      shopname: "肯德基宅急送（唐兴路店）",
+      recommend: "附近热卖好店",
+      shoppic:
+        "http://cdn.clm02.com/ezp9.com/28146/28146_2.png"
+    },
+    {
+      foodpic:
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562550878&di=b56ee730a884f22e60949ed1dfb6d2f1&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201609%2F11%2F20160911182823_GkQeW.jpeg",
+      shopname: "汉堡王（T11西安239311店）",
+      recommend: "根据您看过的店推荐",
+      shoppic:
+        "http://img5.imgtn.bdimg.com/it/u=2095573645,475601590&fm=26&gp=0.jpg"
+    },
+    {
+      foodpic:
+        "https://p0.meituan.net/waimaipoi/d601804ac552730dccea6bda6697329426624.jpg",
+      shopname: "渭南时辰包子(团结南路店)",
+      recommend: "根据您看过的店推荐",
+      shoppic:
+        "http://img5.imgtn.bdimg.com/it/u=3721691357,3522887404&fm=26&gp=0.jpg"
+    }
+  ],
+  goodfood: [
+    {
+      foodmenu: "ᅳ 西北菜菜品 ᅳ",
+      foodname: "肥牛砂锅宽粉",
+      foodprice: "￥ 22.98",
+      foodpic:
+        "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2444544723,2403570976&fm=11&gp=0.jpg",
+      backgroundimg:
+        "http://p0.meituan.net/waimaipoi/148d237f8a27f5a64a5df4c21a99c4c9121765.jpg"
+    },
+    {
+      foodmenu: "ᅳ 新疆菜精选 ᅳ",
+      foodname: "大盘鸡单人套餐",
+      foodprice: "￥ 28.5",
+      foodpic:
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561478282907&di=7954067a9bda931af6bc0bb75a3f6620&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fbainuo%2Fcrop%3D0%2C14%2C690%2C418%3Bw%3D470%3Bq%3D79%2Fsign%3Db425143333d3d539d572558307b7c561%2F55e736d12f2eb938e69f4e3fd0628535e4dd6f08.jpg",
+      backgroundimg:
+        "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1308201291,2809421273&fm=26&gp=0.jpg"
+    }
+  ]
+
+优惠专区
+discountlist:[
+    {
+        title:'天天特惠',
+        name:'今夜不打烊',
+        discount:'满减两折起',
+        backgroundimg:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=130943566,2416302647&fm=11&gp=0.jpg'
+    },
+    {
+        title:'餐餐特价',
+        name:'经典人气宵夜',
+        discount:'精选小食5折',
+        backgroundimg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562550848&di=93c1929869164943457f8b459cfb7bb9&imgtype=jpg&er=1&src=http%3A%2F%2Fci.xiaohongshu.com%2Fa6d6af7d-05dc-4970-892a-604e68e5af53%40r_750w_750h_ss1.jpg'
+    }
+],
+moreslist:[
+    {
+        name:"安全可靠",
+        title:'健康守护',
+        imgs:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561489353908&di=e28e9547f53e88b205d37cb1a068810f&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn4%2Fjfs%2Ft8962%2F104%2F1404008905%2F281435%2F522b649c%2F59b8a529N2164d192.jpg'
+    },
+    {
+        name:"必吃",
+        title:'6折觅好味',
+        imgs:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561488566784&di=f6c541996682ed8fd53a16b0d6a62376&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201504%2F22%2F20150422H2139_YwBTZ.thumb.224_0.jpeg'
+    },
+    {
+        name:"生日花礼",
+        title:'鲜花低至99',
+        imgs:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1003086202,1774654568&fm=15&gp=0.jpg'
+    },
+    {
+        name:"跑腿帮买",
+        title:'更快更方便',
+        imgs:'http://img5.imgtn.bdimg.com/it/u=4169026478,197019271&fm=26&gp=0.jpg'
+    }
+]
+
+好店推荐
+goodsshop:[
+    {
+        shopname:'大尚龙虾.烧烤.虾尾',
+        shopimgs:'http://img4.imgtn.bdimg.com/it/u=543139140,1104626788&fm=26&gp=0.jpg',
+        shoppic:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3422724315,104055540&fm=26&gp=0.jpg',
+        discount:[
+            '5减5',
+            '50减25',
+            '100减50',
+            '200减100'
+        ],
+        shoptheme:'麻辣.鲜香 挑战您的味蕾',
+        foodinfo:[
+            {
+                foodpic:'http://img2.imgtn.bdimg.com/it/u=39505531,2473249177&fm=26&gp=0.jpg',
+                foodname:'秘制！麻辣大龙虾 鲜香美味的小龙虾',
+                foodprice:'￥35.0',
+                originalprice:'￥58.8'
+            },
+            {
+                foodpic:'http://p4.ssl.cdn.btime.com/t01a720786a90975af0.jpg?size=1255x700',
+                foodname:'飘香馋嘴蛙 (进店必买品)',
+                foodprice:'￥86.0',
+                originalprice:'￥128.8'
+            },
+            {
+                foodpic:'http://5b0988e595225.cdn.sohucs.com/images/20171231/e2ce7ee5389a41938e9972adf7adef45.jpeg',
+                foodname:'招牌油焖大虾',
+                foodprice:'￥66.5',
+                originalprice:'￥95.8'
+            }
+        ]
+    }
+]
+
+到店自取
+shoplists:[
+    {
+        shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562551781&di=e8f3c0d90f4327642d6beee52764b50d&imgtype=jpg&er=1&src=http%3A%2F%2F00.imgmini.eastday.com%2Fmobile%2F20180327%2F20180327214538_977ab957fdbe50951691e25e10044fd3_2.jpeg',
+        shopname:'渭南时辰包子(团结南路店)',
+        distance:'1070米',
+        discount:'省2元配送费',
+        activity:[
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }
+        ]
+    },
+    {
+        shoppic:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1103479575,2951119916&fm=26&gp=0.jpg',
+        shopname:'湘秦快餐(精选午餐)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562551975&di=0c3a000b82ab30869b843a9a0c67e148&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F76%2F91%2F5966289bd8c83_610.jpg',
+        shopname:'催记米线(好面配好汤)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561957556765&di=c083bc210fc6ff3f57100f83b6bd4743&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fpeople%2F201207%2F12%2F20120712164512_uEfza.jpeg',
+        shopname:'食客来 (科技三路店)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1106386385,1319488627&fm=26&gp=0.jpg',
+        shopname:'食器时代 (面食专家)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562552415&di=13241d649fcc160db65f1bf47f07a033&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.zhengjicn.com%2FUploadFiles%2Fjx1_UploadFiles_4309%2F201311%2F20131113155752583.jpg',
+        shopname:'一品轩 (川菜辣专家)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    },
+    {
+        shoppic:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562552461&di=c5962e49fd3b6904c750c6bda8b80e26&imgtype=jpg&er=1&src=http%3A%2F%2Fimg3.redocn.com%2F20100111%2F20100111_eb67165017d3721646a9O4ZcNMDSHaEY.jpg',
+        shopname:'黑糖咖啡 (休闲娱乐好去处)',
+        distance:'729米',
+        discount:'省2.5元配送费',
+        activity:[
+            {
+                title:'赠',
+                color:'#fd464b'
+            },
+            {
+                title:'减',
+                color:'#e75854'
+            },
+            {
+                title:'折',
+                color:'#ac5cf3'
+            },
+            {
+                title:'返',
+                color:'#fd464b'
+            }     
+        ]
+    }
+]
+
+更多商家
+foodslist:[
+    {
+        foodpic:'https://p0.meituan.net/waimaipoi/f81249ddff71d0491bb18dceb02acf8f38552.jpg',
+        foodname:'泰熙家（高新万达店）',
+        give:"美团专送",
+        foodscore:'4.8',
+        foodnum:'9999+',
+        time:'50分钟 4.7km',
+        pickup:'30',
+        giveprice:'3.5',
+        percapita:'23',
+        ranking:'大众点评高分店铺',
+        offer:[
+            {
+                title:'20减8',
+                clolr:'red'
+            },
+            {
+                title:'24减9',
+                clolr:'green'
+            },
+            {
+                title:'45减14',
+                clolr:'red'
+            },
+            {
+                title:'支持自取',
+                clolr:'black'
+            }
+        ]
+    },
+    {
+        foodpic:'https://p0.meituan.net/waimaipoi/aea206c79c379477024aa9e0199431f029499.jpg',
+        foodname:'花枝唯希炖品（高新店）',
+        timer:'准时宝',
+        foodscore:'4.7',
+        foodnum:'2358',
+        time:'36分钟 1.7km',
+        pickup:'15',
+        giveprice:'4.5',
+        percapita:'25',
+        ranking:'雁塔区甜品人气第四名',
+        offer:[
+            {
+                title:'35减13',
+                clolr:'red'
+            },
+            {
+                title:'24减9',
+                clolr:'red'
+            },
+            {
+                title:'35减13',
+                clolr:'red'
+            },
+            {
+                title:'58减23',
+                clolr:'red'
+            }
+        ]
+    },
+    {
+        foodpic:'https://p0.meituan.net/waimaipoi/45cd3dac2d626f500ddc9fb15513bf7c50046.jpg',
+        foodname:'鱼小喵在成都（高新店）',
+        give:"美团专送",
+        foodscore:'4.9',
+        foodnum:'5484',
+        time:'42分钟 3.2km',
+        pickup:'20',
+        giveprice:'2',
+        percapita:'23',
+        ranking:'品牌加盟',
+        offer:[
+            {
+                title:'16减4',
+                clolr:'red'
+            },
+            {
+                title:'24减9',
+                clolr:'red'
+            },
+            {
+                title:'30减11',
+                clolr:'red'
+            },
+            {
+                title:'58减23',
+                clolr:'red'
+            }
+        ]
+    },
+    {
+        foodpic:'https://p1.meituan.net/waimaipoi/3a74b132c6a8c5de1f5cd694fdb86ee327206.jpg',
+        foodname:'粥先生(高新店)',
+        foodscore:'4.8',
+        foodnum:'5754',
+        time:'45分钟 3.6km',
+        pickup:'20',
+        giveprice:'2.5',
+        percapita:'23',
+        ranking:'雁塔区销量第三名',
+        offer:[
+            {
+                title:'25减9',
+                clolr:'red'
+            },
+            {
+                title:'38减14',
+                clolr:'red'
+            },
+            {
+                title:'55减20',
+                clolr:'red'
+            },
+            {
+                title:'85减30',
+                clolr:'red'
+            }
+        ]
+    },
+    {
+        foodpic:'https://p0.meituan.net/business/2aa0f13eaf3e723a841f525858f91447124408.png',
+        foodname:'小六汤包（大寨路店）',
+        foodscore:'4.4',
+        foodnum:'3655',
+        time:'52分钟 4.2km',
+        pickup:'20',
+        giveprice:'3',
+        percapita:'23',
+        ranking:'点评高分店铺',
+        offer:[
+            {
+                title:'28减9',
+                clolr:'red'
+            },
+            {
+                title:'46减20',
+                clolr:'red'
+            }
+        ]
+    },
+    {
+        foodpic:'https://p0.meituan.net/business/52f180a996627833cdccbb7be2aeafaf31688.jpg',
+        foodname:'袁记肉夹馍（恒大店）',
+        timer:'准时宝',
+        foodscore:'4.6',
+        foodnum:'4156',
+        time:'65分钟 5.5km',
+        pickup:'20',
+        giveprice:'4',
+        percapita:'23',
+        ranking:'美食广场',
+        offer:[
+            {
+                title:'25减6',
+                clolr:'red'
+            },
+            {
+                title:'40减14',
+                clolr:'red'
+            }
+        ]
+    },
+    {
+        foodpic:'https://p0.meituan.net/business/46617277cd736b368e791f06910e1064233340.png',
+        foodname:'曼玲粥店（西安高新区店）',
+        give:"美团专送",
+        foodscore:'4.3',
+        foodnum:'5624',
+        time:'45分钟 3.7km',
+        pickup:'25',
+        giveprice:'2.5',
+        percapita:'30',
+        ranking:'快餐小吃',
+        offer:[
+            {
+                title:'20减8',
+                clolr:'red'
+            },
+            {
+                title:'30减10',
+                clolr:'red'
+            },
+            {
+                title:'46减18',
+                clolr:'red'
+            }
+        ]
+    },
+    {
+        foodpic:'https://p0.meituan.net/waimaipoi/2c7d876ec86537fe414c1b5095a41e2a30913.jpg',
+        foodname:'舍外轻食博物馆',
+        foodscore:'4.5',
+        foodnum:'2834',
+        time:'36分钟|4.0km',
+        pickup:'18',
+        giveprice:'2',
+        percapita:'20',
+        ranking:'点评高分店铺',
+        offer:[
+            {
+                title:'16减1',
+                clolr:'red'
+            },
+            {
+                title:'24减6',
+                clolr:'red'
+            },
+            {
+                title:'50减14',
+                clolr:'red'
+            },
+        ]
+    }
+]

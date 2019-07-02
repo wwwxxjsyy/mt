@@ -36,13 +36,13 @@ export default {
                     title:'餐餐特价',
                     name:'经典人气宵夜',
                     discount:'精选小食5折',
-                    backgroundimg:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=130943566,2416302647&fm=11&gp=0.jpg'
+                    backgroundimg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562550848&di=93c1929869164943457f8b459cfb7bb9&imgtype=jpg&er=1&src=http%3A%2F%2Fci.xiaohongshu.com%2Fa6d6af7d-05dc-4970-892a-604e68e5af53%40r_750w_750h_ss1.jpg'
                 }
             ],
             moreslist:[
                 {
                     name:"安全可靠",
-                    title:'24小时送药',
+                    title:'健康守护',
                     imgs:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561489353908&di=e28e9547f53e88b205d37cb1a068810f&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn4%2Fjfs%2Ft8962%2F104%2F1404008905%2F281435%2F522b649c%2F59b8a529N2164d192.jpg'
                 },
                 {
@@ -57,8 +57,8 @@ export default {
                 },
                 {
                     name:"跑腿帮买",
-                    title:'24小时为您服务',
-                    imgs:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561488566784&di=f6c541996682ed8fd53a16b0d6a62376&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201504%2F22%2F20150422H2139_YwBTZ.thumb.224_0.jpeg'
+                    title:'更快更方便',
+                    imgs:'http://img5.imgtn.bdimg.com/it/u=4169026478,197019271&fm=26&gp=0.jpg'
                 }
             ]
         }
@@ -127,6 +127,7 @@ export default {
     width: 1.3rem;
     height: .3rem;
     font-size: .19rem;
+    line-height: .3rem;
     background: rgb(255, 73, 6);
     opacity: .8;
     color: #fff;
