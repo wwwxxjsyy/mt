@@ -3,11 +3,7 @@
     <router-link to='/login' v-show="!isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
-<<<<<<< HEAD
-=======
-    <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo"/>
->>>>>>> 687c9a4a7138af584ae7fa9e64b58e4e1fff9f0a
-    <router-link to='/home' v-show="isLogin" class="MineHeaderLogo">
+    <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
     <a  href="#/login" class="MineName" v-show="!isLogin">登录/注册{{isLogin}}</a>
@@ -26,15 +22,26 @@ export default {
       imgUrl: require("../../../assets/minePic/logo.gif"),
       headerIcon: ["&#xe601;", "&#xe69a;"],
       flag:false,
+      isShow:true
     };
   },
   computed: {
-
   },
-  watch: {},
-  methods: {
+   activated(){
+      window.addEventListener('scroll', this.handleScroll)
+    },
+    methods: {
+      handleScroll(){
+        const top = document.documentElement.scrollTop;
+        if (top > 30) {
+         this.$('.mine-header').style.height="75px"
+        } else {
+          
+        }       
+         console.log(document.documentElement.scrollTop);
+      }
+    },
 
-  },
   created() {},
   mounted() {},
   // 登录后传入随机验证码
@@ -48,13 +55,14 @@ export default {
 .mine-header {
   width: 100%;
   height: 1.5rem;
-  background: #f7f7f7;
+  background: #fafafa;
   display: flex;
   align-items: center;
   justify-content: space-between;
   top: 0;
   position: sticky;
 }
+
 .MineHeaderLogo {
   display: flex;
   width: 1rem;

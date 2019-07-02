@@ -1,8 +1,8 @@
 <template>
 
    <div>
-      <div class="myaccount-out" @click="isShow">退出当前账号</div>
-    <setButtn :isShow="isshow"/>
+      <div class="myaccount-out"  @click="isShowDel">退出当前账号</div>
+    <setButtn :isShow="isshow" @isShows="isShows"/>
    </div>
 </template>
 
@@ -20,8 +20,11 @@ export default {
   computed: {},
   watch: {},
   methods: {
-    isShow(){
-      this.isshow = true
+     isShowDel(){
+      this.isshow = !this.isshow
+    },
+    isShows(val){
+      this.isshow = val;
     }
   }
 };

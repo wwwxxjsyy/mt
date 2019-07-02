@@ -12,6 +12,7 @@ import RedMoney from '../components/mine/others/RedMoney'
 import Collection from '../components/mine/others/Collection'
 import Address from '../components/mine/others/Address'
 import PlusAddress from '../components/mine/others/PlusAddress'
+import SetPassword from '../components/mine/others/SetPassword'
 
 // 首页相关路由 
 import Delicious from '../pages/delicious'//美食
@@ -19,10 +20,6 @@ import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
-<<<<<<< HEAD
-import SetPassword from '../components/mine/others/SetPassword'
-=======
->>>>>>> 687c9a4a7138af584ae7fa9e64b58e4e1fff9f0a
                               // order
       // 待评价
 import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
@@ -77,17 +74,10 @@ export default new Router({
       {
         path:"/home",
         component:Home,
-<<<<<<< HEAD
-        meta: {
-          flag: true,
-          requredAuth: false
-        }
-=======
         meta:{
           flag:true,
           requredAuth:true
         }  
->>>>>>> 687c9a4a7138af584ae7fa9e64b58e4e1fff9f0a
       },
       {
         path:"/homegoods",
@@ -96,28 +86,6 @@ export default new Router({
           path: 'goods',
           component: HomeShopGoods
         },
-<<<<<<< HEAD
-        children: [
-          {
-            path: "goods",
-            component: HomeShopGoods
-          },
-
-          {
-            path: "ratings",
-            component: HomeShopRatings
-          },
-
-          {
-            path: "seller",
-            component: HomeShopSeller
-          },
-        ]  
-      },
-      {
-        path:"/goods",
-        component: HomeShopGoods
-=======
         {
           path: 'ratings',
           component: HomeShopRatings
@@ -127,7 +95,6 @@ export default new Router({
           component: HomeShopSeller
         }
         ]
->>>>>>> 687c9a4a7138af584ae7fa9e64b58e4e1fff9f0a
       },
       {
         path:"/vip",
@@ -277,6 +244,10 @@ export default new Router({
       {
         path:'/MyAccount',
         component:MyAccount
+      },
+      {
+        path:'/SetPassword',
+        component:SetPassword
       },
       {
         path:"**",

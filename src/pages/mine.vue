@@ -31,7 +31,8 @@ export default {
                 return this.$store.getters.currentUser
             }
         
-  }
+  },
+
 };
 </script>
 

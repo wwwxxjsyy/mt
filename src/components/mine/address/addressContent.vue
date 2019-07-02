@@ -4,7 +4,12 @@
         <img :src="imgUrl" alt="">
     </a>
     <ul>
-        <li v-if="false"></li>
+        <li v-if="false">
+            <div class="myaddress">
+                <p class="receiveaddress"></p>
+                <p class="doorNumber"></p>
+            </div>
+        </li>
     </ul>
 </div>
 </template>

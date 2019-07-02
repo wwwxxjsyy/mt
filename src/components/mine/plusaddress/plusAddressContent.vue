@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="saveAddress">保存地址</div>
+    <div class="saveAddress" @click="saveAddress">保存地址</div>
   </div>
 </template>
 
@@ -50,7 +50,11 @@ export default {
   },
   computed: {},
   watch: {},
-  methods: {}
+  methods: {
+    saveAddress(){
+      window.location.hash='/Address'
+    }
+  }
 };
 </script>
 <style scoped>
