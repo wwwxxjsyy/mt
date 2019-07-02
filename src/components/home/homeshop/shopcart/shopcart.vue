@@ -88,10 +88,12 @@ import CartControl from '../cartcontrol/CartControl'
 				fold:true
 			}
 		},
-    props:{
-      poiInfo:{
-        type:Object,
-        default:{}
+		props:{
+			poiInfo:{
+				type:Object,
+				default:{
+					
+				}
 			},
 			selectFoods:{
 				type:Array,

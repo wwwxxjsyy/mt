@@ -9,7 +9,7 @@
       
 			<form class="search-wrapper">
 				<span class="search-icon"></span>
-			  <a href="#/goods"><input class="search-bar" disabled type="text" placeholder="搜索店内商品" /></a>
+			  <a><input class="search-bar" disabled type="text" placeholder="搜索店内商品" /></a>
 			</form>
 
 			<div class="more-wrapper">

@@ -92,11 +92,6 @@ export default {
   created(){
     this.getlocation()
   },
-  // mounted(){
-  //   this.http.post('api/home/',).then(res=>{
-  //     console.log(res)
-  //   })
-  // }
 }
 </script>
 

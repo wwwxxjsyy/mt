@@ -4,8 +4,8 @@
         <mt-home-search/>
         <mt-home-recommend :homeData="data"/>
         <mt-home-banner :homeData="data"/>
-        <!-- <mt-home-class/> -->
-        <!-- <homeShop></homeShop> -->
+        <mt-home-class/>
+        <homeShop></homeShop>
         <mt-home-class :homeData="data" :classpic='cartinfo'/>
         <mt-home-optimization :homeData="data"/>
         <mt-home-discount :homeData="data"/>
