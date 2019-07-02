@@ -43,11 +43,13 @@ export default {
     justify-content: space-between;
 }
 .home-adress-map-left{
+    width: 95%;
     height: 100%;
     display: flex;
     align-items: center;
 }
 .home-adress-map-right{
+    width: 5%;
     height: 100%;
 }
 .adress-forward{
@@ -72,11 +74,15 @@ export default {
 .address_text{
     font-size: .3rem;
     color:rgb(26, 25, 25);
-     width: 68%;
+     width: 60%;
+     /* background: red; */
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     margin-left:.2rem;
-     /* margin-right: .2rem */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+      /* margin-right: .2rem */
 }
 </style>

@@ -2,6 +2,7 @@
     <div class="mt-home">
         <mt-home-address/>
         <mt-home-search/>
+<<<<<<< HEAD
         <mt-home-recommend :homeData="data"/>
         <mt-home-banner :homeData="data"/>
         <mt-home-class/>
@@ -12,6 +13,18 @@
         <mt-home-goodshop :homeData="data"/>
         <mt-home-toshop :homeData="data"/>
         <mt-home-moreshop :homeData="data"/>
+=======
+        <mt-home-recommend />
+        <mt-home-banner />
+        <!-- <mt-home-class/> -->
+        <!-- <homeShop></homeShop> -->
+        <mt-home-class />
+        <mt-home-optimization/>
+        <mt-home-discount />
+        <mt-home-goodshop />
+        <mt-home-toshop />
+        <mt-home-moreshop />
+>>>>>>> eb90cad4d983735d7781ad02b14fdfa64a258516
         <!-- <homeShop></homeShop> -->
     </div>
 </template>
@@ -31,7 +44,6 @@ export default {
      name:"MtHome",
      data(){
          return{
-             cartinfo:{}
          }
      },
      components:{
@@ -52,12 +64,12 @@ export default {
              data:{}
          }
      },
-     created(){
-         this.http.post('/api/home/').then(res=>{
-            console.log(res)
-            this.data=res
-            })
-    }
+    //  created(){
+    //      this.http.post('/api/home/').then(res=>{
+    //         console.log(res)
+    //         this.data=res
+    //         })
+    // }
      
      
     

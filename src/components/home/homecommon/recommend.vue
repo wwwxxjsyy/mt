@@ -1,13 +1,14 @@
 <template>
 <div>
     <div class="goodshop" v-for="(items,index) in goodsshop" :key="index">
-        <div class="home-goodshop-top" :style=" 'background-image :  url( ' + items.shopimgs+' ) ' " >
+        <div class="home-goodshop-top">
             <div class="home-goodshop-shoppic">
                 <img :src="items.shoppic" alt="">
                 <span class="home-goodshop-information">
                     <p class="home-goodshop-shopname">{{items.shopname}}</p>
                     <b>
                         <a v-for="items in items.discount" :key="items">{{items}}</a>
+
                     </b>
                 </span>
             </div>
@@ -15,7 +16,21 @@
         <div class="home-goodshop-btm">
             <h3>{{items.shoptheme}}</h3>
             <ul>
-                <li v-for="(items,index) in items.foodinfo" :key="index">
+                <li>
+                    <img :src="items.foodpic">
+                    <i>
+                         <p>{{items.foodname}}</p>
+                         <span>{{items.foodprice}} <del>{{items.originalprice}}</del></span>
+                    </i>
+                </li>
+                 <li>
+                    <img :src="items.foodpic">
+                    <i>
+                         <p>{{items.foodname}}</p>
+                         <span>{{items.foodprice}} <del>{{items.originalprice}}</del></span>
+                    </i>
+                </li>
+                 <li>
                     <img :src="items.foodpic">
                     <i>
                          <p>{{items.foodname}}</p>
@@ -30,13 +45,13 @@
 
 <script>
 export default {
-    name:"Goodshop",
+    name:"Test",
     data(){
         return{
             goodsshop:[
                 {
                     shopname:'大尚龙虾.烧烤.虾尾',
-                    shopimgs:'http://img4.imgtn.bdimg.com/it/u=543139140,1104626788&fm=26&gp=0.jpg',
+                    shopimgs:'../../../../static/imgs/banner/banner2.png',
                     shoppic:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3422724315,104055540&fm=26&gp=0.jpg',
                     discount:[
                         '5减5',
@@ -45,26 +60,10 @@ export default {
                         '200减100'
                     ],
                     shoptheme:'麻辣.鲜香 挑战您的味蕾',
-                    foodinfo:[
-                        {
-                            foodpic:'http://img2.imgtn.bdimg.com/it/u=39505531,2473249177&fm=26&gp=0.jpg',
-                            foodname:'秘制！麻辣大龙虾 鲜香美味的小龙虾',
-                            foodprice:'￥35.0',
-                            originalprice:'￥58.8'
-                        },
-                        {
-                            foodpic:'http://p4.ssl.cdn.btime.com/t01a720786a90975af0.jpg?size=1255x700',
-                            foodname:'飘香馋嘴蛙 (进店必买品)',
-                            foodprice:'￥86.0',
-                            originalprice:'￥128.8'
-                        },
-                        {
-                            foodpic:'http://5b0988e595225.cdn.sohucs.com/images/20171231/e2ce7ee5389a41938e9972adf7adef45.jpeg',
-                            foodname:'招牌油焖大虾',
-                            foodprice:'￥66.5',
-                            originalprice:'￥95.8'
-                        }
-                    ]
+                    foodpic:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=312258124,3153780786&fm=26&gp=0.jpg',
+                    foodname:'秘制！麻辣大龙虾 鲜香美味的小龙虾',
+                    foodprice:'￥16.0',
+                    originalprice:'￥32.8'
                 }
             ]
         }
@@ -85,9 +84,9 @@ export default {
     height: 1.5rem;
     background: red;
     border-radius: .2rem .2rem 0 0;
-    /* background-image: url("http://img4.imgtn.bdimg.com/it/u=543139140,1104626788&fm=26&gp=0.jpg"); */
-    background-size: 100% 100%;
-    opacity: .95;
+    background-image: url("../../../../static/imgs/banner/banner2.png");
+    background-size: cover;
+    opacity: .9;
     /* position: relative; */
 }
 .home-goodshop-btm{
@@ -96,7 +95,7 @@ export default {
     border-radius: 0 0 .2rem .2rem;
 }
 .home-goodshop-shoppic{
-    /* width: 70%; */
+    width: 70%;
     height: .9rem;
     /* background: yellowgreen; */
     display: flex;
@@ -114,10 +113,10 @@ export default {
     height: .9rem;
 }
 .home-goodshop-information b{
-    margin-right: .2rem;
+    padding-left: .2rem;
 }
 .home-goodshop-shopname{
-    color: rgb(241, 233, 233);
+    color: #fff;
     padding-left: .2rem;
     font-size: .3rem;
 }

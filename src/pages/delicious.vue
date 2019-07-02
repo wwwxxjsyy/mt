@@ -18,12 +18,12 @@ export default {
     components:{
         "delicous-search":Delicous,
         "delicious-recommend":Recommend,
-        "mt-home-moreshop":Moreshop
+        "mt-home-moreshop":Moreshop,
     }
 }
 </script>
 
-<style>
+<style scoped>
 .warp {
   width: 100%;
   padding: 0 0.2rem;

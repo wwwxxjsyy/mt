@@ -26,15 +26,23 @@ export default {
     };
   },
   computed: {
+  },
+   activated(){
+      window.addEventListener('scroll', this.handleScroll)
+    },
+    methods: {
+      handleScroll(){
+        const top = document.documentElement.scrollTop;
+        if (top > 30) {
+         this.$('.mine-header').style.height="75px"
+        } else {
+          
+        }       
+         console.log(document.documentElement.scrollTop);
+      }
+    },
 
-  },
-  watch: {},
-  methods: {
-
-  },
-  created() {
-    this.isLogin=localStorage.getItem('mt_login')
-  },
+  created() {},
   mounted() {},
   // 登录后传入随机验证码
   props:{
@@ -47,13 +55,14 @@ export default {
 .mine-header {
   width: 100%;
   height: 1.5rem;
-  background: #f7f7f7;
+  background: #fafafa;
   display: flex;
   align-items: center;
   justify-content: space-between;
   top: 0;
   position: sticky;
 }
+
 .MineHeaderLogo {
   display: flex;
   width: 1rem;

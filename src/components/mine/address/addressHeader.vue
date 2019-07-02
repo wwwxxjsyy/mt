@@ -23,7 +23,7 @@ computed: {},
 watch: {},
 methods: {
     returnOut(){
-        window.history.back()
+        window.location.hash='/Mine'
     }
 },
 }

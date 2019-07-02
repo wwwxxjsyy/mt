@@ -4,7 +4,7 @@
                 <span class="iconfont" @click="$router.back()">&#xe682;</span>
                 <h3>为你优选</h3>
             </div>
-            <ul @click="$router.push('/homegoods')">
+            <ul @click="$router.push('/homegoods/goods')">
                 <li v-for="(items,index) in foodslist" :key="index"> 
                     <div class="home-moreshop-foodinfo">
                         <div class="home-moreshop-img"></div>

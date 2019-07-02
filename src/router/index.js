@@ -17,6 +17,12 @@ import PlusAddress from '../components/mine/others/PlusAddress'
 
 // 首页相关路由 
 import Delicious from '../pages/delicious'//美食
+import Homedrink from '../components/home/homepage/home-drink'
+import Hometest from '../components/home/homecommon/recommend'
+
+
+
+
 import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
@@ -91,6 +97,54 @@ export default new Router({
           flag:true,
           requredAuth:true
         }  
+      },
+      {
+        path:"/drink",
+        component:Homedrink,
+        meta: {
+          flag: false,
+          requredAuth: false
+        }
+      },
+      {
+        path: "/delicious",
+        component: Delicious,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
+      },
+      {
+        path: "/test",
+        component: Hometest,
+        meta: {
+          flag: true,
+          requredAuth: true
+        },
+      },
+      {
+        path: "/homegoods",
+        component: HomeGoods,
+        meta: {
+          flag: false,
+          requredAuth: false
+        },
+        children: [
+          {
+            path: "goods",
+            component: HomeShopGoods
+          },
+
+          {
+            path: "ratings",
+            component: HomeShopRatings
+          },
+
+          {
+            path: "seller",
+            component: HomeShopSeller
+          },
+        ]  
       },
       {
         name:"selectAddress",
@@ -296,7 +350,6 @@ export default new Router({
       {
         path:"**",
         redirect:"/home"
-      },
-    
+      },   
   ]
 })
