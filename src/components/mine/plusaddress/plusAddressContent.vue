@@ -2,17 +2,18 @@
   <div class="plus-address-content">
     <div class="editAddress">
       <div class="receive-address">
-        <span class="receiveAddress">收货地址:<input type="text" class="writeAddress" v-model="addressInfo.position">
+        <!--  @click="$router.push('/selectAddress')" -->
+        <span class="receiveAddress">收货地址:<input type="text" class="writeAddress"  v-if="this.title=='编辑收货地址' ? adress==addressInfo.address : address"  v-model="address">
         </span>
         <div class="location"></div>
       </div>
       <div>
         <span class="doorNumber">门牌号:</span>
-        <input type="text" class="input-wrap" placeholder="详细地址,例:16号楼5层501室" v-model="addressInfo.address">
+        <input type="text" class="input-wrap" placeholder="详细地址,例:16号楼5层501室" >
       </div>
       <div>
         <span class="contacts">联系人:</span>
-        <input type="text" class="input-wrap" placeholder="请填写收货人的姓名" v-model="addressInfo.name">
+        <input type="text" class="input-wrap" placeholder="请填写收货人的姓名"  v-model="name">
       </div>
       <div class="gender">
         <div class="select-man">
@@ -28,7 +29,7 @@
       </div>
       <div>
         <span class="phoneNumber">手机号:</span>
-        <input type="text" class="input-wrap" placeholder="请填写收货手机号码" v-model="addressInfo.phone">
+        <input type="text" class="input-wrap" placeholder="请填写收货手机号码"  v-model="phone">
       </div>
       <div class="where-label">
         <span class="label">标签:</span>
@@ -49,46 +50,67 @@ export default {
     return {
       tags:["家","学校","公司"],
       selectTag:"",
-      addressInfo:{
-        position:"",
-        address:"",
         name:"",
         phone:"",
-        tag:this.selectTag,
-      },
+        sex:"男",
+        tag:'家',
     };
   },
-  computed: {},
+  computed: {
+      address() {
+      return this.$store.getters.location.formattedAddress;
+    }
+  },
   watch: {},
+  props:{
+    
+    addressInfo:{},
+    title:String,
+   
+  },
+  //进入页面先刷新
+//   beforeRouteEnter(to,from,next){
+//     //现在想不做判断，进入之前一律刷新一次
+//     if(from.name == 'dealCenter'){
+//         window.location.reload()
+//     }
+//     next()
+// },
   methods: {
     checkTag(item){
       console.log(item)
-      this.selectTag = item;
+      this.tag = item;
     },
     handleSave(){
       console.log(this.addressInfo)
-      if(!this.addressInfo.name){
+      if(!this.name){
         this.showMessage("请输入联系人")
         return
       }
-      if(!this.addressInfo.phone){
+      if(!this.phone){
         this.showMessage("请输入电话")
         return
       }
-      if(!this.addressInfo.address){
+      if(!this.address){
         this.showMessage("请输入地址")
         return
       }
-      this.addAddress()
+      if(this.title=="编辑收货地址"){
+          this.addAddress()
+      }else{
+          this.editAddress();
+      }
+      
     },
     showMessage(msg){
       Toast({
         message: msg,
         position: 'center',
         duration: 2000,
-        id:""
+        className:"toasts"
       });
     },
+    // 请求地址请求
     addAddress(){
       this.$axios.post('',this.addressInfo)
       .then(res=>{
@@ -97,11 +119,31 @@ export default {
       .catch(err=>{
 
       })
+    },
+    // 修改地址发送请求
+    editAddress() {
+      this.$axios
+        .post(
+          '/api/user/edit_address/',{
+            id:this.addressInfo._id
+          },
+          this.addressInfo
+        )
+        .then(res => {
+          this.$router.push("/myAddress");
+        });
     }
-  }
+    
+  },
+  
 };
 </script>
 <style scoped>
+.mint-toast-text{
+  width:5rem !important;
+  height:2rem !important;
+  font-size: 1rem !important;
+}
 .plus-address-content {
   background: #fff;
   color: #616161;
@@ -223,7 +265,7 @@ export default {
   height:.7rem;
   position: relative;
   z-index: 5;
-  left:1rem;
+  left:.6rem;
   border:none;
   outline: none;
   font-size: .3rem;
