@@ -1,24 +1,7 @@
 <template>
     <div class="mt-home">
-<<<<<<< HEAD
         <mt-home-address/>
         <mt-home-search/>
-<<<<<<< HEAD
-        <mt-home-recommend :homeData="data"/>
-        <mt-home-banner :homeData="data"/>
-        <mt-home-class/>
-        <homeShop></homeShop>
-        <mt-home-class :homeData="data" :classpic='cartinfo'/>
-        <mt-home-optimization :homeData="data"/>
-        <mt-home-discount :homeData="data"/>
-        <mt-home-goodshop :homeData="data"/>
-        <mt-home-toshop :homeData="data"/>
-        <mt-home-moreshop :homeData="data"/>
-=======
-=======
-        <mt-home-address />
-        <mt-home-search />
->>>>>>> dandan
         <mt-home-recommend />
         <mt-home-banner />
         <!-- <mt-home-class/> -->
@@ -28,12 +11,7 @@
         <mt-home-discount />
         <mt-home-goodshop />
         <mt-home-toshop />
-<<<<<<< HEAD
-        <mt-home-moreshop />
->>>>>>> eb90cad4d983735d7781ad02b14fdfa64a258516
-=======
         <mt-home-moreshop :nerbylists = "data.nerbylists" />
->>>>>>> dandan
         <!-- <homeShop></homeShop> -->
     </div>
 </template>
