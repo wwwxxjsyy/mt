@@ -33,7 +33,7 @@
           <div class="home-optimization-selected-btm">
             <div class="home-optimization-selectedmenu">
               <div class="home-optimization-selectedmen-left">
-                <b>{{items.foodname}}</b>
+                <b>{{items.foods_name}}</b>
                 <span>{{items.foodprice}}</span>
               </div>
               <div class="home-optimization-selectedmen-right">
@@ -95,6 +95,15 @@ export default {
         }
       ]
     };
+  },
+  props:{
+    // foodlist:{},
+    // goodfood:{}
+    
+  },
+  created(){
+    console.log(this.foodlist)
+    console.log(this.goodfood)
   }
 };
 </script>
@@ -134,6 +143,7 @@ export default {
   background: #fff;
   margin-top: 0.2rem;
   border-radius: 0.1rem;
+  background-size:100% 100%; 
 }
 .home-optimization-food ul li img {
   width: 100%;
@@ -196,6 +206,9 @@ export default {
   position: relative;
   left: 0.6rem;
   bottom: 0.3rem;
+}
+.home-optimization-selected{
+  background-size:100% 100%;
 }
 .home-optimization-selected h3 {
   width: 100%;

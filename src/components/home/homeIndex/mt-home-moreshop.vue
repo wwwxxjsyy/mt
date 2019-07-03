@@ -262,11 +262,14 @@ export default {
                 }
             ]
         }
+    },
+    props:{
+        nerbylists:{}
     }
 }
 </script>
 
-<style>
+<style scoped>
 .moreshop{
     width: 100%;
 }

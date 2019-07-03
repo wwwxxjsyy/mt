@@ -4,7 +4,12 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const types = {
     SET_LOCATION:"SET_LOCATION",
-    SET_ADDRESS:"SET_ADDRESS"
+    SET_ADDRESS:"SET_ADDRESS",
+    //购物车
+    ORDER_INFO:"ORDER_INFO",
+    //user地址信息
+    USER_INFO:"USER_INFO"
+
 }
 export const store = new Vuex.Store({
     // 存储数据
@@ -14,7 +19,11 @@ export const store = new Vuex.Store({
         isLogin:false,
         //定位地址
         location:{},
-        address:""
+        address:"",
+        //购物车
+        orderInfo:null,
+        ////user地址信息
+        userInfo:null
 
     },
     
@@ -24,12 +33,16 @@ export const store = new Vuex.Store({
         isLogin:state =>state.isLogin,
         //获取定位地址
         location:state=> state.location,
-        address:state=> state.address
+        address:state=> state.address,
+         //获取购物车商品
+         orderInfo:state =>state.orderInfo,
+         //user地址信息
+         userInfo:state =>state.userInfo,
 
     },
     mutations:{
         //改属性的状态
-        //更改用户状态信息
+        //更改用户状态信息s
         userStatus(state, user) {
             if(user){
               state.currentUser = user
@@ -53,6 +66,24 @@ export const store = new Vuex.Store({
                 state.address = address;
             }else{
                 state.address = "";
+            }
+        },
+
+        // lngLatLocation
+        //购物车
+        [types.ORDER_INFO](state,orderInfo){
+            if(location){
+                state.orderInfo = orderInfo;
+            }else{
+                state.orderInfo = "";
+            }
+        },
+          //user地址信息
+        [types.USER_INFO](state,userInfo){
+            if(userInfo){
+                state.userInfo = userInfo;
+            }else{
+                state.userInfo = "";
             }
         }
 
@@ -80,6 +111,14 @@ export const store = new Vuex.Store({
         },
         setAddress({commit},address){
             commit(types.SET_ADDRESS,address)
+        },
+        //购物车
+        setOrderInfo({commit},orderInfo){
+            commit(types.ORDER_INFO,orderInfo)
+        },
+        //user地址信息
+        setUserInfo({commit},userInfo){
+            commit(types.USER_INFO,userInfo)
         },
     }
 })

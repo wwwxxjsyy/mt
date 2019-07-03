@@ -27,27 +27,28 @@ export default {
       userInfo:{}
     }
   },
+  beforeRouteEnter(to, from, next) {
+    next(vm => vm.getData());
+  },
+  
   computed:{
-      currentUser(){
-              return this.$store.getters.currentUser
-      }
+      // currentUser(){
+      //         return this.$store.getters.currentUser
+      // }
         
   },
-  created(){
+  methods:{
     // 向后端请求数据
-    if(currentUser){
-      this.$axios.post('/user/code_login/',currentUser).then(res=>{
-        //打印登陆成功信息   登陆成功
-        console.log(res.msg)
-        this.userInfo=res.data
-      })
-    }else{
-      alert("请先登陆")
-      this.$router.push('/registerLogin')
-    }
-    
-  }
-};
+    getData() {
+      const user_id = localStorage.ele_login;
+      this.$axios(`/api/user/user_info/${user_id}`).then(res => {
+        // console.log(res.data);
+        this.userInfo = res.data;
+      });
+    },
+  },
+  
+}
 </script>
 
 <style scoped>
