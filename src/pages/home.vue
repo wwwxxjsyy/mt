@@ -1,32 +1,16 @@
 <template>
-    <div class="mt-home">
-        <mt-home-address/>
-        <mt-home-search/>
-<<<<<<< HEAD
-        <mt-home-recommend :homeData="data"/>
-        <mt-home-banner :homeData="data"/>
-        <mt-home-class/>
-        <homeShop></homeShop>
-        <mt-home-class :homeData="data" :classpic='cartinfo'/>
-        <mt-home-optimization :homeData="data"/>
-        <mt-home-discount :homeData="data"/>
-        <mt-home-goodshop :homeData="data"/>
-        <mt-home-toshop :homeData="data"/>
-        <mt-home-moreshop :homeData="data"/>
-=======
-        <mt-home-recommend />
-        <mt-home-banner />
-        <!-- <mt-home-class/> -->
-        <!-- <homeShop></homeShop> -->
-        <mt-home-class />
-        <mt-home-optimization/>
-        <mt-home-discount />
-        <mt-home-goodshop />
-        <mt-home-toshop />
-        <mt-home-moreshop />
->>>>>>> eb90cad4d983735d7781ad02b14fdfa64a258516
-        <!-- <homeShop></homeShop> -->
-    </div>
+	<div class="mt-home">
+		<mt-home-address/>
+		<mt-home-search/>
+		<mt-home-recommend :homeData="data"/>
+		<mt-home-banner :homeData="data"/>
+		<mt-home-class :homeData="data"/>
+		<mt-home-optimization :homeData="data"/>
+		<mt-home-discount :homeData="data"/>
+		<mt-home-goodshop :homeData="data"/>
+		<mt-home-toshop :homeData="data"/>
+		<mt-home-moreshop :homeData="data"/>
+	</div>
 </template>
 
 <script>
@@ -41,38 +25,28 @@ import Goodshop from '../components/home/homeIndex/mt-home-goodshop'
 import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
 export default {
-     name:"MtHome",
-     data(){
-         return{
-         }
-     },
-     components:{
-        "mt-home-address":Address,
-        "mt-home-search":Search,
-        "mt-home-recommend":Recommend,
-        "mt-home-banner":Banner,
-        "mt-home-class":Class,
-        "mt-home-optimization":Optimization,
-        "mt-home-discount":Ddiscount,
-        "mt-home-goodshop":Goodshop,
-        "mt-home-toshop":Toshop,
-        "mt-home-moreshop":Moreshop,
-        //  homeShop
-     },
-     data(){
-         return {
-             data:{}
-         }
-     },
-    //  created(){
-    //      this.http.post('/api/home/').then(res=>{
-    //         console.log(res)
-    //         this.data=res
-    //         })
-    // }
-     
-     
-    
+	 name:"MtHome",
+	 data(){
+		 return{
+		 }
+	 },
+	 components:{
+		"mt-home-address":Address,
+		"mt-home-search":Search,
+		"mt-home-recommend":Recommend,
+		"mt-home-banner":Banner,
+		"mt-home-class":Class,
+		"mt-home-optimization":Optimization,
+		"mt-home-discount":Ddiscount,
+		"mt-home-goodshop":Goodshop,
+		"mt-home-toshop":Toshop,
+		"mt-home-moreshop":Moreshop,
+	 },
+	data(){
+		return {
+			data:{}
+		}
+	},
 }
 </script>
 
@@ -81,6 +55,5 @@ export default {
     padding: .2rem;
     width:100%;
     height: 100%;
-    /* -webkit-overflow-scrolling: touch; */
 }
 </style>

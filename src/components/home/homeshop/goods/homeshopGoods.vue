@@ -1,5 +1,6 @@
 <template>
     <div class="goods">
+		<loading v-if="!container.tag_icon"></loading>
     <!-- 分类列表 -->
     <div class="menu-wrapper" ref="menuScroll">
       <ul>
@@ -60,7 +61,7 @@
                 </div>
                 <img class="product" :src="food.product_label_picture" alt="">
                 <p class="price">
-                  <span class="text">${{food.min_price}}</span>
+                  <span class="text">￥{{food.min_price}}</span>
                   <span class="unit">/{{food.unit}}</span>
                 </p>
               </div>
@@ -72,7 +73,7 @@
         </li>
       </ul>
     </div>
-
+		
     <!-- 购物车 -->
     <app-shopcart :poiInfo="poiInfo" :selectFoods="selectFoods"></app-shopcart>
 
@@ -85,11 +86,13 @@ import BScroll from 'better-scroll'
 import Shopcart from '../shopcart/shopcart'
 import CartControl from '../cartcontrol/CartControl'
 import ProductDetail from '../productDetail/ProductDetail'
+import loading from '../loading'
 export default {
     components:{
         "app-shopcart":Shopcart,
         "app-cart-control":CartControl,
-        "app-product-detail":ProductDetail
+        "app-product-detail":ProductDetail,
+				"loading":loading
     },
     data(){
         return {
@@ -100,7 +103,7 @@ export default {
            menuScroll:{},
            foodScroll:{},
            scrollY:0,
-           selectFood:{}
+           selectFood:{},
         }
     },
     // 计算属性是不能够接收参数的
@@ -195,16 +198,16 @@ export default {
   //   next(vm => vm.getData());
   // },
   created(){
-	  	 fetch("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/goods")
-	  	  .then(res => {
-	  	    return res.json()
-	  	  })
+	  	 this.$axios("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/goods")
+	  	  // .then(res => {
+	  	  //   return res.json()
+	  	  // })
 	  	  .then(response =>{
-			  console.log(response)
-	  	    if(response.code == 0){
-	  	      this.container = response.data.container_operation_source
-	  	      this.goods = response.data.food_spu_tags
-	  	      this.poiInfo = response.data.poi_info
+				console.log(response.data)
+	  	    if(response.data.code == 0){
+	  	      this.container = response.data.data.container_operation_source
+	  	      this.goods = response.data.data.food_spu_tags
+	  	      this.poiInfo = response.data.data.poi_info
 				// DOM已经更新
 				this.$nextTick(() => {
 	  	        // 执行滚动方法
@@ -242,7 +245,6 @@ export default {
           }
         })
       })
-
       return foods
     }
   },
@@ -250,6 +252,9 @@ export default {
 </script>
 
 <style scoped>
+.mint-indicator-wrapper {
+	height: 0.5rem;
+}
 .goods{
   display: flex;
   position: absolute;

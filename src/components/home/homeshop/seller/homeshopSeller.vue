@@ -83,14 +83,15 @@ export default {
     }
   },
 	created(){
-		fetch("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/seller")
-		  .then(res => {
-		    return res.json()
-		  })
-		  .then(response =>{
-				console.log(response)
-		    if(response.code == 0){
-		      this.seller = response.data
+		this.$axios("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/seller")
+		// .then(res => {
+		// 	  console.log(res)
+		//     return res.json()
+		//   })
+		.then(response =>{
+			console.log(response.data)
+		    if(response.data.code == 0){
+		      this.seller = response.data.data
 		      this.$nextTick(() => {
 		        if(this.seller.poi_env.thumbnails_url_list){
 		          let imgW = this.$refs.picsItem[0].clientWidth
@@ -116,6 +117,9 @@ export default {
 </script>
 
 <style scoped>
+.mint-indicator-wrapper {
+	height: 1rem;
+}
 .seller {
 		position: absolute;
 		left: 0;
