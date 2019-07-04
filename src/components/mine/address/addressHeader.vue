@@ -4,9 +4,9 @@
            <i class="iconfont" @click="returnOut" v-html="icon"></i>
             <span>我的收货地址</span>
     </div>
-    <router-link to="/PlusAddress" tag="div" class="address-header-titile">
+    <div class="address-header-titile"  @click="handleEdit">
             <span>新增地址</span>
-    </router-link>  
+    </div>  
 </div>
 </template>
 
@@ -16,7 +16,14 @@ export default {
 components: {},
 data() {
 return {
-    icon:'&#xe609;'
+    icon:'&#xe609;',
+    addressInfo:{
+        name:"",
+        tag:"",
+        sex:"",
+        phone:"",
+        address:"",
+    }
 };
 },
 computed: {},
@@ -24,6 +31,16 @@ watch: {},
 methods: {
     returnOut(){
         window.history.back()
+    },
+    handleEdit(){
+        this.$router.push({
+            name:'PlusAddress',
+            params:{
+                // iconfont:'&#xe61a;',
+                title:'新建收货地址',
+                addressInfo:this.addressInfo
+            }
+        })
     }
 },
 }

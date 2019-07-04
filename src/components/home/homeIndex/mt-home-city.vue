@@ -1,5 +1,5 @@
 <template>
-    <div class="city">
+	<div class="city">
         <div class="search_wrap">
             <div class="search">
                 <i class="iconfont">&#xe661;</i>
@@ -23,7 +23,6 @@
                 <li @click="selectCity(item)" v-for="(item,index) in searchList" :key="index">{{item.name}}</li>
             </ul>
         </div>
-
     </div>
 </template>
 
@@ -36,7 +35,7 @@ export default {
     name:"city",
     components:{
         Location,
-        Alphabet
+        Alphabet,
     },
     data(){
         return {

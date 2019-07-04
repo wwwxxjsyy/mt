@@ -19,7 +19,7 @@ import PlusAddress from '../components/mine/others/PlusAddress'
 import Delicious from '../pages/delicious'//美食
 import Homedrink from '../components/home/homepage/home-drink'
 import Hometest from '../components/home/homecommon/recommend'
-
+import Loading from '../components/home/homeshop/loading'
 
 
 
@@ -44,6 +44,8 @@ import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
 
 import VipLogin from '../components/vip/viplogin/'
 
+import Settlement from '../components/home/homeshop/settlement/settlement'
+
 import selectAddress from '../components/home/homeIndex/mt-home-select-address.vue'
 import city from '../components/home/homeIndex/mt-home-city.vue'
 import Superior from '../components/home/homeIndex/mt-home-superior.vue'
@@ -56,7 +58,7 @@ import HomeGoods from '../pages/homegoods'
 import HomeShopGoods from '../components/home/homeshop/goods/homeshopGoods'
 import HomeShopRatings from '../components/home/homeshop/ratings/homeshopRatings'
 import HomeShopSeller from '../components/home/homeshop/seller/homeshopSeller'
-
+import HomeClassify from '../components/home/homeshop/classify/classify'
 
 Vue.use(Router)
 
@@ -74,6 +76,22 @@ export default new Router({
           requredAuth:true
         }  
       },
+			{
+			  path: '/homeclass',
+			  component: HomeClassify,
+			  meta: {
+			    flag: false,
+			    requredAuth: true
+			  }
+			},
+			{
+				path: '/loading',
+				component: Loading,
+				meta: {
+					flag: false,
+					requredAuth: true
+				}
+			},
       {
         path:'/viplogin',
         component:VipLogin,
@@ -269,6 +287,7 @@ export default new Router({
          },
       },
       {
+        name:'PlusAddress',
         path:'/PlusAddress',
         component:PlusAddress,
         meta: {
@@ -337,6 +356,11 @@ export default new Router({
       {
         path:'/superior',
         component:Superior
+      },
+      {
+        path:'/settlement',
+        name:'Settlement',
+        component:Settlement,
       },
  
       {

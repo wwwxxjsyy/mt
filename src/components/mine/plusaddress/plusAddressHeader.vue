@@ -1,8 +1,9 @@
 <template>
    <div class="plus-address-header">
         <div class="back">
-           <i class="iconfont" @click="returnOut" v-html="icon"></i>
-            <span>新增收货地址</span>
+           <i class="iconfont goback" @click="returnOut">&#xe607;</i>
+            <span v-if="title? tit=title:tit='新增收货地址'">{{tit}}</span>
+            <i class="iconfont del" v-html="iconfont" @click="handleDelete()"></i>
         </div>
    </div>
 </template>
@@ -12,16 +13,33 @@
 export default {
 components: {},
 data() {
-return {
-     icon:'&#xe607;'
-};
+    return {
+        tit:"",
+    };
+},
+props:{
+    title:String,
+    iconfont:String,
+    addressInfo:Object,
+   
 },
 computed: {},
 watch: {},
 methods: {
      returnOut(){
         window.history.back()
-    }
+    },
+    //删除地址
+    handleDelete(address, index) {
+        if(localStorage.mt_login){
+            this.$axios
+        .delete('/api/user/address/',{id:address._id})
+        .then(res => {
+          this.addressInfo=null;
+        });
+        }
+      
+    },
 },
 
 }
@@ -43,11 +61,19 @@ methods: {
 
 .plus-address-header .back {
     display: flex;
+    
 }
-
-.plus-address-header .back>i {
+.plus-address-header .back .iconfont{
     font-size: .5rem;
+}
+.goback {
+    
     color: #333;
+
+}
+.del {
+    color: #333;
+    margin-left:1.7rem;
 
 }
 .plus-address-header .back>span {
