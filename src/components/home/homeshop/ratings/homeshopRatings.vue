@@ -118,7 +118,7 @@ export default {
     Star
   },
   created(){
-	fetch("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/ratings")
+	this.$axios('/shop/pl/?v_shop_id=1')
       .then(res => {
         return res.json()
       })

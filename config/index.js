@@ -8,28 +8,9 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-<<<<<<< HEAD
-      '/api': {
-        // target: 'http://jsonplaceholder.typicode.com/',//后端接口地址
-        // target:'http://10.35.161.31:9001/',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        target:'http://10.35.162.134:8002/',
-=======
-<<<<<<< HEAD
-=======
->>>>>>> eb90cad4d983735d7781ad02b14fdfa64a258516
-        // target:'http://10.35.162.134:8000',
-        target:'http://10.35.162.134:8000/',
->>>>>>> f2369eea932cf092ac236c9d25eac1b0cb541e68
-        changeOrigin: true,//是否允许跨越
-        pathRewrite: {
-            '^/api': '/api',//重写,
-        }
-      }
-=======
+    proxyTable:{
+ 
+
       // '/api': {
       //   target: 'https://ele-interface.herokuapp.com/api/',
       //   ws: true,
@@ -38,7 +19,7 @@ module.exports = {
       //       '^/api': '',//重写,
       //   }
       // }
->>>>>>> dandan
+
     },
 
     // Various Dev Server settings

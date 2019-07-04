@@ -5,7 +5,7 @@
 			<div class="seller-view">
         <div class="address-wrapper">
           <div class="address-left">
-            {{seller.address}}
+            {{seller.data.shop_address}}
           </div>
           <div class="address-right">
             <div class="content"></div>
@@ -17,10 +17,10 @@
             <li
               ref="picsItem" 
               class="pics-item"
-              v-for="(imgurl,index) in seller.poi_env.thumbnails_url_list"
+              v-for="(imgurl,index) in seller.poi_env"
               :key="index"
               >
-              <img :src="imgurl">
+              <img :src="imgurl.thumbnails_url_list">
             </li>
           </ul>
         </div>
@@ -34,11 +34,11 @@
 			<Split></Split>
 			<div class="tip-wrapper">
 				<div class="delivery-wrapper">
-          配送服务: {{seller.app_delivery_tip}}
+          配送服务: {{seller.data.app_delivery_tip}}
         </div>
 
         <div class="shipping-wrapper">
-          配送时间: {{seller.shipping_time}}
+          配送时间: {{seller.data.shop_time}}
         </div>
 			</div>
 
@@ -57,9 +57,9 @@
         <div class="discounts-wrapper">
            <div 
             class="discounts-item"
-            v-for="(item,index) in seller.discounts2"
+            v-for="(item,index) in seller.discounts"
             :key="index"
-            >; 
+            >
             <div class="icon">
               <img :src="item.icon_url">
             </div>
@@ -83,14 +83,12 @@ export default {
     }
   },
 	created(){
-		fetch("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/seller")
-		  .then(res => {
-		    return res.json()
-		  })
+    this.$axios('/api/shop/store/?shop_id=1')		
 		  .then(response =>{
-				console.log(response)
-		    if(response.code == 0){
-		      this.seller = response.data
+				console.log(response.data.data)
+		    if(response.data.code == 200){
+			  this.seller = response.data.data
+			  console.log(this.seller.poi_env.thumbnails_url_list)
 		      this.$nextTick(() => {
 		        if(this.seller.poi_env.thumbnails_url_list){
 		          let imgW = this.$refs.picsItem[0].clientWidth
