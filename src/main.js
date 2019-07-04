@@ -10,6 +10,10 @@ import 'mint-ui/lib/style.css'
 Vue.prototype.Observer = Observer;
 import axios from 'axios' 
 import http from './api/http'
+
+// axios.defaults.baseURL = 'https://ele-interface.herokuapp.com/';
+axios.defaults.baseURL = 'http://10.35.162.147:8002/';
+// import http from './api/http'
 Vue.prototype.$axios=axios
 Vue.prototype.http=http
 
