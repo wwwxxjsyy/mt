@@ -6,6 +6,9 @@ import {store} from './store/store.js'
 import Observer from "./Observer";
 import MINT from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import {
+  Indicator
+} from 'mint-ui';
 
 Vue.prototype.Observer = Observer;
 import axios from 'axios' 
@@ -20,8 +23,28 @@ Vue.prototype.$axios=axios
 // Vue.prototype.http=http
 
 
+<<<<<<< HEAD
+axios.interceptors.request.use(config => {
+  //加载动画
+  Indicator.open();
+  return config;
+}, error => {
+  return Promise.reject(error);
+})
+// //响应拦截
+axios.interceptors.response.use(response => {
+  //关闭动画
+  Indicator.close();
+  return response;
+  //错误提醒
+}, error => {
+  return Promise.reject(error);
+})
+
+=======
 
 Vue.config.productionTip = false
+>>>>>>> 000ff109e2b4735991742d76f046b2e811cc755b
 Vue.use(MINT)
 Vue.use(VueLazyload,{
   preLoad:1.3,

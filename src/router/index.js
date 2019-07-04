@@ -19,7 +19,7 @@ import PlusAddress from '../components/mine/others/PlusAddress'
 import Delicious from '../pages/delicious'//美食
 import Homedrink from '../components/home/homepage/home-drink'
 import Hometest from '../components/home/homecommon/recommend'
-
+import Loading from '../components/home/homeshop/loading'
 
 
 
@@ -76,14 +76,22 @@ export default new Router({
           requredAuth:true
         }  
       },
-    {
-      path: '/homeclass',
-      component: HomeClassify,
-      meta: {
-        flag: false,
-        requredAuth: true
-      }
-    },
+			{
+			  path: '/homeclass',
+			  component: HomeClassify,
+			  meta: {
+			    flag: false,
+			    requredAuth: true
+			  }
+			},
+			{
+				path: '/loading',
+				component: Loading,
+				meta: {
+					flag: false,
+					requredAuth: true
+				}
+			},
       {
         path:'/viplogin',
         component:VipLogin,

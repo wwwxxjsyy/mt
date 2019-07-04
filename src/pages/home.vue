@@ -1,4 +1,18 @@
 <template>
+<<<<<<< HEAD
+	<div class="mt-home">
+		<mt-home-address/>
+		<mt-home-search/>
+		<mt-home-recommend :homeData="data"/>
+		<mt-home-banner :homeData="data"/>
+		<mt-home-class :homeData="data"/>
+		<mt-home-optimization :homeData="data"/>
+		<mt-home-discount :homeData="data"/>
+		<mt-home-goodshop :homeData="data"/>
+		<mt-home-toshop :homeData="data"/>
+		<mt-home-moreshop :homeData="data"/>
+	</div>
+=======
     <div class="mt-home">
         <mt-home-address/>
         <mt-home-search/>
@@ -14,6 +28,7 @@
         <mt-home-moreshop :nerbylists = "data.nerbylists" />
         <!-- <homeShop></homeShop> -->
     </div>
+>>>>>>> 000ff109e2b4735991742d76f046b2e811cc755b
 </template>
 
 <script>
@@ -28,6 +43,30 @@ import Goodshop from '../components/home/homeIndex/mt-home-goodshop'
 import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
 export default {
+<<<<<<< HEAD
+	 name:"MtHome",
+	 data(){
+		 return{
+		 }
+	 },
+	 components:{
+		"mt-home-address":Address,
+		"mt-home-search":Search,
+		"mt-home-recommend":Recommend,
+		"mt-home-banner":Banner,
+		"mt-home-class":Class,
+		"mt-home-optimization":Optimization,
+		"mt-home-discount":Ddiscount,
+		"mt-home-goodshop":Goodshop,
+		"mt-home-toshop":Toshop,
+		"mt-home-moreshop":Moreshop,
+	 },
+	data(){
+		return {
+			data:{}
+		}
+	},
+=======
      name:"MtHome",
      data(){
          return{
@@ -80,6 +119,7 @@ export default {
      
      
     
+>>>>>>> 000ff109e2b4735991742d76f046b2e811cc755b
 }
 </script>
 
@@ -88,6 +128,5 @@ export default {
     padding: .2rem;
     width:100%;
     height: 100%;
-    /* -webkit-overflow-scrolling: touch; */
 }
 </style>

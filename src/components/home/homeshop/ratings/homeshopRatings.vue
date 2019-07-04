@@ -3,22 +3,22 @@
     <div class="ratings-wrapper">
       <div class="overview">
         <div class="overview-left">
-          <div class="comment-score">
-              <p class="score">{{ratings.comment_score}}</p>
-              <p class="text">商家评分</p>
-          </div>
-          <div class="other-score">
-            <div class="quality-score item">
-              <span class="text">口味</span>
-              <Star :score="ratings.quality_score" class='star'></Star>
-              <span class="score"></span>
-            </div>
-            <div class="pack-score item">
-              <span class="text">包装</span>
-              <Star :score="ratings.pack_score" class='star'></Star>
-              <span class="score"></span>
-            </div>
-          </div>
+			<div class="comment-score">
+				<p class="score">{{ratings.comment_score}}</p>
+				<p class="text">商家评分</p>
+			</div> 
+			<div class="other-score">
+				<div class="quality-score item">
+				  <span class="text">口味</span>
+				  <Star :score="ratings.quality_score" class='star'></Star>
+				  <span class="score"></span>
+				</div>
+				<div class="pack-score item">
+				  <span class="text">包装</span>
+				  <Star :score="ratings.pack_score" class='star'></Star>
+				  <span class="score"></span>
+				</div>
+		  </div>
         </div>
         <div class="overview-right">
           <div class="delivery-score">
@@ -32,7 +32,7 @@
 
       <div class="content">
         <div class="rating-select" v-if="ratings.tab">
-          <span 
+          <span
             class="item" 
             :class="{'active':selectType==2}"
             @click="selectTypeFn(2)">
@@ -54,13 +54,13 @@
           </span>
         </div>
 
-        <div class="labels-view">
-          <span
-            class="item" 
-            v-for="(item,index) in ratings.labels" 
-            :key="index"
-            :class="{'heigligh':item.label_star>0}"
-            >
+		<div class="labels-view">
+		<span
+			class="item"
+			v-for="(item,index) in ratings.labels" 
+			:key="index"
+			:class="{'heigligh':item.label_star>0}"
+			>
             {{item.content}}{{item.label_count}}
           </span>
         </div>
@@ -118,14 +118,21 @@ export default {
     Star
   },
   created(){
+<<<<<<< HEAD
 	this.$axios('/shop/pl/?v_shop_id=1')
       .then(res => {
         return res.json()
       })
+=======
+	this.$axios("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/ratings")
+      // .then(res => {
+      //   return res.json()
+      // })
+>>>>>>> f5ecd3d267cb5c6f289a9a60a948600aee71e1c6
       .then(response =>{
-				console.log(response)
-        if(response.code == 0){
-          this.ratings = response.data
+		console.log(response.data)
+        if(response.data.code == 0){
+          this.ratings = response.data.data
           this.$nextTick(()=>{
             if(!this.scroll){
               this.scroll = new BScroll(this.$refs.ratingView,{
@@ -144,26 +151,26 @@ export default {
     },
     formatDate(time){
         let date = new Date(time * 1000);
-				let fmt = 'yyyy.MM.dd';
-				if(/(y+)/.test(fmt)) { // 年
-					let year = date.getFullYear().toString();
-					fmt = fmt.replace(RegExp.$1, year);
+			let fmt = 'yyyy.MM.dd';
+			if(/(y+)/.test(fmt)) { // 年
+				let year = date.getFullYear().toString();
+				fmt = fmt.replace(RegExp.$1, year);
+			}
+			if(/(M+)/.test(fmt)) { // 月
+				let mouth = date.getMonth() + 1;
+				if(mouth < 10) {
+					mouth = '0' + mouth;
 				}
-				if(/(M+)/.test(fmt)) { // 月
-					let mouth = date.getMonth() + 1;
-					if(mouth < 10) {
-						mouth = '0' + mouth;
-					}
-					fmt = fmt.replace(RegExp.$1, mouth);
+				fmt = fmt.replace(RegExp.$1, mouth);
+			}
+			if(/(d+)/.test(fmt)) { // 日
+				let mydate = date.getDate();
+				if(mydate < 10) {
+					mydate = '0' + mydate;
 				}
-				if(/(d+)/.test(fmt)) { // 日
-					let mydate = date.getDate();
-					if(mydate < 10) {
-						mydate = '0' + mydate;
-					}
-					fmt = fmt.replace(RegExp.$1, mydate);
-				}
-				return fmt;
+				fmt = fmt.replace(RegExp.$1, mydate);
+			}
+			return fmt;
     }
   },
   computed:{
@@ -187,6 +194,9 @@ export default {
 </script>
 
 <style scoped>
+.mint-indicator-wrapper {
+	height: 0.5rem;
+}
 .ratings {
 		position: absolute;
 		left: 0;

@@ -83,12 +83,24 @@ export default {
     }
   },
 	created(){
+<<<<<<< HEAD
     this.$axios('/api/shop/store/?shop_id=1')		
 		  .then(response =>{
 				console.log(response.data.data)
 		    if(response.data.code == 200){
 			  this.seller = response.data.data
 			  console.log(this.seller.poi_env.thumbnails_url_list)
+=======
+		this.$axios("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/seller")
+		// .then(res => {
+		// 	  console.log(res)
+		//     return res.json()
+		//   })
+		.then(response =>{
+			console.log(response.data)
+		    if(response.data.code == 0){
+		      this.seller = response.data.data
+>>>>>>> f5ecd3d267cb5c6f289a9a60a948600aee71e1c6
 		      this.$nextTick(() => {
 		        if(this.seller.poi_env.thumbnails_url_list){
 		          let imgW = this.$refs.picsItem[0].clientWidth
@@ -114,6 +126,9 @@ export default {
 </script>
 
 <style scoped>
+.mint-indicator-wrapper {
+	height: 1rem;
+}
 .seller {
 		position: absolute;
 		left: 0;
