@@ -6,9 +6,6 @@ import {store} from './store/store.js'
 import Observer from "./Observer";
 import MINT from 'mint-ui'
 import 'mint-ui/lib/style.css'
-import {
-  Indicator
-} from 'mint-ui';
 
 Vue.prototype.Observer = Observer;
 import axios from 'axios' 
@@ -21,6 +18,9 @@ Vue.prototype.$axios=axios
 
 
 axios.interceptors.request.use(config => {
+    if (config.method == 'post') {
+      config.data = qs.stringify(config.data);
+    }
   //加载动画
   Indicator.open();
   return config;
@@ -65,7 +65,10 @@ router.beforeEach((to,from,next)=>{
 
 })
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 85059f34556a6a500d459380b6343c3674c54804
 new Vue({
   el: '#app',
   router,

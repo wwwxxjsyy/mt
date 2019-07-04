@@ -9,15 +9,15 @@
         <!-- foodlist 不同时间推荐不同商品 优选 -->
         <li v-for="(items,index) in foodlist" :key="index">
           <div>
-            <img :src="items.foodpic" />
+            <img :src="items.good_img" />
           </div>
           <div class="home-optimization-foodname">
             <div class="home-optimization-foodname-left">
-              <h3>{{items.shopname}}</h3>
-              <p>{{items.recommend}}</p>
+              <h3>{{items.shop_name}}</h3>
+              <p>{{items.app_delivery_tip}}</p>
             </div>
             <div class="home-optimization-foodname-right">
-              <img :src="items.shoppic" class="home-optimization-shopname" />
+              <img :src="items.shop_img" class="home-optimization-shopname" />
               <i>×</i>
             </div>
           </div>
@@ -27,17 +27,17 @@
           class="home-optimization-selected"
           v-for="(items,index) in goodfood"
           :key="index+888"
-          :style=" 'background-image :  url( ' + items.backgroundimg+' ) ' "
+          :style=" 'background-image :  url( ' + items.goods_picture+' ) ' "
         >
-          <h3>{{items.foodmenu}}</h3>
+          <h3>{{items.shop_name}}</h3>
           <div class="home-optimization-selected-btm">
             <div class="home-optimization-selectedmenu">
               <div class="home-optimization-selectedmen-left">
-                <b>{{items.foods_name}}</b>
-                <span>{{items.foodprice}}</span>
+                <b>{{items.goods_name}}</b>
+                <span>￥{{items.goods_min_price}}</span>
               </div>
               <div class="home-optimization-selectedmen-right">
-                <img :src="items.foodpic" alt />
+                <img :src="items.shop_img" alt />
               </div>
             </div>
           </div>
@@ -97,8 +97,8 @@ export default {
     };
   },
   props:{
-    // foodlist:{},
-    // goodfood:{}
+    foodlist:{},
+    goodfood:{}
     
   },
   created(){

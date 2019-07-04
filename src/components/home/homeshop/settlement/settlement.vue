@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
         <div data-v-7ba5bd90="" id="app">
         	<div data-v-21ee3a69="" data-v-7ba5bd90="" class="settlement">
         		<header data-v-61dd7a3d="" data-v-21ee3a69="" class="header">
@@ -77,6 +78,66 @@
         		<footer data-v-21ee3a69="" class="action-bar"><span data-v-21ee3a69="">¥48.4</span><button data-v-21ee3a69="">去支付</button></footer>
         	</div>
         </div>
+=======
+    <div class="settlement">
+        <Header :isLeft="true" title="提交订单"/>
+        <div class="view-body" v-if="orderInfo">
+            <div class>
+                <!-- 收货地址 -->
+                <section class="cart-address">
+                <p class="title">
+                    订单配送至
+                    <span class="address-tag" v-if="userInfo && userInfo.tag">{{userInfo.tag}}</span>
+                </p>
+                <p class="address-detail">
+                    <span
+                    @click="$router.push('/myAddress')"
+                    v-if="userInfo"
+                    >{{userInfo.address}}{{userInfo.bottom}}</span>
+                    <span v-else>
+                    <span v-if="haveAddress" @click="$router.push('/myAddress')">选择收货地址</span>
+                    <span v-else @click="addAddress">新增收货地址</span>
+                    </span>
+                    <i class="fa fa-angle-right"></i>
+                </p>
+                <h2 v-if="userInfo" class="address-name">
+                    <span>{{userInfo.name}}</span>
+                    <span v-if="userInfo.sex">({{userInfo.sex}})</span>
+                    <span class="phone">{{userInfo.phone}}</span>
+                </h2>
+                </section>
+
+                <!-- 送达时间 -->
+                <Delivery :shopInfo="orderInfo.shopInfo"/>
+
+                <!-- 点餐内容 -->
+                <CartGroup :orderInfo="orderInfo" :totalPrice="totalPrice"/>
+
+                <!-- 备注信息 -->
+                <section class="checkout-section">
+                <CartItem
+                    @click="showTableware=true"
+                    title="餐具份数"
+                    :subHead="remarkInfo.tableware || '未选择'"
+                />
+                <CartItem
+                    @click="$router.push('/remark')"
+                    title="订单备注"
+                    :subHead="remarkInfo.remark || '口味 偏好'"
+                />
+                <CartItem title="发票信息" subHead="不需要开发票"/>
+                </section>
+
+                <!-- 显示Tableware -->
+                <Tableware :isShow="showTableware" @close="showTableware=false"/>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <footer class="action-bar">
+        <span>¥{{totalPrice}}</span>
+        <button @click="handlePay()">去支付</button>
+        </footer>
+>>>>>>> 85059f34556a6a500d459380b6343c3674c54804
 
     </div>
 </template>

@@ -3,11 +3,11 @@
         <mt-home-address/>
         <mt-home-search/>
         <mt-home-recommend />
-        <mt-home-banner />
+        <mt-home-banner :wheel="data.wheel"/>
         <!-- <mt-home-class/> -->
         <!-- <homeShop></homeShop> -->
-        <mt-home-class />
-        <mt-home-optimization :foodlist= "data.foodlist" :goodfood="data.goodfood" :smallChar = "data.main_small_img" />
+        <mt-home-class :main_type_img="data.main_type_img" :main_small_img="data.main_small_img"/>
+        <mt-home-optimization :foodlist= "data.foodlist" :goodfood="data.goodfood" />
         <mt-home-discount />
         <mt-home-goodshop />
         <mt-home-toshop />
@@ -62,7 +62,7 @@ export default {
             // console.log(newName.lng)
             this.lat=newName.lat,
             this.lng=newName.lng,
-            console.log(this.position)
+            // console.log(this.position)
              this.$axios.post('/api/home/',{lat:this.lat,lon:this.lng}).then(res=>{
                  console.log(this.position)
                 console.log(res.data.data)
