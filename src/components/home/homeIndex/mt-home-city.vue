@@ -30,7 +30,7 @@
 <script>
 import Location from './mt-home-location'
 import Alphabet from "./mt-home-alphabet";
-import fetch from '../../../api/fetch'
+// import fetch from '../../../api/fetch'
 // import axios from 'axios'
 export default {
     name:"city",

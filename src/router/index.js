@@ -27,12 +27,9 @@ import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
-<<<<<<< HEAD
 import History from '../components/vip/viphistory/'
 import RedPack from '../components/vip/vipredpack/'
                               // order
-=======
->>>>>>> 445d5f0a2681a8b6223f38eb43a2b6430e15fc30
       // 待评价
 import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
       // 退款
@@ -221,7 +218,6 @@ export default new Router({
           requredAuth:false
         }   
       },
-<<<<<<< HEAD
 
       {
         path:'/viphistory',
@@ -240,17 +236,6 @@ export default new Router({
         }   
       },
      
-=======
-      {
-        path:'/registerLogin',
-        name:RegisterLogin,
-        component:RegisterLogin,
-        meta:{
-          flag:false,
-          requredAuth:false
-        }
-      },
->>>>>>> 445d5f0a2681a8b6223f38eb43a2b6430e15fc30
       {
         name:"LoginMessageVerification",
         path:"/loginMessageVerification",

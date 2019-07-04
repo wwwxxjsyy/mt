@@ -28,28 +28,17 @@
             <img src="../../../assets/img/vipImg/redpacket.png" alt="" class="img1">
         </div>
     </div> 
-    <!-- <div class="vip-content-text">
-        <div class="vip-content-txt">
-            <span class="privi">特权2</span><h1>限时抢购加量包</h1>
-            <p class="vip-common">仅限在本期会员有效期内购买、使用</p> 
-            <img src="../../assets/img/redpacket.png" alt="" >
-        </div>
-    </div> 
-    <div class="vip-content-text">
-        <div class="vip-content-txt">
-            <span class="privi">特权3</span><h1>限时抢购加量包</h1>
-            <p class="vip-common">会员红包金额升级</p> 
-            <img src="../../assets/img/redpacket.png" alt="" >
-        </div>
-    </div>  -->
-    
-
   </div>
 </template>
 
 <script>
 export default {
-  name: "VipContent"
+  name: "VipContent",
+//   mounted() {
+//        window.addEventListener("scroll",(e)=>{
+//         console.log(e)
+//      })
+//   },
 };
 </script>
 
@@ -110,7 +99,7 @@ export default {
     line-height: 0.4rem;
     border-radius: 0.5rem;
     margin-top: 0.4rem;
-    margin-left: 0.7rem;
+    margin-left: 0.9rem;
 }
 .vip-left span::after{
     content: "";
@@ -133,7 +122,7 @@ export default {
     font-size: 0.26rem;
     font-weight: 700;
     margin-top:0.1rem;
-    margin-left: 0.5rem;
+    margin-left: 0.7rem;
 }
 
 .vip-mttx {

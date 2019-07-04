@@ -57,7 +57,7 @@ export default {
     },
     methods: {
         handleBack(){
-             this.$router.back();
+             this.$router.push('/viplogin');
         }
     },
 }

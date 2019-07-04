@@ -4,26 +4,25 @@
             <span class="privi">特权3</span>
             <h1>会员红包金额升级</h1>
             <p class="vip-common">会员红包可以在以下商家升级成更大金额的红包</p> 
-            <ul class="oul">
-                <li v-for="(item,index) in shopList" :key="index">
-                   <div class="price">
-                       <span> <i>￥</i>{{item.money}}</span>无门槛
-                   </div>
-                   <div class="shops">
-                       <a href=""><img :src="item.imgs" alt=""></a>
-                       <span>{{item.names}}</span>
-                   </div>
-                </li>
-            </ul>     
+            <div class="vip-footer">
+                <ul class="oul">
+                    <li v-for="(item,index) in shopList" :key="index">
+                        <div class="price">
+                            <span> <i>￥</i>{{item.money}}</span>无门槛
+                        </div>
+                        <div class="shops">
+                            <a href=""><img :src="item.imgs" alt=""></a>
+                            <span>{{item.names}}</span>
+                        </div>
+                    </li>
+                </ul> 
+                <span>更多外卖可到美团外卖首页查看</span>
+            </div>
         </div>
-        <div class="vip-open">
+        <div class="vip-open" v-show="flag">
             <!-- <a href=""></a> -->
-            <router-link to='vipOpen' tag='a'><span>低至￥3/月</span>立即开通</router-link>
+            <router-link to='vipOpen' tag='a'><span>低至￥5/月</span>立即开通</router-link>
         </div>
-        <div class="vip-footer">
-            <span>更多外卖可到美团外卖首页查看</span>
-        </div>
-    
     </div>
     
 </template>
@@ -69,10 +68,78 @@ export default {
                     imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
                     names:'御品轩(枫叶新都市店)',
                     path:''
-                }
-            ]
+                },
+                 {
+                    money:'7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                 {
+                    money:'7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                 {
+                    money:'7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                 {
+                    money:'7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                 {
+                    money:'7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                 {
+                    money:'7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                {
+                    money:'7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+                {
+                    money:'7',
+                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
+                    names:'御品轩(枫叶新都市店)',
+                    path:''
+                },
+            ],
+            flag:true,
+            timer:null
         }
-    }
+       
+    },
+    methods: {
+        handleScroll(){
+            this.scrollTop = document.documentElement.scrollTop
+            this.flag=false
+            clearTimeout(this.timer)
+            this.timer = setTimeout(()=>{
+                this.flag=true;
+            },1000)
+        }
+    },
+    mounted() {
+        window.addEventListener("scroll",this.handleScroll)
+            // console.log(document.documentElement.scrollTop)
+    },
+    created() {
+        
+    },
 }
 </script>
 
@@ -113,11 +180,12 @@ ul>li{
 
 .oul{
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
     /* align-items: center; */
     flex-wrap: wrap;
     position: relative;
     padding: 0 0.2rem;
+    background: #f2f2f2;
 }
 
 .oul>li{
