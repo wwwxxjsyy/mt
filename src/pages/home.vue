@@ -7,11 +7,11 @@
         <!-- <mt-home-class/> -->
         <!-- <homeShop></homeShop> -->
         <mt-home-class />
-        <mt-home-optimization/>
+        <mt-home-optimization :foodlist= "data.foodlist" :goodfood="data.goodfood" :smallChar = "data.main_small_img" />
         <mt-home-discount />
         <mt-home-goodshop />
         <mt-home-toshop />
-        <mt-home-moreshop />
+        <mt-home-moreshop :nerbylists = "data.nerbylists" />
         <!-- <homeShop></homeShop> -->
     </div>
 </template>
@@ -31,6 +31,10 @@ export default {
      name:"MtHome",
      data(){
          return{
+            //  position:"",
+             lat:"",
+             lng:"",
+             data:"",
          }
      },
      components:{
@@ -46,17 +50,33 @@ export default {
         "mt-home-moreshop":Moreshop,
         //  homeShop
      },
-     data(){
-         return {
-             data:{}
-         }
+     
+     computed:{
+         position(){
+            return this.$store.getters.location.position 
+        }
      },
-    //  created(){
-    //      this.http.post('/api/home/').then(res=>{
-    //         console.log(res)
-    //         this.data=res
-    //         })
-    // }
+    watch:{
+        position(newName, oldName){
+            // console.log(newName.lat)
+            // console.log(newName.lng)
+            this.lat=newName.lat,
+            this.lng=newName.lng,
+            console.log(this.position)
+             this.$axios.post('/api/home/',{lat:this.lat,lon:this.lng}).then(res=>{
+                 console.log(this.position)
+                console.log(res.data.data)
+                this.data=res.data.data
+                })
+
+        }
+    },
+    methods:{
+    }
+    
+         
+
+
      
      
     
@@ -68,6 +88,5 @@ export default {
     padding: .2rem;
     width:100%;
     height: 100%;
-    /* -webkit-overflow-scrolling: touch; */
 }
 </style>

@@ -122,7 +122,7 @@ export default {
     font-size: 0.26rem;
     font-weight: 700;
     margin-top:0.1rem;
-    margin-left: 0.7rem;
+    margin-left: 0.5rem;
 }
 
 .vip-mttx {
