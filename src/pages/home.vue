@@ -1,18 +1,4 @@
 <template>
-<<<<<<< HEAD
-	<div class="mt-home">
-		<mt-home-address/>
-		<mt-home-search/>
-		<mt-home-recommend :homeData="data"/>
-		<mt-home-banner :homeData="data"/>
-		<mt-home-class :homeData="data"/>
-		<mt-home-optimization :homeData="data"/>
-		<mt-home-discount :homeData="data"/>
-		<mt-home-goodshop :homeData="data"/>
-		<mt-home-toshop :homeData="data"/>
-		<mt-home-moreshop :homeData="data"/>
-	</div>
-=======
     <div class="mt-home">
         <mt-home-address/>
         <mt-home-search/>
@@ -26,7 +12,6 @@
         <mt-home-moreshop :nerbylists = "data.nerbylists" />
         <!-- <homeShop></homeShop> -->
     </div>
->>>>>>> 000ff109e2b4735991742d76f046b2e811cc755b
 </template>
 
 <script>
@@ -41,7 +26,6 @@ import Goodshop from '../components/home/homeIndex/mt-home-goodshop'
 import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
 export default {
-<<<<<<< HEAD
 	 name:"MtHome",
 	 data(){
 		 return{
@@ -64,7 +48,6 @@ export default {
 			data:{}
 		}
 	},
-=======
      name:"MtHome",
      data(){
          return{
@@ -87,21 +70,6 @@ export default {
         "mt-home-moreshop":Moreshop,
         //  homeShop
      },
-<<<<<<< HEAD
-     data(){
-         return {
-             data:{
-
-             }
-         }
-     },
-     created(){
-         this.http.post('/api/home/').then(res=>{
-            console.log(res)
-            this.data=res
-            })
-    }
-=======
      
      computed:{
          position(){
@@ -125,15 +93,6 @@ export default {
     },
     methods:{
     }
-    
-         
-
-
->>>>>>> f5ecd3d267cb5c6f289a9a60a948600aee71e1c6
-     
-     
-    
->>>>>>> 000ff109e2b4735991742d76f046b2e811cc755b
 }
 </script>
 

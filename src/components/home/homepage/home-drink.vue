@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="warp"> -->
     <div class="homedrink" ref="foodScroll">
       <div class="drink">
         <div class="drink-search">
@@ -11,11 +10,71 @@
           <b>请输入商家或者商品名称</b>
         </div>
       </div>
-      
-      <mt-home-moreshop />
+        <div>
+          <ul>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+               <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+               <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+            <li>656464644646</li>
+          </ul>
+        </div>
+      <!-- <mt-home-moreshop /> -->
       
     </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -35,16 +94,18 @@ export default {
   },
   methods: {
       showIcon() {
-        this.scrollTop = document.documentElement.scrollTop
+        this.scrollTop =  Math.abs(Math.round(document.documentElement.scrollTop))
+       
         console.log(this.scrollTop)
-        let a = (750-this.scrollTop)/100
-        let b = (100-this.scrollTop)/100
-        console.log(a)
-          if(this.scrollTop>20&&this.scrollTop<70){
-                this.$refs.headerbg.style.width = a+'rem';
+        let a =  (0 - this.scrollTop)/100
+        let b = 98-(this.scrollTop*0.1)
+        // console.log(a)
+          if(this.scrollTop>0 && this.scrollTop<70){
+                this.$refs.headerbg.style.width = b+'%';
                 this.$refs.headerbg.style.position = "fixed";
-                this.$refs.headerbg.style.top = b+'rem';
-                this.$refs.headerbg.style.right = 0;
+                this.$refs.headerbg.style.top = a+'rem';
+                this.$refs.headerbg.style.left = -a+'rem';
+                // this.$refs.headerbg.style.marginRight = 20+'px';
           }
         }
   },
@@ -55,46 +116,38 @@ export default {
 </script>
 
 <style>
-.aaa{
-  width: 100%;
-  position: absolute;
-  top:1.5rem;
-  bottom: .2rem;
-  left: 0;
-  overflow: hidden;
-}
-.warp {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 48px;
-  left: 0;
-  overflow: hidden;
-}
 .homedrink {
   padding: 0 0.2rem;
 }
 .drink-search {
   width: 100%;
-  height: 0.5rem;
+  height: 0.8rem;
+  background: #fff;
   text-align: center;
-  margin-top: 0.2rem;
+  position: fixed;
+  left: 0;
+  top:0; 
 }
 .drink-search span {
   font-size: 0.4rem;
-  position: fixed;
+  /* position: fixed;
   top: 0.2rem;
-  left: 0.2rem;
+  left: 0.2rem; */
+  float: left;
+  margin-left: .1rem;
+  line-height: .8rem;
   color: rgb(148, 150, 150);
 }
 .drink-search a {
   font-size: 0.4rem;
   line-height: 0.5rem;
   color: #ed6b91;
+  line-height: .8rem;
+
 }
 .inputGroup {
   width:7.1rem;
-  margin-top: 0.2rem;
+  margin-top: 0.8rem;
   height: 0.5rem;
   border-radius: 0.1rem;
   background: #ededed;
