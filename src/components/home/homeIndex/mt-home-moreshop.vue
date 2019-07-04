@@ -301,6 +301,7 @@ export default {
 .home-menu-option span{
     width: 23%;
     height: .4rem;
+    line-height: .4rem;
     text-align: center;
     background: #d4d2d2;
 }

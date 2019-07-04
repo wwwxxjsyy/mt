@@ -4,8 +4,6 @@
         <mt-home-search/>
         <mt-home-recommend />
         <mt-home-banner />
-        <!-- <mt-home-class/> -->
-        <!-- <homeShop></homeShop> -->
         <mt-home-class />
         <mt-home-optimization/>
         <mt-home-discount />
@@ -48,15 +46,17 @@ export default {
      },
      data(){
          return {
-             data:{}
+             data:{
+
+             }
          }
      },
-    //  created(){
-    //      this.http.post('/api/home/').then(res=>{
-    //         console.log(res)
-    //         this.data=res
-    //         })
-    // }
+     created(){
+         this.http.post('/api/home/').then(res=>{
+            console.log(res)
+            this.data=res
+            })
+    }
      
      
     

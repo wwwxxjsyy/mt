@@ -110,7 +110,7 @@ export default new Router({
         path: "/test",
         component: Hometest,
         meta: {
-          flag: true,
+          flag: false,
           requredAuth: true
         },
       },
