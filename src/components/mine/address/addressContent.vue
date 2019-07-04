@@ -59,16 +59,18 @@ watch: {},
 methods: {
     getData(){
         //请求数据
-        // localStory.mt_login获取token验证是否是登录状态
+        var use_token=localStory.getItem(mt_login)
+				// 获取token验证是否是登录状态
        
-      //  this.$axios.post('',{})
+       this.$axios.get('/user/address/?token='+use_token)
 
-      //   .then(res=>{
-      //       // this.allAddress=res.data
-      //   })
-      //   .catch(err=>{
+        .then(res=>{
+					console.log(res)
+             // this.allAddress=res.data
+         })
+        .catch(err=>{
 
-      //   })
+         })
       this.allAddress.push({ name:"heello",
         tag:"公司",
         sex:"男士",

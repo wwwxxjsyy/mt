@@ -40,14 +40,13 @@ export default {
   methods:{
     // 向后端请求数据
     getData() {
-      const user_id = localStorage.ele_login;
-      this.$axios(`/api/user/user_info/${user_id}`).then(res => {
+      const user_id = localStorage.getItem(mt_login);
+      this.$axios().then(res => {
         // console.log(res.data);
         this.userInfo = res.data;
       });
     },
   },
-  
 }
 </script>
 

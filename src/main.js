@@ -12,9 +12,6 @@ import {
 
 Vue.prototype.Observer = Observer;
 import axios from 'axios' 
-import qs from 'qs';
-
-import { Indicator } from 'mint-ui';
 
 // axios.defaults.baseURL = 'https://ele-interface.herokuapp.com/';
 axios.defaults.baseURL = 'http://10.35.162.147:8002/';
@@ -23,7 +20,6 @@ Vue.prototype.$axios=axios
 // Vue.prototype.http=http
 
 
-<<<<<<< HEAD
 axios.interceptors.request.use(config => {
   //加载动画
   Indicator.open();
@@ -31,7 +27,7 @@ axios.interceptors.request.use(config => {
 }, error => {
   return Promise.reject(error);
 })
-// //响应拦截
+//响应拦截
 axios.interceptors.response.use(response => {
   //关闭动画
   Indicator.close();
@@ -41,10 +37,6 @@ axios.interceptors.response.use(response => {
   return Promise.reject(error);
 })
 
-=======
-
-Vue.config.productionTip = false
->>>>>>> 000ff109e2b4735991742d76f046b2e811cc755b
 Vue.use(MINT)
 Vue.use(VueLazyload,{
   preLoad:1.3,
@@ -72,38 +64,8 @@ router.beforeEach((to,from,next)=>{
   }
 
 })
-const service = axios.create({
-  baseURL:process.env.BASE_API,
-  timeout:30000,
-})
-// 请求拦截
-service.interceptors.request.use(
-  config => {
-    if (config.method == 'post') {
-      config.data = qs.stringify(config.data);
-    }
 
-    // 加载动画
-    Indicator.open();
-    return config;
-  },
-  error => {
-    return Promise.reject(error);
-  }
-);
 
-// 响应拦截
-axios.interceptors.response.use(
-  response => {
-    Indicator.close();
-    return response;
-  },
-  error => {
-    // 错误提醒
-    Indicator.close();
-    return Promise.reject(error);
-  }
-);
 new Vue({
   el: '#app',
   router,

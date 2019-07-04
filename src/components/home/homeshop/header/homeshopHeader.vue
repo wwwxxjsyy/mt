@@ -4,7 +4,7 @@
     <!-- 顶部通栏 开始 -->
     <div class="top-wrapper">
 			<div class="back-wrapper">
-				<span class="icon-arrow_lift"></span>
+				<span class="icon-arrow_lift" @click="$router.back()"></span>
 			</div>
       
 			<form class="search-wrapper">

@@ -119,7 +119,7 @@ export default {
         }
         this.$axios.post('/user/pwd_login', {phone:this.phone,code:this.verifyCode}).then(res=>{
             //打印登陆成功信息   登陆成功
-            localStorage.setItem("mt_login", res.token);
+            localStorage.setItem("mt_login", res.data.token);
             //存储在vuex中
             //  this.$store.dispatch("setUser",this.phone)
             this.$router.push('/home')
@@ -140,7 +140,7 @@ export default {
             console.log(res)
             if(res.data.code==200){
               
-                localStorage.setItem("mt_login", res.token);
+                localStorage.setItem("mt_login", res.data.token);
                 //存储在vuex中
                 this.$store.dispatch("setUser",this.phone)
                 
