@@ -83,24 +83,12 @@ export default {
     }
   },
 	created(){
-<<<<<<< HEAD
     this.$axios('/api/shop/store/?shop_id=1')		
 		  .then(response =>{
 				console.log(response.data.data)
 		    if(response.data.code == 200){
 			  this.seller = response.data.data
 			  console.log(this.seller.poi_env.thumbnails_url_list)
-=======
-		this.$axios("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/seller")
-		// .then(res => {
-		// 	  console.log(res)
-		//     return res.json()
-		//   })
-		.then(response =>{
-			console.log(response.data)
-		    if(response.data.code == 0){
-		      this.seller = response.data.data
->>>>>>> f5ecd3d267cb5c6f289a9a60a948600aee71e1c6
 		      this.$nextTick(() => {
 		        if(this.seller.poi_env.thumbnails_url_list){
 		          let imgW = this.$refs.picsItem[0].clientWidth
@@ -185,8 +173,6 @@ export default {
 		border-bottom: .03rem solid #F4F4F4;
 		white-space: nowrap;
 	}
-	
-	.seller .seller-wrapper .seller-view .pics-wrapper .pics-list {}
 	
 	.seller .seller-wrapper .seller-view .pics-wrapper .pics-list .pics-item {
 		display: inline-block;

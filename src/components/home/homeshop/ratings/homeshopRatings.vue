@@ -118,17 +118,10 @@ export default {
     Star
   },
   created(){
-<<<<<<< HEAD
-	this.$axios('/shop/pl/?v_shop_id=1')
-      .then(res => {
-        return res.json()
-      })
-=======
 	this.$axios("https://www.easy-mock.com/mock/5d1b24188b8b69552f76273d/example/api/ratings")
       // .then(res => {
       //   return res.json()
       // })
->>>>>>> f5ecd3d267cb5c6f289a9a60a948600aee71e1c6
       .then(response =>{
 		console.log(response.data)
         if(response.data.code == 0){
@@ -244,9 +237,6 @@ export default {
 		margin-left: .1rem;
 	}
 	
-	.ratings .ratings-wrapper .overview .overview-left .other-score .item {
-		/* height: 11px; */
-	}
 	
 	.ratings .ratings-wrapper .overview .overview-left .other-score .item .text {
 		font-size: .25rem;
@@ -277,7 +267,6 @@ export default {
 		height: .8rem;
 	}
 	
-	.ratings .ratings-wrapper .overview .overview-right .delivery-score {}
 	
 	.ratings .ratings-wrapper .overview .overview-right .delivery-score .score {
 		font-size: .4rem;
@@ -352,7 +341,6 @@ export default {
 		color: #656565;
 	}
 
-  .ratings .ratings-wrapper .content .rating-list {}
 	
 .ratings .ratings-wrapper .content .rating-list .comment-item {
 	padding: .1rem .1rem .1rem 0;
