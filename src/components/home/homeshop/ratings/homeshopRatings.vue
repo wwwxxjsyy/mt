@@ -237,9 +237,6 @@ export default {
 		margin-left: .1rem;
 	}
 	
-	.ratings .ratings-wrapper .overview .overview-left .other-score .item {
-		/* height: 11px; */
-	}
 	
 	.ratings .ratings-wrapper .overview .overview-left .other-score .item .text {
 		font-size: .25rem;
@@ -270,7 +267,6 @@ export default {
 		height: .8rem;
 	}
 	
-	.ratings .ratings-wrapper .overview .overview-right .delivery-score {}
 	
 	.ratings .ratings-wrapper .overview .overview-right .delivery-score .score {
 		font-size: .4rem;
@@ -345,7 +341,6 @@ export default {
 		color: #656565;
 	}
 
-  .ratings .ratings-wrapper .content .rating-list {}
 	
 .ratings .ratings-wrapper .content .rating-list .comment-item {
 	padding: .1rem .1rem .1rem 0;

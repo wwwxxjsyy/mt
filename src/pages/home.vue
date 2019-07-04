@@ -3,9 +3,11 @@
         <mt-home-address/>
         <mt-home-search/>
         <mt-home-recommend />
-        <mt-home-banner />
-        <mt-home-class />
-        <mt-home-optimization :foodlist= "data.foodlist" :goodfood="data.goodfood" :smallChar = "data.main_small_img" />
+        <mt-home-banner :wheel="data.wheel"/>
+        <!-- <mt-home-class/> -->
+        <!-- <homeShop></homeShop> -->
+        <mt-home-class :main_type_img="data.main_type_img" :main_small_img="data.main_small_img"/>
+        <mt-home-optimization :foodlist= "data.foodlist" :goodfood="data.goodfood" />
         <mt-home-discount />
         <mt-home-goodshop />
         <mt-home-toshop />
@@ -26,28 +28,6 @@ import Goodshop from '../components/home/homeIndex/mt-home-goodshop'
 import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
 export default {
-	 name:"MtHome",
-	 data(){
-		 return{
-		 }
-	 },
-	 components:{
-		"mt-home-address":Address,
-		"mt-home-search":Search,
-		"mt-home-recommend":Recommend,
-		"mt-home-banner":Banner,
-		"mt-home-class":Class,
-		"mt-home-optimization":Optimization,
-		"mt-home-discount":Ddiscount,
-		"mt-home-goodshop":Goodshop,
-		"mt-home-toshop":Toshop,
-		"mt-home-moreshop":Moreshop,
-	 },
-	data(){
-		return {
-			data:{}
-		}
-	},
      name:"MtHome",
      data(){
          return{
@@ -82,7 +62,7 @@ export default {
             // console.log(newName.lng)
             this.lat=newName.lat,
             this.lng=newName.lng,
-            console.log(this.position)
+            // console.log(this.position)
              this.$axios.post('/api/home/',{lat:this.lat,lon:this.lng}).then(res=>{
                  console.log(this.position)
                 console.log(res.data.data)
@@ -93,6 +73,13 @@ export default {
     },
     methods:{
     }
+    
+         
+
+
+     
+     
+    
 }
 </script>
 
