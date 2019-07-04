@@ -262,6 +262,9 @@ export default {
                 }
             ]
         }
+    },
+    props:{
+        nerbylists:{}
     }
 }
 </script>

@@ -25,7 +25,7 @@
       </div>
     </div>
     <!-- 底部右侧 -->
-    <div class="content-right" :class="{'highligh':totalCount>0}">
+    <div class="content-right" :class="{'highligh':totalCount>0}" @click="settlement">
       {{payStr}}
     </div>
 
@@ -165,6 +165,16 @@ import CartControl from '../cartcontrol/CartControl'
 			},
 			hideMask(){
 				this.fold = true
+			},
+			//去结算
+			settlement(){
+				if(this.payStr=="去结算"){
+					this.$store.dispatch("setOrderInfo",{
+						// shopInfo:this.shopInfo.rst,
+						shopFoods:this.selectFoods,
+					})
+					this.$router.push('/settlement')
+				}
 			}
 		},
 		components:{

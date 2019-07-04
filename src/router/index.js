@@ -44,6 +44,8 @@ import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
 
 import VipLogin from '../components/vip/viplogin/'
 
+import Settlement from '../components/home/homeshop/settlement/settlement'
+
 import selectAddress from '../components/home/homeIndex/mt-home-select-address.vue'
 import city from '../components/home/homeIndex/mt-home-city.vue'
 import Superior from '../components/home/homeIndex/mt-home-superior.vue'
@@ -285,6 +287,7 @@ export default new Router({
          },
       },
       {
+        name:'PlusAddress',
         path:'/PlusAddress',
         component:PlusAddress,
         meta: {
@@ -353,6 +356,11 @@ export default new Router({
       {
         path:'/superior',
         component:Superior
+      },
+      {
+        path:'/settlement',
+        name:'Settlement',
+        component:Settlement,
       },
  
       {

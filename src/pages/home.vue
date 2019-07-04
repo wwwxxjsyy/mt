@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 	<div class="mt-home">
 		<mt-home-address/>
 		<mt-home-search/>
@@ -11,6 +12,23 @@
 		<mt-home-toshop :homeData="data"/>
 		<mt-home-moreshop :homeData="data"/>
 	</div>
+=======
+    <div class="mt-home">
+        <mt-home-address/>
+        <mt-home-search/>
+        <mt-home-recommend />
+        <mt-home-banner />
+        <!-- <mt-home-class/> -->
+        <!-- <homeShop></homeShop> -->
+        <mt-home-class />
+        <mt-home-optimization :foodlist= "data.foodlist" :goodfood="data.goodfood" :smallChar = "data.main_small_img" />
+        <mt-home-discount />
+        <mt-home-goodshop />
+        <mt-home-toshop />
+        <mt-home-moreshop :nerbylists = "data.nerbylists" />
+        <!-- <homeShop></homeShop> -->
+    </div>
+>>>>>>> 000ff109e2b4735991742d76f046b2e811cc755b
 </template>
 
 <script>
@@ -25,6 +43,7 @@ import Goodshop from '../components/home/homeIndex/mt-home-goodshop'
 import Toshop from '../components/home/homeIndex/mt-home-toshop'
 import Moreshop from '../components/home/homeIndex/mt-home-moreshop'
 export default {
+<<<<<<< HEAD
 	 name:"MtHome",
 	 data(){
 		 return{
@@ -47,6 +66,60 @@ export default {
 			data:{}
 		}
 	},
+=======
+     name:"MtHome",
+     data(){
+         return{
+            //  position:"",
+             lat:"",
+             lng:"",
+             data:"",
+         }
+     },
+     components:{
+        "mt-home-address":Address,
+        "mt-home-search":Search,
+        "mt-home-recommend":Recommend,
+        "mt-home-banner":Banner,
+        "mt-home-class":Class,
+        "mt-home-optimization":Optimization,
+        "mt-home-discount":Ddiscount,
+        "mt-home-goodshop":Goodshop,
+        "mt-home-toshop":Toshop,
+        "mt-home-moreshop":Moreshop,
+        //  homeShop
+     },
+     
+     computed:{
+         position(){
+            return this.$store.getters.location.position 
+        }
+     },
+    watch:{
+        position(newName, oldName){
+            // console.log(newName.lat)
+            // console.log(newName.lng)
+            this.lat=newName.lat,
+            this.lng=newName.lng,
+            console.log(this.position)
+             this.$axios.post('/api/home/',{lat:this.lat,lon:this.lng}).then(res=>{
+                 console.log(this.position)
+                console.log(res.data.data)
+                this.data=res.data.data
+                })
+
+        }
+    },
+    methods:{
+    }
+    
+         
+
+
+     
+     
+    
+>>>>>>> 000ff109e2b4735991742d76f046b2e811cc755b
 }
 </script>
 
