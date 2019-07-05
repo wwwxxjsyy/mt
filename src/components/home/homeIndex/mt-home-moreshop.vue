@@ -267,7 +267,7 @@ export default {
         }
     },
     props:{
-        nerbylists:[]
+        nerbylists:{}
     }
 }
 </script>

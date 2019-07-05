@@ -169,6 +169,12 @@ import CartControl from '../cartcontrol/CartControl'
 			//去结算
 			settlement(){
 				if(this.payStr=="去结算"){
+					console.log(this.poiInfo)
+					console.log(this.selectFoods)
+					this.$store.dispatch("setPoiInfo",{
+						// shopInfo:this.shopInfo.rst,
+						setPoiInfo:this.poiInfo,
+					})
 					this.$store.dispatch("setOrderInfo",{
 						// shopInfo:this.shopInfo.rst,
 						shopFoods:this.selectFoods,

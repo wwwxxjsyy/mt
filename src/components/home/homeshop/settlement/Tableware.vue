@@ -2,7 +2,7 @@
   <transition>
     <div class="tableware" v-if="isShow">
       <div class="actions-sheet">
-        <i class="fa fa-remove" @click="$emit('close')"></i>
+        <i class="iconfont" @click="$emit('close')">&#xe60b;</i>
         <h2 class="actions-sheet-header">
           <span class="tag"></span>
           <span class="title">餐具份数</span>
@@ -70,16 +70,16 @@ export default {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 5.333333vw 6.933333vw;
+  padding: .5rem .5rem;
   box-sizing: border-box;
   transition: transform 0.2s;
   will-change: transform;
 }
 .actions-sheet-header {
-  margin-bottom: 3.2vw;
-  padding: 0 7.466667vw;
+  margin-bottom: .3rem;
+  padding: 0 .7rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: .4rem;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -87,30 +87,30 @@ export default {
 }
 .actions-sheet-header .tag {
   display: inline-block;
-  width: 4.266667vw;
-  height: 0.266667vw;
-  border-top: 0.266667vw solid #333;
+  width: .5rem;
+  height: .1rem;
+  border-top: 1px solid #333;
 }
 .actions-sheet-header .title {
-  margin: 0 3.2vw;
+  margin: 0 .3rem;
 }
 .actions-sheet ul {
-  margin-top: 5.466667vw;
-  max-height: 80vw;
+  margin-top: .5rem;
+  max-height: 8rem;
   overflow-y: scroll;
 }
 .actions-sheet ul li {
-  margin-bottom: 7.466667vw;
+  margin-bottom: .3rem;
   text-align: center;
 }
 .fa-remove {
   position: absolute;
-  height: 6.4vw;
-  width: 6.4vw;
-  right: 2.666667vw;
-  top: 2.666667vw;
+  height: .6rem;
+  width: .6rem;
+  right: .2rem;
+  top: .2rem;
   color: #aaa;
-  font-size: 1.2rem;
+  font-size: .3rem;
 }
 
 /* 过度动画 */
@@ -126,7 +126,7 @@ export default {
 
 /* 选中样式 */
 .selected {
-  color: #2396ff;
+  color: #efb700;
   font-weight: 500;
 }
 </style>

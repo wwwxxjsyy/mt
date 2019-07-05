@@ -18,9 +18,12 @@ axios.defaults.baseURL = 'http://10.35.162.147:8002/';
 // import http from './api/http'
 Vue.prototype.$axios=axios
 // Vue.prototype.http=http
+const service = axios.create({
+  baseUrl:process.env.BASEAPI,
+  timeout:10000,
+})
 
-
-axios.interceptors.request.use(config => {
+service.interceptors.request.use(config => {
     if (config.method == 'post') {
       config.data = qs.stringify(config.data);
     }

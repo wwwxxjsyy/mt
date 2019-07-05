@@ -7,8 +7,10 @@ const types = {
     SET_ADDRESS:"SET_ADDRESS",
     //购物车
     ORDER_INFO:"ORDER_INFO",
+    POI_INFO:"POI_INFO",
     //user地址信息
-    USER_INFO:"USER_INFO"
+    USER_INFO:"USER_INFO",
+    REMARK_INFO: 'REMARK_INFO'
 
 }
 export const store = new Vuex.Store({
@@ -22,8 +24,13 @@ export const store = new Vuex.Store({
         address:"",
         //购物车
         orderInfo:null,
+        poiInfo:null,
         ////user地址信息
-        userInfo:null
+        userInfo:null,
+        remarkInfo: {
+            tableware: '',
+            remark: ''
+          }
 
     },
     
@@ -36,8 +43,24 @@ export const store = new Vuex.Store({
         address:state=> state.address,
          //获取购物车商品
          orderInfo:state =>state.orderInfo,
+         poiInfo:state =>state.poiInfo,
+         totalPrice: state => {
+            let price = 0;
+            if (state.orderInfo) {
+              const selectFoods = state.orderInfo.shopFoods;
+              selectFoods.forEach(food => {
+                price += food.min_price * food.count;
+              });
+              var str=state.poiInfo.setPoiInfo.shipping_fee_tip;
+              var num = parseInt(str.substring(1).substring(1).substring(1).substring(1));
+              price += num
+            }
+            return price;
+          },
+          remarkInfo: state => state.remarkInfo,
          //user地址信息
          userInfo:state =>state.userInfo,
+
 
     },
     mutations:{
@@ -62,7 +85,7 @@ export const store = new Vuex.Store({
             }
         },
         [types.SET_ADDRESS](state,address){
-            if(location){
+            if(address){
                 state.address = address;
             }else{
                 state.address = "";
@@ -72,10 +95,17 @@ export const store = new Vuex.Store({
         // lngLatLocation
         //购物车
         [types.ORDER_INFO](state,orderInfo){
-            if(location){
+            if(orderInfo){
                 state.orderInfo = orderInfo;
             }else{
                 state.orderInfo = "";
+            }
+        },
+        [types.POI_INFO](state,poiInfo){
+            if(poiInfo){
+                state.poiInfo = poiInfo;
+            }else{
+                state.poiInfo = "";
             }
         },
           //user地址信息
@@ -85,7 +115,14 @@ export const store = new Vuex.Store({
             }else{
                 state.userInfo = "";
             }
-        }
+        },
+        [types.REMARK_INFO](state, remarkInfo) {
+            if (remarkInfo) {
+              state.remarkInfo = remarkInfo;
+            } else {
+              state.remarkInfo = null;
+            }
+          }
 
 
     },
@@ -116,9 +153,15 @@ export const store = new Vuex.Store({
         setOrderInfo({commit},orderInfo){
             commit(types.ORDER_INFO,orderInfo)
         },
+        setPoiInfo({commit},poiInfo){
+            commit(types.POI_INFO,poiInfo)
+        },
         //user地址信息
         setUserInfo({commit},userInfo){
             commit(types.USER_INFO,userInfo)
         },
+        setRemarkInfo: ({ commit }, remarkInfo) => {
+            commit(types.REMARK_INFO, remarkInfo);
+          }
     }
 })

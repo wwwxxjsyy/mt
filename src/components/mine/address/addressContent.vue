@@ -7,9 +7,9 @@
      <!-- 显示收货地址 -->
     <div class="address-view" v-if="!flag">
       <div class="address-card" v-for="(address,index) in allAddress" :key="index">
-        <!-- <div class="address-card-select">
-          <i class="fa fa-check-circle" v-if="selectIndex == index"></i>
-        </div> -->
+        <div class="address-card-select">
+          <i class="iconfont" v-if="selectIndex == index">&#xe620;</i>
+        </div>
 
         <div class="address-card-body" @click="setAddressInfo(address,index)">
           <p class="address-card-address">
@@ -19,7 +19,7 @@
           <p class="address-card-title">
             <span class="username">{{address.name}}</span>
             <span v-if="address.sex" class="gender">{{address.sex}}</span>
-            <span class="phone">{{address.phone}}111</span>
+            <span class="phone">{{address.phone}}</span>
           </p>
         </div>
         <div class="address-card-edit">
@@ -36,9 +36,10 @@ export default {
 components: {},
 data() {
     return {
+      selectIndex:0,
         flag:false,
         imgUrl:require('../../../assets/minePic/address.png'),
-        allAddress:[],
+        // allAddress:[],
         addressInfo:{
         name:"",
         tag:"",
@@ -49,35 +50,16 @@ data() {
     }
     };
 },
-  computed: {
-
-  },
-watch: {},
-  beforeRouteEnter(to,from,next){
-      next(vm=>vm.getData())
-  },
-methods: {
-    getData(){
-        //请求数据
-        // localStory.mt_login获取token验证是否是登录状态
-       
-      //  this.$axios.post('',{})
-
-      //   .then(res=>{
-      //       // this.allAddress=res.data
-      //   })
-      //   .catch(err=>{
-
-      //   })
-      this.allAddress.push({ name:"heello",
-        tag:"公司",
-        sex:"男士",
-        phone:"18821687723",
-        address:"西安高新区",
-        bottom:"2109",
-    })
-     
+computed: {
+   orderInfo() {
+      return this.$store.getters.orderInfo;
     },
+},
+props:{
+  allAddress:{}
+},
+methods: {
+   
     handleEdit(address){
       // console.log(address)
         this.$router.push({
@@ -85,7 +67,7 @@ methods: {
             params:{
                 iconfont:'&#xe61a;',
                 title:'编辑收货地址',
-                addressInfo:this.addressInfo
+                addressInfo:address
             }
         })
     },
@@ -93,7 +75,10 @@ methods: {
         this.selectIndex=index;
         //将address存储到vuex中
         this.$store.dispatch("setUserInfo",address)
-        this.$router.push("/settlement")
+        if(this.orderInfo){
+          this.$router.push("/settlement")
+        }
+        
     }
 },
 
@@ -103,6 +88,10 @@ created(){
 }
 </script>
 <style  scoped>
+.iconfont{
+  font-size: .3rem;
+  color:#f79606;
+}
 .address-content{
     margin-top: .08rem;
     flex: 1;
@@ -120,13 +109,15 @@ created(){
 }
 .address-card {
   background-color: #fff;
-  padding: .2rem;
+  padding: .2rem .5rem;
   border-bottom: 1px solid #ddd;
   display: flex;
 }
 .address-card-body {
   flex: 1;
-  overflow: hidden;
+  width: 3rem;
+  margin-left:.2rem;
+ 
 }
 .address-card-title {
   font-size: .3rem;
@@ -163,6 +154,9 @@ created(){
 }
 .address-text {
   line-height: .6rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /* 编辑和删除 */
