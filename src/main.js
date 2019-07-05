@@ -40,6 +40,7 @@ axios.interceptors.response.use(response => {
 }, error => {
   return Promise.reject(error);
 })
+Vue.prototype.http=http
 
 Vue.use(MINT)
 Vue.use(VueLazyload,{
@@ -56,19 +57,19 @@ Vue.config.productionTip = false
 // from: Route: 当前导航正要离开的路由
 // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
 
-// router.beforeEach((to,from,next)=>{
+ router.beforeEach((to,from,next)=>{
   const isLogin = localStorage.mt_login ? true: false;
-//   if(to.path=='/vip'||to.path=='/order'){
-//       if(isLogin){
-//         next()
-//       }else{
-//        isLogin ? next() : next('/login')
-//       }
-//   }else{
-//     next()
-//   }
+   if(to.path=='/vip'||to.path=='/order'){
+       if(isLogin){
+         next()
+       }else{
+        isLogin ? next() : next('/login')
+       }
+   }else{
+     next()
+   }
 
-// })
+ })
 
 new Vue({
   el: '#app',
