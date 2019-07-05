@@ -45,10 +45,6 @@
             <i class="iconfont">{{'&#xe60a;'}}</i>
         </div>
     </div>
-    <div>
-      <div class="myaccount-out"  @click="handleLogout">退出当前账号</div>
-    <!-- <setButtn :isShow="isshow"/> -->
-    </div>
 </div>
 </template>
 
@@ -64,10 +60,7 @@ return {
 computed: {},
 watch: {},
 methods: {
-    handleLogout() {
-      localStorage.removeItem("mt_login");
-      this.$router.push("/registerLogin");
-    },
+
 },
 
 }
@@ -80,7 +73,7 @@ methods: {
     color:black; 
 }
 .myaccount-content .input-wrap{
-    border-bottom:1px solid #fff;
+    border-bottom:1px solid #efefef;
     display: flex;
     height:1rem;
     align-items: center;
@@ -107,17 +100,5 @@ methods: {
 .input-wrap .wrapcon i{
     font-size:.5rem;
     color: #9e9e9e;
-}
-.myaccount-out {
-  width: 100%;
-  height: 1.1rem;
-  color: #ff6c7a;
-  font-size: 0.35rem;
-  text-align: center;
-  line-height: 1.1rem;
-  background: #fafafa;
-  position: absolute;
-  left: 0;
-  bottom: 0;
 }
 </style>

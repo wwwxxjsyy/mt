@@ -19,7 +19,7 @@ import PlusAddress from '../components/mine/others/PlusAddress'
 import Delicious from '../pages/delicious'//美食
 import Homedrink from '../components/home/homepage/home-drink'
 import Hometest from '../components/home/homecommon/recommend'
-import Loading from '../components/home/homeshop/loading'
+
 
 
 
@@ -27,10 +27,9 @@ import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
-      // 待评价
-import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
-      // 退款
-import OrderOrderRefund from '../components/orders/OrderRefund.vue'
+import History from '../components/vip/viphistory/'
+import RedPack from '../components/vip/vipredpack/'
+                              // order
       // 搜索
 import OrderOrderSearch from '../components/orders/OrderSearch.vue'
       // 消息
@@ -41,6 +40,8 @@ import OrderOrderLately from '../components/orders/OrderLately.vue'
 import OrderOrderComment from '../components/orders/OrderComment.vue'
       // 相似商家
 import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
+      // 订单状态
+import OrderOrderState from '../components/orders/OrderState.vue'
 
 import VipLogin from '../components/vip/viplogin/'
 
@@ -60,7 +61,7 @@ import HomeGoods from '../pages/homegoods'
 import HomeShopGoods from '../components/home/homeshop/goods/homeshopGoods'
 import HomeShopRatings from '../components/home/homeshop/ratings/homeshopRatings'
 import HomeShopSeller from '../components/home/homeshop/seller/homeshopSeller'
-import HomeClassify from '../components/home/homeshop/classify/classify'
+
 
 Vue.use(Router)
 
@@ -78,22 +79,6 @@ export default new Router({
           requredAuth:true
         }  
       },
-			{
-			  path: '/homeclass',
-			  component: HomeClassify,
-			  meta: {
-			    flag: false,
-			    requredAuth: true
-			  }
-			},
-			{
-				path: '/loading',
-				component: Loading,
-				meta: {
-					flag: false,
-					requredAuth: true
-				}
-			},
       {
         path:'/viplogin',
         component:VipLogin,
@@ -130,7 +115,7 @@ export default new Router({
         path: "/test",
         component: Hometest,
         meta: {
-          flag: true,
+          flag: false,
           requredAuth: true
         },
       },
@@ -235,15 +220,24 @@ export default new Router({
           requredAuth:false
         }   
       },
+
       {
-        path:'/registerLogin',
-        name:RegisterLogin,
-        component:RegisterLogin,
+        path:'/viphistory',
+        component:History,
         meta:{
           flag:false,
           requredAuth:false
-        }
+        }   
       },
+      {
+        path:'/vipredpack',
+        component:RedPack,
+        meta:{
+          flag:false,
+          requredAuth:false
+        }   
+      },
+     
       {
         name:"LoginMessageVerification",
         path:"/loginMessageVerification",
@@ -289,7 +283,6 @@ export default new Router({
          },
       },
       {
-        name:'PlusAddress',
         path:'/PlusAddress',
         component:PlusAddress,
         meta: {
@@ -297,16 +290,6 @@ export default new Router({
           requredAuth: true
         },
       },     // order
-          {
-            name:"OrderOrderNoDiscuss",
-            path:"/OrderOrderNoDiscuss",
-            component:OrderOrderNoDiscuss
-          },
-          {
-            name:"OrderOrderRefund",
-            path:"/OrderOrderRefund",
-            component:OrderOrderRefund
-          },
           {
             name:"OrderOrderSearch",
             path:"/OrderOrderSearch",
@@ -332,9 +315,12 @@ export default new Router({
             path:"/OrderOrderSimilarity",
             component:OrderOrderSimilarity
           },
+          {
+            name:"OrderOrderState",
+            path:"/OrderOrderState",
+            component:OrderOrderState
+          },
 
-
-      
       {
         path:'/MyWallet',
         component:Mywallet

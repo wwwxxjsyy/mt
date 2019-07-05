@@ -1,7 +1,7 @@
 <template>
     <div class="mt-vip"  >
         <!-- <h2>mt-vip</h2> -->
-        <VipHeader  />
+        <VipHeader :isScrollTop="isScrollTop"/>
         <VieContent/>
         <VipContentred/>
         <VipContentshop/>  
@@ -16,27 +16,34 @@ import VipContentshop from '../components/vip/vipContentshop'
 
 export default {
     name:"MtVip",
+    data() {
+        return {
+            scrollTop:'',
+            isScrollTop:false
+            // isbg:true
+        }
+    },
     components:{
         VipHeader,
         VieContent,
         VipContentred,
         VipContentshop
     },
-    data() {
-        return {
-            flag:false
-    }
-      
-    },
     methods: {
-        
-    }
-    // created() {
-    //     this.$emit('scrollHeader',(flag)=>{
-    //         this.flag=flag
-    //         console.log(flag);
-    //     })
-    // },
+        handleScroll(){
+            this.scrollTop = document.documentElement.scrollTop
+            // console.log(this.scrollTop)
+            if(this.scrollTop>70){
+                this.isScrollTop = true
+            }else{
+                 this.isScrollTop = false
+            }
+        }
+    },
+    mounted() {
+        window.addEventListener("scroll",this.handleScroll)
+            // console.log(document.documentElement.scrollTop)
+    },
 }
 </script>
 

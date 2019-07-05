@@ -1,15 +1,15 @@
 <template>
   <div class="swiper-container">
     <div class="swiper-wrapper" >
-      <div class="swiper-slide" v-for="(item,index) in wheel" :key="index">
-        <img :src="item.wheel_url">
+      <div class="swiper-slide" >
+        <img src="../../../../static/imgs/banner/banner1.png">
       </div>
-      <!-- <div class="swiper-slide" >
+      <div class="swiper-slide" >
         <img src="../../../../static/imgs/banner/banner2.png">
       </div>
       <div class="swiper-slide" >
         <img src="../../../../static/imgs/banner/banner3.png">
-      </div> -->
+      </div>
     </div>
     <!-- 如果需要分页器 -->
     <div class="swiper-pagination"></div>
@@ -21,7 +21,6 @@ import Swiper from "swiper";
 export default {
   name: "Banner",
   props: {
-    wheel:Array,
   },
   created() {
   },

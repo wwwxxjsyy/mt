@@ -1,7 +1,7 @@
 <template>
 <div class='mine-list'>
     <ul>
-        <li v-for="(item,index) in list"  :key="index">
+        <li v-for="(item,index) in list" :key="index">
            <router-link :to="item.path" tag="a">
                <img :src="item.url" alt=""> 
                <span class="listTitle">{{item.desc1}}</span>
@@ -52,7 +52,6 @@ return {
         },
     ]
 };
-
 },
 }
 </script>

@@ -9,15 +9,15 @@
         <!-- foodlist 不同时间推荐不同商品 优选 -->
         <li v-for="(items,index) in foodlist" :key="index">
           <div>
-            <img :src="items.good_img" />
+            <img :src="items.foodpic" />
           </div>
           <div class="home-optimization-foodname">
             <div class="home-optimization-foodname-left">
-              <h3>{{items.shop_name}}</h3>
-              <p>{{items.app_delivery_tip}}</p>
+              <h3>{{items.shopname}}</h3>
+              <p>{{items.recommend}}</p>
             </div>
             <div class="home-optimization-foodname-right">
-              <img :src="items.shop_img" class="home-optimization-shopname" />
+              <img :src="items.shoppic" class="home-optimization-shopname" />
               <i>×</i>
             </div>
           </div>
@@ -27,17 +27,17 @@
           class="home-optimization-selected"
           v-for="(items,index) in goodfood"
           :key="index+888"
-          :style=" 'background-image :  url( ' + items.goods_picture+' ) ' "
+          :style=" 'background-image :  url( ' + items.backgroundimg+' ) ' "
         >
-          <h3>{{items.shop_name}}</h3>
+          <h3>{{items.foodmenu}}</h3>
           <div class="home-optimization-selected-btm">
             <div class="home-optimization-selectedmenu">
               <div class="home-optimization-selectedmen-left">
-                <b>{{items.goods_name}}</b>
-                <span>￥{{items.goods_min_price}}</span>
+                <b>{{items.foodname}}</b>
+                <span>{{items.foodprice}}</span>
               </div>
               <div class="home-optimization-selectedmen-right">
-                <img :src="items.shop_img" alt />
+                <img :src="items.foodpic" alt />
               </div>
             </div>
           </div>
@@ -95,6 +95,7 @@ export default {
       //   }
       // ]
     };
+<<<<<<< HEAD
   },
   props:{
     foodlist:{},
@@ -102,6 +103,8 @@ export default {
     
   },
   created(){
+=======
+>>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
   }
 };
 </script>
@@ -141,7 +144,6 @@ export default {
   background: #fff;
   margin-top: 0.2rem;
   border-radius: 0.1rem;
-  background-size:100% 100%; 
 }
 .home-optimization-food ul li img {
   width: 100%;
@@ -204,9 +206,6 @@ export default {
   position: relative;
   left: 0.6rem;
   bottom: 0.3rem;
-}
-.home-optimization-selected{
-  background-size:100% 100%;
 }
 .home-optimization-selected h3 {
   width: 100%;

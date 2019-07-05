@@ -17,17 +17,17 @@
 
 <script>
 export default {
-		data(){
-			return{
-					
-			}
-    },
-		props:{
-			commentNum:{
-				type:Number,
-				default:0
-			}
-		}
+    data(){
+        return{
+            commentNum:0
+        }
+    }
+//   props:{
+//     commentNum:{
+//       type:Number,
+//       default:0
+//     }
+//   }
 }
 </script>
 

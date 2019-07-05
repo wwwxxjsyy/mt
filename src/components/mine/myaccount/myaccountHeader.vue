@@ -29,7 +29,7 @@ methods: {
 <style scoped>
 .myaccount-header {
     width: 100%;
-    height: 1rem;
+    height: 1.2rem;
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
@@ -45,12 +45,12 @@ methods: {
 }
 
 .myaccount-header .back>i {
-    font-size: .35rem;
+    font-size: .5rem;
     color:#757575;
 }
 .myaccount-header .back>span {
-    margin-left: .35rem;
-    font-size: .35rem;
+    margin-left: .4rem;
+    font-size: .4rem;
     color: black;
 }
 </style>

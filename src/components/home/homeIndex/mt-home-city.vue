@@ -1,5 +1,5 @@
 <template>
-	<div class="city">
+    <div class="city">
         <div class="search_wrap">
             <div class="search">
                 <i class="iconfont">&#xe661;</i>
@@ -23,19 +23,20 @@
                 <li @click="selectCity(item)" v-for="(item,index) in searchList" :key="index">{{item.name}}</li>
             </ul>
         </div>
+
     </div>
 </template>
 
 <script>
 import Location from './mt-home-location'
 import Alphabet from "./mt-home-alphabet";
-import fetch from '../../../api/fetch'
+// import fetch from '../../../api/fetch'
 // import axios from 'axios'
 export default {
     name:"city",
     components:{
         Location,
-        Alphabet,
+        Alphabet
     },
     data(){
         return {

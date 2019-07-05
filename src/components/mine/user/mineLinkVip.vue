@@ -1,7 +1,7 @@
 <template>
-<div class='Mine-link-vip' v-if="vipShow">
+<div class='Mine-link-vip'>
     <router-link to="/vip" tag="a">
-    <img :src="url" alt="">
+    <img :src="url" v-if="true" alt="">
     </router-link>
 </div>
 </template>
@@ -12,8 +12,7 @@ export default {
 components: {},
 data() {
 return {
-    url:require('../../../assets/minePic/mineVip.gif'),
-    vipShow:false
+    url:require('../../../assets/minePic/mineVip.gif')
 };
 },
 }

@@ -1,5 +1,6 @@
 <template>
   <div class="mine-header">
+<<<<<<< HEAD
     <router-link to='/registerLogin' v-if="!token" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
@@ -8,6 +9,16 @@
     </router-link>
     <a  href="#/registerLogin" class="MineName"  v-if="!token">登录/注册</a>
     <a  class="MineName" v-if="token">{{encryptPhone(token)}}</a>
+=======
+    <router-link to='/registerLogin' v-show="!isLogin" class="MineHeaderLogo">
+      <img :src="imgUrl" alt>
+    </router-link>
+    <router-link to='/Myaccount' v-show="isLogin" class="MineHeaderLogo">
+      <img :src="imgUrl" alt>
+    </router-link>
+    <a  href="#/registerLogin" class="MineName"  v-show="!isLogin">登录/注册</a>
+    <a  class="MineName" v-show="isLogin">{{userInfo.u_username}}</a>
+>>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
     <div class="mine-icon">
       <a href="#" class="iconfont" v-for="item in headerIcon" v-html="item" :key="item"></a>
     </div>
@@ -27,7 +38,9 @@ export default {
     };
   },
   computed: {
+
   },
+<<<<<<< HEAD
    activated(){
       window.addEventListener('scroll', this.handleScroll)
     },
@@ -49,6 +62,14 @@ export default {
 
   created() {
     this.token=localStorage.getItem('mt_login')
+=======
+  watch: {},
+  methods: {
+
+  },
+  created() {
+    this.isLogin=localStorage.getItem('mt_login')
+>>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
   },
   mounted() {},
   // 登录后传入随机验证码
@@ -62,14 +83,13 @@ export default {
 .mine-header {
   width: 100%;
   height: 1.5rem;
-  background: #fafafa;
+  background: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: space-between;
   top: 0;
   position: sticky;
 }
-
 .MineHeaderLogo {
   display: flex;
   width: 1rem;

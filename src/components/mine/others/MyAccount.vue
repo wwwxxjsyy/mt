@@ -2,7 +2,7 @@
 <div class="myaccount">
     <MyAccountHeader/>
     <MyAccountContetn/>
-    <!-- <MyAccountBottom/> -->
+    <MyAccountBottom/>
 </div>
 </template>
 

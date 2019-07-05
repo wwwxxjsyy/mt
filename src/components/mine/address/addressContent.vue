@@ -3,6 +3,7 @@
     <a href="#" v-if="flag">
         <img :src="imgUrl" alt="">
     </a>
+<<<<<<< HEAD
     <!-- /显示收货地址 -->
      <!-- 显示收货地址 -->
     <div class="address-view" v-if="!flag">
@@ -27,6 +28,11 @@
         </div>
       </div>
     </div>
+=======
+    <ul v-if="!flag">
+        <li></li>
+    </ul>
+>>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 </div>
 </template>
 
@@ -36,6 +42,7 @@ export default {
 components: {},
 data() {
     return {
+<<<<<<< HEAD
       selectIndex:0,
         flag:false,
         imgUrl:require('../../../assets/minePic/address.png'),
@@ -79,9 +86,30 @@ methods: {
           this.$router.push("/settlement")
         }
         
+=======
+        flag:true,
+        imgUrl:require('../../../assets/minePic/address.png'),
+        addressInfo:[]
+    };
+},
+computed: {},
+watch: {},
+methods: {
+    getData(){
+        //请求数据
+    this.$axios.post('')
+    .then(res=>{
+        this.addressInfo=addressInfo
+    })
+    .catch(err=>{
+
+    })
+>>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
     }
 },
-
+beforeRouteEnter(to,from,next){
+    next(vm=>vm.getData())
+},
 created(){
     
 }
@@ -96,12 +124,14 @@ created(){
     margin-top: .08rem;
     flex: 1;
     background: #fff;
-    /* text-align: center; */
+    text-align: center;
+    padding:3rem 0;
 }
 .address-content img{
     width: 3rem;
     margin: auto;
 }
+<<<<<<< HEAD
 .address-view {
   height: 100%;
   overflow-y: auto;
@@ -170,4 +200,6 @@ created(){
   font-size: .4rem;
 }
 
+=======
+>>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 </style>

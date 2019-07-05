@@ -15,20 +15,17 @@
         </div>
         <div class="home-moreshop-foodlist">
             <ul>
-                <li v-for="(items,index) in nerbylists" :key="index"> 
-                    <img :src="items.img_url">
+                <li v-for="(items,index) in foodslist" :key="index"> 
+                    <img :src="items.foodpic">
                     <div class="home-moreshop-foodinfo">
-                        <b>{{items.shop_name}} <span class="iconfont">&#xe615;</span></b> 
-                        <p><span class="iconfont home-moreshop-score">&#xe612;{{items.wm_poi_score}} 
-                            <i>月售{{items.comment_num}}</i>
-                            </span><span class="home-moreshop-time">{{items.delivery_time_tip}}</span>
-                        </p>
+                        <b>{{items.foodname}} <span class="iconfont">&#xe615;</span></b> 
+                        <p><span class="iconfont home-moreshop-score">&#xe612;{{items.foodscore}} <i>月售{{items.foodnum}}</i></span><span class="home-moreshop-time">{{items.time}}</span></p>
                         <p>
-                            <span>{{items.min_price_tip}} {{items.shipping_fee_tip}} {{items.per}}</span>
-                            <span :class="{'home-moreshop-delivery':items.mtzs}">{{items.mtzs}}</span>
+                            <span>起送￥{{items.pickup}} 配送￥{{items.giveprice}} 人均￥{{items.percapita}}</span>
+                            <span :class="{'home-moreshop-delivery':items.give}">{{items.give}}</span>
                             <span :class="{'home-moreshop-ontime':items.timer}">{{items.timer}}</span>
                         </p>
-                        <p><span class="home-moreshop-ranking iconfont">{{items.bulletin}}</span></p>
+                        <p><span class="home-moreshop-ranking iconfont">{{items.ranking}}</span></p>
                         <p class="home-moreshop-offer">
                             <a v-for="(items,index) in items.offer" :key="index">{{items.title}}</a>
                         </p>
@@ -265,14 +262,17 @@ export default {
                 }
             ]
         }
+<<<<<<< HEAD
     },
     props:{
         nerbylists:{}
+=======
+>>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
     }
 }
 </script>
 
-<style scoped>
+<style>
 .moreshop{
     width: 100%;
 }
@@ -307,6 +307,7 @@ export default {
 .home-menu-option span{
     width: 23%;
     height: .4rem;
+    line-height: .4rem;
     text-align: center;
     background: #d4d2d2;
 }
