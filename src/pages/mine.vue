@@ -27,7 +27,6 @@ export default {
       // userInfo:{}
     }
   },
-<<<<<<< HEAD
   // beforeRouteEnter(to, from, next) {
   //   next(vm => vm.getData());
   // },
@@ -36,17 +35,10 @@ export default {
       userInfo() {
       return this.$store.getters.currentUser;
     },
-=======
-  computed:{
-      currentUser(){
-              return this.$store.getters.currentUser
-      }
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
         
   },
-  created(){
+  methods:{
     // 向后端请求数据
-<<<<<<< HEAD
     // getData() {
     //   const user_id = localStorage.mt_login;
     //   this.$axios().then(res => {
@@ -57,21 +49,6 @@ export default {
   },
   
 }
-=======
-    if(currentUser){
-      this.$axios.post('/user/code_login/',currentUser).then(res=>{
-        //打印登陆成功信息   登陆成功
-        console.log(res.msg)
-        this.userInfo=res.data
-      })
-    }else{
-      alert("请先登陆")
-      this.$router.push('/registerLogin')
-    }
-    
-  }
-};
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 </script>
 
 <style scoped>

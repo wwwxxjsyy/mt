@@ -25,7 +25,7 @@
       </div>
     </div>
     <!-- 底部右侧 -->
-    <div class="content-right" :class="{'highligh':totalCount>0}">
+    <div class="content-right" :class="{'highligh':totalCount>0}" @click="settlement">
       {{payStr}}
     </div>
 
@@ -88,10 +88,12 @@ import CartControl from '../cartcontrol/CartControl'
 				fold:true
 			}
 		},
-    props:{
-      poiInfo:{
-        type:Object,
-        default:{}
+		props:{
+			poiInfo:{
+				type:Object,
+				default:{
+					
+				}
 			},
 			selectFoods:{
 				type:Array,
@@ -163,7 +165,6 @@ import CartControl from '../cartcontrol/CartControl'
 			},
 			hideMask(){
 				this.fold = true
-<<<<<<< HEAD
 			},
 			//去结算
 			settlement(){
@@ -180,8 +181,6 @@ import CartControl from '../cartcontrol/CartControl'
 					})
 					this.$router.push('/settlement')
 				}
-=======
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 			}
 		},
 		components:{

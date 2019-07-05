@@ -2,14 +2,11 @@
     <div class="vipLogin">
         <div class="vipLogin-content">
             <!-- header -->
-            <div class="vipLogin-header" >
-                <div class="headerBar" :class="{Active:isTrue}">
-                    <span>会员</span>
-                    <!-- 这里需要跳转到购买记录 -->
-                    <!-- <a href="#">购买记录</a> -->
-                    <router-link tag='a' to='viphistory'>购买记录</router-link>
-                </div>
-                
+            <div class="vipLogin-header">
+                <span>会员</span>
+                <!-- 这里需要跳转到购买记录 -->
+                <!-- <a href="#">购买记录</a> -->
+                <router-link tag='a' to='viphistory'>购买记录</router-link>
 
             </div>
             <!-- 会员头像信息 -->
@@ -166,7 +163,6 @@ export default {
                    image:require("../../../assets/img/vipImg/redpack.png")
                }
            ],
-           isTrue:false,
              shopList:[
                {
                    shopsName:'钟记老砂锅',
@@ -215,25 +211,13 @@ export default {
         }
     },components:{
         "van-popup":Popup
-    },
-    methods: {
+    },methods: {
         changeShow(){
             this.show = true;
         },
         handleClose(){
             this.show = false;
-        },
-          handleScroll(){
-            this.scrollTop = document.documentElement.scrollTop;
-            if(this.scrollTop>70){
-                this.isTrue = true
-            }else{
-                 this.isTrue = false
-            }
         }
-    },
-    mounted() {
-        window.addEventListener("scroll",this.handleScroll)
     },
 }
 </script>
@@ -241,20 +225,22 @@ export default {
 <style scoped>
 .vipLogin{
     width: 100%;
+    /* height: 100%; */
     background: #efefef;
     padding-bottom: 1rem;
 }
 .vipLogin-content{
+    /* margin: 0 0.2rem; */
+    padding: 0 0.25rem;
+    /* background: red; */
     height: 4.9rem;
-    background: url('../../../assets/img/vipImg/bbg.png');
+    background: url('../../../assets/img/vipImg/bbg.png')
 }
 .vipLogin-header{
     display:inline-flex;
     justify-content: flex-end;
     width: 100%;
-    /* margin: 0.4rem 0; */
-    height: 1.3rem;
-    line-height: 1.3rem;
+    margin: 0.4rem 0;
 }
 .vipLogin-header a{
     margin-top: 0.1rem;
@@ -263,13 +249,7 @@ export default {
 .vipLogin-header span{
     font-size:0.41rem;
     color: #323232;
-    margin-right: 2.3rem;
-}
-.headerBar{
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    margin-right: 2rem;
 }
 .user-photo{
     padding: 0.6rem 0;
@@ -681,9 +661,5 @@ export default {
 }
 .vipPay-content>a>i{
     font-size: .42rem;
-}
-.Active{
-    background: #ffffff;
-    border-bottom: none;
 }
 </style>

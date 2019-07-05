@@ -14,7 +14,7 @@
                     <div v-show="cur==1" class="Cbody_item">
                         <div class="form_item"><input type="text" name="fname" placeholder="手机号" value="" v-model="phone"></div>
                         <div class="form_item">
-                          <input type="password" name="fpassword" placeholder="密码" v-model="password">
+                          <input type="password" name="fpassword" placeholder="密码" v-model="verifyCode">
                           <!-- <div class="errors" ref="errors2" v-show="errors">{{errors.msg}}</div> -->
                         </div>
                         <div class="form_item">
@@ -29,7 +29,7 @@
                     <div v-show="cur==0" class="Cbody_item">
                         <div class="form_item"><input type="text" name="fname" placeholder="手机号" v-model="phone"></div>
                         <div class="form_item">
-                          <input type="password"  name="fpassword" placeholder="验证码"  v-model="code">
+                          <input type="password"  name="fpassword" placeholder="验证码"  v-model="verifyCode">
                           <!-- <input id="btnSendCode1" type="button" class="btn btn-default" value="获取验证码" @click="sendMessage1()" /> -->
                           <input class="btn btn-default" id="btnSendCode1"  @click="sendMessage1()" value="获取验证码">
                           <!-- <div class="errors" ref="errors" v-show="errors1">{{errors.msg}}</div> -->
@@ -59,11 +59,8 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 import MtLoginHeader from "./loginHeader";
-<<<<<<< HEAD
 import { Toast } from "mint-ui";
 import qs from "qs"
-=======
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 export default {
   name: "RegisterLogin",
   components: {
@@ -75,7 +72,7 @@ export default {
       errors1: {},
       errors2: {},
       phone: "",
-      code:"",
+      verifyCode:"",
       password:"",
       phoneReg: /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/, //手机号正则
       count: 60, //间隔函数，1秒执行
@@ -103,11 +100,11 @@ export default {
       // $("#btnSendCode1").css({color:"#eee"})
        this.InterValObj1 = window.setInterval(this.SetRemainTime1, 1000); //启动计时器，1秒执行一次
       //向后台发送处理数据
-      this.$axios.get('/user/check_code/?phone='+this.phone).then(res=>{
-        console.log(res)//打印后端的响应
-            console.log(res.data.msg)//打印后端的响应
-            alert("发送成功")
-       }) 
+      this.$axios
+          .get("/user/check_code/?phone="+this.phone)
+          .then(res => {
+            console.log(res);
+          });
     },
     SetRemainTime1() {
       if (this.curCount1 == 0) {
@@ -123,18 +120,13 @@ export default {
     //密码登录提交
     toggleLogin1(){
         let formData={
-            "phone":this.phone,
-            "code":this.code,
+            phone:this.phone,
+            pwd:this.verifyCode
         }
-        this.$router.push('/mine')
-        this.$axios.post('/user/code_login/',{"phone":"18821687723","code":this.this.code}).then(res=>{
+        this.$axios.post('/user/pwd_login', {phone:this.phone,code:this.verifyCode}).then(res=>{
             //打印登陆成功信息   登陆成功
-            console.log(res)
-            存储token在localStory中
-            localStorage.setItem("mt_login", true);
-            localStorage.setItem("mt_token", res,token);
+            localStorage.setItem("mt_login", res.token);
             //存储在vuex中
-<<<<<<< HEAD
             //  this.$store.dispatch("setUser",this.phone)
             this.$router.push('/home')
         }).catch(err =>{ 
@@ -145,33 +137,15 @@ export default {
             });
             return; 
         }) 
-=======
-            this.$store.dispatch("setUser",this.phone)
-            this.$router.push('/mine')
-            // 发送请求比对成功，跳转路由，我的页面
-                // alert("验证码错误")
-        }).catch(err =>{
-          返回错误信息
-            this.errors = {
-              msg: err.response.data.msg
-            };
-        })   
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
     },
     //验证码登录提交
     toggleLogin2(){
+      this.errors = {};
         let formData={
-<<<<<<< HEAD
             phone:this.phone,
             code:this.verifyCode
-=======
-            "phone":this.phone,
-            "password":this.password,
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
         }
-        this.$router.push('/mine')
         this.$axios.post('/user/code_login/',formData).then(res=>{
-<<<<<<< HEAD
             console.log(res)
             if(res.data.code==200){
                 localStorage.setItem("mt_login", res.data.token);
@@ -186,19 +160,6 @@ export default {
                   duration: 2000
                 });
                 return; 
-=======
-            if(res.code==200){
-            //打印登陆成功信息   登陆成功
-            console.log(res.msg)
-            localStorage.setItem("mt_login", true);
-            localStorage.setItem("mt_token", res,token);
-            //存储在vuex中
-            this.$store.dispatch("setUser",'T123')
-            this.$router.push('/mine')
-            // 发送请求比对成功，跳转路由，我的页面
-            }else{
-                 alert("账号或密码错误")
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
             }
         })
         

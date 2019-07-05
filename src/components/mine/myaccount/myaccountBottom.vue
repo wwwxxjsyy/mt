@@ -1,8 +1,8 @@
 <template>
 
    <div>
-      <div class="myaccount-out" @click="isShow">退出当前账号</div>
-    <setButtn :isShow="isshow"/>
+      <div class="myaccount-out"  @click="handleLogout">退出当前账号</div>
+    <!-- <setButtn :isShow="isshow"/> -->
    </div>
 </template>
 
@@ -20,9 +20,6 @@ export default {
   computed: {},
   watch: {},
   methods: {
-    isShow(){
-      this.isshow = true
-    }
   }
 };
 </script>

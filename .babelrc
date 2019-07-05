@@ -13,6 +13,7 @@
       "libraryName": "vant",
       "libraryDirectory": "es",
       "style": true
-    }]
+    }],
+    ["transform-runtime"]
   ]
 }

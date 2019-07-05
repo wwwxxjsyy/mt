@@ -4,7 +4,6 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const types = {
     SET_LOCATION:"SET_LOCATION",
-<<<<<<< HEAD
     SET_ADDRESS:"SET_ADDRESS",
     //购物车
     ORDER_INFO:"ORDER_INFO",
@@ -13,9 +12,6 @@ const types = {
     USER_INFO:"USER_INFO",
     REMARK_INFO: 'REMARK_INFO'
 
-=======
-    SET_ADDRESS:"SET_ADDRESS"
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 }
 export const store = new Vuex.Store({
     // 存储数据
@@ -25,7 +21,6 @@ export const store = new Vuex.Store({
         isLogin:false,
         //定位地址
         location:{},
-<<<<<<< HEAD
         address:"",
         //购物车
         orderInfo:null,
@@ -36,9 +31,6 @@ export const store = new Vuex.Store({
             tableware: '',
             remark: ''
           }
-=======
-        address:""
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 
     },
     
@@ -48,7 +40,6 @@ export const store = new Vuex.Store({
         isLogin:state =>state.isLogin,
         //获取定位地址
         location:state=> state.location,
-<<<<<<< HEAD
         address:state=> state.address,
          //获取购物车商品
          orderInfo:state =>state.orderInfo,
@@ -69,15 +60,12 @@ export const store = new Vuex.Store({
           remarkInfo: state => state.remarkInfo,
          //user地址信息
          userInfo:state =>state.userInfo,
-=======
-        address:state=> state.address
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 
 
     },
     mutations:{
         //改属性的状态
-        //更改用户状态信息
+        //更改用户状态信息s
         userStatus(state, user) {
             if(user){
               state.currentUser = user
@@ -102,7 +90,6 @@ export const store = new Vuex.Store({
             }else{
                 state.address = "";
             }
-<<<<<<< HEAD
         },
 
         // lngLatLocation
@@ -136,9 +123,6 @@ export const store = new Vuex.Store({
               state.remarkInfo = null;
             }
           }
-=======
-        }
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 
 
     },
@@ -165,7 +149,6 @@ export const store = new Vuex.Store({
         setAddress({commit},address){
             commit(types.SET_ADDRESS,address)
         },
-<<<<<<< HEAD
         //购物车
         setOrderInfo({commit},orderInfo){
             commit(types.ORDER_INFO,orderInfo)
@@ -180,7 +163,5 @@ export const store = new Vuex.Store({
         setRemarkInfo: ({ commit }, remarkInfo) => {
             commit(types.REMARK_INFO, remarkInfo);
           }
-=======
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
     }
 })

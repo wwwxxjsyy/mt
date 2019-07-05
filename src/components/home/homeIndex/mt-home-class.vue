@@ -1,16 +1,17 @@
 <template>
     <div class="class">
         <ul>
-            <router-link tag="li" :to="item.path" v-for="(item,index) in classifys" :key="index" class="home-class-blist">
-                <span><img :src="item.pic"></span>
-                <b>{{item.title}}</b>
+            <!-- :to="item.path" -->
+            <router-link tag="li" to="/delicious" v-for="(item,index) in main_type_img" :key="index" class="home-class-blist">
+                <span><img :src="item.main_type_url"></span>
+                <b>{{item.main_type_name}}</b>
             </router-link>
           
         </ul>
           <ul>
-            <li v-for="(item,index) in sclassifys" :key="index" class="home-class-slist"> 
-                <span><img :src="item.pic"></span>
-                <b>{{item.title}}</b>
+            <li v-for="(item,index) in main_small_img" :key="index" class="home-class-slist"> 
+                <span><img :src="item.main_small_img_url"></span>
+                <b>{{item.main_small_img_name}}</b>
             </li>
         </ul>
     </div>
@@ -20,7 +21,8 @@
 export default {
     name:"Class",
     props:{
-        homeData:{}
+        main_type_img:Array,
+        main_small_img:Array,
     },
     data(){
         return{
@@ -94,12 +96,9 @@ export default {
                 }
             ]
         }
-<<<<<<< HEAD
     },
     created(){
         // console.log(this.main_type_img)
-=======
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
     }
 }
 </script>

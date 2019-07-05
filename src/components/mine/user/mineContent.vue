@@ -111,21 +111,21 @@ export default {
            path:'/'
         },
         {
-          url: require("../../../assets/minePic/funlistimg.gif"),
+          url:' http://p1.meituan.net/81.81.100/aichequan/43bf38ae274310d9d993728c4e17912b3188.png.webp',
           desc: "骑手招募",
            path:'/'
         },
         {
-          url: require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p0.meituan.net/81.81.100/aichequan/8ac83a2284e3a45f5e336c5bf9142c3e3426.png.webp',
           desc: "我要合作",
            path:'/'
         },
         {
-          url:require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p1.meituan.net/81.81.100/aichequan/a781cead700fcd53a37edad515e20d773939.png.webp',
           desc: "美团公益",
            path:'/'
         },{
-          url: require("../../../assets/minePic/funlistimg.gif"),
+          url:'http://p1.meituan.net/81.81.100/aichequan/a781cead700fcd53a37edad515e20d773939.png.webp',
           desc: "能量捐赠",
            path:'/'
         }

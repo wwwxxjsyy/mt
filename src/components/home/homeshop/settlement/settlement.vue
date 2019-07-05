@@ -1,7 +1,6 @@
 <template>
     <div class="settlement">
         <Header :isLeft="true" title="提交订单"/>
-<<<<<<< HEAD
         <div class="view-body" v-if="orderInfo">
             <div class="">
                 <!-- 收货地址 -->
@@ -58,13 +57,10 @@
         <button @click="handlePay()">去支付</button>
         </footer>
 
-=======
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
     </div>
 </template>
 
 <script>
-<<<<<<< HEAD
 import Header from "./Header";
 import Delivery from "./Delivery";
 import CartGroup from "./CartGroup";
@@ -142,20 +138,17 @@ export default {
         this.$router.push("/Pay");
         }
     },
-=======
-import Header from "./Header"
-export default {
-    name:"Settlement",
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
     components:{
-        Header
+        Header,
+        Delivery,
+        CartGroup,
+        CartItem,
+        Tableware
     }
 }
 </script>
 
-<style>
 
-<<<<<<< HEAD
 <style scoped>
 .iconfont{
   font-size: .4rem;
@@ -281,6 +274,5 @@ export default {
   color: #fff;
   font-size: .35rem;
 }
-=======
->>>>>>> 449dd4b2850738ae71b5e2e26d23204d009a1545
 </style>
+

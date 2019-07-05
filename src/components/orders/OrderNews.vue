@@ -1,7 +1,7 @@
 <template>
     <div class="ordernews">
         <div class="ordernewst">
-            <span @click="back"></span>
+            <span></span>
             <h3>消息中心</h3>
             <div></div>
         </div>
@@ -28,12 +28,7 @@
 
 <script>
 export default {
-    name:"ordernews",
-    methods:{
-        back(){
-            this.$router.back();
-        }
-    }
+    name:"ordernews"
 }
 </script>
 

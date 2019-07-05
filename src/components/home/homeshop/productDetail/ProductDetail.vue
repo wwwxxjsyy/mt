@@ -78,7 +78,7 @@
           </ul>
         </div>
       </div>
-    </div>                                              
+    </div>
   </transition>
 </template>
 
@@ -101,7 +101,6 @@ import Split from '../split/Split'
     methods:{
       showView(){
         this.showFlag = true
-
         this.$nextTick(() => {
           if(!this.scroll){
             this.scroll = new BScroll(this.$refs.foodView,{

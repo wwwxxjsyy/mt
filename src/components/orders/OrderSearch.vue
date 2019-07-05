@@ -1,7 +1,7 @@
 <template>
     <div class="ordersearch">
         <div class="ordersearcht">
-            <span @click="back"></span>
+            <span></span>
             <div class="ordersearchi">
                 <i></i>
                 <input type="text" placeholder="输入订单中的商家或商品名称">
@@ -17,11 +17,6 @@
 <script>
 export default {
     name:"ordersearch",
-    methods:{
-        back(){
-            this.$router.back();
-        }
-    }
 }
 </script>
 
