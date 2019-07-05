@@ -68,7 +68,6 @@ export default {
                 console.log(res.data.data)
                 this.data=res.data.data
                 })
-
         }
     },
     methods:{

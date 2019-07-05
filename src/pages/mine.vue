@@ -39,15 +39,6 @@ export default {
   },
   methods:{
     // 向后端请求数据
-<<<<<<< HEAD
-    getData() {
-      const user_id = localStorage.getItem(mt_login);
-      this.$axios().then(res => {
-        // console.log(res.data);
-        this.userInfo = res.data;
-      });
-    },
-=======
     // getData() {
     //   const user_id = localStorage.mt_login;
     //   this.$axios().then(res => {
@@ -55,7 +46,6 @@ export default {
     //     this.userInfo = res.data;
     //   });
     // },
->>>>>>> 4ddf17e39e6eb39feff5392ed578f910034ce65a
   },
 }
 </script>

@@ -50,42 +50,9 @@ data() {
     }
     };
 },
-<<<<<<< HEAD
-  computed: {
-
-  },
-watch: {},
-  beforeRouteEnter(to,from,next){
-      next(vm=>vm.getData())
-  },
-methods: {
-    getData(){
-        //请求数据
-        var use_token=localStory.getItem(mt_login)
-				// 获取token验证是否是登录状态
-       
-       this.$axios.get('/user/address/?token='+use_token)
-
-        .then(res=>{
-					console.log(res)
-             // this.allAddress=res.data
-         })
-        .catch(err=>{
-
-         })
-      this.allAddress.push({ name:"heello",
-        tag:"公司",
-        sex:"男士",
-        phone:"18821687723",
-        address:"西安高新区",
-        bottom:"2109",
-    })
-     
-=======
 computed: {
    orderInfo() {
       return this.$store.getters.orderInfo;
->>>>>>> 4ddf17e39e6eb39feff5392ed578f910034ce65a
     },
 },
 props:{
