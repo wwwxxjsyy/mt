@@ -27,10 +27,7 @@ import Mywallet from '../components/mine/others/MyWallet'
 import Balance from '../components/mine/others/Balance'
 import MyEvalute from '../components/mine/others/MyEvalute'
 import MyAccount from '../components/mine/others/MyAccount'
-      // 待评价
-import OrderOrderNoDiscuss from '../components/orders/OrderNoDiscuss.vue'
-      // 退款
-import OrderOrderRefund from '../components/orders/OrderRefund.vue'
+
       // 搜索
 import OrderOrderSearch from '../components/orders/OrderSearch.vue'
       // 消息
@@ -41,6 +38,8 @@ import OrderOrderLately from '../components/orders/OrderLately.vue'
 import OrderOrderComment from '../components/orders/OrderComment.vue'
       // 相似商家
 import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
+      // 订单状态
+import OrderOrderState from '../components/orders/OrderState.vue'
 
 import VipLogin from '../components/vip/viplogin/'
 
@@ -298,16 +297,6 @@ export default new Router({
         },
       },     // order
           {
-            name:"OrderOrderNoDiscuss",
-            path:"/OrderOrderNoDiscuss",
-            component:OrderOrderNoDiscuss
-          },
-          {
-            name:"OrderOrderRefund",
-            path:"/OrderOrderRefund",
-            component:OrderOrderRefund
-          },
-          {
             name:"OrderOrderSearch",
             path:"/OrderOrderSearch",
             component:OrderOrderSearch
@@ -331,6 +320,11 @@ export default new Router({
             name:"OrderOrderSimilarity",
             path:"/OrderOrderSimilarity",
             component:OrderOrderSimilarity
+          },
+          {
+            name:"OrderOrderState",
+            path:"/OrderOrderState",
+            component:OrderOrderState
           },
 
 
