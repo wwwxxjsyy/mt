@@ -1,10 +1,10 @@
 <template>
   <div class="mt-mine">
-    <mineHeader :userInfo="userInfo"/>
-    <mineVip :userInfo="userInfo"/>
-    <mineList :userInfo="userInfo"/>
-    <mineContent :userInfo="userInfo"/>
-    <Footer :userInfo="userInfo"/>
+    <mineHeader />
+    <mineVip />
+    <mineList />
+    <mineContent/>
+    <Footer/>
   </div>
 </template>
 
@@ -24,21 +24,22 @@ export default {
   },
   data(){
     return {
-      userInfo:{}
+      // userInfo:{}
     }
   },
-  beforeRouteEnter(to, from, next) {
-    next(vm => vm.getData());
-  },
+  // beforeRouteEnter(to, from, next) {
+  //   next(vm => vm.getData());
+  // },
   
   computed:{
-      // currentUser(){
-      //         return this.$store.getters.currentUser
-      // }
+      userInfo() {
+      return this.$store.getters.currentUser;
+    },
         
   },
   methods:{
     // 向后端请求数据
+<<<<<<< HEAD
     getData() {
       const user_id = localStorage.getItem(mt_login);
       this.$axios().then(res => {
@@ -46,6 +47,15 @@ export default {
         this.userInfo = res.data;
       });
     },
+=======
+    // getData() {
+    //   const user_id = localStorage.mt_login;
+    //   this.$axios().then(res => {
+    //     // console.log(res.data);
+    //     this.userInfo = res.data;
+    //   });
+    // },
+>>>>>>> 4ddf17e39e6eb39feff5392ed578f910034ce65a
   },
 }
 </script>

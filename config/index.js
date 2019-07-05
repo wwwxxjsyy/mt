@@ -11,12 +11,21 @@ module.exports = {
       '/api': {
         // target: 'http://jsonplaceholder.typicode.com/',//后端接口地址
         // target:'http://10.35.161.31:9001/',
+<<<<<<< HEAD
         // target:'http://10.35.162.134:8002/',
         // target:'http://10.35.162.134:8000',
         // changeOrigin: true,//是否允许跨越
         // pathRewrite: {
         //     '^/api': '/api',//重写,
         // }
+=======
+        target:'http://10.35.162.134:8002/',
+        // target:'http://10.35.162.134:8000',
+        changeOrigin: true,//是否允许跨越
+        pathRewrite: {
+            '^/api': '/api',//重写,
+        }
+>>>>>>> 4ddf17e39e6eb39feff5392ed578f910034ce65a
       }
       // '/api': {
       //   target: 'https://ele-interface.herokuapp.com/api/',
@@ -26,7 +35,6 @@ module.exports = {
       //       '^/api': '',//重写,
       //   }
       // }
-
     },
 
     // Various Dev Server settings

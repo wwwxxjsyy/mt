@@ -99,7 +99,7 @@ export default {
         }
     },
     created(){
-        console.log(this.main_type_img)
+        // console.log(this.main_type_img)
     }
 }
 </script>

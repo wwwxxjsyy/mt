@@ -52,48 +52,48 @@ export default {
   name: "Optimization",
   data() {
     return {
-      foodlist: [
-        {
-          foodpic:"http://youimg1.c-ctrip.com/target/100t0d0000006s5zkA325.jpg",
-             shopname: "魏家凉皮 (科技三路店)",
-             recommend: "根据您看过的店推荐",
-             shoppic:"http://userimages15.51sole.com/20170912/b_4056735_201709121533535225.jpg"
-        },
-        {
-          foodpic:"http://img5.imgtn.bdimg.com/it/u=3473710707,611514416&fm=26&gp=0.jpg",
-          shopname: "肯德基宅急送（唐兴路店）",
-          recommend: "附近热卖好店",
-          shoppic: "http://cdn.clm02.com/ezp9.com/28146/28146_2.png"
-        },
-        {
-          foodpic:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562550878&di=b56ee730a884f22e60949ed1dfb6d2f1&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201609%2F11%2F20160911182823_GkQeW.jpeg",
-          shopname: "汉堡王（T11西安239311店）",
-          recommend: "根据您看过的店推荐",
-          shoppic:"http://img5.imgtn.bdimg.com/it/u=2095573645,475601590&fm=26&gp=0.jpg"
-        },
-        {
-          foodpic:"https://p0.meituan.net/waimaipoi/d601804ac552730dccea6bda6697329426624.jpg",
-          shopname: "渭南时辰包子(团结南路店)",
-          recommend: "根据您看过的店推荐",
-          shoppic:"http://img5.imgtn.bdimg.com/it/u=3721691357,3522887404&fm=26&gp=0.jpg"
-        }
-      ],
-      goodfood: [
-        {
-          foodmenu: "ᅳ 西北菜菜品 ᅳ",
-          foodname: "肥牛砂锅宽粉",
-          foodprice: "￥ 22.98",
-          foodpic:"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2444544723,2403570976&fm=11&gp=0.jpg",
-          backgroundimg:"http://p0.meituan.net/waimaipoi/148d237f8a27f5a64a5df4c21a99c4c9121765.jpg"
-        },
-        {
-          foodmenu: "ᅳ 新疆菜精选 ᅳ",
-          foodname: "大盘鸡单人套餐",
-          foodprice: "￥ 28.5",
-          foodpic:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561478282907&di=7954067a9bda931af6bc0bb75a3f6620&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fbainuo%2Fcrop%3D0%2C14%2C690%2C418%3Bw%3D470%3Bq%3D79%2Fsign%3Db425143333d3d539d572558307b7c561%2F55e736d12f2eb938e69f4e3fd0628535e4dd6f08.jpg",
-          backgroundimg:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1308201291,2809421273&fm=26&gp=0.jpg"
-        }
-      ]
+      // foodlist: [
+      //   {
+      //     foodpic:"http://youimg1.c-ctrip.com/target/100t0d0000006s5zkA325.jpg",
+      //        shopname: "魏家凉皮 (科技三路店)",
+      //        recommend: "根据您看过的店推荐",
+      //        shoppic:"http://userimages15.51sole.com/20170912/b_4056735_201709121533535225.jpg"
+      //   },
+      //   {
+      //     foodpic:"http://img5.imgtn.bdimg.com/it/u=3473710707,611514416&fm=26&gp=0.jpg",
+      //     shopname: "肯德基宅急送（唐兴路店）",
+      //     recommend: "附近热卖好店",
+      //     shoppic: "http://cdn.clm02.com/ezp9.com/28146/28146_2.png"
+      //   },
+      //   {
+      //     foodpic:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562550878&di=b56ee730a884f22e60949ed1dfb6d2f1&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201609%2F11%2F20160911182823_GkQeW.jpeg",
+      //     shopname: "汉堡王（T11西安239311店）",
+      //     recommend: "根据您看过的店推荐",
+      //     shoppic:"http://img5.imgtn.bdimg.com/it/u=2095573645,475601590&fm=26&gp=0.jpg"
+      //   },
+      //   {
+      //     foodpic:"https://p0.meituan.net/waimaipoi/d601804ac552730dccea6bda6697329426624.jpg",
+      //     shopname: "渭南时辰包子(团结南路店)",
+      //     recommend: "根据您看过的店推荐",
+      //     shoppic:"http://img5.imgtn.bdimg.com/it/u=3721691357,3522887404&fm=26&gp=0.jpg"
+      //   }
+      // ],
+      // goodfood: [
+      //   {
+      //     foodmenu: "ᅳ 西北菜菜品 ᅳ",
+      //     foodname: "肥牛砂锅宽粉",
+      //     foodprice: "￥ 22.98",
+      //     foodpic:"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2444544723,2403570976&fm=11&gp=0.jpg",
+      //     backgroundimg:"http://p0.meituan.net/waimaipoi/148d237f8a27f5a64a5df4c21a99c4c9121765.jpg"
+      //   },
+      //   {
+      //     foodmenu: "ᅳ 新疆菜精选 ᅳ",
+      //     foodname: "大盘鸡单人套餐",
+      //     foodprice: "￥ 28.5",
+      //     foodpic:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561478282907&di=7954067a9bda931af6bc0bb75a3f6620&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fbainuo%2Fcrop%3D0%2C14%2C690%2C418%3Bw%3D470%3Bq%3D79%2Fsign%3Db425143333d3d539d572558307b7c561%2F55e736d12f2eb938e69f4e3fd0628535e4dd6f08.jpg",
+      //     backgroundimg:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1308201291,2809421273&fm=26&gp=0.jpg"
+      //   }
+      // ]
     };
   },
   props:{
@@ -102,8 +102,6 @@ export default {
     
   },
   created(){
-    console.log(this.foodlist)
-    console.log(this.goodfood)
   }
 };
 </script>

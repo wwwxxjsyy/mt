@@ -16,10 +16,21 @@ axios.defaults.baseURL = 'http://10.35.162.147:8002/';
 // import http from './api/http'
 Vue.prototype.$axios=axios
 // Vue.prototype.http=http
+const service = axios.create({
+  baseUrl:process.env.BASEAPI,
+  timeout:10000,
+})
 
+<<<<<<< HEAD
 
 axios.interceptors.request.use(config => {
     
+=======
+service.interceptors.request.use(config => {
+    if (config.method == 'post') {
+      config.data = qs.stringify(config.data);
+    }
+>>>>>>> 4ddf17e39e6eb39feff5392ed578f910034ce65a
   //加载动画
   Indicator.open();
   return config;

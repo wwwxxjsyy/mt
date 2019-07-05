@@ -45,6 +45,8 @@ import OrderOrderSimilarity from '../components/orders/OrderSimilarity.vue'
 import VipLogin from '../components/vip/viplogin/'
 
 import Settlement from '../components/home/homeshop/settlement/settlement'
+import Remark from '../components/home/homeshop/settlement/Remark'
+import Pay from '../components/home/homeshop/settlement/Pay'
 
 import selectAddress from '../components/home/homeIndex/mt-home-select-address.vue'
 import city from '../components/home/homeIndex/mt-home-city.vue'
@@ -291,7 +293,7 @@ export default new Router({
         path:'/PlusAddress',
         component:PlusAddress,
         meta: {
-          flag: true,
+          flag: false,
           requredAuth: true
         },
       },     // order
@@ -362,7 +364,16 @@ export default new Router({
         name:'Settlement',
         component:Settlement,
       },
- 
+      {
+        path:'/remark',
+        name:'Remark',
+        component:Remark,
+      },
+      {
+        path:'/pay',
+        name:'Pay',
+        component:Pay,
+      },
       {
         path:"**",
         redirect:"/home"

@@ -1,13 +1,13 @@
 <template>
   <div class="mine-header">
-    <router-link to='/registerLogin' v-show="!userInfo.length" class="MineHeaderLogo">
+    <router-link to='/registerLogin' v-if="!token" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
-    <router-link to='/Myaccount' v-show="userInfo.length" class="MineHeaderLogo">
+    <router-link to='/Myaccount' v-if="token" class="MineHeaderLogo">
       <img :src="imgUrl" alt>
     </router-link>
-    <a  href="#/registerLogin" class="MineName"  v-show="!userInfo.length">登录/注册</a>
-    <a  class="MineName" v-show="userInfo.length">{{userInfo._id}}</a>
+    <a  href="#/registerLogin" class="MineName"  v-if="!token">登录/注册</a>
+    <a  class="MineName" v-if="token">{{encryptPhone(token)}}</a>
     <div class="mine-icon">
       <a href="#" class="iconfont" v-for="item in headerIcon" v-html="item" :key="item"></a>
     </div>
@@ -22,7 +22,8 @@ export default {
       imgUrl: require("../../../assets/minePic/logo.gif"),
       headerIcon: ["&#xe601;", "&#xe69a;"],
       flag:false,
-      isLogin:""
+      isLogin:"",
+      token:"",
     };
   },
   computed: {
@@ -39,16 +40,22 @@ export default {
           
         }       
          console.log(document.documentElement.scrollTop);
-      }
+      },
+      encryptPhone(phone) {
+        var p1 = phone.slice(0,11)
+      return p1.replace(/(\w{3})\w{4}(\w{4})/, "$1****$2");
+    },
     },
 
-  created() {},
+  created() {
+    this.token=localStorage.getItem('mt_login')
+  },
   mounted() {},
   // 登录后传入随机验证码
-  props:{
-    userInfo:{},
-    default:'未登录'
-  }
+  // props:{
+  //   currentUser:String,
+  //   default:'未登录'
+  // }
 };
 </script>
 <style scoped>

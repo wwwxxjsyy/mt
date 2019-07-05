@@ -59,6 +59,7 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 import MtLoginHeader from "./loginHeader";
+import { Toast } from "mint-ui";
 import qs from "qs"
 export default {
   name: "RegisterLogin",
@@ -84,7 +85,13 @@ export default {
       this.curCount1 = this.count;
       var phone = this.phone;
       if (!this.phoneReg.test(phone)) {
-        alert(" 请输入有效的手机号码");
+            Toast({
+                message: "请输入有效的手机号码",
+                position: "center",
+                duration: 2000
+            });
+            return;
+        // alert(" 请输入有效的手机号码");
         return false;
       }
       //设置button效果，开始计时
@@ -110,9 +117,8 @@ export default {
       }
     },
     //点击登录按钮
-    //验证码登录提交
+    //密码登录提交
     toggleLogin1(){
-      // 取消错误提醒
         let formData={
             phone:this.phone,
             pwd:this.verifyCode
@@ -123,32 +129,37 @@ export default {
             //存储在vuex中
             //  this.$store.dispatch("setUser",this.phone)
             this.$router.push('/home')
-        }).catch(err =>{  
-          this.errors = {
-              // code: err.response,
-            };  
+        }).catch(err =>{ 
+          Toast({
+                message: "请输入正确的手机号或密码",
+                position: "center",
+                duration: 2000
+            });
+            return; 
         }) 
     },
-    //密码登录提交
+    //验证码登录提交
     toggleLogin2(){
       this.errors = {};
         let formData={
             phone:this.phone,
-            code:this.verifyCode,
+            code:this.verifyCode
         }
         this.$axios.post('/user/code_login/',formData).then(res=>{
             console.log(res)
             if(res.data.code==200){
-              
                 localStorage.setItem("mt_login", res.data.token);
                 //存储在vuex中
                 this.$store.dispatch("setUser",this.phone)
                 
                 this.$router.push('/home')
             }else{
-                 this.errors = {
-              // code: err.response,
-            }; 
+                Toast({
+                  message: "请输入正确的验证码",
+                  position: "center",
+                  duration: 2000
+                });
+                return; 
             }
         })
         

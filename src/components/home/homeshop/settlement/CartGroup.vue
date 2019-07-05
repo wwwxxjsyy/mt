@@ -1,18 +1,18 @@
 <template>
   <section class="checkout-section cart-group">
-    <h3>{{orderInfo.shopInfo.name}}</h3>
+    <h3>{{poiInfo.setPoiInfo.name}}</h3>
     <ul>
-      <li v-for="(food,index) in orderInfo.selectFoods" :key="index">
-        <img :src="food.image_path" alt>
+      <li v-for="(food,index) in orderInfo.shopFoods" :key="index">
+        <img :src="food.picture" alt>
         <div class="cart-group-info">
           <span>{{food.name}}</span>
           <span>x {{food.count}}</span>
-          <span>{{food.activity.fixed_price}}</span>
+          <span>{{food.min_price}}</span>
         </div>
       </li>
       <li class="cart-group-total">
-        <div>配送费</div>
-        <div>¥{{orderInfo.shopInfo.float_delivery_fee}}</div>
+        <div class="fee">配送费</div>
+        <div>{{poiInfo.setPoiInfo.shipping_fee_tip}}</div>
       </li>
       <li class="cart-group-total">
         <div class="discounts"></div>
@@ -28,49 +28,55 @@
 <script>
 export default {
   name: "CartGroup",
+  data(){
+    return {
+      fee:6,
+    }
+  },
   props: {
     orderInfo: Object,
-    totalPrice: Number
+    totalPrice: Number,
+    poiInfo:Object
   }
 };
 </script>
 
 <style scoped>
 .checkout-section {
-  margin-bottom: 2.133333vw;
-  padding: 0 5.333333vw;
+  margin-bottom: .2rem;
+  padding: 0 .5rem;
   background: #fff;
-  box-shadow: 0 0.133333vw 0.266667vw 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.05);
 }
 .cart-group > h3 {
-  padding: 4.266667vw 0;
+  padding: .4rem 0;
   color: #333;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 1.1rem;
+  font-size: .35rem;
   line-height: 1;
   font-weight: 700;
 }
 .cart-group > ul {
-  margin-top: 0.666667vw;
+  margin-top: .1rem;
   color: #333;
-  font-size: 0.9rem;
+  font-size: 0.3rem;
 }
 .cart-group > ul > li {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 3.2vw 0;
+  padding: .3rem 0;
   border-bottom: 1px dotted #eee;
   color: inherit;
 }
 .cart-group > ul > li > img {
-  width: 9.6vw;
-  height: 9.6vw;
+  width: .9rem;
+  height: .9rem;
 }
 .cart-group-info {
-  margin-left: 2.133333vw;
+  margin-left: .2rem;
   overflow: hidden;
   flex: 9;
   display: flex;
@@ -79,13 +85,16 @@ export default {
 }
 .cart-group-total {
   justify-content: space-between;
-  padding: 4vw 0 4.8vw !important;
+  padding: .4ren 0 .4rem !important;
+}
+.cart-group .fee{
+  font-weight:600;
 }
 .discounts {
   color: #bbb;
 }
 .subtotal .price {
-  font-size: 1.5rem;
+  font-size: .4rem;
   font-weight: 500;
 }
 </style>

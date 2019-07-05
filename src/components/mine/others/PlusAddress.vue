@@ -43,18 +43,13 @@ components: {
 data() {
     return {
         addressInfo: {
-            tag:"",
-            sex:"",
-            address:"",
-            name:"",
-            phone:"",
-            bottom:"",
         },
         iconfont:"&#xe61a;",
         // title:"",
         tags:["家","学校","公司"],
         sexes:["先生","女士"],
-        showSearch: false
+        showSearch: false,
+        title:"新建收货地址"
 
     };
 },
@@ -94,9 +89,10 @@ methods: {
         }
 
       // 存储数据
-        if (this.title == "添加地址") {
+        if (this.title == "新建收货地址") {
           this.addAddress();
         } else {
+          // this.addAddress();
           this.editAddress();
         }
     },
@@ -109,46 +105,42 @@ methods: {
     },
     //发送地址请求
     addAddress() {
-      // this.$axios
-      //   .post(
-      //     `/api/user/add_address/${localStorage.ele_login}`,
-      //     this.addressInfo
-      //   )
-      //   .then(res => {
-      //     if (!this.$store.getters.userInfo) {
+      let user_id=localStorage.getItem('mt_login')
+       this.$axios
+         .post('/user/add_address/?token='+user_id,this.addressInfo)
+         .then(res => {
+           console.log(res)
+          if (!this.$store.getters.userInfo) {
             this.$store.dispatch("setUserInfo", this.addressInfo);
-        //   }
+           }
           this.$router.push("/Address");
-        // })
-        // .catch(err => console.log(err));
+         })
+         .catch(err => console.log(err));
     },
     //修改地址请求
     editAddress() {
-      // this.$axios
-      //   .post(
-      //     `/api/user/edit_address/${localStorage.mt_login}/${
-      //       this.addressInfo._id
-      //     }`,
-      //     this.addressInfo
-      //   )
-      //   .then(res => {
+      console.log(this.addressInfo)
+       let user_id=localStorage.getItem('mt_login')
+       this.$axios
+        .post('/user/address/up_address/?token='+user_id,this.addressInfo)
+        .then(res => {
           this.$router.push("/Address");
-        // });
+         });
     }
   }
 }
 
-// beforeRouteEnter(to, from, next){
-//     console.log(to.params.addressInfo)
-//     next(vm =>{
-//         vm.addressInfo = vm.$route.params.addressInfo
-//         vm.title = vm.$route.params.title
-//         vm.iconfont = vm.$route.params.iconfont
-//         console.log(vm.iconfont)
-//     })
-//   }
+//  beforeRouteEnter(to, from, next){
+//      console.log(to.params.addressInfo)
+//      next(vm =>{
+//          vm.addressInfo = vm.$route.params.addressInfo
+//          vm.title = vm.$route.params.title
+//          vm.iconfont = vm.$route.params.iconfont
+//          console.log(vm.iconfont)
+//      })
+//    }
 
-// }
+//  }
 
 </script>
 <style  scoped>

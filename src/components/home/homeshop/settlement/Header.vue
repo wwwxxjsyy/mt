@@ -33,6 +33,7 @@ export default {
 <style scoped>
 .iconfont{
   font-size: .4rem;
+  color:#fff;
 }
 .header {
   align-items: center;
@@ -65,6 +66,8 @@ export default {
 }
 .header-title {
   flex: 1;
+  font-size:.35rem;
+  color:#fff;
 }
 .is-left {
   text-align: left;

@@ -2,55 +2,54 @@
     <div class="settlement">
         <Header :isLeft="true" title="提交订单"/>
         <div class="view-body" v-if="orderInfo">
-            <div class>
+            <div class="">
                 <!-- 收货地址 -->
                 <section class="cart-address">
-                <p class="title">
-                    订单配送至
-                    <span class="address-tag" v-if="userInfo && userInfo.tag">{{userInfo.tag}}</span>
-                </p>
-                <p class="address-detail">
+                  <p class="title">
+                      订单配送至
+                      <span class="address-tag" v-if="userInfo && userInfo.tag">{{userInfo.tag}}</span>
+                  </p>
+                  <p class="address-detail">
                     <span
-                    @click="$router.push('/myAddress')"
+                    @click="$router.push('/Address')"
                     v-if="userInfo"
-                    >{{userInfo.address}}{{userInfo.bottom}}</span>
+                  >{{userInfo.address}}{{userInfo.bottom}}</span>
                     <span v-else>
-                    <span v-if="haveAddress" @click="$router.push('/myAddress')">选择收货地址</span>
-                    <span v-else @click="addAddress">新增收货地址</span>
-                    </span>
-                    <i class="fa fa-angle-right"></i>
-                </p>
-                <h2 v-if="userInfo" class="address-name">
+                      <span v-if="haveAddress" @click="$router.push('/address')">选择收货地址</span>
+                      <span v-else @click="addAddress">新增收货地址</span>
+                    </span>  
+                    <span class="iconfont">&#xe60a;</span>
+                  </p>
+                  <h2 v-if="userInfo" class="address-name">
                     <span>{{userInfo.name}}</span>
                     <span v-if="userInfo.sex">({{userInfo.sex}})</span>
                     <span class="phone">{{userInfo.phone}}</span>
-                </h2>
+                  </h2>
                 </section>
-
                 <!-- 送达时间 -->
-                <Delivery :shopInfo="orderInfo.shopInfo"/>
-
+                <Delivery :shopInfo="orderInfo.shopFoods"/>
                 <!-- 点餐内容 -->
-                <CartGroup :orderInfo="orderInfo" :totalPrice="totalPrice"/>
-
-                <!-- 备注信息 -->
+                <CartGroup :orderInfo="orderInfo" :totalPrice="totalPrice" :poiInfo="poiInfo"/>
+              <!-- 备注信息 -->
                 <section class="checkout-section">
-                <CartItem
+                  <CartItem
                     @click="showTableware=true"
                     title="餐具份数"
                     :subHead="remarkInfo.tableware || '未选择'"
-                />
-                <CartItem
+                  />
+                  <CartItem
                     @click="$router.push('/remark')"
                     title="订单备注"
                     :subHead="remarkInfo.remark || '口味 偏好'"
-                />
-                <CartItem title="发票信息" subHead="不需要开发票"/>
+                  />
+                  <CartItem title="发票信息" subHead="不需要开发票"/>
                 </section>
 
+        <!-- 显示Tableware -->
                 <!-- 显示Tableware -->
                 <Tableware :isShow="showTableware" @close="showTableware=false"/>
             </div>
+
         </div>
         <!-- 底部 -->
         <footer class="action-bar">
@@ -62,7 +61,7 @@
 </template>
 
 <script>
-import Header from "./Header"
+import Header from "./Header";
 import Delivery from "./Delivery";
 import CartGroup from "./CartGroup";
 import CartItem from "./CartItem";
@@ -82,6 +81,9 @@ export default {
         },
         orderInfo() {
             return this.$store.getters.orderInfo;
+        },
+        poiInfo() {
+            return this.$store.getters.poiInfo;
         },
         totalPrice() {
             return this.$store.getters.totalPrice;
@@ -133,7 +135,7 @@ export default {
             });
             return;
         }
-        this.$router.push("/pay");
+        this.$router.push("/Pay");
         }
     },
     components:{
@@ -148,6 +150,9 @@ export default {
 
 
 <style scoped>
+.iconfont{
+  font-size: .4rem;
+}
 .settlement {
   width: 100%;
   height: 100%;
@@ -169,10 +174,10 @@ export default {
       0deg,
       #f5f5f5,
       #f5f5f5 65%,
-      hsla(0, 0%, 96%, 0.3) 75%,
+      hsla(0, 0%, 96%, 0.3) 50%,
       hsla(0, 0%, 96%, 0)
     ),
-    linear-gradient(270deg, #009eef, #009eef);
+    linear-gradient(360deg, #f1e1b2, #efb700);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -186,13 +191,13 @@ export default {
 }
 .cart-address .title {
   font-size: 0.3rem;
-  line-height: 1.21;
+  line-height: .5rem;
   color: hsla(0, 0%, 100%, 0.8);
 }
 .cart-address .address-detail {
-  font-size: 0.3rem;
-  font-weight: 600;
-  line-height: 1.88;
+  font-size: 0.4rem;
+  /* font-weight: 600; */
+  line-height: .8rem;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -202,7 +207,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  /* max-width: calc(100% - 4vw); */
+  font-weight: 700;
+  max-width: calc(100% - 3rem);
+  font-size:.35rem;
 }
 .address-detail > i {
   margin-left: .3rem;
@@ -224,7 +231,7 @@ export default {
   padding: .1rem;
   white-space: nowrap;
   border-radius: .1rem;
-  font-size: 0.6rem !important;
+  /* font-size: 0.6rem !important; */
   line-height: .3rem;
 }
 
@@ -251,8 +258,8 @@ export default {
 .action-bar > span {
   color: #fff;
   font-size: .4rem;
-  line-height: .6rem;
-  padding-left: .2rem;
+  line-height: 1rem;
+  padding-left: 2.2rem;
   vertical-align: middle;
 }
 .action-bar > button {

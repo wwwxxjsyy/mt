@@ -19,11 +19,13 @@ export default {
 <style  scoped>
 .myevalute-content {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .myevalute-content > img {
   width: 4rem;
   height: 4.2rem;
-  margin: auto;
   margin-top: 3rem;
 }
 </style>
