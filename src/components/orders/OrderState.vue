@@ -4,51 +4,25 @@
             <p @click="back" class="state-head-l"></p>
             <p class="state-head-r"></p>
         </div>
-        <OrderStateAchieve v-show="false"/>
-        <OrderStateCancel/>
+        <OrderStateAchieve v-if="isfulfill"/>
+        <OrderStateCancel v-if="!isfulfill"/>
         <a class="state-yaoqing" href="#">
             <img src="../../../static/img/order/yaoqing.png" alt="">
         </a>
         <div class="state-shopdetail">
             <div class="shopdetail-name">
-                <p>米面多（科技二路站）</p>
+                <p>{{similaritynow.shopname}}</p>
                 <i></i>
             </div>
             <div class="shopdetail-shops">
                 <!-- 商品 -->
                 <ul>
-                    <li>
+                    <li v-for="(itme,index) in similaritynow.commodity">
                         <div class="shopdetails">
-                            <img src="" alt="">
+                            <img :src='itme.commoditypicture' alt="">
                             <div class="shopdetails-count">
-                                <p class="shopname"><span>折</span>三米爱心蒸蛋</p>
-                                <p class="shopcount">×<span>1</span></p>
-                            </div>
-                        </div>
-                        <div class="shopprice">
-                            <p class="shopprice-oprice">￥<span>40.9</span></p>
-                            <p class="shopprice-pprice">￥<span>21.8</span></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shopdetails">
-                            <img src="" alt="">
-                            <div class="shopdetails-count">
-                                <p class="shopname"><span>折</span>牛肉馅饼（单个）</p>
-                                <p class="shopcount">×<span>1</span></p>
-                            </div>
-                        </div>
-                        <div class="shopprice">
-                            <p class="shopprice-oprice">￥<span>40.9</span></p>
-                            <p class="shopprice-pprice">￥<span>21.8</span></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shopdetails">
-                            <img src="" alt="">
-                            <div class="shopdetails-count">
-                                <p class="shopname"><span>折</span>皮蛋瘦肉粥</p>
-                                <p class="shopcount">×<span>1</span></p>
+                                <p class="shopname"><span>折</span>{{itme.commodityname}}</p>
+                                <p class="shopcount">×<span>{{itme.commoditycount}}</span></p>
                             </div>
                         </div>
                         <div class="shopprice">
@@ -70,8 +44,8 @@
                         <div class="otherprice-every">
                             <p class="otherprice-every-name">配送费</p>
                             <div class="otherprice-num">
-                                <p class="shopprice-oprice">￥<span>6</span></p>
-                                <p class="shopprice-pprice">￥<span>3</span></p>
+                                <p class="shopprice-oprice">{{similaritynow.postprice}}</p>
+                                <p class="shopprice-pprice">{{similaritynow.postprice}}</p>
                             </div>
                         </div>
                         <div class="otherprice-every">
@@ -121,6 +95,27 @@ export default {
     components:{
         OrderStateAchieve,
         OrderStateCancel
+    },
+    data(){
+        return{
+            allorder:[],
+            shopid:"",
+            isfulfill:Boolean,
+            similaritynow:{}
+        }
+    },
+    beforeRouteEnter(to,from,next){
+        next(vm=>{
+            vm.allorder=to.params.allorder
+            vm.shopid=to.params.shopid
+            vm.isfulfill=to.params.isfulfill
+            for(var i in vm.allorder){
+                if(vm.shopid==vm.allorder[i].shopid){
+                    vm.similaritynow=vm.allorder[i]
+                }
+            }
+            console.log(vm.similaritynow)
+        })
     },
     methods:{
         back(){

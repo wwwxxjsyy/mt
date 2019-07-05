@@ -72,13 +72,7 @@ export default {
     },
     methods:{
     }
-    
-         
-
-
      
-     
-    
 }
 </script>
 

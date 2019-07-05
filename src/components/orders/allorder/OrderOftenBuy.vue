@@ -34,20 +34,7 @@ export default {
     },
     mounted(){
         this.allcount=this.allorder.length;
-    },
-      created(){
-        console.log(this.allorder)
-        // this.Observer.$on("handlat",(val)=>{
-        //     console.log(val);
-        //     this.lately=val;
-        //     console.log(this.lately);
-        // })
-    },
-    // methods:{
-    //     postlat(allorder){
-    //         this.Observer.$emit("handlat")
-    //     }
-    // }
+    }
 }
 </script>
 

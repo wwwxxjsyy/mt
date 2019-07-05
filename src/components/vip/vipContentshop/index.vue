@@ -4,17 +4,20 @@
             <span class="privi">特权3</span>
             <h1>会员红包金额升级</h1>
             <p class="vip-common">会员红包可以在以下商家升级成更大金额的红包</p> 
-            <ul class="oul">
-                <li v-for="(item,index) in shopList" :key="index">
-                   <div class="price">
-                       <span> <i>￥</i>{{item.money}}</span>无门槛
-                   </div>
-                   <div class="shops">
-                       <a href=""><img :src="item.imgs" alt=""></a>
-                       <span>{{item.names}}</span>
-                   </div>
-                </li>
-            </ul>     
+            <div class="vip-footer">
+                <ul class="oul">
+                    <li v-for="(item,id) in data" :key="id" @click="handleDetail">
+                        <div class="price" >
+                            <span> <i>￥</i>{{item.kquan}}</span>无门槛
+                        </div>
+                        <div class="shops">
+                            <a href=""><img :src="item.img_url" alt=""></a>
+                            <span>{{item.shop_name}}</span>
+                        </div>
+                    </li>
+                </ul> 
+                <span>更多外卖可到美团外卖首页查看</span>
+            </div>
         </div>
         <div class="vip-open">
             <!-- <a href=""></a> -->
@@ -33,46 +36,40 @@ export default {
     name:'VipContentshop',
     data(){
         return{
-            shopList:[
-                {
-                    money:'7',
-                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-                    names:'御品轩(枫叶新都市店)',
-                    path:''
-                },
-                {
-                    money:'7',
-                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-                    names:'御品轩(枫叶新都市店)',
-                    path:''
-                },
-                {
-                    money:'7',
-                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-                    names:'御品轩(枫叶新都市店)',
-                    path:''
-                },
-                {
-                    money:'7',
-                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-                    names:'御品轩(枫叶新都市店)',
-                    path:''
-                },
-                {
-                    money:'7',
-                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-                    names:'御品轩(枫叶新都市店)',
-                    path:''
-                },
-                {
-                    money:'7',
-                    imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-                    names:'御品轩(枫叶新都市店)',
-                    path:''
-                }
-            ]
+           
+            flag:true,
+            timer:null,
+            data:[]
         }
-    }
+       
+    },
+    methods: {
+        handleScroll(){
+            this.scrollTop = document.documentElement.scrollTop
+            this.flag=false
+            clearTimeout(this.timer)
+            this.timer = setTimeout(()=>{
+                this.flag=true;
+            },1000)
+        },
+        handleDetail(){
+            console.log(handleDetail);
+        }
+    },
+    mounted() {
+        window.addEventListener("scroll",this.handleScroll)
+            // console.log(document.documentElement.scrollTop)
+    },
+    created() {
+        this.$axios.get('/api/vip/?token=MT15111111111').then(res=>{
+           var code=res.data.code;
+           if(code==200){
+               this.data= res.data.data.shop_data;
+            // console.log(this.data.data.shop_data)
+           }
+            
+        })
+    },
 }
 </script>
 

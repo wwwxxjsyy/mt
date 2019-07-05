@@ -30,8 +30,8 @@
                                     </div>
                                 </div>    
                             </router-link> 
-                            <a href="javascript:;" v-show="item.isfulfill" class="delitestate-my" @click="$router.push({name:'OrderOrderState',params:{allorder:allorder,shopid:item.shopid}})">订单已完成</a>
-                            <a href="javascript:;" v-show="!item.isfulfill" class="delitestate-my" @click="$router.push({name:'OrderOrderState',params:{allorder:allorder,shopid:item.shopid}})">订单已取消</a>
+                            <a href="javascript:;" v-show="item.isfulfill" class="delitestate-my" @click="$router.push({name:'OrderOrderState',params:{allorder:allorder,shopid:item.shopid,isfulfill:item.isfulfill}})">订单已完成</a>
+                            <a href="javascript:;" v-show="!item.isfulfill" class="delitestate-my" @click="$router.push({name:'OrderOrderState',params:{allorder:allorder,shopid:item.shopid,isfulfill:item.isfulfill}})">订单已取消</a>
                         </div>
                     </div>
                     <!-- 单个订单商品价格 -->
