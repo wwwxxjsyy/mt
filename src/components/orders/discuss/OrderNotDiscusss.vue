@@ -6,7 +6,7 @@
             <router-link to="/OrderOrderRefund">退款</router-link>
         </div>
         <div class="notorderdelite">
-            <img src="../../../static/img/order/orderk2.png" alt="">
+            <img src="../../../../static/img/order/orderk2.png" alt="">
             <p class="notorderdelite-t">没有待评价的订单哦~</p>
         </div>
     </div>
@@ -22,8 +22,6 @@ export default {
 .ordernotdiscusss{
     width:100%;
     height:100%;
-    margin-top:0.9rem;
-    margin-bottom:1rem;
     overflow:hidden;
     display:flex;
     flex-direction:column;

@@ -4,11 +4,11 @@
             <router-link to="/order">
                 全部订单<span></span>
             </router-link>
-            <router-link to="ordernodiscuss">待评价</router-link>
-            <router-link to="orderrefund">退款</router-link>
+            <router-link to="/OrderOrderNoDiscuss">待评价</router-link>
+            <router-link to="/OrderOrderRefund">退款</router-link>
         </div>
         <div class="notorderdelite">
-            <img src="../../../static/img/order/orderk1.png" alt="">
+            <img src="../../../../static/img/order/orderk1.png" alt="">
             <p class="notorderdelite-t">一个订单都没有哦~</p>
             <p class="notorderdelite-b">给自己定一个小目标，先下一单</p>
             <a href="#">去逛逛</a>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    
+    name:"ordernotorders"
 }
 </script>
 
@@ -27,8 +27,6 @@ export default {
 .ordernotorders{
     width:100%;
     height:100%;
-    margin-top:0.9rem;
-    margin-bottom:1rem;
     overflow:hidden;
     display:flex;
     flex-direction:column;

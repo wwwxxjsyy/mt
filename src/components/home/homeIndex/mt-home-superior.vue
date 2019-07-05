@@ -7,7 +7,9 @@
             <ul @click="$router.push('/homegoods/goods')">
                 <li v-for="(items,index) in foodslist" :key="index"> 
                     <div class="home-moreshop-foodinfo">
-                        <div class="home-moreshop-img"></div>
+                        <div class="home-moreshop-img">
+							<img :src="items.pic1" />
+						</div>
                         <div class="home-moreshop-msg">
                             <b>{{items.foodname}}</b> 
                             <p><span>起送￥{{items.pickup}} 配送￥{{items.giveprice}} 人均￥{{items.percapita}}</span></p>
@@ -21,10 +23,16 @@
                         
                     </div>
                     <div class="home-goods-img">
-                        <div class="home-goods-img-left"></div>
+                        <div class="home-goods-img-left">
+							<img :src="items.pic2" />
+						</div>
                         <div class="home-goods-img-right">
-                            <div class="home-goods-img-top"></div>
-                            <div class="home-goods-img-bottom"></div>
+                            <div class="home-goods-img-top">
+								<img :src="items.pic3" />
+							</div>
+                            <div class="home-goods-img-bottom">
+								<img :src="items.pic4" />
+							</div>
                         </div>
                     </div>
                     <div class="home-moreshop-comment">
@@ -43,7 +51,7 @@ export default {
             foodslist:[
                 {
                     foodpic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1649352314,3326472692&fm=15&gp=0.jpg',
-                    foodname:'一只酸奶牛(唐延路T11店)',
+                    foodname:'麦当劳(唐延路T11店)',
                     foodscore:'4.7',
                     foodnum:'1045',
                     time:'38分钟 2.7km',
@@ -61,11 +69,16 @@ export default {
                             clolr:'red'
                         },
                        
-                    ]
+                    ],
+					
+					pic1:"http://p0.meituan.net/xianfu/fd3a8462080c71f60f2581c2e7c1d3f43010.jpeg",
+					pic2:"http://p1.meituan.net/xianfu/71f534915c7763796729a1d9721fb1f1389269.png",
+					pic3:"http://p0.meituan.net/xianfu/35f41c0badc69352b886cc34080f1f9a232448.png",
+					pic4:"http://p0.meituan.net/xianfu/38bbfa3f955cbce3330f1cb6818d0ce6216794.png",
                 },
                 {
                     foodpic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1649352314,3326472692&fm=15&gp=0.jpg',
-                    foodname:'一只酸奶牛(唐延路T11店)',
+                    foodname:'巴适的板(唐延路B141店)',
                     foodscore:'4.7',
                     foodnum:'1045',
                     time:'38分钟 2.7km',
@@ -83,11 +96,15 @@ export default {
                             clolr:'red'
                         },
                      
-                    ]
+                    ],
+					pic1:"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3846659024,2810753627&fm=26&gp=0.jpg",
+					pic2:"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2781673913,4079441495&fm=26&gp=0.jpg",
+					pic3:"https://f10.baidu.com/it/u=603021203,1744213382&fm=72",
+					pic4:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3698333089,2292902627&fm=26&gp=0.jpg",
                 },
                 {
                     foodpic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1649352314,3326472692&fm=15&gp=0.jpg',
-                    foodname:'一只酸奶牛(唐延路T11店)',
+                    foodname:'欣欣花店(唐延路T321店)',
                     foodscore:'4.7',
                     foodnum:'1045',
                     time:'38分钟 2.7km',
@@ -105,7 +122,11 @@ export default {
                             title:'16减4',
                             clolr:'red'
                         }
-                    ]
+                    ],
+					pic1:"https://f11.baidu.com/it/u=3040295833,227881002&fm=72",
+					pic2:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1166999486,780844275&fm=26&gp=0.jpg",
+					pic3:"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3930624134,3703206725&fm=26&gp=0.jpg",
+					pic4:"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3301835421,2479549609&fm=26&gp=0.jpg",
                 },
             ]
         }
@@ -118,10 +139,11 @@ export default {
 .iconfont{
     font-size: .35rem;
     color:rgb(192, 189, 189);
+	margin-left: .2rem;
 }
 img{
-    width:inherit;
-    height:inherit;
+    /* width:80%; */
+    /* height:inherit; */
 }
 .header{
     width:100%;
@@ -180,8 +202,8 @@ img{
 
 }
 .home-moreshop-foodlist ul li img{
-    width: 2.8rem;
-    height: 1.5rem;
+    width: 80%;
+    /* height: 1.5rem; */
 }
 .home-moreshop-foodlist ul li b span{
     font-size: .4rem;
@@ -242,10 +264,15 @@ img{
 .home-moreshop-img{
     width:3rem;
     height:1.5rem;
-    background: #e9a43f;
+    /* background: #e9a43f; */
     margin-right: .2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
     /* display: flex; */
-    
+}
+.home-moreshop-img img{
+	width: 100%;
 }
 .home-goods-img{
     display: flex;
@@ -256,24 +283,35 @@ img{
 }
 .home-goods-img-left{
     width:60%;
-    background: #ffd574;
+    /* background: #ffd574; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
     margin-right: 1px;
-     height:3rem;
+    height:3rem;
 }
 .home-goods-img-right{
     width:40%;
      height:3rem;
-    background: #fde8b6;
+    /* background: #fde8b6; */
 }
 .home-goods-img-top{
     width:100%;
     height:50%;
-    background: #eee2c6;
+    /* background: #eee2c6; */
+}
+.home-goods-img-top img{
+	width: 100%;
+	height: 100%;
 }
 .home-goods-img-bottom{
     width:100%;
     height:50%;
-    background: #b6b4b0;
+    /* background: #b6b4b0; */
+}
+.home-goods-img-bottom img{
+	width: 100%;
+	height: 100%;
 }
 .home-moreshop-comment{
     height:.6rem;
@@ -287,7 +325,6 @@ img{
 .home-moreshop-comment div{
     font-size: .2rem;
     font-weight: bolder;
-     
     line-height: .6rem;
     box-sizing: border-box;
 }

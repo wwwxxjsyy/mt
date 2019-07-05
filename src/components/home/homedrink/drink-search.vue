@@ -1,5 +1,5 @@
     <template>
-    <div class="drink" ref="test">
+    <div class="drink" >
         <div class="drink-search">
             <span class="iconfont">&#xe607;</span> <a>甜点饮品</a>
         </div>
@@ -13,20 +13,14 @@
 <script>
 export default {
     name:"Drink",
-    data(){
-        return{
-            scrollTop:''
-        }
-    },  
+    // mounted(){
+    //     window.addEventListener("scroll",this.handleScorll)
+    // },
     methods:{
-        showIcon(){
-            this.scrollTop = document.documentElement.scrollTop
-            console.log(this.scrollTop)
-            console.log(123)
-        }
-//         handleScorll(){
-//               var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-//   console.log(scrollTop)
+        handleScorll(){
+
+              var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+  console.log(scrollTop)
             // let headerHeight = document.getElementsByClassName("homedrink")[0];
             // console.log(headerHeight);
             // let scrollTop = headerHeight.scrollTop;
@@ -40,15 +34,14 @@ export default {
             //     this.$refs.inputGroup.style.width = "100%";
             //     this.$refs.inputGroup.style.position = "static";
             // }
-        // }
-    },
-    mounted(){
-         window.addEventListener("scroll", this.showIcon);
-    }    
+        }
+        
+
+    }
 }
 </script>
 
-<style scoped>
+<style>
 .drink-search{
     width: 100%;
     height: .5rem;

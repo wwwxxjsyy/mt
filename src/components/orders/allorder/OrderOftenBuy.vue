@@ -3,54 +3,38 @@
     <div class="orderoftenbuy">
         <div class="orderoftenbuy-top">
             <h3>最近常买</h3>
-            <a href="#"><p>查看10个商家</p><span class="orderoftenbuy-top-youjian"></span></a>
+            <a href="javascript:;" @click="$router.push({name:'OrderOrderLately',params:{allorder:allorder}})">
+                <p>查看<span>{{allcount}}</span>个商家</p><span class="orderoftenbuy-top-youjian"></span>
+            </a>
         </div>
         <div class="orderoftenbuy-bottom">
             <ul>
-                <li>
-                    <a class="shops" href="#">
-                        <img src="" alt="">
-                        <p class="shopsname">麻辣空间(科技西路南窑头)</p>
-                        <p class="shopsbuynum">买过<span>1</span>次</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="shops" href="#">
-                        <img src="" alt="">
-                        <p class="shopsname">麻辣空间(科技西路南窑头)</p>
-                        <p class="shopsbuynum">买过<span>1</span>次</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="shops" href="#">
-                        <img src="" alt="">
-                        <p class="shopsname">麻辣空间(科技西路南窑头)</p>
-                        <p class="shopsbuynum">买过<span>1</span>次</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="shops" href="#">
-                        <img src="" alt="">
-                        <p class="shopsname">麻辣空间(科技西路南窑头)</p>
-                        <p class="shopsbuynum">买过<span>1</span>次</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="shops" href="#">
-                        <img src="" alt="">
-                        <p class="shopsname">麻辣空间(科技西路南窑头)</p>
-                        <p class="shopsbuynum">买过<span>1</span>次</p>
-                    </a>
+                <li v-for="(item,index) in allorder">
+                    <router-link to="" class="shops">
+                        <img :src='item.shoppicture' alt="">
+                        <p class="shopsname">{{item.shopname}}</p>
+                        <p class="shopsbuynum">买过<span>{{item.buycount}}</span>次</p>
+                    </router-link>
                 </li>
             </ul>
         </div>
-        
     </div>
 </template>
 
 <script>
 export default {
-    
+    props:{
+        allorder:Array
+    },
+    name:"ordeoftenbuy",
+    data(){
+        return{
+            allcount:0,
+        }
+    },
+    mounted(){
+        this.allcount=this.allorder.length;
+    }
 }
 </script>
 
@@ -86,7 +70,7 @@ export default {
 .orderoftenbuy-top-youjian{
     width:0.22rem;
     height:0.28rem;
-    background:url("../../../static/img/order/png.png");
+    background:url("../../../../static/img/order/png.png");
     background-size:8.77rem 4.97rem;
     background-position:0.02rem 0rem;
     margin-top:0.46rem;
@@ -115,7 +99,7 @@ export default {
     background:white;
 }
 .orderoftenbuy-bottom ul li:last-child{
-    margin-right:0.2rem;
+    margin-right:0.4rem;
 }
 .orderoftenbuy-bottom ul li .shops{
     display:block;
@@ -139,9 +123,9 @@ export default {
     overflow:hidden; 
     white-space:nowrap;
     text-overflow:ellipsis;
+    text-align:center;
 }
 .shopsbuynum{
-    width:1rem;
     margin:0 auto 0.2rem;
     font-size:0.22rem;
     color:#ecdd98;

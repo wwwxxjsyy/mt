@@ -1,10 +1,10 @@
 <template>
   <div class="mt-mine">
-    <mineHeader :userInfo="userInfo"/>
-    <mineVip :userInfo="userInfo"/>
-    <mineList :userInfo="userInfo"/>
-    <mineContent :userInfo="userInfo"/>
-    <Footer :userInfo="userInfo"/>
+    <mineHeader />
+    <mineVip />
+    <mineList />
+    <mineContent/>
+    <Footer/>
   </div>
 </template>
 
@@ -24,30 +24,30 @@ export default {
   },
   data(){
     return {
-      userInfo:{}
+      // userInfo:{}
     }
   },
+  // beforeRouteEnter(to, from, next) {
+  //   next(vm => vm.getData());
+  // },
+  
   computed:{
-      currentUser(){
-              return this.$store.getters.currentUser
-      }
+      userInfo() {
+      return this.$store.getters.currentUser;
+    },
         
   },
-  created(){
+  methods:{
     // 向后端请求数据
-    if(currentUser){
-      this.$axios.post('/user/code_login/',currentUser).then(res=>{
-        //打印登陆成功信息   登陆成功
-        console.log(res.msg)
-        this.userInfo=res.data
-      })
-    }else{
-      alert("请先登陆")
-      this.$router.push('/registerLogin')
-    }
-    
-  }
-};
+    // getData() {
+    //   const user_id = localStorage.mt_login;
+    //   this.$axios().then(res => {
+    //     // console.log(res.data);
+    //     this.userInfo = res.data;
+    //   });
+    // },
+  },
+}
 </script>
 
 <style scoped>

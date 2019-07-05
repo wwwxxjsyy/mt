@@ -25,9 +25,12 @@ export default {
   },
   methods: {
     cancel(){
-      
-    }
+      this.$emit("isShows",false)
+    },
+    determine(){
+      window.location.hash="/Mine"
   },
+}
 }
 
 </script>

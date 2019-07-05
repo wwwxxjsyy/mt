@@ -19,10 +19,14 @@
                 <span>更多外卖可到美团外卖首页查看</span>
             </div>
         </div>
-        <div class="vip-open" v-show="flag">
+        <div class="vip-open">
             <!-- <a href=""></a> -->
-            <router-link to='vipOpen' tag='a'><span>低至￥5/月</span>立即开通</router-link>
+            <router-link to='vipOpen' tag='a'><span>低至￥3/月</span>立即开通</router-link>
         </div>
+        <div class="vip-footer">
+            <span>更多外卖可到美团外卖首页查看</span>
+        </div>
+    
     </div>
     
 </template>
@@ -32,92 +36,7 @@ export default {
     name:'VipContentshop',
     data(){
         return{
-            // shopList:[
-            //     {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //     {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //     {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //     {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //     {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //     {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //      {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //      {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //      {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //      {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //      {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //      {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //     {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            //     {
-            //         money:'7',
-            //         imgs:"http://p0.meituan.net/waimaipoi/9c7d800065e94a2a6863b31729365a4810966.jpg",
-            //         names:'御品轩(枫叶新都市店)',
-            //         path:''
-            //     },
-            // ],
+           
             flag:true,
             timer:null,
             data:[]
@@ -191,12 +110,11 @@ ul>li{
 
 .oul{
     display: flex;
-    justify-content:flex-start;
+    justify-content: center;
     /* align-items: center; */
     flex-wrap: wrap;
     position: relative;
     padding: 0 0.2rem;
-    background: #f2f2f2;
 }
 
 .oul>li{

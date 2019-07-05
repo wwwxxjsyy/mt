@@ -41,7 +41,7 @@
             <div class="vipPay-content">
                 <span><i>月卡仅需</i>￥15</span>
                 <!-- <a href="#">去支付</a> -->
-                <router-link to='viplogin' tag='a'>去支付</router-link>
+                <router-link to='vip' tag='a'>去支付</router-link>
             </div>
         </div>
     </div>

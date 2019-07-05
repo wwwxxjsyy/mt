@@ -1,6 +1,8 @@
 <template>
   <div id="app"  >
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
     <Mt-TabBar v-if="$route.meta.flag"/>
   </div>
 </template>
@@ -19,6 +21,7 @@ export default {
       flag:false
     }
   },
+
   methods: {
     getlocation(){
       var self=this
@@ -27,7 +30,7 @@ export default {
         // 是否使用高精度定位，默认：true
         enableHighAccuracy: true,
         // 设置定位超时时间，默认：无穷大
-        timeout: 1000,
+        timeout: 2000,
               
       })
 
@@ -92,11 +95,6 @@ export default {
   created(){
     this.getlocation()
   },
-  // mounted(){
-  //   this.http.post('api/home/',).then(res=>{
-  //     console.log(res)
-  //   })
-  // }
 }
 </script>
 
@@ -110,7 +108,7 @@ export default {
   color: #2c3e50;
   height: 100%;
   width: 100%;
-  /* overflow: scroll; */
+  overflow: scroll;
   /* background: #fff; */
 }
 </style>

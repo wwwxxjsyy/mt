@@ -1,7 +1,7 @@
 <template>
 <div class='mine-list'>
     <ul>
-        <li v-for="(item,index) in list" :key="index">
+        <li v-for="(item,index) in list"  :key="index">
            <router-link :to="item.path" tag="a">
                <img :src="item.url" alt=""> 
                <span class="listTitle">{{item.desc1}}</span>
@@ -33,7 +33,7 @@ return {
             path:'/'
         },
         {
-            url:'ttp://p1.meituan.net/81.81.100/aichequan/774ce13f88576ec6742205fdada5dd1f4555.png.webp',
+            url:'http://p1.meituan.net/81.81.100/aichequan/774ce13f88576ec6742205fdada5dd1f4555.png.webp',
             desc1:'津贴',
             desc2:'余额20元',
             path:'/'
@@ -52,6 +52,7 @@ return {
         },
     ]
 };
+
 },
 }
 </script>
