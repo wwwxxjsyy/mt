@@ -8,7 +8,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-<<<<<<< HEAD
       '/api': {
         // target: 'http://jsonplaceholder.typicode.com/',//后端接口地址
         // target:'http://10.35.161.31:9001/',
@@ -19,7 +18,6 @@ module.exports = {
         //     '^/api': '/api',//重写,
         // }
       }
-=======
       // '/api': {
       //   target: 'https://ele-interface.herokuapp.com/api/',
       //   ws: true,
@@ -29,7 +27,6 @@ module.exports = {
       //   }
       // }
 
->>>>>>> 85059f34556a6a500d459380b6343c3674c54804
     },
 
     // Various Dev Server settings

@@ -51,7 +51,7 @@ export default {
             foodslist:[
                 {
                     foodpic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1649352314,3326472692&fm=15&gp=0.jpg',
-                    foodname:'一只酸奶牛(唐延路T11店)',
+                    foodname:'麦当劳(唐延路T11店)',
                     foodscore:'4.7',
                     foodnum:'1045',
                     time:'38分钟 2.7km',
@@ -78,7 +78,7 @@ export default {
                 },
                 {
                     foodpic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1649352314,3326472692&fm=15&gp=0.jpg',
-                    foodname:'一只酸奶牛(唐延路T11店)',
+                    foodname:'巴适的板(唐延路B141店)',
                     foodscore:'4.7',
                     foodnum:'1045',
                     time:'38分钟 2.7km',
@@ -97,14 +97,14 @@ export default {
                         },
                      
                     ],
-					pic1:"http://p0.meituan.net/xianfu/fd3a8462080c71f60f2581c2e7c1d3f43010.jpeg",
-					pic2:"http://p1.meituan.net/xianfu/71f534915c7763796729a1d9721fb1f1389269.png",
-					pic3:"http://p0.meituan.net/xianfu/35f41c0badc69352b886cc34080f1f9a232448.png",
-					pic4:"http://p0.meituan.net/xianfu/38bbfa3f955cbce3330f1cb6818d0ce6216794.png",
+					pic1:"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3846659024,2810753627&fm=26&gp=0.jpg",
+					pic2:"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2781673913,4079441495&fm=26&gp=0.jpg",
+					pic3:"https://f10.baidu.com/it/u=603021203,1744213382&fm=72",
+					pic4:"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3698333089,2292902627&fm=26&gp=0.jpg",
                 },
                 {
                     foodpic:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1649352314,3326472692&fm=15&gp=0.jpg',
-                    foodname:'一只酸奶牛(唐延路T11店)',
+                    foodname:'欣欣花店(唐延路T321店)',
                     foodscore:'4.7',
                     foodnum:'1045',
                     time:'38分钟 2.7km',
@@ -123,10 +123,10 @@ export default {
                             clolr:'red'
                         }
                     ],
-					pic1:"http://p0.meituan.net/xianfu/fd3a8462080c71f60f2581c2e7c1d3f43010.jpeg",
-					pic2:"http://p1.meituan.net/xianfu/71f534915c7763796729a1d9721fb1f1389269.png",
-					pic3:"http://p0.meituan.net/xianfu/35f41c0badc69352b886cc34080f1f9a232448.png",
-					pic4:"http://p0.meituan.net/xianfu/38bbfa3f955cbce3330f1cb6818d0ce6216794.png",
+					pic1:"https://f11.baidu.com/it/u=3040295833,227881002&fm=72",
+					pic2:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1166999486,780844275&fm=26&gp=0.jpg",
+					pic3:"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3930624134,3703206725&fm=26&gp=0.jpg",
+					pic4:"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3301835421,2479549609&fm=26&gp=0.jpg",
                 },
             ]
         }
@@ -139,6 +139,7 @@ export default {
 .iconfont{
     font-size: .35rem;
     color:rgb(192, 189, 189);
+	margin-left: .2rem;
 }
 img{
     /* width:80%; */
@@ -269,7 +270,9 @@ img{
 	justify-content: center;
 	align-items: center;
     /* display: flex; */
-    
+}
+.home-moreshop-img img{
+	width: 100%;
 }
 .home-goods-img{
     display: flex;

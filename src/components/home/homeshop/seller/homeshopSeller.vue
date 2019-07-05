@@ -29,7 +29,7 @@
           查看食品安全档案
           <span class="icon-keyboard_arrow_right"></span>
         </div>
-      </div>
+		</div>
 
 			<Split></Split>
 			<div class="tip-wrapper">
@@ -68,8 +68,8 @@
             </div>
            </div>
         </div>
-			</div>
 		</div>
+	</div>
   </div>
 </template>
 
@@ -79,33 +79,45 @@ import BScroll from 'better-scroll'
 export default {
   data(){
     return {
-      seller:{}
+      seller:{
+		  data:{}
+		  
+	  }
     }
   },
+   beforeRouteEnter(to, from, next) {
+    next(vm => vm.getseller());
+  },
 	created(){
-    this.$axios('/api/shop/store/?shop_id=1')		
-		  .then(response =>{
-				console.log(response.data.data)
-		    if(response.data.code == 200){
-			  this.seller = response.data.data
-			  console.log(this.seller.poi_env.thumbnails_url_list)
-		      this.$nextTick(() => {
-		        if(this.seller.poi_env.thumbnails_url_list){
-		          let imgW = this.$refs.picsItem[0].clientWidth
-		          let marginR = 11
-		          let width = (imgW + marginR) * this.seller.poi_env.thumbnails_url_list.length
-		          this.$refs.picsList.style.width = width + "px"
-		          this.scroll = new BScroll(this.$refs.picsView,{
-		            scrollX:true
-		          })
-		        }
-		        this.sellerView = new BScroll(this.$refs.sellerView)
-		      })
-		    }
-		})
+   
   },
   mounted(){
-	  
+	
+  },
+  methods:{
+	  getseller(){
+		   this.$axios('/api/shop/store?shop_id=1')
+		  	.then(response =>{
+		  	// console.log(response)
+		  	if(response.data.code == 200){
+		  		  this.seller = response.data.data
+		  		  // console.log(this.seller)
+		  		this.$nextTick(() => {
+		  	        if(this.seller.poi_env){
+		  	          let imgW = this.$refs.picsItem[0].clientWidth
+		  	          let marginR = 20
+		  	          let width = (imgW + marginR) * this.seller.poi_env.length
+		  	          this.$refs.picsList.style.width = width + "px"
+		  			  // console.log(this.seller.poi_env.length)
+		  	          this.scroll = new BScroll(this.$refs.picsView,{
+		  	            scrollX:true
+		  	          })
+		  	        }
+		  	        this.sellerView = new BScroll(this.$refs.sellerView)
+		  	      })
+		  	    }
+		  	})
+	  }
   },
   components:{
     Split
@@ -115,6 +127,7 @@ export default {
 
 <style scoped>
 .mint-indicator-wrapper {
+	
 	height: 1rem;
 }
 .seller {

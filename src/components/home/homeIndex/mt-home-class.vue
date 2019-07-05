@@ -9,7 +9,7 @@
           
         </ul>
           <ul>
-            <li v-for="(item,index) in main_small_img" :key="index" class="home-class-slist"> 
+            <li @click="$router.push('/homeclass')" v-for="(item,index) in main_small_img" :key="index" class="home-class-slist"> 
                 <span><img :src="item.main_small_img_url"></span>
                 <b>{{item.main_small_img_name}}</b>
             </li>
@@ -92,7 +92,8 @@ export default {
                 },
                 {
                     pic:require('../../../../static/imgs/class/class.png'),
-                    title:'全部分类'
+                    title:'全部分类',
+					path:'/homeclass'
                 }
             ]
         }

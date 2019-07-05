@@ -2,7 +2,7 @@
   <div class="test">
     <div class="test_header">
       <div class="test_header_left">
-      <span class="iconfont">&#xe607;</span>
+      <span class="iconfont" @click="$router.back()">&#xe607;</span>
       </div>
       <div class="test_header_right">
       <input type="text" placeholder="我呀便当 满15减12" readonly="readonly">
@@ -32,7 +32,7 @@
                 </h3>
                 <!-- 具体分类列表 -->
                 <ul class="goodsName">
-                    <li v-for="(items,index) in items.foodsList" :key="index">
+                    <li v-for="(items,index) in items.foodsList" :key="index" @click="$router.push('/superior')">
                         <a class="producy">
                           <img :src="items.img">
                           <span>{{items.title}}</span>
@@ -61,686 +61,567 @@ export default {
         scrollY:0,
         data:{}, 
       menus: [
-        "推荐",
-        "男装",
-        "女装",
-        "男鞋",
-        "女鞋",
-        "袜品",
-        "家居",
-        "童装",
-        "内衣"
+        "美食",
+        "甜点饮品",
+        "超市便利",
+        "蔬菜水果",
+        "送药上门",
+        "浪漫鲜花",
+        "早餐",
+        "正餐优选",
+        "夜宵",
+				"面包蛋糕",
+				"汉堡披萨",
+				"日韩料理",
+				"家常菜",
+				"快餐简餐",
+				"小吃馆"
       ],
       foods:[
         {
-            "name":"推荐",
+            "name":"美食",
             "foodsList":[
                 {
-                    "img": "http://i1.vanclimg.com/cms/20180411/11aaaaa.jpg",
-                    "title": "吉国武"
+                    "img": "http://p0.meituan.net/720.0.100/jungle/7448ec45e26edb34d327121ad7bfdb2111426.png.webp",
+                    "title": "快餐便当"
                   },
                   {
-                    "img": "https://mi.vanclimg.com/oms/2019_5_16_15_5_53_46_400x400.jpg",
-                    "title": "T恤"
+                    "img": "http://p0.meituan.net/720.0.100/jungle/12a331ee952b227b871490b7acd860f913252.png.webp",
+                    "title": "汉堡薯条"
                   },
                   {
                     "img":
-                      "https://mi2.vanclimg.com/oms/2019_5_15_15_27_19_8618_400x400.jpg",
-                    "title": "短袖衬衫"
+                    "http://p1.meituan.net/720.0.100/jungle/7deda5e9f33520b51e26236eaf2f389013347.png.webp",
+                    "title": "意面披萨"
                   },
                   {
-                    "img":"http://i.vanclimg.com/640/q80/product/6/3/7/6377971/big/6377971-1j201709260833241850.jpg",
-                    "title": "休闲衬衫"
+                    "img":"http://p0.meituan.net/720.0.100/jungle/1b5d577b7939d820761e1db3d7300f6a14954.png.webp",
+                    "title": "包子粥店"
                   },
                   {
-                    "img":"http://p3.vanclimg.com/product/6/3/7/6375163/mid/6375163-1j201709151925189721.jpg",
-                    "title": "水柔棉"
+                    "img":"http://p0.meituan.net/720.0.100/jungle/57eec0d1a46db45e5266612678d4d39e12752.png.webp",
+                    "title": "米粉面馆"
                   },
                   {
-                    "img":"https://mi2.vanclimg.com/oms/2019_5_16_15_7_53_8057_400x400.jpg",
-                    "title": "牛津纺"
+                    "img":"http://p0.meituan.net/720.0.100/jungle/4080be491d2b2d7de798e180599e0e4214296.png.webp",
+                    "title": "饺子馄饨"
                   },
                   {
-                    "img":"http://p2.vanclimg.com/product/6/3/7/6378353/mid/6378353-1j201709090039435468.jpg",
-                    "title": "卫衣"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/67cd87b3a05a47166d4737e435e1bb0a11858.png.webp",
+                    "title": "麻辣烫"
                   },
                   {
-                    "img":"http://p4.vanclimg.com/product/6/3/7/6378026/mid/6378026-1j201710121408227822.jpg",
-                    "title": "夹克"
+                    "img":"http://p0.meituan.net/720.0.100/jungle/4fc98cf7db4dcb2ee31f2d564885e08614588.png.webp",
+                    "title": "川湘菜"
                   },
                   {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6378261/mid/6378261-1j201709211359324069.jpg",
-                    "title": "针织衫"
+                    "img":"http://p0.meituan.net/720.0.100/jungle/1acaf0582e559ed4d672364045dac7be15629.png.webp",
+                    "title": "地方菜系"
                   },
                   {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6375651/mid/6375651-1j201709151926288158.jpg",
-                    "title": "外套"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/627aa3cb850eb6c8c1631933804f13b110938.png.webp",
+                    "title": "炸鸡炸串"
                   },
                   {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6378464/mid/6378464-1j201709221623443761.jpg",
-                    "title": "童装"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/b6dbdac0ca7156c8078bbf12e645d36010674.png.webp",
+                    "title": "特色小吃"
                   },
                   {
-                    "img":"http://p1.vanclimg.com/product/6/3/7/6375440/mid/6375440-1j201709151926140815.jpg",
-                    "title": "大衣"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/831b99f5a2642c10fabb5f638feef7e915759.png.webp",
+                    "title": "夹馍饼类"
                   },
                   {
-                    "img":"http://p2.vanclimg.com/product/6/3/7/6378281/mid/6378281-1j201711031618496576.jpg",
-                    "title": "棉服"
+                    "img":"http://p0.meituan.net/720.0.100/jungle/9f166db86b479477185bc07dc5dea2c911202.png.webp",
+                    "title": "鸭脖卤味"
                   },
                   {
-                    "img":"http://p1.vanclimg.com/product/6/3/7/6375431/mid/6375431-1j201710131712238133.jpg",
-                    "title": "羽绒服"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/d7c49f79319c3e1956131fc12887f3a59366.png.webp",
+                    "title": "日料寿司"
                   },
                   {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6375237/mid/6375237-1j201609181106554831.jpg",
-                    "title": "休闲裤"
+                    "img":"http://p0.meituan.net/720.0.100/jungle/61c3ba422200ac7f81a0ac9c4da38c4811954.png.webp",
+                    "title": "韩式料理"
                   },
                   {
-                    "img":"http://p3.vanclimg.com/product/6/3/7/6375663/mid/6375663-1201702221659421316.jpg",
-                    "title": "牛仔裤"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/2e74f8e22906ad5699ffbd3ed922d1e513445.png.webp",
+                    "title": "香锅干锅"
                   },
                   {
-                    "img":"https://mi2.vanclimg.com/oms/2019_5_16_14_59_46_8762_400x400.jpg",
-                    "title": "帆布鞋"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/7e4f57b155c11773302c13ceb55eb63f14704.png.webp",
+                    "title": "火锅串串"
                   },
                   {
-                    "img":"http://p1.vanclimg.com/product/6/3/7/6375869/mid/6375869-1j201703301445582286.jpg",
-                    "title": "复古跑"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/f09a63d346afb9f4a78a4a487350217013220.png.webp",
+                    "title": "龙虾烧烤"
                   },
                   {
-                    "img":"http://p4.vanclimg.com/product/6/3/7/6379070/mid/6379070-1j201710271718344293.jpg",
-                    "title": "拖鞋"
+                    "img":"http://p1.meituan.net/720.0.100/jungle/75d32dc82c2083fe61297a040f380d4611210.png.webp",
+                    "title": "轻食沙拉"
                   },
                   {
-                    "img": "http://i2.vanclimg.com/cms/20190225/dsxcsd.jpg",
-                    "title": "手机壳"
+                    "img": "http://p0.meituan.net/720.0.100/jungle/f62009a606f67e4fbcf92fdf523a64ba13767.png.webp",
+                    "title": "暖胃粉"
+                  },
+									{
+									  "img": "http://p0.meituan.net/720.0.100/jungle/47c973d6aa98fa6c38f4b0324d6a023516150.png.webp",
+									  "title": "东南亚菜"
+									}
+            ]
+        },
+        {
+            "name":"甜点饮品",
+            "foodsList":[
+                {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/ff56fc00777ffcf61c17593632c5923a7455.png.webp",
+                    "title": "奶茶果汁"
+                  },
+                  {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/1b7e48257cea6114e051973eb346f63815593.png.webp",
+                    "title": "可口甜品"
+                  },
+                  {
+                    "img":
+                      "http://p0.meituan.net/160.160.100/jungle/eef343a5ef09fc18493cec0e44f0bf1812619.png.webp",
+                    "title": "醒脑咖啡"
+                  },
+                  {
+                    "img":
+                      "http://p1.meituan.net/160.160.100/jungle/7ebbfa424ffb59149e021bfc31ec90de7060.png.webp",
+                    "title": "凉茶冰"
+                  },
+							]
+        },
+        {
+            "name":"超市便利",
+            "foodsList":[
+                {
+                    "img": "http://p1.meituan.net/160.160.100/jungle/cb8ac6ab7dfb24fd8155291a518303d06880.png.webp",
+                    "title": "全部商家"
+                  },
+                  {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/ffe77f9e3dc2d93c3f936f4b7e08fe1b5979.png.webp",
+                    "title": "生鲜菜场"
+                  },
+                  {
+                    "img":"http://p0.meituan.net/160.160.100/jungle/e7f789d2b191c037d09fd505ea6262905994.png.webp",
+                    "title": "闪购优选"
+                  }
+							]
+        },
+        {
+            "name":"蔬菜水果",
+            "foodsList":[
+                {
+                    "img": "http://p1.meituan.net/160.160.100/jungle/1a247796d24f6c1ecdfc0e3958344bdc5244.png.webp",
+                    "title": "全部商家"
+                  },
+                  {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/bf30efa7b16233c2aa518770aaf3ef324454.png.webp",
+                    "title": "水果"
+                  },
+                  {
+                    "img":"http://p0.meituan.net/160.160.100/jungle/38920c065e94fc21218d97d0ed19dd6a11276.png.webp",
+                    "title": "食材"
+                  },
+                  {
+                    "img":"http://p0.meituan.net/160.160.100/jungle/8e4020c7a3d2c8bb9ccac38bbbe0e8089900.png.webp",
+                    "title": "果切"
                   }
             ]
         },
         {
-            "name":"男装",
+            "name":"送药上门",
             "foodsList":[
                 {
-                    "img": "http://p2.vanclimg.com/product/6/3/7/6377093/mid/6377093-1j201709181534534139.jpg",
-                    "title": "免烫衬衫"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6375076/mid/6375076-1j201709151927340820.jpg",
-                    "title": "休闲衬衫"
-                  },
-                  {
-                    "img":
-                      "https://mi1.vanclimg.com/oms/2019_5_16_15_5_56_4201_400x400.jpg",
-                    "title": "T恤"
-                  },
-                  {
-                    "img":
-                      "https://mi2.vanclimg.com/oms/2019_5_15_15_33_14_8658_400x400.jpg",
-                    "title": "水洗棉衬衫"
-                  },
-                  {
-                    "img":
-                      "https://mi1.vanclimg.com/oms/2019_5_15_15_37_35_3744_400x400.jpg",
-                    "title": "牛仔衬衫"
-                  },
-                  {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6375493/mid/6375493-1j201704211456159105.jpg",
-                    "title": "短袖衬衫"
-                  },
-                  {
-                    "img": "https://mi2.vanclimg.com/oms/2019_5_15_15_57_55_7561_400x400.jpg",
-                    "title": "牛津纺"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6374869/mid/6374869-1j201608231026249778.jpg",
-                    "title": "polo衫"
-                  },
-                  {
-                    "img":
-                      "https://mi.vanclimg.com/oms/2019_5_16_15_11_37_3094_400x400.jpg",
-                    "title": "商务衬衫"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6378356/mid/6378356-1j201709090039584376.jpg",
-                    "title": "卫衣"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6375166/mid/6375166-1j201709151925342223.jpg",
-                    "title": "水柔棉"
-                  },
-                  {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6375506/mid/6375506-1j201709181647233777.jpg",
-                    "title": "麻衬衫"
-                  },
-                  {
-                    "img":
-                      "http://p4.vanclimg.com/product/6/3/7/6375920/mid/6375920-1j201704071346168501.jpg",
-                    "title": "皮肤衣"
-                  },
-                  {
-                    "img":
-                      "https://mi.vanclimg.com/oms/2019_5_15_15_55_8_2095_400x400.jpg",
-                    "title": "法兰绒"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6378263/mid/6378263-1j201709211400422674.jpg",
-                    "title": "针织衫"
-                  },
-          
-                  {
-                    "img":
-                      "http://i.vanclimg.com/640/q80/product/6/3/7/6375420/big/6375420-1j201709190939310097.jpg",
-                    "title": "外套"
-                  },
-                  {
-                    "img": "http://i.vanclimg.com/640/q80/product/6/3/7/6375178/big/6375178-1j201709190939204939.jpg",
-                    "title": "西服"
-                  },
-                  {
-                    "img": "http://i.vanclimg.com/640/q80/product/6/3/7/6375438/big/6375438-1j201709151926139721.jpg",
-                    "title": "大衣"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6379041/mid/6379041-1j201711081537064863.jpg",
-                    "title": "羽绒服"
-                  },
-                  {
-                    "img":
-                      "http://p4.vanclimg.com/product/6/3/7/6375236/mid/6375236-1j201609181106558580.jpg",
-                    "title": "休闲裤"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6375676/mid/6375676-1j201702271714371849.jpg",
-                    "title": "牛仔裤"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6375716/mid/6375716-1j201703011610142579.jpg",
-                    "title": "针织裤"
+                    "img": "http://p0.meituan.net/160.160.100/jungle/eb4968866585dad9feb3dc5e4c6762f511495.png.webp",
+                    "title": "常用药品"
                   }
-            ]
+							]
         },
         {
-            "name":"女装",
-            "foodsList":[
-                {
-                    "img": "http://i.vanclimg.com/640/q80/product/6/3/7/6375741/big/6375741-1j201703151524555988.jpg",
-                    "title": "卫衣"
-                  },
-                  {
-                    "img": "http://i2.m.vancl.com/oms/2017_10_9_16_2_46_2082_400x400.jpg",
-                    "title": "水柔棉"
-                  },
-                  {
-                    "img":
-                      "http://i9.m.vancl.com/oms/2017_10_9_16_5_56_9321_400x400.jpg",
-                    "title": "T恤"
-                  },
-                  {
-                    "img":
-                      "http://i4.m.vancl.com/oms/2017_10_9_15_58_41_4362_400x400.jpg",
-                    "title": "休闲衬衫"
-                  },
-                  {
-                    "img":
-                      "http://p3.vanclimg.com/product/6/1/3/6139863/mid/6139863-1j201505141032063416.jpg",
-                    "title": "麻衫衬裙"
-                  },
-                  {
-                    "img": "http://p3.vanclimg.com/product/6/3/7/6374218/mid/6374218-1j201706172249534728.jpg",
-                    "title": "针织纱"
-                  },
-                  {
-                    "img": "http://mimages.vancl.com/oms/2017_10_9_15_47_47_125_400x400.jpg",
-                    "title": "外套"
-                  },
-                  {
-                    "img":"http://i.vanclimg.com/640/q80/product/6/3/7/6374159/big/6374159-1j201709191136144818.jpg",
-                    "title": "皮肤衣"
-                  },
-                  {
-                    "img":"http://p4.vanclimg.com/product/6/3/7/6373643/mid/6373643-1j201604151115425202.jpg",
-                    "title": "运动速干"
-                  },
-                  {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6375674/mid/6375674-1j201702221659533816.jpg",
-                    "title": "牛仔裤"
-                  },
-                   {
-                    "img":"http://p4.vanclimg.com/product/6/3/7/6375740/mid/6375740-1j201703151436554981.jpg",
-                    "title": "针织裤"
-                  },
-                  {
-                    "img": "http://i5.vanclimg.com/cms/20180802/6376038-1j201704200924045527.jpg",
-                    "title": "沙滩裤"
-                  }
-            ]
-        },
-        {
-            "name":"男鞋",
-            "foodsList":[
-                {
-                    "img": "https://mi2.vanclimg.com/oms/2019_5_16_14_59_43_6907_400x400.jpg",
-                    "title": "帆布鞋"
-                  },
-                  {
-                    "img": "http://mimages.vancl.com/oms/2016_9_29_15_4_54_591_400x400.jpg",
-                    "title": "休闲鞋"
-                  },
-                  {
-                    "img":"http://i7.m.vancl.com/oms/2016_11_4_14_42_3_7460_400x400.jpg",
-                    "title": "复古跑"
-                  },
-                  {
-                    "img":"http://i2.vanclimg.com/cms/20180802/j201704200924045527.jpg",
-                    "title": "运动鞋"
-                  },
-                  {
-                    "img":"http://i1.vanclimg.com/cms/20181221/lalalal.jpg",
-                    "title": "商务休闲鞋"
-                  },
-                  {
-                    "img": "https://mi1.vanclimg.com/oms/2019_5_14_15_6_10_4174_400x400.jpg",
-                    "title": "皮鞋"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6379346/mid/6379346-1j201711201639496170.jpg",
-                    "title": "床单"
-                  },
-                  {
-                    "img": "http://p5.vanclimg.com/product/6/3/7/6376934/mid/6376934-1j201704251016152543.jpg",
-                    "title": "被子"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6378483/mid/6378483-1j201711070900347238.jpg",
-                    "title": "家居毯"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6375801/mid/6375801-1j201704111029201726.jpg",
-                    "title": "枕头"
-                  },
-                  {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6378229/mid/6378229-1j201710200947086013.jpg",
-                    "title": "围巾"
-                  }
-            ]
-        },
-        {
-            "name":"女鞋",
-            "foodsList":[
-                {
-                    "img": "https://mi.vanclimg.com/oms/2019_5_16_14_59_46_190_400x400.jpg",
-                    "title": "帆布鞋"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6375869/mid/6375869-1j201703301445582286.jpg",
-                    "title": "复古跑"
-                  },
-                  {
-                    "img":
-                      "https://mi1.vanclimg.com/oms/2019_4_19_15_42_52_5286_400x400.jpg",
-                   " title": "休闲鞋"
-                  },{
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6379346/mid/6379346-1j201711201639496170.jpg",
-                    "title": "床单"
-                  },
-                  {
-                    "img": "http://p5.vanclimg.com/product/6/3/7/6376934/mid/6376934-1j201704251016152543.jpg",
-                    "title": "被子"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6378483/mid/6378483-1j201711070900347238.jpg",
-                    "title": "家居毯"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6375801/mid/6375801-1j201704111029201726.jpg",
-                    "title": "枕头"
-                  },
-                  {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6378229/mid/6378229-1j201710200947086013.jpg",
-                    "title": "围巾"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6379346/mid/6379346-1j201711201639496170.jpg",
-                    "title": "床单"
-                  },
-                  {
-                    "img": "http://p5.vanclimg.com/product/6/3/7/6376934/mid/6376934-1j201704251016152543.jpg",
-                    "title": "被子"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6378483/mid/6378483-1j201711070900347238.jpg",
-                    "title": "家居毯"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6375801/mid/6375801-1j201704111029201726.jpg",
-                    "title": "枕头"
-                  },
-                  {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6378229/mid/6378229-1j201710200947086013.jpg",
-                    "title": "围巾"
-                  }
-            ]
-        },
-        {
-            "name":"袜品",
+            "name":"浪漫鲜花",
             "foodsList":[
                  {
-                    "img": "http://i8.m.vancl.com/oms/2015_8_24_14_36_41_8264.jpg",
-                    "title": "连裤袜"
+                    "img": "http://p1.meituan.net/160.160.100/jungle/cec76de8fa403ebfbef8d22f3568d48631149.png.webp",
+                    "title": "全部门店"
                   },
                   {
-                    "img": "http://i4.m.vancl.com/oms/2015_10_12_17_6_14_4263.jpg",
-                    "title": "打底裤"
+                    "img": "http://p0.meituan.net/160.160.100/jungle/2a1f4f05a1b14a51b53246ffac5cd0ba35975.png.webp",
+                    "title": "品质甄选"
                   },
                   {
-                    "img":
-                      "http://i6.m.vancl.com/oms/2015_8_24_14_43_42_6578.jpg",
-                    "title": "棉裤"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6379346/mid/6379346-1j201711201639496170.jpg",
-                    "title": "床单"
-                  },
-                  {
-                    "img": "http://p5.vanclimg.com/product/6/3/7/6376934/mid/6376934-1j201704251016152543.jpg",
-                    "title": "被子"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6378483/mid/6378483-1j201711070900347238.jpg",
-                    "title": "家居毯"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6375801/mid/6375801-1j201704111029201726.jpg",
-                    "title": "枕头"
-                  },
-                  {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6378229/mid/6378229-1j201710200947086013.jpg",
-                    "title": "围巾"
+                    "img":"http://p0.meituan.net/160.160.100/jungle/ce2c0661fc408a12420823d80f82bc1029274.png.webp",
+                    "title": "多肉绿植"
                   }
-            ]
+							]
         },
         {
-            "name":"家居",
+            "name":"早餐",
             "foodsList":[
                 {
-                    "img": "http://i2.vanclimg.com/cms/20190225/dsxcsd.jpg",
-                    "title": "手机壳"
+                    "img": "http://p1.meituan.net/160.160.100/jungle/86a42403d8b4a38e891ec6e74af5d9a48927.png.webp",
+                    "title": "全部"
                   },
                   {
-                    "img": "http://p1.vanclimg.com/product/6/3/6/6360018/mid/6360018-1j201507061744455744.jpg",
-                    "title": "床品"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6379346/mid/6379346-1j201711201639496170.jpg",
-                    "title": "床单"
-                  },
-                  {
-                    "img": "http://p5.vanclimg.com/product/6/3/7/6376934/mid/6376934-1j201704251016152543.jpg",
-                    "title": "被子"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6378483/mid/6378483-1j201711070900347238.jpg",
-                    "title": "家居毯"
+                    "img": "http://p1.meituan.net/160.160.100/jungle/c4f4438f1ebbc6bccb11952905369ab815784.png.webp",
+                    "title": "包子粥店"
                   },
                   {
                     "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6375801/mid/6375801-1j201704111029201726.jpg",
-                    "title": "枕头"
+                      "http://p1.meituan.net/160.160.100/jungle/878b12cd12773f508a033715df73a20917164.png.webp",
+                    "title": "米粉面馆"
                   },
                   {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6378229/mid/6378229-1j201710200947086013.jpg",
-                    "title": "围巾"
+                    "img": "http://p1.meituan.net/160.160.100/jungle/16a518b9f89fc00813868ea090d2ffa613671.png.webp",
+                    "title": "饺子馄饨"
                   },
                   {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6374336/mid/6374336-1j201605061429584072.jpg",
-                    "title": "背心"
-                  },
-                  {
-                    "img":
-                      "http://i3.vanclimg.com/cms/20181220/dd.jpg",
-                    "title": "睡衣"
-                  },
-                  {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6377054/mid/6377054-1j201705051702590184.jpg",
-                    "title": "箱包"
-                  },
-                  {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6379054/mid/6379054-1j201710271704243178.jpg",
-                    "title": "钱包"
+                    "img": "http://p1.meituan.net/160.160.100/jungle/c6c87f80926a4dc1496a3d6faa9a1dbc15582.png.webp",
+                    "title": "地方小吃"
                   },
                   {
                     "img":
-                      "http://p3.vanclimg.com/product/6/3/7/6379056/mid/6379056-1j201710271512142805.jpg",
-                    "title": "拖鞋"
+                      "http://p1.meituan.net/160.160.100/jungle/67345c946d57a7addff4f3860814875c11459.png.webp",
+                    "title": "豆浆饼类"
                   },
                   {
-                    "img": "http://i1.vanclimg.com/cms/20181220/pppp.jpg",
-                    "title": "皮带"
+                    "img": "http://p0.meituan.net/720.0.100/jungle/eef343a5ef09fc18493cec0e44f0bf1812619.png.webp",
+                    "title": "醒脑咖啡"
+                  },
+                  {
+                    "img": "http://p1.meituan.net/160.160.100/jungle/690e0d665884ae2a8220160339d5096315967.png.webp",
+                    "title": "汉堡面包"
+                  }
+							]
+        },
+        {
+            "name":"正餐优选",
+            "foodsList":[
+                  {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/69735240114d8c7b5474677397d59c1b17953.png.webp",
+                    "title": "全部"
+                  },
+                  {
+                    "img": "http://p1.meituan.net/160.160.100/jungle/713671965e1646f293d6377040a7b7e413278.png.webp",
+                    "title": "地方菜系"
+                  },
+                  {
+                    "img":"http://p1.meituan.net/160.160.100/jungle/8c2cf236ce32023de0153cfb3bb3d3ed15061.png.webp",
+                    "title": "火锅烧烤"
+                  },
+                  {
+                    "img":"http://p0.meituan.net/160.160.100/jungle/61aee2e371ae10668de0b8e5ee7127bb15823.png.webp",
+                    "title": "日韩料理"
+                  },
+                  {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/ec8d71f6e56cf1f4af7cdf7822f3f6eb12560.png.webp",
+                    "title": "轻食西餐"
+                  },
+                  {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/72cdd5536f977a961107f371182aa7a111189.png.webp",
+                    "title": "东南亚菜"
+                  }
+							]
+        },
+        {
+            "name":"夜宵",
+            "foodsList":[
+                  {
+                    "img": "http://p1.meituan.net/160.160.100/jungle/b93881054403679364973fee5e80cb1013529.png.webp",
+                    "title": "全部"
+                  },
+                  {
+                    "img": "http://p1.meituan.net/160.160.100/jungle/0dda4b01def263e8a24c98bdfe87bd7f9458.png.webp",
+                    "title": "热门小炒"
                   },
                   {
                     "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6379346/mid/6379346-1j201711201639496170.jpg",
-                    "title": "床单"
+                      "http://p1.meituan.net/160.160.100/jungle/16a518b9f89fc00813868ea090d2ffa613671.png.webp",
+                    "title": "粥面饺子"
                   },
                   {
-                    "img": "http://p5.vanclimg.com/product/6/3/7/6376934/mid/6376934-1j201704251016152543.jpg",
-                    "title": "被子"
+                    "img": "http://p1.meituan.net/160.160.100/jungle/8c2cf236ce32023de0153cfb3bb3d3ed15061.png.webp",
+                    "title": "龙虾烧烤"
                   },
                   {
-                    "img": "http://p1.vanclimg.com/product/6/3/7/6378483/mid/6378483-1j201711070900347238.jpg",
-                    "title": "家居毯"
+                    "img": "http://p0.meituan.net/160.160.100/jungle/afe012b345e40b538a6c02409df479c013484.png.webp",
+                    "title": "鸭脖小吃"
                   },
                   {
                     "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6375801/mid/6375801-1j201704111029201726.jpg",
-                    "title": "枕头"
+                      "http://p0.meituan.net/160.160.100/jungle/033558d48263963e5a2130ac670b0cd215828.png.webp",
+                    "title": "炸鸡汉堡"
                   },
                   {
-                    "img": "http://p4.vanclimg.com/product/6/3/7/6378229/mid/6378229-1j201710200947086013.jpg",
-                    "title": "围巾"
+                    "img": "http://p0.meituan.net/160.160.100/jungle/060226a40886501172f9864e552200bc15299.png.webp",
+                    "title": "火锅串串"
+                  },
+                  {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/3dffede4faf110cad598091c55d825c017283.png.webp",
+                    "title": "麻辣烫"
+                  },
+                  {
+                    "img":
+                      "http://p0.meituan.net/160.160.100/jungle/f1d736bdb27bb1c04c450ffec2c5b21113288.png.webp",
+                    "title": "香锅烤鱼"
+                  },
+                  {
+                    "img": "http://p0.meituan.net/160.160.100/jungle/8e3a98cc04f54c9024ce0a2376348b1612591.png.webp",
+                    "title": "意面披萨"
                   }
             ]
         },
-        {
-            "name":"童装",
-            "foodsList":[
-                  {
-                    "img": "http://i6.m.vancl.com/oms/2017_9_22_14_50_27_6213_400x400.jpg",
-                    "title": "卫衣"
-                  },
-                  {
-                    "img": "http://p3.vanclimg.com/product/6/3/7/6378719/mid/6378719-2201710181354559807.jpg",
-                    "title": "男童"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6378718/mid/6378718-2201710181354110581.jpg",
-                    "title": "女童"
-                  },
-                  {
-                    "img":
-                      "http://i7.m.vancl.com/oms/2017_9_22_14_43_51_7555_400x400.jpg",
-                    "title": "皮肤衣"
-                  },
-                  {
-                    "img": "http://i6.m.vancl.com/oms/2017_9_22_14_50_27_6213_400x400.jpg",
-                    "title": "卫衣"
-                  },
-                  {
-                    "img": "http://p3.vanclimg.com/product/6/3/7/6378719/mid/6378719-2201710181354559807.jpg",
-                    "title": "男童"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6378718/mid/6378718-2201710181354110581.jpg",
-                    "title": "女童"
-                  },
-                  {
-                    "img":
-                      "http://i7.m.vancl.com/oms/2017_9_22_14_43_51_7555_400x400.jpg",
-                    "title": "皮肤衣"
-                  },
-                  {
-                    "img": "http://i6.m.vancl.com/oms/2017_9_22_14_50_27_6213_400x400.jpg",
-                    "title": "卫衣"
-                  },
-                  {
-                    "img": "http://p3.vanclimg.com/product/6/3/7/6378719/mid/6378719-2201710181354559807.jpg",
-                    "title": "男童"
-                  },
-                  {
-                    "img":
-                      "http://p2.vanclimg.com/product/6/3/7/6378718/mid/6378718-2201710181354110581.jpg",
-                    "title": "女童"
-                  },
-                  {
-                    "img":
-                      "http://i7.m.vancl.com/oms/2017_9_22_14_43_51_7555_400x400.jpg",
-                    "title": "皮肤衣"
-                  }
-            ]
-        },
-        {
-            "name":"内衣",
-            "foodsList":[
-                  {
-                    "img": "http://p3.vanclimg.com/product/0/8/5/0852470/mid/0852470-1j201602231548141598.jpg",
-                    "title": "秋衣"
-                  },
-                  {
-                    "img": "http://p2.vanclimg.com/product/6/3/7/6375743/mid/6375743-1j201703151541308000.jpg",
-                    "title": "打底裤"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6378045/mid/6378045-1j201709200915558828.jpg",
-                    "title": "内衣"
-                  },
-                  {
-                    "img": "http://p3.vanclimg.com/product/0/8/5/0852470/mid/0852470-1j201602231548141598.jpg",
-                    "title": "秋衣"
-                  },
-                  {
-                    "img": "http://p2.vanclimg.com/product/6/3/7/6375743/mid/6375743-1j201703151541308000.jpg",
-                    "title": "打底裤"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6378045/mid/6378045-1j201709200915558828.jpg",
-                    "title": "内衣"
-                  },
-                  {
-                    "img": "http://p3.vanclimg.com/product/0/8/5/0852470/mid/0852470-1j201602231548141598.jpg",
-                    "title": "秋衣"
-                  },
-                  {
-                    "img": "http://p2.vanclimg.com/product/6/3/7/6375743/mid/6375743-1j201703151541308000.jpg",
-                    "title": "打底裤"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6378045/mid/6378045-1j201709200915558828.jpg",
-                    "title": "内衣"
-                  },
-                  {
-                    "img": "http://p3.vanclimg.com/product/0/8/5/0852470/mid/0852470-1j201602231548141598.jpg",
-                    "title": "秋衣"
-                  },
-                  {
-                    "img": "http://p2.vanclimg.com/product/6/3/7/6375743/mid/6375743-1j201703151541308000.jpg",
-                    "title": "打底裤"
-                  },
-                  {
-                    "img":
-                      "http://p5.vanclimg.com/product/6/3/7/6378045/mid/6378045-1j201709200915558828.jpg",
-                    "title": "内衣"
-                  },
-                  {
-                    "img": "https://mi.vanclimg.com/oms/2019_5_16_15_5_53_46_400x400.jpg",
-                    "title": "T恤"
-                  },
-                  {
-                    "img":
-                      "https://mi2.vanclimg.com/oms/2019_5_15_15_27_19_8618_400x400.jpg",
-                    "title": "短袖衬衫"
-                  },
-                  {
-                    "img":"http://i.vanclimg.com/640/q80/product/6/3/7/6377971/big/6377971-1j201709260833241850.jpg",
-                    "title": "休闲衬衫"
-                  },
-                  {
-                    "img":"http://p3.vanclimg.com/product/6/3/7/6375163/mid/6375163-1j201709151925189721.jpg",
-                    "title": "水柔棉"
-                  },
-                  {
-                    "img":"https://mi2.vanclimg.com/oms/2019_5_16_15_7_53_8057_400x400.jpg",
-                    "title": "牛津纺"
-                  },
-                  {
-                    "img":"http://p2.vanclimg.com/product/6/3/7/6378353/mid/6378353-1j201709090039435468.jpg",
-                    "title": "卫衣"
-                  },
-                  {
-                    "img":"http://p4.vanclimg.com/product/6/3/7/6378026/mid/6378026-1j201710121408227822.jpg",
-                    "title": "夹克"
-                  },
-                  {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6378261/mid/6378261-1j201709211359324069.jpg",
-                    "title": "针织衫"
-                  },
-                  {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6375651/mid/6375651-1j201709151926288158.jpg",
-                    "title": "外套"
-                  },
-                  {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6378464/mid/6378464-1j201709221623443761.jpg",
-                    "title": "童装"
-                  },
-                  {
-                    "img":"http://p1.vanclimg.com/product/6/3/7/6375440/mid/6375440-1j201709151926140815.jpg",
-                    "title": "大衣"
-                  },
-                  {
-                    "img":"http://p2.vanclimg.com/product/6/3/7/6378281/mid/6378281-1j201711031618496576.jpg",
-                    "title": "棉服"
-                  },
-                  {
-                    "img":"http://p1.vanclimg.com/product/6/3/7/6375431/mid/6375431-1j201710131712238133.jpg",
-                    "title": "羽绒服"
-                  },
-                  {
-                    "img":"http://p5.vanclimg.com/product/6/3/7/6375237/mid/6375237-1j201609181106554831.jpg",
-                    "title": "休闲裤"
-                  },
-                  {
-                    "img":"http://p3.vanclimg.com/product/6/3/7/6375663/mid/6375663-1201702221659421316.jpg",
-                    "title": "牛仔裤"
-                  }
-            ]
-        }
+				{
+				    "name":"面包蛋糕",
+				    "foodsList":[
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/6a32901663964fe6409822d56b15d9d412821.png.webp",
+				            "title": "全部"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/94829b6414cb4c1d76783f4244cb91bf16348.png.webp",
+				            "title": "甜蜜蛋糕"
+				          },
+				          {
+				            "img":
+				              "http://p0.meituan.net/160.160.100/jungle/466a96d63b6bdcc321b2811639d9b6e87923.png.webp",
+				            "title": "免配送费"
+				          },
+				          {
+				            "img": "http://p1.meituan.net/160.160.100/jungle/b237c5b1d16699ec13fbd4c0d6a511875301.png.webp",
+				            "title": "0元起送"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/afe012b345e40b538a6c02409df479c013484.png.webp",
+				            "title": "鸭脖小吃"
+				          }
+				    ]
+				},
+				{
+				    "name":"汉堡披萨",
+				    "foodsList":[
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/4e4f8d0a758f310b8dbf107baacbd09815365.png.webp",
+				            "title": "全部"
+				          },
+				          {
+				            "img": "http://p1.meituan.net/160.160.100/jungle/0d3131770e4326c3300cd64a03d696a410970.png.webp",
+				            "title": "汉堡薯条"
+				          },
+				          {
+				            "img":
+				              "http://p0.meituan.net/160.160.100/jungle/8e3a98cc04f54c9024ce0a2376348b1612591.png.webp",
+				            "title": "意面披萨"
+				          },
+				          {
+				            "img": "http://p1.meituan.net/160.160.100/jungle/f77cd62f6f2f1e86fd6adc08d02d029017661.png.webp",
+				            "title": "低卡沙拉"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/ec8d71f6e56cf1f4af7cdf7822f3f6eb12560.png.webp",
+				            "title": "法意牛排"
+				          }
+							]
+				},
+				{
+				    "name":"日韩料理",
+				    "foodsList":[
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/ef2f69bdd45df5d0f984e3cd2c4dbe2917106.png.webp",
+				            "title": "全部"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/cfbabd397d11bd67767719e60b7f62389946.png.webp",
+				            "title": "日本料理"
+				          },
+				          {
+				            "img":
+				              "http://p0.meituan.net/160.160.100/jungle/61aee2e371ae10668de0b8e5ee7127bb15823.png.webp",
+				            "title": "韩式简餐"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/033558d48263963e5a2130ac670b0cd215828.png.webp",
+				            "title": "低卡沙拉"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/d3791320b324c9f33ee847759ed953d013468.png.webp",
+				            "title": "法意牛排"
+				          }
+							]
+				},
+				{
+				    "name":"家常菜",
+				    "foodsList":[
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/fb08b463cf54d3d0d5e80dc265bd750516668.png.webp",
+				            "title": "全部"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/6e1d215648eccfa5f61bca511a1cd45012268.png.webp",
+				            "title": "日本料理"
+				          },
+				          {
+				            "img":
+				              "http://p0.meituan.net/160.160.100/jungle/2671b31ebb347791b291e4c51013cf1113397.png.webp",
+				            "title": "韩式简餐"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/1ac4f72ae5cbe165c1f54660a0c37bc517815.png.webp",
+				            "title": "低卡沙拉"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/923b034947d0dbd8a171eb4d4e91ec0315163.png.webp",
+				            "title": "法意牛排"
+				          }
+							]
+				},
+				{
+				    "name":"快餐简餐",
+				    "foodsList":[
+				          {
+				            "img": "http://p1.meituan.net/160.160.100/jungle/04004d8ac0241e281f924ce22f03d3ff12635.png.webp",
+				            "title": "全部"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/072c421a572c9c6522470babd1a13c7417688.png.webp",
+				            "title": "地方菜系"
+				          },
+				          {
+				            "img":"http://p1.meituan.net/160.160.100/jungle/aa408d1920ce0165a94018b27897388314800.png.webp",
+				            "title": "火锅烧烤"
+				          },
+				          {
+				            "img":"http://p1.meituan.net/160.160.100/jungle/b93881054403679364973fee5e80cb1013529.png.webp",
+				            "title": "日韩料理"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/923b034947d0dbd8a171eb4d4e91ec0315163.png.webp",
+				            "title": "轻食西餐"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/72cdd5536f977a961107f371182aa7a111189.png.webp",
+				            "title": "东南亚菜"
+				          }
+							]
+				},
+				{
+				    "name":"小吃馆",
+				    "foodsList":[
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/69735240114d8c7b5474677397d59c1b17953.png.webp",
+				            "title": "全部"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/53a32641a81bc5d63a15a9e0a92eb6cd15341.png.webp",
+				            "title": "地方菜系"
+				          },
+				          {
+				            "img":"http://p1.meituan.net/160.160.100/jungle/419953c34a25bffa1c640125c7f3c12e10767.png.webp",
+				            "title": "火锅烧烤"
+				          },
+				          {
+				            "img":"http://p1.meituan.net/160.160.100/jungle/b93881054403679364973fee5e80cb1013529.png.webp",
+				            "title": "日韩料理"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/923b034947d0dbd8a171eb4d4e91ec0315163.png.webp",
+				            "title": "轻食西餐"
+				          },
+				          {
+				            "img": "http://p0.meituan.net/160.160.100/jungle/72cdd5536f977a961107f371182aa7a111189.png.webp",
+				            "title": "东南亚菜"
+				          },
+									{
+									  "img":"http://p0.meituan.net/720.0.100/jungle/4080be491d2b2d7de798e180599e0e4214296.png.webp",
+									  "title": "饺子馄饨"
+									},
+									{
+									  "img":"http://p1.meituan.net/720.0.100/jungle/67cd87b3a05a47166d4737e435e1bb0a11858.png.webp",
+									  "title": "麻辣烫"
+									},
+									{
+									  "img":"http://p0.meituan.net/720.0.100/jungle/4fc98cf7db4dcb2ee31f2d564885e08614588.png.webp",
+									  "title": "川湘菜"
+									},
+									{
+									  "img":"http://p0.meituan.net/720.0.100/jungle/1acaf0582e559ed4d672364045dac7be15629.png.webp",
+									  "title": "地方菜系"
+									},
+									{
+									  "img":"http://p1.meituan.net/720.0.100/jungle/627aa3cb850eb6c8c1631933804f13b110938.png.webp",
+									  "title": "炸鸡炸串"
+									},
+									{
+									  "img":"http://p1.meituan.net/720.0.100/jungle/b6dbdac0ca7156c8078bbf12e645d36010674.png.webp",
+									  "title": "特色小吃"
+									},
+									{
+									  "img": "http://p1.meituan.net/160.160.100/jungle/0d3131770e4326c3300cd64a03d696a410970.png.webp",
+									  "title": "汉堡薯条"
+									},
+									{
+									  "img":
+									    "http://p0.meituan.net/160.160.100/jungle/8e3a98cc04f54c9024ce0a2376348b1612591.png.webp",
+									  "title": "意面披萨"
+									},
+									{
+									  "img": "http://p1.meituan.net/160.160.100/jungle/f77cd62f6f2f1e86fd6adc08d02d029017661.png.webp",
+									  "title": "低卡沙拉"
+									},
+									{
+									  "img": "http://p0.meituan.net/160.160.100/jungle/ec8d71f6e56cf1f4af7cdf7822f3f6eb12560.png.webp",
+									  "title": "法意牛排"
+									},
+									{
+									  "img": "http://p0.meituan.net/720.0.100/jungle/12a331ee952b227b871490b7acd860f913252.png.webp",
+									  "title": "汉堡薯条"
+									},
+									{
+									  "img":
+									  "http://p1.meituan.net/720.0.100/jungle/7deda5e9f33520b51e26236eaf2f389013347.png.webp",
+									  "title": "意面披萨"
+									},
+									{
+									  "img":"http://p0.meituan.net/720.0.100/jungle/1b5d577b7939d820761e1db3d7300f6a14954.png.webp",
+									  "title": "包子粥店"
+									},
+									{
+									  "img":"http://p0.meituan.net/720.0.100/jungle/57eec0d1a46db45e5266612678d4d39e12752.png.webp",
+									  "title": "米粉面馆"
+									},
+									{
+									  "img":"http://p0.meituan.net/720.0.100/jungle/4080be491d2b2d7de798e180599e0e4214296.png.webp",
+									  "title": "饺子馄饨"
+									},
+									{
+									  "img":"http://p1.meituan.net/720.0.100/jungle/67cd87b3a05a47166d4737e435e1bb0a11858.png.webp",
+									  "title": "麻辣烫"
+									},
+									{
+									  "img":"http://p0.meituan.net/720.0.100/jungle/4fc98cf7db4dcb2ee31f2d564885e08614588.png.webp",
+									  "title": "川湘菜"
+									},
+									{
+									  "img":"http://p0.meituan.net/720.0.100/jungle/1acaf0582e559ed4d672364045dac7be15629.png.webp",
+									  "title": "地方菜系"
+									},
+									{
+									  "img":"http://p1.meituan.net/720.0.100/jungle/627aa3cb850eb6c8c1631933804f13b110938.png.webp",
+									  "title": "炸鸡炸串"
+									},
+									{
+									  "img":"http://p1.meituan.net/720.0.100/jungle/b6dbdac0ca7156c8078bbf12e645d36010674.png.webp",
+									  "title": "特色小吃"
+									},
+							]
+				}
     ]
     };
   },
   methods:{
       initScroll(){
          this.menuScroll = new BScroll(this.$refs.menuScroll,{
-            click:true,//默认false 设置为truw  onclick事件才可以执行
+            click:true,//默认false 设置为true  onclick事件才可以执行
          })
          this.foodScroll = new BScroll(this.$refs.foodScroll,{
             probeType:3,
@@ -777,6 +658,7 @@ export default {
       }
   },
   created(){
+		
     this.$nextTick(()=>{
           // 执行滚动方法
         this.initScroll()       
@@ -818,7 +700,8 @@ export default {
   display: flex;
   position: absolute;
   top: 1rem;
-  bottom: 1rem;
+  bottom: .1px;
+	overflow: hidden;
 }
 .name{
   display: flex;
@@ -827,9 +710,7 @@ export default {
   font-weight: 100;
   height: 1rem;
 }
-.name_div{
-  color: black;
-}
+
 .name_icon{
   display: flex;
   align-items: center;
@@ -865,7 +746,6 @@ export default {
 
 .listMenu{
   flex: 1;
-  /* width: 80%; */
   background: #eee;
   text-align: center;
   overflow: hidden;

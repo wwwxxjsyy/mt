@@ -1,84 +1,4 @@
 <template>
-<<<<<<< HEAD
-        <div data-v-7ba5bd90="" id="app">
-        	<div data-v-21ee3a69="" data-v-7ba5bd90="" class="settlement">
-        		<header data-v-61dd7a3d="" data-v-21ee3a69="" class="header">
-        			<div data-v-61dd7a3d="" class="header-button is-left"><i data-v-61dd7a3d="" class="fa fa-chevron-left"></i><button
-        				 data-v-61dd7a3d="">返回</button></div>
-        			<h1 data-v-61dd7a3d="" class="header-title">确认订单</h1>
-        			<div data-v-61dd7a3d="" class="header-button is-right" style="display: none;"><button data-v-61dd7a3d=""><i
-        					 data-v-61dd7a3d="" class="fa fa-undefined"></i></button></div>
-        		</header>
-        		<div data-v-21ee3a69="" class="view-body">
-        			<div data-v-21ee3a69="">
-        				<section data-v-21ee3a69="" class="cart-address">
-        					<p data-v-21ee3a69="" class="title">
-        						订单配送至
-        						<!---->
-        					</p>
-        					<p data-v-21ee3a69="" class="address-detail"><span data-v-21ee3a69=""><span data-v-21ee3a69="">新增收货地址</span></span><i
-        						 data-v-21ee3a69="" class="fa fa-angle-right"></i></p>
-        					<!---->
-        				</section>
-        				<section data-v-b75fea04="" data-v-21ee3a69="" class="checkout-section">
-        					<div data-v-b75fea04="" class="delivery">
-        						<div data-v-b75fea04="" class="deliver-left"><span data-v-b75fea04="" class="delivery-time">送达时间</span>
-        							<div data-v-b75fea04="" class="delivery-extra"><span data-v-b75fea04="">蜂鸟专送</span></div>
-        						</div>
-        						<div data-v-b75fea04="" class="delivery-right"><span data-v-b75fea04="" class="delivery-select">尽快送达 (11:35送达)</span><i
-        							 data-v-b75fea04="" class="fa fa-angle-right"></i></div>
-        					</div>
-        					<div data-v-b75fea04="" class="cart-item">
-        						<div data-v-b75fea04="" class="cart-item-title">支付方式</div>
-        						<div data-v-b75fea04="" class="pay-text">在线支付</div>
-        					</div>
-        				</section>
-        				<section data-v-40c5f225="" data-v-21ee3a69="" class="checkout-section cart-group">
-        					<h3 data-v-40c5f225="">汉堡王（北京珠江摩尔国际店21157）</h3>
-        					<ul data-v-40c5f225="">
-        						<li data-v-40c5f225=""><img data-v-40c5f225="" src="https://fuss10.elemecdn.com/e/ed/cf60fce3bca1fb41227128a076a04png.png"
-        							 alt="">
-        							<div data-v-40c5f225="" class="cart-group-info"><span data-v-40c5f225="">王道椒香鸡腿</span><span data-v-40c5f225="">x
-        									1</span><span data-v-40c5f225="">13</span></div>
-        						</li>
-        						<li data-v-40c5f225=""><img data-v-40c5f225="" src="https://fuss10.elemecdn.com/b/66/be76d44a4bcc5d39a668f07d50f37png.png"
-        							 alt="">
-        							<div data-v-40c5f225="" class="cart-group-info"><span data-v-40c5f225="">29.9鸡腿双堡套餐</span><span
-        								 data-v-40c5f225="">x 1</span><span data-v-40c5f225="">29.9</span></div>
-        						</li>
-        						<li data-v-40c5f225="" class="cart-group-total">
-        							<div data-v-40c5f225="">配送费</div>
-        							<div data-v-40c5f225="">¥5.5</div>
-        						</li>
-        						<li data-v-40c5f225="" class="cart-group-total">
-        							<div data-v-40c5f225="" class="discounts"></div>
-        							<div data-v-40c5f225="" class="subtotal"><span data-v-40c5f225="">小计 ¥</span><span data-v-40c5f225="" class="price">48.4</span></div>
-        						</li>
-        					</ul>
-        				</section>
-        				<section data-v-21ee3a69="" class="checkout-section">
-        					<div data-v-21c581dd="" data-v-21ee3a69="" class="cart-item">
-        						<div data-v-21c581dd="" class="cart-item-title">餐具份数</div>
-        						<div data-v-21c581dd="" class="cart-item-right"><span data-v-21c581dd="">未选择</span><i data-v-21c581dd="" class="fa fa-angle-right"></i></div>
-        					</div>
-        					<div data-v-21c581dd="" data-v-21ee3a69="" class="cart-item">
-        						<div data-v-21c581dd="" class="cart-item-title">订单备注</div>
-        						<div data-v-21c581dd="" class="cart-item-right"><span data-v-21c581dd="">口味 偏好</span><i data-v-21c581dd=""
-        							 class="fa fa-angle-right"></i></div>
-        					</div>
-        					<div data-v-21c581dd="" data-v-21ee3a69="" class="cart-item">
-        						<div data-v-21c581dd="" class="cart-item-title">发票信息</div>
-        						<div data-v-21c581dd="" class="cart-item-right"><span data-v-21c581dd="">不需要开发票</span><i data-v-21c581dd=""
-        							 class="fa fa-angle-right"></i></div>
-        					</div>
-        				</section>
-        				<!---->
-        			</div>
-        		</div>
-        		<footer data-v-21ee3a69="" class="action-bar"><span data-v-21ee3a69="">¥48.4</span><button data-v-21ee3a69="">去支付</button></footer>
-        	</div>
-        </div>
-=======
     <div class="settlement">
         <Header :isLeft="true" title="提交订单"/>
         <div class="view-body" v-if="orderInfo">
@@ -137,7 +57,6 @@
         <span>¥{{totalPrice}}</span>
         <button @click="handlePay()">去支付</button>
         </footer>
->>>>>>> 85059f34556a6a500d459380b6343c3674c54804
 
     </div>
 </template>

@@ -6,21 +6,20 @@ import {store} from './store/store.js'
 import Observer from "./Observer";
 import MINT from 'mint-ui'
 import 'mint-ui/lib/style.css'
-
+import {Indicator} from 'mint-ui'
 Vue.prototype.Observer = Observer;
 import axios from 'axios' 
 
 // axios.defaults.baseURL = 'https://ele-interface.herokuapp.com/';
 axios.defaults.baseURL = 'http://10.35.162.147:8002/';
+// axios.defaults.baseURL = 'http://10.35.162.134:8002/';
 // import http from './api/http'
 Vue.prototype.$axios=axios
 // Vue.prototype.http=http
 
 
 axios.interceptors.request.use(config => {
-    if (config.method == 'post') {
-      config.data = qs.stringify(config.data);
-    }
+    
   //加载动画
   Indicator.open();
   return config;
@@ -65,10 +64,6 @@ router.beforeEach((to,from,next)=>{
 
 })
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 85059f34556a6a500d459380b6343c3674c54804
 new Vue({
   el: '#app',
   router,
