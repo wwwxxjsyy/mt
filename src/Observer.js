@@ -23,44 +23,40 @@
 
 */
 
-let EventList = {
+let EventList = {};
 
-}
+const $on = (eventName, callback) => {
+  if (!EventList[eventName]) {
+    EventList[eventName] = [];
+  }
 
-const $on = (eventName,callback)=>{
+  EventList[eventName].push(callback);
+};
 
-    if(!EventList[eventName]){
-        EventList[eventName] = [];
+const $emit = (eventName, params) => {
+  if (EventList[eventName]) {
+    EventList[eventName].forEach(cb => {
+      cb(params);
+    });
+  }
+};
+
+const $off = (eventName, callback) => {
+  if (EventList[eventName]) {
+    if (callback) {
+      var index = EventList[eventName].indexOf(callback);
+      EventList[eventName].splice(index, 1);
+    } else {
+      EventList[eventName].length = 0;
     }
-
-    EventList[eventName].push(callback);
-}
-
-const $emit = (eventName,params)=>{
-    if(EventList[eventName]){
-        EventList[eventName].forEach((cb)=>{
-            cb(params);
-        })
-    }
-}
-
-
-const $off = (eventName,callback)=>{
-    if(EventList[eventName]){
-        if(callback){
-            var index = EventList[eventName].indexOf(callback);
-            EventList[eventName].splice(index,1);
-        }else{
-            EventList[eventName].length = 0;
-        }
-    }
-}
+  }
+};
 
 export default {
-    $on,
-    $emit,
-    $off
-}
+  $on,
+  $emit,
+  $off
+};
 
 // function fn1(val){
 //     console.log(1111,val);
